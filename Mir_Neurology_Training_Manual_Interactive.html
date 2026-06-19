@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mir Neurology & Spine Center — Staff Training Manual</title>
+<style>
+:root{--primary:#1a4a7a;--primary-light:#2563a8;--accent:#0ea5c8;--success:#16a34a;--warn:#d97706;--danger:#dc2626;--bg:#f0f4f8;--card:#fff;--text:#1e293b;--muted:#64748b;--border:#cbd5e1;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.65;}
+header{background:linear-gradient(135deg,#1a4a7a,#0f3460);color:#fff;padding:22px 32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;box-shadow:0 4px 16px rgba(0,0,0,.2);}
+header h1{font-size:1.45rem;font-weight:700;}
+header p{font-size:.82rem;opacity:.75;margin-top:3px;}
+.search-wrap{display:flex;gap:8px;align-items:center;}
+#si{padding:8px 14px;border-radius:8px;border:none;width:270px;font-size:14px;background:rgba(255,255,255,.15);color:#fff;outline:none;}
+#si::placeholder{color:rgba(255,255,255,.55);}
+#si:focus{background:rgba(255,255,255,.25);}
+#clr{background:rgba(255,255,255,.18);border:none;color:#fff;padding:8px 12px;border-radius:8px;cursor:pointer;font-size:13px;display:none;}
+mark{background:#fde68a;color:#92400e;border-radius:2px;padding:0 2px;}
+.tab-nav{background:var(--primary);padding:0 14px;display:flex;gap:3px;overflow-x:auto;scrollbar-width:none;}
+.tab-nav::-webkit-scrollbar{display:none;}
+.tb{background:transparent;border:none;color:rgba(255,255,255,.7);padding:13px 16px;cursor:pointer;font-size:13px;font-weight:500;white-space:nowrap;border-bottom:3px solid transparent;transition:all .2s;display:flex;align-items:center;gap:6px;}
+.tb:hover{color:#fff;background:rgba(255,255,255,.08);}
+.tb.active{color:#fff;border-bottom-color:var(--accent);background:rgba(255,255,255,.12);}
+.content{max-width:1120px;margin:0 auto;padding:26px 22px 70px;}
+#sb{background:#fffbeb;border:1px solid #fcd34d;border-radius:10px;padding:12px 16px;margin-bottom:18px;font-size:14px;color:#78350f;display:none;}
+.tab-panel{display:none;}
+.tab-panel.active{display:block;}
+.dept-hdr{background:#fff;border-radius:14px;padding:22px 26px;margin-bottom:22px;border-left:5px solid var(--accent);box-shadow:0 2px 8px rgba(0,0,0,.06);}
+.dept-hdr h2{font-size:1.35rem;font-weight:700;color:var(--primary);}
+.dept-hdr p{color:var(--muted);margin-top:6px;font-size:14px;}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:11px;}
+.tag{background:#e0f2fe;color:#0369a1;border-radius:20px;padding:3px 11px;font-size:12px;font-weight:500;}
+.acc{background:#fff;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,.06);margin-bottom:14px;overflow:hidden;}
+.ah{display:flex;align-items:center;justify-content:space-between;padding:15px 20px;cursor:pointer;user-select:none;gap:12px;transition:background .15s;}
+.ah:hover{background:#f8fafc;}
+.ah.open{background:#f0f9ff;}
+.at{display:flex;align-items:center;gap:10px;font-weight:600;font-size:14.5px;color:var(--primary);}
+.si{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;}
+.ib{background:#dbeafe;} .ig{background:#dcfce7;} .io{background:#ffedd5;} .ir{background:#fee2e2;} .ip{background:#ede9fe;} .it{background:#ccfbf1;} .iy{background:#fef9c3;}
+.badge{font-size:11px;font-weight:700;padding:2px 8px;border-radius:20px;margin-left:6px;}
+.bc{background:#fee2e2;color:#b91c1c;} .bw{background:#ffedd5;color:#c2410c;} .bi{background:#dbeafe;color:#1d4ed8;}
+.chev{color:var(--muted);font-size:17px;transition:transform .25s;flex-shrink:0;}
+.ah.open .chev{transform:rotate(180deg);}
+.ab{display:none;padding:4px 20px 20px;border-top:1px solid #f1f5f9;}
+.ab.open{display:block;}
+.sub{margin-top:16px;}
+.sub-title{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:9px;}
+ul.cl{list-style:none;}
+ul.cl li{padding:6px 0 6px 26px;position:relative;border-bottom:1px solid #f8fafc;font-size:14.5px;}
+ul.cl li:last-child{border-bottom:none;}
+ul.cl li::before{content:'•';position:absolute;left:8px;color:var(--accent);font-weight:bold;}
+ol.st{list-style:none;counter-reset:s;}
+ol.st li{counter-increment:s;padding:8px 0 8px 40px;position:relative;border-bottom:1px solid #f8fafc;font-size:14.5px;}
+ol.st li:last-child{border-bottom:none;}
+ol.st li::before{content:counter(s);position:absolute;left:8px;top:9px;width:22px;height:22px;background:var(--primary);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;line-height:22px;text-align:center;}
+.al{border-radius:8px;padding:12px 15px;margin:11px 0;font-size:14px;display:flex;gap:10px;align-items:flex-start;}
+.al-icon{font-size:15px;flex-shrink:0;margin-top:1px;}
+.ac{background:#fef2f2;border-left:4px solid #dc2626;color:#7f1d1d;}
+.aw{background:#fffbeb;border-left:4px solid #f59e0b;color:#78350f;}
+.ai{background:#eff6ff;border-left:4px solid #3b82f6;color:#1e3a8a;}
+.as{background:#f0fdf4;border-left:4px solid #22c55e;color:#14532d;}
+.tpl{background:#f8fafc;border:1px dashed var(--border);border-radius:8px;padding:13px 15px;margin:10px 0;font-style:italic;font-size:14px;color:#334155;}
+.tpl strong{font-style:normal;font-size:11.5px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);display:block;margin-bottom:5px;}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:12px;}
+@media(max-width:660px){.two{grid-template-columns:1fr;}}
+.ic{background:#f8fafc;border-radius:10px;padding:15px;}
+.ic h5{font-size:12.5px;font-weight:700;color:var(--primary);margin-bottom:9px;text-transform:uppercase;letter-spacing:.5px;}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px;}
+@media(max-width:760px){.three{grid-template-columns:1fr 1fr;}}
+@media(max-width:500px){.three{grid-template-columns:1fr;}}
+.ovgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(185px,1fr));gap:13px;margin-bottom:26px;}
+.ovc{background:#fff;border-radius:12px;padding:17px 14px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.06);cursor:pointer;transition:transform .15s,box-shadow .15s,border-color .15s;border:2px solid transparent;}
+.ovc:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.1);border-color:var(--accent);}
+.ovc .oi{font-size:1.9rem;margin-bottom:9px;}
+.ovc .ot{font-weight:700;font-size:13.5px;color:var(--primary);}
+.ovc .os{font-size:12px;color:var(--muted);margin-top:3px;}
+.il{list-style:none;}
+.il li{display:flex;align-items:flex-start;gap:10px;padding:8px;border-radius:6px;cursor:pointer;transition:background .1s;margin:2px 0;}
+.il li:hover{background:#f8fafc;}
+.il li.ck{opacity:.55;}
+.il li.ck .cl-lbl{text-decoration:line-through;color:var(--muted);}
+.cb{width:20px;height:20px;border:2px solid var(--border);border-radius:5px;flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center;transition:all .15s;font-size:11px;color:transparent;}
+.il li.ck .cb{background:var(--success);border-color:var(--success);color:#fff;}
+.cl-lbl{font-size:14px;}
+.prog{background:#f1f5f9;border-radius:8px;padding:10px 14px;margin-bottom:12px;display:flex;align-items:center;gap:12px;font-size:13px;}
+.pbw{flex:1;background:#e2e8f0;border-radius:10px;height:8px;overflow:hidden;}
+.pb{height:100%;border-radius:10px;background:var(--success);transition:width .3s;}
+.pt{font-weight:700;color:var(--success);white-space:nowrap;}
+.rb{background:none;border:1px solid var(--border);border-radius:6px;padding:4px 10px;font-size:12px;cursor:pointer;color:var(--muted);}
+.rb:hover{border-color:var(--primary);color:var(--primary);}
+.nr{text-align:center;padding:55px 20px;color:var(--muted);display:none;}
+.nr .ni{font-size:2.8rem;margin-bottom:11px;}
+.prob{background:#fff8f8;border-radius:8px;padding:12px 15px;margin:10px 0;border-left:3px solid #fca5a5;font-size:14px;}
+.prob strong{color:#b91c1c;font-size:12px;text-transform:uppercase;letter-spacing:.5px;display:block;margin-bottom:4px;}
+.exp{background:#f0f9ff;border-radius:8px;padding:12px 15px;margin:10px 0;border-left:3px solid #7dd3fc;font-size:14px;}
+.exp strong{color:#0369a1;font-size:12px;text-transform:uppercase;letter-spacing:.5px;display:block;margin-bottom:4px;}
+.tp{background:#f0fdf4;border-radius:8px;padding:12px 15px;margin:10px 0;border-left:3px solid #86efac;font-size:14px;}
+.tp strong{color:#15803d;font-size:12px;text-transform:uppercase;letter-spacing:.5px;display:block;margin-bottom:4px;}
+hr.div{border:none;border-top:1px solid #f1f5f9;margin:16px 0;}
+</style>
+</head>
+<body>
+<header>
+  <div><h1>🧠 Mir Neurology & Spine Center</h1><p>Comprehensive Segment-Wise Staff Training & Operations Manual</p></div>
+  <div class="search-wrap">
+    <input id="si" type="text" placeholder="🔍  Search manual…" oninput="doSearch(this.value)">
+    <button id="clr" onclick="clearS()">✕ Clear</button>
+  </div>
+</header>
+<nav class="tab-nav">
+  <button class="tb active" onclick="sw('ov',this)">🏠 Overview</button>
+  <button class="tb" onclick="sw('fd',this)">🗂 Front Desk</button>
+  <button class="tb" onclick="sw('ma',this)">🩺 Medical Assistants</button>
+  <button class="tb" onclick="sw('sc',this)">📅 Schedulers</button>
+  <button class="tb" onclick="sw('ref',this)">📋 Referrals & Records</button>
+  <button class="tb" onclick="sw('doc',this)">📄 Documentation</button>
+  <button class="tb" onclick="sw('labs',this)">🔬 Labs & Imaging</button>
+  <button class="tb" onclick="sw('ops',this)">🔒 Operations & Compliance</button>
+  <button class="tb" onclick="sw('qi',this)">⭐ Quality Improvement</button>
+  <button class="tb" onclick="sw('ck',this)">✅ Daily Checklists</button>
+</nav>
+<div class="content">
+  <div id="sb"></div>
+  <div id="nr" class="nr"><div class="ni">🔍</div>No results found. Try different keywords.</div>
+
+<!-- ===== OVERVIEW ===== -->
+<div id="panel-ov" class="tab-panel active">
+  <div class="dept-hdr">
+    <h2>Staff Training & Operations Manual</h2>
+    <p>Developed from real workflow concerns, patient complaints, provider feedback, documentation issues, and operational breakdowns. Select a department tab above to view role-specific training content.</p>
+  </div>
+  <div class="ovgrid">
+    <div class="ovc" onclick="swId('fd')"><div class="oi">🗂</div><div class="ot">Front Desk</div><div class="os">Scheduling · Intake · Insurance</div></div>
+    <div class="ovc" onclick="swId('ma')"><div class="oi">🩺</div><div class="ot">Medical Assistants</div><div class="os">Chart Prep · Meds · EMG</div></div>
+    <div class="ovc" onclick="swId('sc')"><div class="oi">📅</div><div class="ot">Schedulers</div><div class="os">Procedures · MVA · Timing</div></div>
+    <div class="ovc" onclick="swId('ref')"><div class="oi">📋</div><div class="ot">Referrals & Records</div><div class="os">Closed-Loop · Urgent · VA</div></div>
+    <div class="ovc" onclick="swId('doc')"><div class="oi">📄</div><div class="ot">Documentation</div><div class="os">Scanning · Clearance · DOS</div></div>
+    <div class="ovc" onclick="swId('labs')"><div class="oi">🔬</div><div class="ot">Labs & Imaging</div><div class="os">Quest · Coding · MRI</div></div>
+    <div class="ovc" onclick="swId('ops')"><div class="oi">🔒</div><div class="ot">Operations</div><div class="os">Security · Credentials · Tasks</div></div>
+    <div class="ovc" onclick="swId('qi')"><div class="oi">⭐</div><div class="ot">Quality Improvement</div><div class="os">Audits · Culture · Training</div></div>
+    <div class="ovc" onclick="swId('ck')"><div class="oi">✅</div><div class="ot">Daily Checklists</div><div class="os">Interactive MA & Front Desk</div></div>
+  </div>
+  <div class="acc">
+    <div class="ah open" onclick="tog(this)"><div class="at"><div class="si ib">🎯</div>Core Principles — All Staff</div><span class="chev">▼</span></div>
+    <div class="ab open">
+      <p style="color:var(--muted);font-size:14px;margin:12px 0 8px">These principles apply to every staff member regardless of role or department.</p>
+      <div class="two">
+        <div class="ic"><h5>Behaviors Expected</h5><ul class="cl"><li>Be proactive — anticipate needs before they become problems</li><li>Communicate clearly with patients, providers, and colleagues</li><li>Follow through completely — never leave tasks half-done</li><li>Escalate concerns early before they become critical</li><li>Verify information carefully — accuracy protects patients</li></ul></div>
+        <div class="ic"><h5>Work Standards</h5><ul class="cl"><li>Maintain professionalism at all times</li><li>Prepare charts thoroughly before every visit</li><li>Document accurately and completely</li><li>Work as a team — no task belongs to only one person</li><li>Ask questions rather than guess</li></ul></div>
+      </div>
+      <div class="al as" style="margin-top:14px"><span class="al-icon">✅</span><span>This manual was created from <strong>real operational problems</strong>. The goal is system improvement — <strong>not blame</strong>. Every issue documented here is an opportunity to build better workflows.</span></div>
+    </div>
+  </div>
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si iy">📖</div>How to Use This Manual</div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="three" style="margin-top:8px">
+        <div class="ic"><h5>🆕 New Hire Onboarding</h5><p style="font-size:14px;color:var(--muted)">Read your department tab fully before starting. Review core principles, then work through each section with your supervisor.</p></div>
+        <div class="ic"><h5>📅 Morning Meetings</h5><p style="font-size:14px;color:var(--muted)">Use the Daily Checklists tab each morning. Open your department tab to review any protocols relevant to the day's schedule.</p></div>
+        <div class="ic"><h5>🔍 Quality Reviews</h5><p style="font-size:14px;color:var(--muted)">Reference the Quality Improvement tab for audit checklists. Use the search bar to quickly find any specific topic or rule.</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== FRONT DESK ===== -->
+<div id="panel-fd" class="tab-panel">
+  <div class="dept-hdr">
+    <h2>🗂 Front Desk Training</h2>
+    <p>Complete training guide for Front Desk staff covering scheduling, patient communication, MVA intake, procedure rules, document scanning, and quality expectations.</p>
+    <div class="tags"><span class="tag">Scheduling</span><span class="tag">Insurance Verification</span><span class="tag">Patient Communication</span><span class="tag">Document Handling</span><span class="tag">MVA Intake</span><span class="tag">Procedure Rules</span></div>
+  </div>
+
+  <div class="acc">
+    <div class="ah open" onclick="tog(this)"><div class="at"><div class="si ib">📋</div>Core Responsibilities</div><span class="chev">▼</span></div>
+    <div class="ab open">
+      <div class="two">
+        <div class="ic"><h5>Primary Duties</h5><ul class="cl"><li>Accurate scheduling of all appointment types</li><li>Insurance verification prior to every visit</li><li>Correct intake workflows for all patient types</li><li>Proper document handling and scanning</li></ul></div>
+        <div class="ic"><h5>Communication Duties</h5><ul class="cl"><li>Clear communication with patients at all stages</li><li>Coordinating workflow between departments</li><li>Answering phones and managing incoming requests</li><li>Relaying urgent messages to clinical staff</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ig">📞</div>Appointment Confirmation Workflow <span class="badge bw">Important</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="prob"><strong>Problem Identified</strong>Patients were missing phone calls because they were at work, and staff were cancelling appointments unnecessarily as a result. This leads to lost patient visits and frustrated patients.</div>
+      <div class="exp"><strong>Expectations</strong>
+        <ul class="cl" style="margin-top:6px">
+          <li>Use <strong>text confirmations</strong> as the primary confirmation method whenever possible</li>
+          <li>Phone calls should mainly be used for cancellations or rescheduling — not initial confirmations</li>
+          <li>Never cancel an appointment solely because the patient did not answer a phone call</li>
+          <li>Attempt multiple methods before considering a no-confirm cancellation</li>
+          <li>Document all confirmation attempts in the system</li>
+        </ul>
+      </div>
+      <div class="tp"><strong>Training Points</strong>
+        <ul class="cl" style="margin-top:6px">
+          <li>Many patients work during business hours and cannot take calls</li>
+          <li>Text messages are seen faster and are less intrusive than calls</li>
+          <li>A confirmed appointment that doesn't cancel is always preferable to a preventive cancellation</li>
+          <li>If a patient truly cannot be reached, escalate to supervisor before cancelling</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si io">🪑</div>Waiting Room Communication <span class="badge bw">Important</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="prob"><strong>Problem Identified</strong>Patients reported waiting long periods without any updates when providers were running behind. This created frustration and complaints, and patients felt ignored.</div>
+      <div class="al ac"><span class="al-icon">🚫</span><span>Never allow patients to sit in the waiting room without updates for more than 20–30 minutes.</span></div>
+      <div class="exp"><strong>Expectations</strong>
+        <ul class="cl" style="margin-top:6px">
+          <li>Proactively update every waiting patient <strong>every 20–30 minutes</strong></li>
+          <li>Do not wait for patients to ask — approach them first</li>
+          <li>If the delay is unexpected or long, offer water or other comfort</li>
+          <li>If a patient chooses to leave, document it and notify the provider</li>
+        </ul>
+      </div>
+      <div class="sub"><div class="sub-title">Approved Communication Phrases</div>
+        <div class="tpl"><strong>Running Behind</strong>"The provider is running a little behind today. We appreciate your patience and will get you in as soon as possible."</div>
+        <div class="tpl"><strong>Time Estimate Available</strong>"We expect it will be approximately ___ more minutes. Thank you for waiting with us."</div>
+        <div class="tpl"><strong>General Check-In</strong>"I just wanted to check in — we haven't forgotten you. We'll have you in shortly."</div>
+      </div>
+      <div class="tp"><strong>Training Points</strong>
+        <ul class="cl" style="margin-top:6px">
+          <li>Communication dramatically reduces patient frustration even when waits are long</li>
+          <li>Patients who feel acknowledged are far less likely to complain or leave</li>
+          <li>Silence sends the message that no one cares — always communicate</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ir">🚗</div>Motor Vehicle Accident (MVA) Intake <span class="badge bc">Critical</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="prob"><strong>Problem Identified</strong>MVA visits were missing critical billing and legal documentation at intake, causing delays in payment and gaps in records for legal proceedings.</div>
+      <div class="sub"><div class="sub-title">Required Information — Collect Every Item for Every MVA Visit</div>
+        <div class="two">
+          <div class="ic"><h5>Insurance & Claim</h5><ul class="cl"><li>Claim number (auto insurance claim)</li><li>Insurance carrier name</li><li>Policy number</li><li>Effective date of coverage</li></ul></div>
+          <div class="ic"><h5>Legal & Adjusters</h5><ul class="cl"><li>Adjuster name and contact information</li><li>Attorney name and firm (if applicable)</li><li>Attorney phone and fax numbers</li><li>Date of accident</li></ul></div>
+        </div>
+      </div>
+      <div class="al aw" style="margin-top:12px"><span class="al-icon">⚠️</span><span>If any of this information is missing, <strong>do not skip it</strong>. Follow up with the patient before they leave or call back the same day. Incomplete MVA intake causes billing failures.</span></div>
+      <div class="tp"><strong>Training Points</strong>
+        <ul class="cl" style="margin-top:6px">
+          <li>MVA cases are billed differently from routine insurance — missing info can result in zero reimbursement</li>
+          <li>Legal cases may require documentation months later — collect everything now</li>
+          <li>Always separate MVA visits from routine neurology visits during scheduling when possible</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ip">🗓</div>Procedure Scheduling Rules <span class="badge bc">Critical</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="prob"><strong>Problem Identified</strong>Procedures were being scheduled at incorrect times of day and incorrect days of the week, resulting in specimen shipping failures and invalid EMG results.</div>
+      <hr class="div">
+      <div class="sub-title">Skin Punch Biopsy — Strict Rules</div>
+      <div class="al ac"><span class="al-icon">🚫</span><span>Biopsies scheduled late in the day or on Fridays cannot be shipped in time. The specimen becomes unusable.</span></div>
+      <ul class="cl">
+        <li>Schedule <strong>Monday through Thursday only</strong> — never on Fridays</li>
+        <li>Schedule as <strong>early in the morning</strong> as possible</li>
+        <li>Confirm the specimen shipping window with the lab before finalizing</li>
+        <li>Same-day shipping is required — the specimen cannot wait overnight</li>
+        <li>If an early slot is unavailable, reschedule to the following Monday rather than a late slot</li>
+      </ul>
+      <hr class="div">
+      <div class="sub-title">EMG After Injury — Timing Rule</div>
+      <div class="al ac"><span class="al-icon">⏱️</span><span>EMGs scheduled too soon after injury will not show accurate nerve conduction findings. Results will be invalid.</span></div>
+      <ul class="cl">
+        <li>EMGs should <strong>not be scheduled earlier than 11–14 days after injury</strong></li>
+        <li>Always verify the exact date of injury before booking</li>
+        <li>If injury date is unknown, hold scheduling until confirmed</li>
+        <li>Communicate this rule to patients who push for earlier appointments</li>
+      </ul>
+      <hr class="div">
+      <div class="sub-title">Appointment Type Separation</div>
+      <ul class="cl">
+        <li>Keep MVA visits separate from routine neurology visits</li>
+        <li>Keep EEGs separate from routine office visits when possible</li>
+        <li>Procedures should have their own scheduling blocks</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si it">🧲</div>MRI & Imaging Order Tracking <span class="badge bw">Important</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="prob"><strong>Problem Identified</strong>Imaging centers reported not receiving orders. Patients arrived for MRIs that were never received, and providers did not have results available at follow-up visits.</div>
+      <div class="exp"><strong>Expectations — Track Every MRI Order Through 4 Stages</strong>
+        <ol class="st" style="margin-top:8px">
+          <li>Order sent to imaging center — confirm transmission</li>
+          <li>Imaging center confirmed receipt — call if not confirmed within 24 hours</li>
+          <li>Patient appointment scheduled — document date and location</li>
+          <li>Results received and available in chart — follow up after appointment date</li>
+        </ol>
+      </div>
+      <div class="tp"><strong>Training Points</strong>
+        <ul class="cl" style="margin-top:6px">
+          <li>Never assume an order went through — always confirm</li>
+          <li>If the imaging center does not confirm receipt in 24 hours, call them directly</li>
+          <li>Document every step in the patient's chart as it happens</li>
+          <li>Providers need imaging results before follow-up visits — timing matters</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si iy">📁</div>Document Scanning Standards <span class="badge bw">Important</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="prob"><strong>Problem Identified</strong>Documents were scanned under incorrect chart tabs, using scan dates instead of the Date of Service, and using inconsistent or duplicated category names. This delayed clinical review and caused provider frustration.</div>
+      <div class="sub"><div class="sub-title">Standard Document Categories — Use These Exactly</div>
+        <div class="two">
+          <ul class="cl"><li>Consultations</li><li>Hospital Records</li><li>Labs</li><li>Imaging</li></ul>
+          <ul class="cl"><li>Procedures</li><li>Administrative</li><li>Patient Education</li></ul>
+        </div>
+      </div>
+      <div class="sub"><div class="sub-title">Correct Document Placement Examples</div>
+        <ul class="cl">
+          <li>Discharge summaries → <strong>"Discharge Summary"</strong> tab</li>
+          <li>Emergency department notes → <strong>"Emergency Department"</strong> tab</li>
+          <li>Specialist consult notes → <strong>"Consultation"</strong> tab</li>
+          <li>Lab results → <strong>"Labs"</strong> tab with correct DOS</li>
+          <li>MRI / CT reports → <strong>"Imaging"</strong> tab</li>
+        </ul>
+      </div>
+      <div class="al ac"><span class="al-icon">🚫</span><span>Always use the <strong>original Date of Service</strong> — not today's date, not the scan date. Using the wrong date makes records appear out of order and delays clinical care.</span></div>
+      <div class="al aw"><span class="al-icon">⚠️</span><span>Do not create new or duplicate tab categories. If you are unsure which category to use, ask your supervisor before scanning.</span></div>
+    </div>
+  </div>
+
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ig">✅</div>Daily Quality Expectations</div><span class="chev">▼</span></div>
+    <div class="ab">
+      <p style="color:var(--muted);font-size:14px;margin:10px 0 12px">Before end of shift, Front Desk staff should verify each of the following was completed:</p>
+      <ul class="cl">
+        <li>EMG tables scanned after each patient checkout</li>
+        <li>Correct scheduling types used for every appointment booked today</li>
+        <li>Correct and complete insurance information entered for all patients</li>
+        <li>Referral documentation faxed as requested</li>
+        <li>Patient summaries uploaded for MA-completed visits</li>
+        <li>Urgent messages communicated to appropriate provider or clinical staff</li>
+        <li>MVA intake forms completed for all accident-related visits</li>
+        <li>All scanned documents indexed under correct category and DOS</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ===== MEDICAL ASSISTANTS ===== -->
+<div id="panel-ma" class="tab-panel">
+  <div class="dept-hdr">
+    <h2>🩺 Medical Assistant (MA) Training</h2>
+    <p>Comprehensive training for MAs covering pre-visit chart preparation, medication and allergy reconciliation, EMG workflow, neurological exam documentation, patient handouts, DME orders, home PT setup, and provider communication.</p>
+    <div class="tags"><span class="tag">Chart Prep</span><span class="tag">Medication Reconciliation</span><span class="tag">Allergy Documentation</span><span class="tag">EMG Workflow</span><span class="tag">Neuro Exam</span><span class="tag">DME</span><span class="tag">Home PT</span></div>
+  </div>
+
+  <div class="acc">
+    <div class="ah open" onclick="tog(this)"><div class="at"><div class="si ib">📋</div>Core Responsibilities</div><span class="chev">▼</span></div>
+    <div class="ab open">
+      <div class="three">
+        <div class="ic"><h5>Clinical Prep</h5><ul class="cl"><li>Pre-visit chart preparation</li><li>Medication reconciliation</li><li>Allergy reconciliation and documentation</li><li>EMG workflow management</li></ul></div>
+        <div class="ic"><h5>Documentation</h5><ul class="cl"><li>Neurological exam documentation</li><li>Upload patient education materials</li><li>Patient summaries and handouts</li><li>Correct chart labeling</li></ul></div>
+        <div class="ic"><h5>Follow-Through</h5><ul class="cl"><li>Follow up on referrals and labs</li><li>DME and brace order processing</li><li>Home PT coordination</li><li>Responsive provider communication</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ir">📂</div>Pre-Visit Chart Preparation <span class="badge bc">Critical</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="prob"><strong>Problem Identified</strong>Providers were entering exam rooms to find that labs, radiology reports, consult notes, or pending communications were missing from charts. This caused delays, repeat visits, and incomplete clinical decisions.</div>
+      <div class="al ac"><span class="al-icon">🚫</span><span>Providers should <strong>never</strong> discover missing information during a patient encounter. All chart review must be completed <strong>before</strong> the provider enters the room.</span></div>
+      <div class="sub"><div class="sub-title">Complete Pre-Visit Chart Review Checklist</div>
+        <ul class="cl">
+          <li><strong>Labs</strong> — Are the most recent results available and reviewed?</li>
+          <li><strong>Radiology / Imaging</strong> — Are MRI, CT, X-ray, and ultrasound reports present?</li>
+          <li><strong>Consult Notes</strong> — Are notes from all referred specialists present?</li>
+          <li><strong>Hospital Records</strong> — Are any recent ED visits, hospitalizations, or discharge summaries documented?</li>
+          <li><strong>Pending Communications</strong> — Are there unresolved messages, portal messages, or callback requests?</li>
+          <li><strong>Referral Status</strong> — Are all outstanding referrals tracked and documented?</li>
+          <li><strong>EMG Tables</strong> — Are EMG tables printed, scanned, and verified?</li>
+          <li><strong>Medication List</strong> — Has the full medication list been verified (name, dose, frequency, formulation)?</li>
+          <li><strong>Allergies</strong> — Is the allergy list complete, including EpiPen inquiries?</li>
+        </ul>
+      </div>
+      <div class="tp"><strong>Training Points</strong>
+        <ul class="cl" style="margin-top:6px">
+          <li>Missing information discovered during a visit slows down every subsequent patient</li>
+          <li>Providers who must search for records mid-visit lose trust in the support team</li>
+          <li>Chart prep is one of the highest-value tasks an MA performs — do it thoroughly</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si io">💊</div>Medication Reconciliation <span class="badge bc">Critical</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="prob"><strong>Problem Identified</strong>Medication lists contained incorrect doses, wrong frequencies, duplicate entries, and missing medications. Parkinson's medications in particular had repeated dosing errors — which can have serious clinical consequences.</div>
+      <div class="sub"><div class="sub-title">Most Common Medication Errors to Watch For</div>
+        <ul class="cl">
+          <li>Incorrect dose listed (e.g., 25mg entered instead of 250mg)</li>
+          <li>Wrong frequency (e.g., "daily" instead of "three times daily")</li>
+          <li>Duplicate medication entries under different names</li>
+          <li>Medications the patient stopped taking still listed as active</li>
+          <li>New medications started by another provider not added</li>
+          <li>Incorrect formulation (e.g., regular vs. extended release)</li>
+          <li>Incorrect Parkinson's medication doses — extremely high-risk</li>
+        </ul>
+      </div>
+      <div class="al ac"><span class="al-icon">⚠️</span>
+        <div><strong>High-Risk Medications — Extra Verification Required:</strong><br>
+        <span style="display:block;margin-top:5px">Sinemet &nbsp;·&nbsp; Requip &nbsp;·&nbsp; Amantadine &nbsp;·&nbsp; Anticoagulants (Warfarin, Eliquis, Xarelto) &nbsp;·&nbsp; Seizure medications (Keppra, Lamictal, Dilantin) &nbsp;·&nbsp; Controlled substances</span></div>
+      </div>
+      <div class="sub"><div class="sub-title">Medication Verification Workflow — Complete All 6 Steps</div>
+        <ol class="st">
+          <li><strong>Verify medication name</strong> — exact spelling, generic vs. brand</li>
+          <li><strong>Verify dose</strong> — confirm with patient and compare to outside records</li>
+          <li><strong>Verify frequency</strong> — daily, twice daily, three times daily, as needed</li>
+          <li><strong>Verify formulation</strong> — regular, extended release, patch, liquid</li>
+          <li><strong>Compare with outside records</strong> — pharmacy printout, previous notes, hospital discharge list</li>
+          <li><strong>Clarify all discrepancies before provider enters room</strong> — do not leave it for the provider to discover</li>
+        </ol>
+      </div>
+      <div class="tp"><strong>Training Points</strong>
+        <ul class="cl" style="margin-top:6px">
+          <li>When in doubt about any medication detail, ask the patient directly and compare with their pharmacy list</li>
+          <li>If a patient is unsure, call the pharmacy before the provider enters</li>
+          <li>Do not assume previously entered data is correct — verify every visit</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ir">🚨</div>Allergy Documentation <span class="badge bc">Critical</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="prob"><strong>Problem Identified</strong>A patient was carrying an EpiPen for bee sting anaphylaxis, but this severe allergy was not documented in the chart at all. If this patient received a medication or procedure triggering a reaction, the chart would have shown no allergies.</div>
+      <div class="al ac"><span class="al-icon">🚫</span><span>Undocumented severe allergies are a patient safety risk. Every allergy must be identified, verified, and documented at every visit.</span></div>
+      <div class="sub"><div class="sub-title">EpiPen Rule</div>
+        <ul class="cl">
+          <li>If a patient carries an EpiPen — always ask <strong>WHY</strong></li>
+          <li>Verify the specific allergen and the type of reaction (anaphylaxis, hives, swelling, etc.)</li>
+          <li>Document the allergy with full details: allergen, reaction type, severity</li>
+          <li>Flag as "Severe" or "Life-Threatening" as appropriate</li>
+        </ul>
+        <div class="tpl"><strong>Required Question During Reconciliation</strong>"I see you carry an EpiPen — can you tell me what you're allergic to and what happens when you're exposed?"</div>
+      </div>
+      <div class="sub"><div class="sub-title">General Allergy Review — Every Visit</div>
+        <ul class="cl">
+          <li>Ask the patient to confirm all listed allergies at every visit</li>
+          <li>Ask if any new allergies or reactions have occurred since the last visit</li>
+          <li>Document reactions with specificity (e.g., "anaphylaxis" not just "allergic reaction")</li>
+          <li>Remove allergies only when the patient and provider both confirm it is safe to do so</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ip">⚡</div>EMG Workflow & Quality Control <span class="badge bc">Critical</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="prob"><strong>Problem Identified</strong>EMG tables were missing from charts, charts were being marked ready for signature before EMG tables were verified, and dictation contained inaccuracies that were not caught before signing.</div>
+      <div class="al ac"><span class="al-icon">🚫</span><span>A chart must <strong>NOT</strong> be marked ready for signature until the EMG table is confirmed printed, scanned, uploaded, and verified against the dictation.</span></div>
+      <div class="sub"><div class="sub-title">EMG Table Workflow — All Steps Required Same Day</div>
+        <ol class="st">
+          <li>EMG procedure is performed by provider</li>
+          <li>EMG table is <strong>printed immediately</strong> after the procedure</li>
+          <li>Table is <strong>scanned and uploaded</strong> to the patient's chart same day</li>
+          <li>MA reviews the table against the dictation for accuracy</li>
+          <li>Chart is marked ready for signature only after all items are verified</li>
+        </ol>
+      </div>
+      <div class="sub"><div class="sub-title">MA Verification — Check Each Item Against Dictation</div>
+        <ul class="cl">
+          <li><strong>Number of extremities tested</strong> — does the table match what was dictated?</li>
+          <li><strong>Number of nerves tested</strong> — verify count matches dictation</li>
+          <li><strong>Severity grading</strong> — confirm Mild / Moderate / Severe is correctly documented</li>
+          <li><strong>Dictation accuracy</strong> — does the overall summary match the table findings?</li>
+        </ul>
+      </div>
+      <div class="al ai"><span class="al-icon">👤</span><span>Shahzaib is the designated EMG documentation trainer and will assist with retraining other MAs on EMG verification standards.</span></div>
+    </div>
+  </div>
+
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ig">🧠</div>Neurological Examination Documentation</div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="prob"><strong>Problem Identified</strong>Previously documented abnormal neurological findings were disappearing from later visit notes. Normal exam findings were being incorrectly carried forward over known abnormal findings, creating a false record of improvement.</div>
+      <div class="exp"><strong>Expectations</strong>
+        <ul class="cl" style="margin-top:6px">
+          <li>Import the previous neurological examination into each new visit note</li>
+          <li>Update <strong>only the findings that have actually changed</strong></li>
+          <li>Do not overwrite known abnormal findings with "normal" unless the provider has documented improvement</li>
+          <li>The documentation must reflect the <strong>actual examination performed that day</strong></li>
+        </ul>
+      </div>
+      <div class="al aw"><span class="al-icon">⚠️</span><span>If the prior exam showed abnormal reflexes and today's exam did not test them, do not document them as normal. Leave the prior finding intact or flag it for provider review.</span></div>
+      <div class="tp"><strong>Training Points</strong>
+        <ul class="cl" style="margin-top:6px">
+          <li>Carry-forward documentation improves consistency and helps track disease progression</li>
+          <li>Inaccurate "normal" findings can affect medication decisions, disability determinations, and legal cases</li>
+          <li>When uncertain whether a finding changed, ask the provider before documenting</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si it">📤</div>Patient Handouts & Education Summaries</div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="prob"><strong>Problem Identified</strong>Educational materials and visit summaries were not being consistently uploaded to charts, making it impossible to verify what patients received or when.</div>
+      <div class="exp"><strong>MA Responsibilities — Every Visit</strong>
+        <ul class="cl" style="margin-top:6px">
+          <li>Upload patient visit summary to chart under "Patient Education" category</li>
+          <li>Upload all handouts provided to the patient</li>
+          <li>Document education materials in the chart note</li>
+          <li>Use the upload checkbox in your workflow to confirm completion</li>
+        </ul>
+      </div>
+      <div class="al ai"><span class="al-icon">💡</span><span>Supervisor spot audits will be performed. Expect random chart reviews to verify handout uploads are complete and consistent.</span></div>
+    </div>
+  </div>
+
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ib">🦾</div>DME / Brace Orders</div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="exp"><strong>All MAs Must Be Able to Independently:</strong>
+        <ul class="cl" style="margin-top:6px">
+          <li>Prepare brace orders with all required patient and provider information</li>
+          <li>Process carpal tunnel brace orders from start to finish</li>
+          <li>Complete and submit DME documentation to the supplier</li>
+          <li>Obtain provider signature on the order</li>
+          <li>Send orders without needing to rely on another staff member</li>
+          <li>Follow up with the DME supplier to confirm order receipt and delivery</li>
+        </ul>
+      </div>
+      <div class="al aw"><span class="al-icon">⚠️</span><span>If you have not processed a DME order before, ask to shadow the process at least once before doing it independently. Do not skip steps.</span></div>
+    </div>
+  </div>
+
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ig">🏃</div>Home Physical Therapy (PT) Setup</div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="prob"><strong>Problem Identified</strong>Staff were relying entirely on one person (Shahzaib) to arrange all home PT services. When that person was unavailable, the process stalled and patients experienced delays in receiving care.</div>
+      <div class="al ac"><span class="al-icon">🚫</span><span>Home PT setup must not depend on a single staff member. All MAs must know this workflow independently.</span></div>
+      <div class="sub"><div class="sub-title">Home PT Setup Workflow — Full Process</div>
+        <ol class="st">
+          <li><strong>Identify patient need</strong> — confirm provider has ordered home PT</li>
+          <li><strong>Select appropriate agency</strong> — use the approved agency list; verify they accept patient's insurance</li>
+          <li><strong>Send required documentation</strong> — patient demographics, insurance info, provider order, diagnosis</li>
+          <li><strong>Obtain provider signature</strong> on the home PT order if not already signed</li>
+          <li><strong>Confirm receipt by agency</strong> — call or fax to verify they received the referral</li>
+          <li><strong>Document referral in chart</strong> — note the agency, date sent, and confirmation received</li>
+          <li><strong>Follow up</strong> until evaluation is scheduled and confirmed with patient</li>
+        </ol>
+      </div>
+      <div class="tp"><strong>Training Points</strong>
+        <ul class="cl" style="margin-top:6px">
+          <li>Escalate early if an agency is not responding — do not wait days before acting</li>
+          <li>If an agency cannot see the patient within a reasonable time, try an alternative agency</li>
+          <li>Document all follow-up attempts with dates and outcomes</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si iy">💬</div>Provider Communication Standards <span class="badge bc">Critical</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="prob"><strong>Problem Identified</strong>Providers were requesting information before entering exam rooms and receiving no response. They had to ask multiple times or enter without the information needed to care for the patient.</div>
+      <div class="al ac"><span class="al-icon">🚫</span><span>Silence is <strong>never</strong> acceptable when a provider makes a request. Respond immediately — even if you do not yet have the answer.</span></div>
+      <div class="sub"><div class="sub-title">Acceptable Immediate Responses When Still Researching</div>
+        <div class="tpl"><strong>Still Looking</strong>"I'm looking into that right now — I'll have an answer for you in a moment."</div>
+        <div class="tpl"><strong>Waiting on Records</strong>"I'm waiting for the records to come through — I'll bring them to you as soon as they arrive."</div>
+        <div class="tpl"><strong>On the Phone</strong>"I'm currently on the phone with the facility to get that information."</div>
+      </div>
+      <div class="tp"><strong>Training Points</strong>
+        <ul class="cl" style="margin-top:6px">
+          <li>Acknowledging a request is part of patient safety — it keeps the provider informed</li>
+          <li>A simple "I'm on it" buys time and prevents repeat requests</li>
+          <li>If you cannot resolve a request, escalate to a supervisor — do not leave it unaddressed</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SCHEDULERS ===== -->
+<div id="panel-sc" class="tab-panel">
+  <div class="dept-hdr">
+    <h2>📅 Schedulers Training</h2>
+    <p>Detailed scheduling rules for procedures, MVA visits, referral urgency, and coordination with clinical staff.</p>
+    <div class="tags"><span class="tag">EMG Timing</span><span class="tag">Biopsy Rules</span><span class="tag">MVA Separation</span><span class="tag">Referral Urgency</span><span class="tag">Procedure Protocols</span></div>
+  </div>
+  <div class="acc">
+    <div class="ah open" onclick="tog(this)"><div class="at"><div class="si ib">📋</div>Scheduler Responsibilities Overview</div><span class="chev">▼</span></div>
+    <div class="ab open">
+      <p style="color:var(--muted);font-size:14px;margin:10px 0 12px">Schedulers are the first line of defense against procedure errors. Wrong timing at scheduling creates downstream clinical and billing problems.</p>
+      <div class="two">
+        <div class="ic"><h5>Must Understand</h5><ul class="cl"><li>Procedure timing requirements for each procedure type</li><li>MVA intake and workflow requirements</li><li>Referral urgency — when to escalate immediately</li><li>Special testing timelines for EMG, biopsy, and EEG</li></ul></div>
+        <div class="ic"><h5>Coordination Duties</h5><ul class="cl"><li>Communicate scheduling conflicts to clinical staff promptly</li><li>Confirm insurance eligibility for scheduled procedures</li><li>Notify provider if urgent referral cannot be seen within appropriate timeframe</li><li>Document scheduling notes for unusual visits</li></ul></div>
+      </div>
+    </div>
+  </div>
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ir">⚡</div>EMG Scheduling — Injury Timing Rule <span class="badge bc">Critical</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="prob"><strong>Problem Identified</strong>EMGs were being scheduled within days of an injury. Studies performed too early after nerve injury will not show abnormal findings, resulting in wasted visits, unreliable results, and possible incorrect clinical decisions.</div>
+      <div class="al ac"><span class="al-icon">⏱️</span><span>EMGs must <strong>not be scheduled earlier than 11–14 days after injury</strong>. This is a clinical requirement, not a preference.</span></div>
+      <div class="exp"><strong>Expectations</strong>
+        <ul class="cl" style="margin-top:6px">
+          <li>Always ask the patient for their exact date of injury before scheduling</li>
+          <li>Calculate the number of days between injury and proposed appointment</li>
+          <li>If the appointment would fall before day 11, reschedule to day 14 or later</li>
+          <li>If the injury date is unknown, hold the EMG slot until it is confirmed</li>
+          <li>Educate patients who request earlier appointments — explain the clinical reason</li>
+        </ul>
+      </div>
+      <div class="tpl"><strong>Patient Communication — When They Push for Earlier</strong>"The provider recommends waiting at least 11–14 days after your injury for the EMG to give accurate results. Scheduling earlier may mean the test needs to be repeated. We want to make sure we get useful information for your care."</div>
+    </div>
+  </div>
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si io">🔬</div>Skin Punch Biopsy — Day & Time Rules <span class="badge bc">Critical</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="prob"><strong>Problem Identified</strong>Biopsies were being scheduled on Fridays or late in the day. Specimens require same-day shipping and cannot sit overnight. Late scheduling directly caused specimen loss and wasted procedures.</div>
+      <div class="al ac"><span class="al-icon">🚫</span><span>Never schedule a skin punch biopsy on a Friday or in the afternoon. A missed shipping window makes the specimen unusable.</span></div>
+      <ul class="cl" style="margin-top:10px">
+        <li>Schedule <strong>Monday through Thursday only</strong></li>
+        <li>Schedule in the <strong>morning</strong> — confirm the exact time window with clinical staff</li>
+        <li>Verify the shipping cut-off time for the specimen lab before confirming the slot</li>
+        <li>If no morning slot is available Monday–Thursday, schedule the following week rather than using a late-day or Friday slot</li>
+        <li>Inform the patient of the scheduling restriction when booking</li>
+      </ul>
+    </div>
+  </div>
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ip">🚗</div>MVA Visit Scheduling <span class="badge bw">Important</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="prob"><strong>Problem Identified</strong>MVA and routine neurology visits were being scheduled together without separation. This created documentation confusion and billing issues because MVA billing flows through auto insurance, not health insurance.</div>
+      <div class="exp"><strong>Scheduling Rules for MVA Visits</strong>
+        <ul class="cl" style="margin-top:6px">
+          <li>Keep MVA visits separate from routine neurology visits whenever scheduling allows</li>
+          <li>Keep EEGs and procedures separate from routine office visits</li>
+          <li>Use the correct visit type when entering the appointment</li>
+        </ul>
+      </div>
+      <div class="sub"><div class="sub-title">Required Information to Collect at Scheduling</div>
+        <div class="two">
+          <ul class="cl"><li>Date of accident</li><li>Auto insurance claim number</li><li>Insurance carrier name</li></ul>
+          <ul class="cl"><li>Adjuster name and contact</li><li>Attorney name and fax (if represented)</li></ul>
+        </div>
+      </div>
+      <div class="al aw"><span class="al-icon">⚠️</span><span>If any MVA intake information is missing at scheduling, flag the appointment for Front Desk to complete at check-in. Do not allow the visit to proceed without this information.</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== REFERRALS & RECORDS ===== -->
+<div id="panel-ref" class="tab-panel">
+  <div class="dept-hdr">
+    <h2>📋 Referrals & Outside Records</h2>
+    <p>Closed-loop referral tracking, urgent escalation protocols, specialist note communication, and special facility record workflows.</p>
+    <div class="tags"><span class="tag">Closed-Loop Tracking</span><span class="tag">Urgent Escalation</span><span class="tag">PCP Communication</span><span class="tag">Federal/VA Records</span><span class="tag">Consult Notes</span></div>
+  </div>
+  <div class="acc">
+    <div class="ah open" onclick="tog(this)"><div class="at"><div class="si ir">🔄</div>Closed-Loop Referral System <span class="badge bc">Critical</span></div><span class="chev">▼</span></div>
+    <div class="ab open">
+      <div class="prob"><strong>Problem Identified</strong>Referrals were being sent but not tracked. Urgent referrals were lost or delayed without provider awareness. Patients arrived at follow-up visits with no specialist notes because no one had confirmed they were ever seen.</div>
+      <div class="al ac"><span class="al-icon">🚫</span><span>A referral is <strong>not complete</strong> when it is sent. It is only complete when all 5 steps below are done and documented.</span></div>
+      <div class="sub"><div class="sub-title">The 5-Step Referral Completion Standard</div>
+        <ol class="st">
+          <li><strong>Referral sent</strong> — fax or portal submission confirmed, fax confirmation printed</li>
+          <li><strong>Appointment scheduled</strong> — confirm with patient that they received their appointment date</li>
+          <li><strong>Patient seen</strong> — confirm via follow-up call or patient report that the visit occurred</li>
+          <li><strong>Notes received</strong> — specialist note received via fax, portal, or mail</li>
+          <li><strong>Notes scanned correctly</strong> — filed under Consultation with correct DOS in patient chart</li>
+        </ol>
+      </div>
+      <div class="tp"><strong>Training Points</strong>
+        <ul class="cl" style="margin-top:6px">
+          <li>Track every open referral in a log or tracking system — do not rely on memory</li>
+          <li>Review open referrals weekly and update statuses</li>
+          <li>If a referral is stuck at any step, follow up proactively</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si io">🚨</div>Urgent Referral Escalation <span class="badge bc">Critical</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="prob"><strong>Problem Identified</strong>Urgent referrals were being placed into the same queue as routine referrals. Delays went unnoticed and providers were not informed, potentially delaying time-sensitive care.</div>
+      <div class="al ac"><span class="al-icon">🚫</span><span>An urgent referral that cannot be scheduled within an appropriate timeframe <strong>must be escalated to the provider immediately</strong> — do not let it sit.</span></div>
+      <ul class="cl" style="margin-top:10px">
+        <li>Urgent referrals require same-day or next-day follow-up — not routine weekly review</li>
+        <li>If the specialist cannot see the patient within the appropriate window, notify the provider immediately</li>
+        <li>Consider alternative specialists or facilities if the first choice has a long wait</li>
+        <li>Document all escalation actions with timestamps</li>
+        <li>Never silently accept a delayed appointment for an urgent referral without provider approval</li>
+      </ul>
+    </div>
+  </div>
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ib">📠</div>Specialist Notes & PCP Communication</div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="prob"><strong>Problem Identified</strong>Specialist consult notes were missing from charts and PCPs were not consistently receiving copies of specialist notes, breaking the continuity of care loop.</div>
+      <div class="exp"><strong>Expectations</strong>
+        <ul class="cl" style="margin-top:6px">
+          <li>Obtain specialist consult notes promptly after each appointment</li>
+          <li>Ensure the PCP receives a copy of every specialist note</li>
+          <li>Verify PCP fax numbers regularly — they change frequently</li>
+          <li>If fax confirmation is not received within 2 business days, resend</li>
+          <li>Actively track all missing consult notes — do not wait for the provider to ask</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ip">🏛️</div>Federal Prison, VA & Special Facility Records</div><span class="chev">▼</span></div>
+    <div class="ab">
+      <p style="color:var(--muted);font-size:14px;margin:10px 0 12px">These facilities have unique and often more complex record-release processes. Standard fax requests frequently fail.</p>
+      <div class="two">
+        <div class="ic"><h5>Facilities Requiring Special Effort</h5><ul class="cl"><li>Federal prisons</li><li>VA (Veterans Affairs) medical systems</li><li>Nursing homes / skilled nursing facilities</li><li>Inpatient rehabilitation facilities</li></ul></div>
+        <div class="ic"><h5>Track for Each Facility</h5><ul class="cl"><li>Correct department contact (not main number)</li><li>Verified fax number for medical records</li><li>Required authorization forms specific to that facility</li><li>Record release timeline expectations</li><li>Follow-up status and contact log</li></ul></div>
+      </div>
+      <div class="al aw" style="margin-top:12px"><span class="al-icon">⚠️</span><span>VA records requests often require specific VA authorization forms. Federal prison record requests may require inmate consent forms. Confirm requirements before sending.</span></div>
+    </div>
+  </div>
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ig">🧲</div>MRI / Imaging Order Tracking</div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="prob"><strong>Problem Identified</strong>Imaging centers reported not receiving MRI orders, yet no one had followed up to confirm receipt. Patients showed up for imaging appointments that could not be performed.</div>
+      <ol class="st" style="margin-top:10px">
+        <li>Order sent to imaging center — print confirmation or note fax confirmation number</li>
+        <li>Call imaging center within 24 hours to confirm receipt if no automatic confirmation</li>
+        <li>Document patient's appointment date and location in chart</li>
+        <li>After appointment date, follow up to confirm results were received</li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+<!-- ===== DOCUMENTATION ===== -->
+<div id="panel-doc" class="tab-panel">
+  <div class="dept-hdr">
+    <h2>📄 Documentation & Scanning Standards</h2>
+    <p>Chart categorization, correct Date of Service usage, neurological clearance language, physician name accuracy, and document labeling standards that apply to all staff.</p>
+    <div class="tags"><span class="tag">Clearance Language</span><span class="tag">Chart Indexing</span><span class="tag">Date of Service</span><span class="tag">Physician Names</span><span class="tag">Document Categories</span></div>
+  </div>
+  <div class="acc">
+    <div class="ah open" onclick="tog(this)"><div class="at"><div class="si ir">⚖️</div>Neurological Clearance Language <span class="badge bc">Critical</span></div><span class="chev">▼</span></div>
+    <div class="ab open">
+      <div class="prob"><strong>Problem Identified</strong>Staff were repeatedly writing "patient is medically cleared" on forms and letters. This practice implies the neurology practice is clearing the patient for all aspects of surgery or procedures — including cardiac, pulmonary, anesthesia, and surgical risk — which is outside the scope of neurology.</div>
+      <div class="al ac" style="margin-top:10px"><span class="al-icon">❌</span><span>Never write: <strong>"Patient is medically cleared"</strong> or any variation implying general medical clearance.</span></div>
+      <div class="sub"><div class="sub-title">Correct Template Language — Always Use This Exact Wording</div>
+        <div class="tpl"><strong>Standard Neurological Clearance Statement</strong>"From a neurological standpoint, there is no neurological contraindication to the planned procedure at this time."</div>
+        <div class="tpl"><strong>When Risk Exists or More Information Is Needed</strong>"Neurological recommendations cannot be finalized until the requested records/details are reviewed."</div>
+      </div>
+      <div class="sub"><div class="sub-title">Staff Workflow for All Clearance Forms</div>
+        <ol class="st">
+          <li>Identify what procedure is being requested</li>
+          <li>Confirm who is requesting the form (surgeon's office? anesthesia? PCP?)</li>
+          <li>Confirm whether they are asking for general medical clearance or neurology-specific input</li>
+          <li>If they want general medical clearance — redirect them to the appropriate provider (PCP, cardiology, etc.)</li>
+          <li>If neurology input is appropriate — use the approved template language only</li>
+          <li>Send to the provider for review and approval before faxing or releasing</li>
+          <li>Save completed and signed form in chart under correct category</li>
+        </ol>
+      </div>
+      <div class="al ai"><span class="al-icon">ℹ️</span><span>Neurology can only comment on neurological contraindications. General medical clearance must come from PCP, cardiology, pulmonology, anesthesia, or the surgical team as appropriate.</span></div>
+    </div>
+  </div>
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ib">🗂</div>Correct Chart Categorization & Document Labeling</div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="prob"><strong>Problem Identified</strong>Documents were indexed under wrong chart tabs, new duplicate categories were being created, and inconsistent naming prevented clinical staff from finding documents quickly.</div>
+      <div class="sub"><div class="sub-title">Approved Standard Categories — Use These Only</div>
+        <div class="two">
+          <ul class="cl"><li>Consultations</li><li>Hospital Records</li><li>Labs</li><li>Imaging</li></ul>
+          <ul class="cl"><li>Procedures</li><li>Administrative</li><li>Patient Education</li></ul>
+        </div>
+      </div>
+      <div class="sub"><div class="sub-title">Document Placement Guide</div>
+        <ul class="cl">
+          <li>Hospital discharge summaries → <strong>Hospital Records</strong></li>
+          <li>Emergency department notes → <strong>Hospital Records</strong></li>
+          <li>Specialist consult notes → <strong>Consultations</strong></li>
+          <li>Lab results → <strong>Labs</strong></li>
+          <li>MRI / CT / X-ray reports → <strong>Imaging</strong></li>
+          <li>EMG tables → <strong>Procedures</strong></li>
+          <li>Patient handouts and summaries → <strong>Patient Education</strong></li>
+          <li>Consent forms, insurance documents → <strong>Administrative</strong></li>
+        </ul>
+      </div>
+      <div class="al aw"><span class="al-icon">⚠️</span><span>Do <strong>not</strong> create new categories. Do not create duplicate tabs. If you are unsure where a document belongs, ask before scanning.</span></div>
+    </div>
+  </div>
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si io">📅</div>Correct Date of Service (DOS) <span class="badge bc">Critical</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="prob"><strong>Problem Identified</strong>Staff were using today's date (the scan date) instead of the original Date of Service when indexing documents. This caused records to appear out of chronological order, making it difficult to review patient history accurately.</div>
+      <div class="al ac"><span class="al-icon">🚫</span><span>Always use the <strong>original Date of Service</strong> from the document — never the date you scanned it.</span></div>
+      <ul class="cl" style="margin-top:10px">
+        <li>Look at the document itself for the date of the service, visit, or result</li>
+        <li>For lab results — use the date the lab was drawn or resulted</li>
+        <li>For imaging — use the date the study was performed</li>
+        <li>For consult notes — use the date of the consult visit</li>
+        <li>For hospital records — use the date of discharge or the date of the specific note</li>
+        <li>If the DOS is unclear, check with your supervisor before indexing</li>
+      </ul>
+    </div>
+  </div>
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ip">👨‍⚕️</div>Physician Name Accuracy</div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="prob"><strong>Problem Identified</strong>Physician names were repeatedly misspelled in documentation, including on referral letters and forms sent externally. Misspelled names create professionalism issues and can cause confusion with document matching.</div>
+      <ul class="cl" style="margin-top:10px">
+        <li>Verify physician names before entering them in documentation</li>
+        <li>Use the facility directory, NPI lookup, or web search to confirm spelling</li>
+        <li>Do not guess — confirm before submitting any external document</li>
+        <li>Example of correct spelling: <strong>Dr. Okoye</strong></li>
+        <li>When in doubt, call the physician's office to verify name spelling and fax number</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ===== LABS & IMAGING ===== -->
+<div id="panel-labs" class="tab-panel">
+  <div class="dept-hdr">
+    <h2>🔬 Labs, Imaging & Interfaces</h2>
+    <p>Quest interface verification, lab coding accuracy, MRI order tracking, and preventing interface failures.</p>
+    <div class="tags"><span class="tag">Quest Interface</span><span class="tag">Lab Coding</span><span class="tag">MRI Tracking</span><span class="tag">Diagnosis Codes</span><span class="tag">Interface Failures</span></div>
+  </div>
+  <div class="acc">
+    <div class="ah open" onclick="tog(this)"><div class="at"><div class="si io">🔌</div>Quest Interface Verification <span class="badge bw">Important</span></div><span class="chev">▼</span></div>
+    <div class="ab open">
+      <div class="prob"><strong>Problem Identified</strong>Lab orders were not transmitting through the Quest interface and results were not returning. Staff were not verifying transmission, so failures were only discovered later when results were needed for a visit.</div>
+      <div class="exp"><strong>Expectations</strong>
+        <ul class="cl" style="margin-top:6px">
+          <li>After placing every lab order, verify that it transmitted successfully through the interface</li>
+          <li>Check for transmission errors in the EMR before the patient leaves</li>
+          <li>If results are not returned by the expected date, actively follow up with Quest</li>
+          <li>Reconcile all missing results before the patient's next visit</li>
+          <li>Escalate interface failures immediately — do not wait until results are critically needed</li>
+        </ul>
+      </div>
+      <div class="tp"><strong>Training Points</strong>
+        <ul class="cl" style="margin-top:6px">
+          <li>Interface failures are not rare — they must be checked every time an order is placed</li>
+          <li>If the interface has been unreliable, consider calling Quest to confirm receipt of each order</li>
+          <li>Document all interface failure incidents and escalate to the supervisor so IT can be notified</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ir">💳</div>Lab Coding Accuracy <span class="badge bw">Important</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="prob"><strong>Problem Identified</strong>Incorrect diagnosis codes were linked to lab orders, causing patient billing problems. Labs were billed without medical necessity documentation, leading to denials and patient responsibility balances that should never have been created.</div>
+      <div class="al ac"><span class="al-icon">🚫</span><span>Incorrect diagnosis codes can create unexpected patient bills and insurance denials. Every lab order must be coded accurately and linked to the correct diagnosis.</span></div>
+      <ul class="cl" style="margin-top:10px">
+        <li>Use the <strong>correct diagnosis code</strong> that reflects the clinical indication for the test</li>
+        <li>Verify <strong>medical necessity</strong> — the diagnosis must justify the lab being ordered</li>
+        <li>Do not use a generic or default diagnosis code without provider confirmation</li>
+        <li>If you are unsure which diagnosis to link, ask the provider before submitting the order</li>
+        <li>Review any lab denials with the billing team to identify patterns</li>
+      </ul>
+    </div>
+  </div>
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ib">🧲</div>MRI / Imaging Order Tracking — Full Workflow</div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="prob"><strong>Problem Identified</strong>Multiple imaging centers reported not receiving MRI orders. Patients arrived for MRI appointments and the imaging center had no order on file. Providers did not have results available at follow-up visits.</div>
+      <div class="sub"><div class="sub-title">Track Every MRI Order Through All 4 Stages</div>
+        <ol class="st">
+          <li><strong>Order Sent</strong> — fax or portal transmission; save fax confirmation number in chart note</li>
+          <li><strong>Confirmed Received</strong> — call imaging center if no auto-confirmation within 24 hours; document the name of staff member who confirmed</li>
+          <li><strong>Appointment Scheduled</strong> — record date, time, and location of appointment in chart</li>
+          <li><strong>Results Returned</strong> — after appointment date, follow up to verify report was faxed; confirm report is in chart before next visit</li>
+        </ol>
+      </div>
+      <div class="al aw"><span class="al-icon">⚠️</span><span>If an MRI is ordered at a visit and results are not available at the next follow-up, the MA must identify the breakdown point and take corrective action before the provider sees the patient.</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== OPERATIONS & COMPLIANCE ===== -->
+<div id="panel-ops" class="tab-panel">
+  <div class="dept-hdr">
+    <h2>🔒 Operations, Security & Compliance</h2>
+    <p>Prescription security, credential management, unsigned chart workflows, communication consolidation, accountability standards, and capacity/legal question protocols.</p>
+    <div class="tags"><span class="tag">Credential Security</span><span class="tag">Prescription Safety</span><span class="tag">Task Ownership</span><span class="tag">Communication Groups</span><span class="tag">Capacity Evaluations</span></div>
+  </div>
+  <div class="acc">
+    <div class="ah open" onclick="tog(this)"><div class="at"><div class="si ir">🔐</div>Prescription & Credential Security <span class="badge bc">Critical</span></div><span class="chev">▼</span></div>
+    <div class="ab open">
+      <div class="al ac"><span class="al-icon">🚫</span><span>No prescription should <strong>ever</strong> be sent under a former employee's credentials. This is a serious legal and compliance violation.</span></div>
+      <div class="sub"><div class="sub-title">Required Actions When a Staff Member Leaves</div>
+        <ul class="cl">
+          <li>Disable all EMR access <strong>immediately on the last day of employment</strong></li>
+          <li>Remove prescribing access from all systems</li>
+          <li>Remove all saved passwords and autofill credentials from clinic computers</li>
+          <li>Verify the departure is documented in your HR and compliance system</li>
+          <li>Confirm with IT that remote access has also been revoked</li>
+        </ul>
+      </div>
+      <div class="sub"><div class="sub-title">No Shared Credentials — Absolute Rules</div>
+        <ul class="cl">
+          <li>Never share your password with any colleague for any reason</li>
+          <li>Never use another employee's login, even temporarily</li>
+          <li>Never leave your account logged in on a shared computer when you step away</li>
+          <li>Lock your screen whenever you leave a workstation</li>
+          <li>Report suspected credential misuse to your supervisor immediately</li>
+        </ul>
+      </div>
+      <div class="tp"><strong>Why This Matters</strong>
+        <ul class="cl" style="margin-top:6px">
+          <li>Prescriptions sent under wrong credentials create DEA and licensing violations</li>
+          <li>Shared credentials mean actions cannot be accurately attributed — destroying the audit trail</li>
+          <li>HIPAA violations occur when unauthorized individuals access patient records using borrowed logins</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ig">✅</div>Accountability & Task Ownership</div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="prob"><strong>Problem Identified</strong>Tasks were started but not followed through to completion. No one knew who owned specific tasks, and follow-up was inconsistent.</div>
+      <div class="exp"><strong>Every Important Task Must Have Three Things</strong>
+        <ul class="cl" style="margin-top:6px">
+          <li>An <strong>assigned owner</strong> — one named person responsible for completion</li>
+          <li>A <strong>follow-up process</strong> — scheduled check-in or tracking method</li>
+          <li><strong>Completion verification</strong> — documented confirmation it was done</li>
+        </ul>
+      </div>
+      <div class="sub"><div class="sub-title">Areas Where Ownership Must Be Assigned</div>
+        <div class="two">
+          <ul class="cl"><li>Referrals — each referral has a named owner</li><li>Lab follow-ups — tracked until results confirmed in chart</li><li>Imaging orders — tracked through all 4 stages</li></ul>
+          <ul class="cl"><li>Prior authorizations — tracked until approved or denied</li><li>Outside records requests — tracked until received and scanned</li><li>Unsigned chart follow-up — tracked until signed and sent</li></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si iy">📝</div>Unsigned Chart Workflow</div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="prob"><strong>Problem Identified</strong>Signed charts were remaining unsent for weeks, and unsigned charts were accumulating without any tracking system to identify what needed follow-up.</div>
+      <div class="sub"><div class="sub-title">Suggested Tracking Solutions</div>
+        <ul class="cl">
+          <li>Use a shared tracking spreadsheet (e.g., Google Sheets) with filters by status</li>
+          <li>Use checkbox tracking — each chart has a column for "Signed" and "Sent"</li>
+          <li>Set up automated reminders or notifications for charts unsigned past a deadline</li>
+          <li>Assign ownership — one staff member responsible for following up on unsigned charts daily</li>
+          <li>Review unsigned chart count at morning meetings</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ib">💬</div>Communication Group Consolidation</div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="prob"><strong>Problem Identified</strong>Too many overlapping communication groups were created across platforms, creating confusion about where to send messages and causing important messages to be missed.</div>
+      <ul class="cl" style="margin-top:10px">
+        <li>Consolidate overlapping groups into clearly defined single-purpose groups</li>
+        <li>Assign a named manager for each active group</li>
+        <li>Remove members who do not need to be in a group</li>
+        <li>Define the purpose of each group so staff know where to post what</li>
+        <li>Archive or delete unused groups to reduce clutter</li>
+      </ul>
+    </div>
+  </div>
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ip">⚖️</div>Capacity & Legal Questions</div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="prob"><strong>Problem Identified</strong>Families were calling to ask general questions about "mental capacity" without specifying the context, and staff were routing these to providers without enough information to be useful.</div>
+      <div class="exp"><strong>Before Routing to Provider — Clarify the Specific Context</strong>
+        <ul class="cl" style="margin-top:6px">
+          <li>What type of capacity is being asked about?</li>
+          <li>Medical decision-making capacity</li>
+          <li>Financial decision-making capacity</li>
+          <li>Nursing home placement decisions</li>
+          <li>Legal matters (Power of Attorney, guardianship)</li>
+          <li>Informed consent for a specific procedure</li>
+        </ul>
+      </div>
+      <div class="tpl"><strong>Intake Question for Capacity Calls</strong>"Can you help me understand what specific decision or situation you're asking about? Capacity evaluations are specific to the type of decision being made, and the provider will need that context."</div>
+      <div class="al ai"><span class="al-icon">ℹ️</span><span>Capacity is <strong>task-specific</strong>. A patient may have capacity to make some decisions but not others. The provider needs to know exactly what context they are evaluating before the appointment.</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== QUALITY IMPROVEMENT ===== -->
+<div id="panel-qi" class="tab-panel">
+  <div class="dept-hdr">
+    <h2>⭐ Quality Improvement & Training Culture</h2>
+    <p>The philosophy of quality improvement, suggested audit topics, recurring training meetings, and how to build a culture of accountability without blame.</p>
+    <div class="tags"><span class="tag">Quality Audits</span><span class="tag">Training Meetings</span><span class="tag">System Improvement</span><span class="tag">No Blame Culture</span></div>
+  </div>
+  <div class="acc">
+    <div class="ah open" onclick="tog(this)"><div class="at"><div class="si ib">🎯</div>Quality Philosophy</div><span class="chev">▼</span></div>
+    <div class="ab open">
+      <div class="al as"><span class="al-icon">✅</span><span>This process is <strong>not about blame</strong>. Every error documented in this manual exists to help us build a better system — not to punish individuals.</span></div>
+      <div class="sub"><div class="sub-title">The Purpose of Quality Reviews Is To:</div>
+        <div class="two">
+          <ul class="cl"><li>Improve systems and standardize workflows</li><li>Improve staff training and onboarding</li><li>Reduce repeated mistakes across the team</li><li>Identify process gaps before they harm patients</li></ul>
+          <ul class="cl"><li>Improve patient care and patient experience</li><li>Build better teamwork and communication</li><li>Create accountability without creating fear</li><li>Strengthen the clinic's overall reliability</li></ul>
+        </div>
+      </div>
+      <div class="al ai" style="margin-top:12px"><span class="al-icon">💡</span><span>When a mistake happens, the first question should be: <strong>"What in our system allowed this to happen?"</strong> — not "who made this mistake?"</span></div>
+    </div>
+  </div>
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ig">🔍</div>Suggested Regular Quality Audits</div><span class="chev">▼</span></div>
+    <div class="ab">
+      <p style="color:var(--muted);font-size:14px;margin:10px 0 12px">These audits should be performed on a rotating basis. Each represents a category where recurring errors have been identified.</p>
+      <div class="three">
+        <div class="ic"><h5>Chart Documentation</h5><ul class="cl"><li>Missing consult notes in charts</li><li>Missing EMG tables</li><li>Incorrect document labels</li><li>Incorrect Date of Service</li></ul></div>
+        <div class="ic"><h5>Clinical Workflow</h5><ul class="cl"><li>Medication reconciliation errors</li><li>Missing or undocumented allergies</li><li>Missing patient handouts</li><li>Missing imaging results</li></ul></div>
+        <div class="ic"><h5>Referrals & Follow-Up</h5><ul class="cl"><li>Referral delays</li><li>Unsigned charts sitting unsent</li><li>Unclosed referral loops</li><li>Urgent referrals without escalation</li></ul></div>
+      </div>
+    </div>
+  </div>
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ip">📚</div>Suggested Recurring Training Meetings</div><span class="chev">▼</span></div>
+    <div class="ab">
+      <p style="color:var(--muted);font-size:14px;margin:10px 0 12px">These topics should be covered in regular staff meetings on a rotating schedule. Each session should include real examples from recent clinic activity.</p>
+      <div class="two">
+        <ul class="cl">
+          <li>Medication Reconciliation Meeting — review recent errors and high-risk cases</li>
+          <li>EMG Documentation Workshop — verify current scanning and dictation accuracy</li>
+          <li>Referral Tracking Workshop — review open referrals and closure rates</li>
+          <li>Scanning & Indexing Workshop — audit random charts for document placement</li>
+        </ul>
+        <ul class="cl">
+          <li>Scheduling Rules Workshop — review procedure timing rules with schedulers</li>
+          <li>MVA Intake Training — practice data collection scenarios</li>
+          <li>Pre-Visit Preparation Training — timed chart review exercises</li>
+          <li>Communication Standards Workshop — role-play provider request scenarios</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si it">📊</div>Medication Refill & Denial Workflows</div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="prob"><strong>Problem Identified</strong>Patients reported refill requests going unresolved for extended periods. Denied medications were left with no follow-up, leaving patients without needed medications.</div>
+      <hr class="div">
+      <div class="sub-title">Refill Request Workflow</div>
+      <ul class="cl">
+        <li>Address every refill request within 1 business day of receipt</li>
+        <li>If the refill requires provider review, route immediately — do not queue</li>
+        <li>If the refill is approved, confirm it was sent to the pharmacy</li>
+        <li>Escalate any request unresolved beyond 24 hours to the supervisor</li>
+        <li>Document all refill request communications with date and outcome</li>
+      </ul>
+      <hr class="div">
+      <div class="sub-title">Denied Medication Workflow — All 5 Steps Required</div>
+      <ol class="st">
+        <li><strong>Review the denial</strong> — understand the reason (formulary, prior auth, quantity limit)</li>
+        <li><strong>Check for prior authorization</strong> — initiate PA immediately if applicable</li>
+        <li><strong>Contact provider</strong> — present denial and ask for alternative options</li>
+        <li><strong>Notify patient</strong> — communicate the denial and timeline for resolution</li>
+        <li><strong>Document all actions</strong> — every step must be recorded with date and outcome</li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+<!-- ===== DAILY CHECKLISTS ===== -->
+<div id="panel-ck" class="tab-panel">
+  <div class="dept-hdr">
+    <h2>✅ Daily Quality Checklists</h2>
+    <p>Interactive daily checklists for Medical Assistants and Front Desk staff. Check off items as you complete them. Progress resets when you reload the page.</p>
+  </div>
+  <div class="acc">
+    <div class="ah open" onclick="tog(this)"><div class="at"><div class="si ib">🩺</div>Daily MA Checklist — Before Provider Enters Room</div><span class="chev">▼</span></div>
+    <div class="ab open">
+      <div class="prog" id="ma-p"><span>Progress:</span><div class="pbw"><div class="pb" id="ma-b" style="width:0%"></div></div><span class="pt" id="ma-t">0 / 12</span><button class="rb" onclick="resetCL('ma')">Reset</button></div>
+      <ul class="il" id="ma-cl">
+        <li onclick="tck(this,'ma')"><div class="cb">✓</div><span class="cl-lbl">Labs reviewed — most recent results available</span></li>
+        <li onclick="tck(this,'ma')"><div class="cb">✓</div><span class="cl-lbl">Radiology / imaging reports reviewed</span></li>
+        <li onclick="tck(this,'ma')"><div class="cb">✓</div><span class="cl-lbl">Consult notes present in chart</span></li>
+        <li onclick="tck(this,'ma')"><div class="cb">✓</div><span class="cl-lbl">Pending communications reviewed and addressed</span></li>
+        <li onclick="tck(this,'ma')"><div class="cb">✓</div><span class="cl-lbl">EMG tables printed, scanned, and verified</span></li>
+        <li onclick="tck(this,'ma')"><div class="cb">✓</div><span class="cl-lbl">Patient handouts and summaries uploaded</span></li>
+        <li onclick="tck(this,'ma')"><div class="cb">✓</div><span class="cl-lbl">Allergies updated — EpiPen question asked if applicable</span></li>
+        <li onclick="tck(this,'ma')"><div class="cb">✓</div><span class="cl-lbl">Medication list fully verified (name, dose, frequency, formulation)</span></li>
+        <li onclick="tck(this,'ma')"><div class="cb">✓</div><span class="cl-lbl">Referral status updates documented in chart</span></li>
+        <li onclick="tck(this,'ma')"><div class="cb">✓</div><span class="cl-lbl">MRI / imaging order status checked</span></li>
+        <li onclick="tck(this,'ma')"><div class="cb">✓</div><span class="cl-lbl">Urgent consults followed up and status documented</span></li>
+        <li onclick="tck(this,'ma')"><div class="cb">✓</div><span class="cl-lbl">All document labels verified (correct category and DOS)</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ig">🗂</div>Daily Front Desk Checklist</div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="prog" id="fd-p"><span>Progress:</span><div class="pbw"><div class="pb" id="fd-b" style="width:0%"></div></div><span class="pt" id="fd-t">0 / 10</span><button class="rb" onclick="resetCL('fd')">Reset</button></div>
+      <ul class="il" id="fd-cl">
+        <li onclick="tck(this,'fd')"><div class="cb">✓</div><span class="cl-lbl">Correct scheduling type used for every appointment</span></li>
+        <li onclick="tck(this,'fd')"><div class="cb">✓</div><span class="cl-lbl">MVA information fully collected (claim, insurance, adjuster, attorney)</span></li>
+        <li onclick="tck(this,'fd')"><div class="cb">✓</div><span class="cl-lbl">Procedure timing protocols followed (biopsy Mon–Thu AM, EMG 11+ days)</span></li>
+        <li onclick="tck(this,'fd')"><div class="cb">✓</div><span class="cl-lbl">Correct and complete insurance information entered</span></li>
+        <li onclick="tck(this,'fd')"><div class="cb">✓</div><span class="cl-lbl">Referral documents faxed and fax confirmation saved</span></li>
+        <li onclick="tck(this,'fd')"><div class="cb">✓</div><span class="cl-lbl">EMG tables scanned after each patient checkout</span></li>
+        <li onclick="tck(this,'fd')"><div class="cb">✓</div><span class="cl-lbl">Patient summaries uploaded to charts</span></li>
+        <li onclick="tck(this,'fd')"><div class="cb">✓</div><span class="cl-lbl">Urgent messages communicated to appropriate clinical staff</span></li>
+        <li onclick="tck(this,'fd')"><div class="cb">✓</div><span class="cl-lbl">Waiting room patients updated every 20–30 minutes when delays occurred</span></li>
+        <li onclick="tck(this,'fd')"><div class="cb">✓</div><span class="cl-lbl">All documents scanned with correct category and original DOS</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ip">🔒</div>End-of-Day Security Checklist</div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="prog" id="sec-p"><span>Progress:</span><div class="pbw"><div class="pb" id="sec-b" style="width:0%"></div></div><span class="pt" id="sec-t">0 / 6</span><button class="rb" onclick="resetCL('sec')">Reset</button></div>
+      <ul class="il" id="sec-cl">
+        <li onclick="tck(this,'sec')"><div class="cb">✓</div><span class="cl-lbl">All workstations logged out or screen-locked</span></li>
+        <li onclick="tck(this,'sec')"><div class="cb">✓</div><span class="cl-lbl">No patient records left visible on screens</span></li>
+        <li onclick="tck(this,'sec')"><div class="cb">✓</div><span class="cl-lbl">Paper documents with PHI secured or shredded</span></li>
+        <li onclick="tck(this,'sec')"><div class="cb">✓</div><span class="cl-lbl">Fax machine cleared of received documents</span></li>
+        <li onclick="tck(this,'sec')"><div class="cb">✓</div><span class="cl-lbl">Prescription pads secured in locked location</span></li>
+        <li onclick="tck(this,'sec')"><div class="cb">✓</div><span class="cl-lbl">Any access issues or credential concerns reported to supervisor</span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+</div><!-- end .content -->
+
+<script>
+function sw(id,btn){
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tb').forEach(b=>b.classList.remove('active'));
+  document.getElementById('panel-'+id).classList.add('active');
+  btn.classList.add('active');
+  clearHL();
+}
+function swId(id){
+  const btn=Array.from(document.querySelectorAll('.tb')).find(b=>b.getAttribute('onclick')&&b.getAttribute('onclick').includes("'"+id+"'"));
+  if(btn)btn.click();
+}
+function tog(h){
+  const b=h.nextElementSibling;
+  const o=h.classList.contains('open');
+  h.classList.toggle('open',!o);
+  b.classList.toggle('open',!o);
+}
+function tck(li,pfx){li.classList.toggle('ck');upd(pfx);}
+function upd(pfx){
+  const lst=document.getElementById(pfx+'-cl');
+  const all=lst.querySelectorAll('li').length;
+  const chk=lst.querySelectorAll('li.ck').length;
+  const pct=all?Math.round(chk/all*100):0;
+  document.getElementById(pfx+'-b').style.width=pct+'%';
+  document.getElementById(pfx+'-t').textContent=chk+' / '+all;
+}
+function resetCL(pfx){
+  document.getElementById(pfx+'-cl').querySelectorAll('li').forEach(li=>li.classList.remove('ck'));
+  upd(pfx);
+}
+let stimer;
+function doSearch(v){
+  clearTimeout(stimer);
+  stimer=setTimeout(()=>runSearch(v.trim()),200);
+  document.getElementById('clr').style.display=v?'block':'none';
+}
+function runSearch(q){
+  clearHL();
+  const sb=document.getElementById('sb');
+  const nr=document.getElementById('nr');
+  if(!q){sb.style.display='none';nr.style.display='none';return;}
+  const rx=new RegExp('('+esc(q)+')','gi');
+  let total=0;const pm={};
+  document.querySelectorAll('.tab-panel').forEach(panel=>{
+    const id=panel.id.replace('panel-','');
+    let cnt=0;
+    getTN(panel).forEach(n=>{
+      if(rx.test(n.nodeValue)){
+        cnt+=(n.nodeValue.match(rx)||[]).length;
+        const s=document.createElement('span');
+        s.innerHTML=n.nodeValue.replace(rx,'<mark>$1</mark>');
+        n.parentNode.replaceChild(s,n);
+      }
+      rx.lastIndex=0;
+    });
+    if(cnt>0){pm[id]=cnt;total+=cnt;}
+  });
+  if(!total){sb.style.display='none';nr.style.display='block';return;}
+  nr.style.display='none';
+  const first=Object.keys(pm)[0];
+  if(first){
+    const btn=Array.from(document.querySelectorAll('.tb')).find(b=>b.getAttribute('onclick')&&b.getAttribute('onclick').includes("'"+first+"'"));
+    if(btn)btn.click();
+    document.querySelectorAll('#panel-'+first+' .ab').forEach(ab=>{
+      if(ab.querySelector('mark')){ab.classList.add('open');ab.previousElementSibling.classList.add('open');}
+    });
+  }
+  const sum=Object.entries(pm).map(([k,v])=>'<strong>'+lbl(k)+'</strong> ('+v+')').join(' · ');
+  sb.innerHTML='🔍 Found <strong>'+total+'</strong> match'+(total!==1?'es':'')+' for "<em>'+q+'</em>" — '+sum;
+  sb.style.display='block';
+}
+function clearS(){
+  document.getElementById('si').value='';
+  document.getElementById('clr').style.display='none';
+  document.getElementById('sb').style.display='none';
+  document.getElementById('nr').style.display='none';
+  clearHL();
+}
+function clearHL(){
+  document.querySelectorAll('mark').forEach(m=>{
+    m.parentNode.replaceChild(document.createTextNode(m.textContent),m);
+  });
+  document.querySelectorAll('span').forEach(s=>{
+    if(s.parentNode&&!s.className&&!s.querySelector('mark')&&s.childNodes.length===1&&s.childNodes[0].nodeType===3){
+      s.parentNode.replaceChild(s.childNodes[0],s);
+    }
+  });
+}
+function getTN(el){
+  const w=document.createTreeWalker(el,NodeFilter.SHOW_TEXT,{acceptNode:n=>{
+    const p=n.parentNode;if(!p)return NodeFilter.FILTER_REJECT;
+    if(['SCRIPT','STYLE','INPUT','BUTTON'].includes(p.tagName))return NodeFilter.FILTER_REJECT;
+    if(p.tagName==='MARK')return NodeFilter.FILTER_REJECT;
+    return n.nodeValue.trim()?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_REJECT;
+  }});
+  const r=[];let n;while((n=w.nextNode()))r.push(n);return r;
+}
+function esc(s){return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');}
+function lbl(id){const m={ov:'Overview',fd:'Front Desk',ma:'Medical Assistants',sc:'Schedulers',ref:'Referrals',doc:'Documentation',labs:'Labs & Imaging',ops:'Operations',qi:'Quality',ck:'Checklists'};return m[id]||id;}
+</script>
+</body>
+</html>
