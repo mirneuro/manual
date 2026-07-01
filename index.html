@@ -1,14 +1,27 @@
-<script>
-  const password = "123";
-  const entered = prompt("Enter password to view this page:");
+<style>
+  body {
+    display: none !important;
+  }
+</style>
 
-  if (entered !== password) {
-    document.documentElement.innerHTML = `
-      <body style="font-family:Arial;text-align:center;margin-top:100px;">
-        <h2>Access denied</h2>
-      </body>
-    `;
-    throw new Error("Access denied");
+<script>
+  const correctPassword = "123";
+  const enteredPassword = prompt("Enter password to view this page:");
+
+  if (enteredPassword === correctPassword) {
+    document.addEventListener("DOMContentLoaded", function () {
+      document.body.style.setProperty("display", "block", "important");
+    });
+  } else {
+    document.addEventListener("DOMContentLoaded", function () {
+      document.body.innerHTML = `
+        <div style="font-family:Arial;text-align:center;margin-top:100px;">
+          <h2>Access Denied</h2>
+          <p>Wrong password.</p>
+        </div>
+      `;
+      document.body.style.setProperty("display", "block", "important");
+    });
   }
 </script>
 
