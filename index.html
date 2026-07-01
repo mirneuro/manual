@@ -1,15 +1,15 @@
-<body>
 <script>
-const password = "mirneuro";
-const entered = prompt("Enter password:");
+  const password = "123";
+  const entered = prompt("Enter password to view this page:");
 
-if (entered !== password) {
-    document.body.innerHTML = `
-        <div style="font-family:Arial;text-align:center;margin-top:100px">
-            <h2>Access Denied</h2>
-        </div>`;
+  if (entered !== password) {
+    document.documentElement.innerHTML = `
+      <body style="font-family:Arial;text-align:center;margin-top:100px;">
+        <h2>Access denied</h2>
+      </body>
+    `;
     throw new Error("Access denied");
-}
+  }
 </script>
 
 <!-- Rest of your page -->
