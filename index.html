@@ -1,3 +1,14 @@
+<body>
+
+<div id="loginBox" style="font-family:Arial;text-align:center;margin-top:100px;">
+  <h2>Enter Password</h2>
+  <input type="password" id="passwordInput" placeholder="Password">
+  <button onclick="checkPassword()">Enter</button>
+  <p id="error" style="color:red;"></p>
+</div>
+
+<div id="protectedContent" style="display:none;">
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14244,3 +14255,22 @@ document.addEventListener('DOMContentLoaded',function(){fmlRenderDrugs();});
 </script>
 </body>
 </html>
+
+</div>
+
+<script>
+function checkPassword() {
+  const correctPassword = "hhl";
+  const enteredPassword = document.getElementById("passwordInput").value;
+
+  if (enteredPassword === correctPassword) {
+    document.getElementById("loginBox").style.display = "none";
+    document.getElementById("protectedContent").style.display = "block";
+  } else {
+    document.getElementById("error").innerText = "Wrong password";
+    document.getElementById("protectedContent").style.display = "none";
+  }
+}
+</script>
+
+</body>
