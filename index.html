@@ -10,6 +10,8 @@
 <div id="protectedContent" style="display:none;">
 
 
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1154,19 +1156,42 @@ table.fml-plans tr:hover td{background:#f7fafc;}
 
   <!-- ROOMING ON SCHEDULE -->
   <div class="acc">
-    <div class="ah open" onclick="tog(this)"><div class="at"><div class="si ir">🚪</div>Marking Patient Roomed on Schedule <span class="badge bc">Required — Every Visit</span></div><span class="chev">▼</span></div>
+    <div class="ah open" onclick="tog(this)"><div class="at"><div class="si ir">🚪</div>Patient Rooming — Promptness, Room Type &amp; Tracking <span class="badge bc">Required — Every Visit</span></div><span class="chev">▼</span></div>
     <div class="ab open">
-      <div class="prob"><strong>Real Example:</strong> Sofia was roomed in Room 4 but this was never marked on the schedule. Clinical staff had no visibility into her status, causing delays and confusion.</div>
-      <div class="al ac" style="margin-top:10px"><span class="al-icon">🚫</span><span>Do <strong>not</strong> room a patient without immediately updating the schedule to reflect their room assignment.</span></div>
+      <div class="prob"><strong>Real Example:</strong> Sofia was roomed in Room 4 but this was never marked on the schedule. Clinical staff had no visibility into her status, causing delays and confusion. Additionally, EMG patients were brought to standard exam rooms without the EMG room being prepared — causing provider downtime and workflow disruption.</div>
+      <div class="al ac" style="margin-top:10px"><span class="al-icon">🚫</span><span>Do <strong>not</strong> room a patient without immediately updating the schedule to reflect their room assignment. Patients must be roomed <strong>promptly</strong> — delays in rooming cascade through the entire provider schedule.</span></div>
+
       <div class="sub"><div class="sub-title">Required Steps When Rooming a Patient</div>
         <ol class="st">
-          <li>Escort the patient to the room</li>
+          <li>Escort the patient to the room <strong>promptly</strong> after check-in — do not leave them waiting at the desk</li>
           <li><strong>Immediately</strong> update the schedule/appointment to indicate the patient is roomed</li>
           <li>Enter the room number (e.g., Room 4) in the designated field</li>
           <li>This must be done in real time — not after the fact</li>
         </ol>
       </div>
-      <div class="al ai"><span class="al-icon">ℹ️</span><span>Marking patients as roomed allows providers and clinical staff to know which patients are ready, prevents missed patients, and maintains accurate flow tracking throughout the day.</span></div>
+
+      <div class="sub"><div class="sub-title">Correct Room Assignment by Appointment Type</div></div>
+      <div class="al aw" style="margin-bottom:10px"><span class="al-icon">⚠️</span><span>Rooming a patient in the wrong room wastes provider time and disrupts clinic flow. Always match the patient to the correct room <em>before</em> escorting them.</span></div>
+      <div class="two">
+        <div class="ic" style="border-left:4px solid var(--danger)">
+          <h5>⚡ EMG Patients — EMG Room Only</h5>
+          <ul class="cl">
+            <li>EMG patients must be roomed in the <strong>EMG room</strong> — never in a standard exam room</li>
+            <li>The EMG room must be <strong>fully prepared before the patient arrives</strong>: equipment powered on correctly (base power first), supplies stocked, EMG computer ready</li>
+            <li>Patient demographics must be entered in the EMG computer before the patient is brought in</li>
+          </ul>
+        </div>
+        <div class="ic" style="border-left:4px solid var(--primary)">
+          <h5>🧠 CA Room — Patient Must Never Be Left Unattended After Testing</h5>
+          <ul class="cl">
+            <li>After Cognitive Assessment testing is complete, the patient must <strong>not</strong> be left alone in the CA room</li>
+            <li>Staff must actively track the patient's location and either room them for the provider or return them to the waiting area if there is a delay</li>
+            <li>Leaving a post-testing CA patient unattended is a patient safety and supervision concern</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="al ai" style="margin-top:10px"><span class="al-icon">ℹ️</span><span>Marking patients as roomed allows providers and clinical staff to know which patients are ready, prevents missed patients, and maintains accurate flow tracking throughout the day. Prompt rooming directly protects provider efficiency — a roomed patient means the provider can move immediately to the next encounter.</span></div>
     </div>
   </div>
 
@@ -1189,11 +1214,12 @@ table.fml-plans tr:hover td{background:#f7fafc;}
           <div class="ic" style="border-left:4px solid var(--success)">
             <h5 style="color:var(--success)">✅ What Must Be Done</h5>
             <ul class="cl">
-              <li>Review the provider's plan / orders before the patient leaves or when scheduling follow-ups</li>
+              <li><strong>Review the provider's documented plan</strong> before the patient leaves or when scheduling follow-ups — confirm the correct visit type (e.g., EMG vs. routine follow-up; new patient vs. established)</li>
               <li>If testing is ordered (EEG, EMG, etc.), schedule it at the <strong>same time as the follow-up visit</strong> or as directed</li>
               <li>For EEG at a follow-up: place the appointment on <strong>both</strong> the provider's schedule and the <strong>EEG technician's schedule</strong></li>
               <li>Select the correct appointment type and time slot for the specific test</li>
               <li>Sleep-deprived EEG requires early morning scheduling per protocol</li>
+              <li>When in doubt about the correct appointment type, confirm with the MA or provider before scheduling — do not guess</li>
             </ul>
           </div>
         </div>
@@ -1456,6 +1482,50 @@ table.fml-plans tr:hover td{background:#f7fafc;}
     </div>
   </div>
 
+  <!-- PA MONITORING & FORMULARY & SAMPLES -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ip">💊</div>Medication PA Monitoring, Formulary Verification &amp; Manufacturer Samples <span class="badge bc">Critical</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+
+      <div class="prob"><strong>Issue Identified</strong>Medication prior authorizations are not being monitored closely enough, leading to prolonged treatment delays. Formulary restrictions are being discovered late — after the prescribing decision — when alternatives or appeals could have been initiated much earlier. Manufacturer sample programs are underutilized as a bridge while PAs are pending.</div>
+
+      <div class="sub"><div class="sub-title">PA Monitoring — Preventing Treatment Delays</div></div>
+      <ul class="cl" style="margin-bottom:14px">
+        <li>Monitor all pending medication prior authorizations actively — do not wait for the patient to call about a delay</li>
+        <li>When a PA is pending, identify an expected decision date and follow up with the payer if it has passed</li>
+        <li>Notify <strong>both the provider and the patient</strong> promptly when a PA is approved, denied, or requires additional information</li>
+        <li>For denied PAs, immediately escalate to the PA team and provider — do not leave the patient without a plan</li>
+        <li>Document all PA status updates in the tracking sheet and patient chart</li>
+      </ul>
+
+      <div class="sub"><div class="sub-title">Formulary Verification — Do It Early</div></div>
+      <div class="al ac" style="margin-bottom:10px"><span class="al-icon">🚫</span><span>Formulary verification must happen <strong>early in the prescribing process</strong> — before the medication is prescribed if possible, not after a pharmacy denial.</span></div>
+      <ul class="cl" style="margin-bottom:14px">
+        <li>When a high-cost or specialty medication is under consideration, verify the patient's formulary status <strong>before or at the time of prescribing</strong></li>
+        <li>Use the Formulary &amp; PA Tool tab (🔍) to check plan-specific coverage quickly</li>
+        <li>If a medication is not covered or requires PA, notify the provider immediately so alternatives, step therapy, or an appeal can be initiated without delay</li>
+        <li>Identify formulary restrictions proactively — do not wait for the pharmacy to reject a claim</li>
+      </ul>
+
+      <div class="sub"><div class="sub-title">Manufacturer Sample Programs — Bridge Coverage</div></div>
+      <ul class="cl" style="margin-bottom:12px">
+        <li>Pharmaceutical manufacturer sample programs should be <strong>fully utilized</strong> to bridge treatment while a prior authorization is pending</li>
+        <li>When a PA is submitted and approval is pending, immediately check whether the manufacturer offers samples or a bridge program</li>
+        <li>Samples prevent treatment gaps — patients should not go without medication while waiting for insurance approval when samples are available</li>
+      </ul>
+      <div class="ic" style="border-left:4px solid var(--primary);margin-bottom:4px">
+        <h5>Designated Sample Manager — Required</h5>
+        <ul class="cl">
+          <li>A <strong>designated staff member</strong> must be assigned responsibility for the sample program</li>
+          <li>Responsibilities include: ordering samples, maintaining inventory, tracking expiration dates, distributing to providers, and logging all samples dispensed to patients</li>
+          <li>This role must have a backup — sample management cannot depend on a single person</li>
+          <li>All sample dispensing must be documented in the patient's chart</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
   <!-- Front Desk QUIZ -->
   <div class="acc">
     <div class="ah" onclick="tog(this)"><div class="at"><div class="si ig">🎓</div>Front Desk Knowledge Quiz <span class="badge bc">Required — All Staff</span></div><span class="chev">▼</span></div>
@@ -1575,6 +1645,16 @@ table.fml-plans tr:hover td{background:#f7fafc;}
               <li><strong>Vyepti</strong> (eptinezumab) — every 3 months for migraine prevention</li>
             </ul>
           </div>
+          <div class="ic" style="border-left:4px solid var(--warn)">
+            <h5>⚠️ Mavenclad (Cladribine) — Required Documentation Every Encounter</h5>
+            <ul class="cl">
+              <li><strong>Treatment start date</strong> (when the first course began)</li>
+              <li><strong>Current treatment course and cycle</strong> (e.g., Course 1, Cycle 2)</li>
+              <li><strong>Dates of completed cycles</strong></li>
+              <li><strong>Next treatment due date</strong></li>
+            </ul>
+            <div class="al aw" style="margin-top:6px"><span class="al-icon">⚠️</span><span style="font-size:12px">All four items must be documented at every encounter for patients on Mavenclad. Missing any item is an incomplete chart.</span></div>
+          </div>
         </div>
       </div>
       <div class="sub"><div class="sub-title">Medication Verification Workflow — Complete All 6 Steps</div>
@@ -1604,6 +1684,26 @@ table.fml-plans tr:hover td{background:#f7fafc;}
         </ul>
         Ask the patient directly: <em>"Is it a B Complex, B1, or B12?"</em> If they are unsure, check the bottle or call the pharmacy. Document the exact type, dose, and frequency.
       </div>
+
+      <div class="sub"><div class="sub-title">Medication Safety — Special Clinical Scenarios</div></div>
+      <div class="two">
+        <div class="ic" style="border-left:4px solid var(--warn)">
+          <h5>Lab Values That Don't Match the Medication Regimen</h5>
+          <ul class="cl">
+            <li>If lab values are inconsistent with the documented medication regimen, verify medication reconciliation before flagging to the provider</li>
+            <li>Common example: TSH elevated but patient is listed as taking levothyroxine — confirm dose, compliance, and current regimen</li>
+          </ul>
+        </div>
+        <div class="ic" style="border-left:4px solid var(--warn)">
+          <h5>Hypothyroidism — Off Therapy</h5>
+          <ul class="cl">
+            <li>Patients with severe hypothyroidism who have been off therapy should generally be restarted on a <strong>low dose of levothyroxine</strong> per provider direction — do not assume previous high-dose therapy should resume</li>
+            <li>If thyroid management is deferred or outside neurology scope, <strong>notify the PCP</strong> and forward laboratory results</li>
+          </ul>
+        </div>
+      </div>
+      <div class="al ai" style="margin-top:8px"><span class="al-icon">💡</span><span><strong>MRI Anxiety / Claustrophobia:</strong> Patients requesting anxiolytic medication to tolerate an MRI should be scheduled for an <strong>Open MRI</strong> whenever clinically appropriate, rather than initiating anxiolytic therapy.</span></div>
+
     </div>
   </div>
 
@@ -1854,6 +1954,162 @@ table.fml-plans tr:hover td{background:#f7fafc;}
     </div>
   </div>
 
+  <!-- LAB MANAGEMENT -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ib">🧪</div>Laboratory Management <span class="badge bc">Critical</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="prob"><strong>Problem Identified</strong>Lab orders are placed but not consistently verified as transmitted. Abnormal results are not always acted upon promptly. Significant findings under another provider's management are occasionally not forwarded to the PCP.</div>
+
+      <div class="sub"><div class="sub-title">Order Verification &amp; Patient Requisitions</div></div>
+      <ul class="cl" style="margin-bottom:14px">
+        <li>Verify that laboratory orders are <strong>successfully transmitted</strong> to the performing laboratory — do not assume an order was received simply because it was placed in the EHR</li>
+        <li>Provide patients with <strong>laboratory requisitions</strong> whenever possible so they can present them directly to the lab</li>
+        <li>Encourage every patient to enroll in the <strong>patient portal</strong> — lab orders can be accessed there, preventing delays when outside facilities cannot locate orders</li>
+      </ul>
+
+      <div class="sub"><div class="sub-title">Daily External Portal Monitoring — Mandatory</div></div>
+      <div class="al ac" style="margin-bottom:10px"><span class="al-icon">🚫</span><span>Reviewing external lab portals is not optional — it must occur every clinical day. Waiting for results to be faxed is not sufficient.</span></div>
+      <div class="two" style="margin-bottom:14px">
+        <div class="ic">
+          <h5>Portals to Check Daily</h5>
+          <ul class="cl">
+            <li>Epic (Meritus, WVU, UPMC)</li>
+            <li>LabCorp portal</li>
+            <li>Quest portal</li>
+            <li>Any other external facility where results are expected</li>
+          </ul>
+        </div>
+        <div class="ic">
+          <h5>When Results Are Found</h5>
+          <ul class="cl">
+            <li>Download or save the result</li>
+            <li>Upload to the patient's chart under the correct category and date of service</li>
+            <li>Flag abnormal results immediately to the provider</li>
+            <li>Document in the chart that results were reviewed and communicated</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sub"><div class="sub-title">Abnormal Results — Required Actions</div></div>
+      <ol class="st" style="margin-bottom:14px">
+        <li><strong>Review promptly</strong> — do not let abnormal results sit unreviewed</li>
+        <li><strong>Communicate to the provider</strong> — notify via chat with the result and flag severity</li>
+        <li><strong>Act on the provider's instructions</strong> — document the action taken (e.g., callback, order, referral)</li>
+        <li><strong>Document everything</strong> — result received, provider notified, action taken, follow-up planned</li>
+      </ol>
+
+      <div class="sub"><div class="sub-title">Forwarding Results to Other Providers</div></div>
+      <ul class="cl">
+        <li>Significant laboratory abnormalities that fall under another provider's management (e.g., endocrinology, PCP) must be <strong>sent to the appropriate treating physician</strong></li>
+        <li>Do not assume the patient will relay results to their other doctors</li>
+        <li>Document that results were forwarded: provider name, fax number, date sent</li>
+        <li>Develop a standardized process for CC'ing results to care team members when multiple providers are involved</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- REFERRALS & SCOPE OF PRACTICE -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ir">🔀</div>Referrals &amp; Scope of Practice <span class="badge bc">Critical</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="al aw" style="margin-bottom:14px"><span class="al-icon">⚠️</span><span>Differentiating between referrals neurology should initiate and recommendations for the PCP is a core MA skill. Doing it wrong either creates unnecessary work or drops needed follow-up entirely.</span></div>
+
+      <div class="two" style="margin-bottom:14px">
+        <div class="ic" style="border-left:4px solid var(--primary)">
+          <h5>Neurology Initiates — Formal Referral Required</h5>
+          <ul class="cl">
+            <li>Any specialist referral directly related to a neurological condition or finding</li>
+            <li>Sleep studies (require active follow-up until scheduling <em>and</em> completion)</li>
+            <li>Physical therapy, occupational therapy, speech therapy for neurological conditions</li>
+            <li>Any referral where the chart states "refer to" a specialist — the referral process must be <strong>completed and tracked</strong></li>
+          </ul>
+        </div>
+        <div class="ic" style="border-left:4px solid var(--muted)">
+          <h5>PCP Manages — Document as Recommendation</h5>
+          <ul class="cl">
+            <li>Non-neurological conditions identified during a neurology visit</li>
+            <li>Document as: <em>"Recommendation: discuss [finding] with PCP for further management"</em></li>
+            <li>Do <strong>not</strong> initiate a formal referral for conditions outside neurology's scope unless the provider explicitly directs it</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sub"><div class="sub-title">Active Follow-Up Requirement</div></div>
+      <ul class="cl">
+        <li>All referrals — including sleep studies — require active follow-up until scheduling <strong>and</strong> completion are confirmed</li>
+        <li>A referral is not closed when it is sent — it is closed when results or consultation notes are received and uploaded</li>
+        <li>Track every referral in the centralized tracking sheet; assign a follow-up date</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PATIENT FOLLOW-UP -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si io">🔔</div>Patient Follow-Up — Walk-Outs, No-Shows &amp; High-Risk Patients <span class="badge bc">Critical</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="prob"><strong>Problem Identified</strong>Complex patients who leave before completing their visit are not consistently receiving chart review or follow-up. Walk-outs and no-shows may have outstanding labs, imaging, referrals, or clinical concerns that are being missed.</div>
+
+      <div class="sub"><div class="sub-title">Walk-Out &amp; No-Show Protocol</div></div>
+      <ul class="cl" style="margin-bottom:14px">
+        <li>Any walk-out or no-show triggers a <strong>chart review by the assigned MA</strong></li>
+        <li>Review and document status of all outstanding items:
+          <ul class="cl" style="margin-top:4px;margin-left:16px">
+            <li>Laboratory orders (sent? resulted? reviewed?)</li>
+            <li>Imaging orders (sent? scheduled? completed?)</li>
+            <li>Referrals (sent? confirmed? resulted?)</li>
+            <li>Prescriptions (sent? filled? any prior auth needed?)</li>
+            <li>Prior authorizations (status? expiring?)</li>
+            <li>Provider recommendations (actioned? documented?)</li>
+          </ul>
+        </li>
+        <li>Document the chart review with date and findings</li>
+        <li>Notify the provider of any clinically significant outstanding items</li>
+      </ul>
+
+      <div class="sub"><div class="sub-title">Complex Patients Who Leave Before Visit Is Complete</div></div>
+      <ul class="cl" style="margin-bottom:14px">
+        <li>Initiate active follow-up — do not wait for the patient to reschedule</li>
+        <li>Attempt contact by phone; document attempts and outcomes</li>
+        <li>Escalate to the provider if a patient cannot be reached and has critical pending items</li>
+      </ul>
+
+      <div class="sub"><div class="sub-title">High-Risk Patients — Proactive Outreach</div></div>
+      <ul class="cl">
+        <li>High-risk patients (recent hospitalization, critical labs, complex medication regimens, cognitive impairment) should be <strong>proactively contacted</strong> and brought back into care when appropriate</li>
+        <li>Do not wait for the patient to call — identify the need from the chart and act first</li>
+        <li>Document all contact attempts and outcomes</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- FALL DOCUMENTATION -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si iy">🚶</div>History Taking — Fall Documentation <span class="badge bc">Medicolegal</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="al ac" style="margin-bottom:12px"><span class="al-icon">⚠️</span><span>A reported fall is not just a clinical finding — it may carry medicolegal significance. Every reported fall must be fully documented.</span></div>
+      <div class="sub"><div class="sub-title">Required Documentation for Every Reported Fall</div></div>
+      <div class="two">
+        <div class="ic">
+          <h5>Clinical Details</h5>
+          <ul class="cl">
+            <li><strong>Where</strong> the fall occurred (home, store, work, public property)</li>
+            <li><strong>How</strong> it occurred (tripped, lost balance, syncope, mechanical)</li>
+            <li><strong>Resulting injuries</strong> (head strike, fracture, laceration, loss of consciousness)</li>
+          </ul>
+        </div>
+        <div class="ic" style="border-left:4px solid var(--warn)">
+          <h5>⚖️ Medicolegal Flags — Document &amp; Flag to Provider</h5>
+          <ul class="cl">
+            <li>Fall at work → possible <strong>workers' compensation</strong> claim</li>
+            <li>Fall on someone else's property → possible <strong>premises liability</strong></li>
+            <li>Fall involving a motor vehicle or third party → possible litigation</li>
+            <li>Any fall that may involve legal proceedings should be flagged to the provider immediately — the documentation in this chart may be used in court</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="acc">
     <div class="ah" onclick="tog(this)"><div class="at"><div class="si iy">💬</div>Provider Communication Standards <span class="badge bc">Critical</span></div><span class="chev">▼</span></div>
     <div class="ab">
@@ -1871,6 +2127,17 @@ table.fml-plans tr:hover td{background:#f7fafc;}
           <li>If you cannot resolve a request, escalate to a supervisor — do not leave it unaddressed</li>
         </ul>
       </div>
+
+      <div class="sub"><div class="sub-title">Closed-Loop Provider Communication — Chat &amp; Verbal</div></div>
+      <div class="al ac" style="margin-bottom:10px"><span class="al-icon">🚫</span><span>Every provider concern raised in chat must be <strong>acknowledged, addressed, documented, and closed</strong>. No provider request or clinical concern should remain with an open communication loop.</span></div>
+      <ul class="cl" style="margin-bottom:6px">
+        <li>When a provider sends a concern or request via chat, confirm receipt and act on it immediately</li>
+        <li>After a <strong>verbal discussion</strong> with the provider, send a brief follow-up message in the chat: <em>"Discussed with you and documented in [Patient Name]'s chart."</em></li>
+        <li>Do not assume a verbal conversation was captured — always close the loop in writing</li>
+        <li>Review open chat threads at the end of every session — no unresolved items should carry over</li>
+      </ul>
+      <div class="tpl"><strong>Chat Follow-Up After Verbal Discussion</strong>"Discussed with you — documented in [Patient Name]'s chart under [date of service]. Loop closed."</div>
+
       <div class="sub"><div class="sub-title">Interrupt Protocol — During Patient Hours</div>
         <div class="al ac"><span class="al-icon">🚫</span><span>Do <strong>not</strong> interrupt the provider during a patient encounter for routine questions, refill requests, or non-urgent tasks. Accumulate non-urgent items and address them between patients or at the end of the session.</span></div>
         <div class="two">
@@ -2142,6 +2409,8 @@ table.fml-plans tr:hover td{background:#f7fafc;}
           <li>Flag and immediately verbally notify the provider of any critical values (BP &gt;180/110, O₂ sat &lt;90%, HR &lt;50 or &gt;120)</li>
           <li>If patient refuses any portion of the exam, document the refusal clearly</li>
           <li>Complete all MA documentation before leaving the room</li>
+          <li><strong>Document everyone present during the encounter</strong> — family members, caregivers, interpreters. Example: <em>"Wife present and participating in the visit."</em> This improves documentation reliability and medicolegal protection.</li>
+          <li><strong>Document collateral historians</strong> when information is obtained from someone other than the patient. Example: <em>"History provided by patient's daughter, who is the primary caregiver."</em></li>
         </ul>
       </div>
     </div>
@@ -3473,6 +3742,13 @@ table.fml-plans tr:hover td{background:#f7fafc;}
     </div>
   </div>
 
+  <!-- OVERALL QUALITY PRINCIPLE -->
+  <div style="background:linear-gradient(135deg,#0d2e5c,#1a4a7a);color:#fff;border-radius:12px;padding:18px 22px;margin-bottom:20px;margin-top:8px">
+    <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;opacity:.65;margin-bottom:8px">Overall Quality Principle — Closed-Loop Mandate</div>
+    <p style="margin:0 0 10px 0;font-size:14px;opacity:.95;line-height:1.7">Every patient care task — including laboratory orders, imaging, referrals, medical record requests, provider communications, prescriptions, and follow-up recommendations — must follow a <strong style="color:#C9A227">closed-loop workflow</strong>.</p>
+    <p style="margin:0;font-size:13.5px;opacity:.85;line-height:1.6">An order, request, or recommendation is <strong style="color:#C9A227">not considered complete</strong> until it has been performed, documented, verified, and appropriately followed up. This principle is the foundation of all clinical and operational processes within Mir Neurology.</p>
+  </div>
+
   <!-- CPT CODE REFERENCE -->
   <div class="acc">
     <div class="ah" onclick="tog(this)"><div class="at"><div class="si ib">📋</div>CPT Code Reference — Procedures &amp; Billing</div><span class="chev">▼</span></div>
@@ -3662,6 +3938,132 @@ table.fml-plans tr:hover td{background:#f7fafc;}
           </tbody>
         </table>
       </div>
+
+    </div>
+  </div>
+
+  <!-- CII SCHEDULE II REFERENCE -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ip">💊</div>Schedule II Prescription Limits &amp; Prior Authorization by Payer <span class="badge bc">Maryland Reference</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+
+      <p style="color:var(--muted);font-size:13px;margin-bottom:4px"><strong>Last updated: July 2026</strong> &nbsp;·&nbsp; Verify against each payer's live formulary at least annually — plan edits change with the plan year.</p>
+      <p style="font-size:13px;margin-bottom:14px">Several Maryland payers — especially Medicare Advantage plans — will only cover a short initial fill of a Schedule II (CII) prescription (typically a 7-day supply) and require prior authorization or a coverage determination for anything beyond that. Use this section to set patient expectations and start the PA early.</p>
+
+      <div class="al aw" style="margin-bottom:16px"><span class="al-icon">⚠️</span><div><strong>This mostly affects OPIOIDS, not stimulants.</strong> The 7-day limits below target opioid prescriptions for acute pain in opioid-naïve patients. Schedule II stimulants neurology commonly prescribes (methylphenidate, amphetamine salts, dextroamphetamine, lisdexamfetamine — for ADHD/narcolepsy) are generally <em>not</em> subject to the 7-day acute-pain edit, though they may carry their own quantity limits or PA on specific formularies. Always confirm on the member's active formulary.</div></div>
+
+      <!-- THREE LAYERS -->
+      <div class="sub"><div class="sub-title">How the Limits Stack — Three Layers (check all three)</div></div>
+      <div class="three" style="margin-bottom:20px">
+        <div class="ic"><h5>Layer 1 — Federal (Medicare)</h5><p style="font-size:13px">CMS requires every Medicare Advantage–PD and Part D plan to run the same opioid point-of-sale safety edits. This is why CareFirst, UnitedHealthcare, Aetna, and Humana MA plans all behave identically for opioids.</p></div>
+        <div class="ic"><h5>Layer 2 — Maryland State Law</h5><p style="font-size:13px">Applies to the <em>prescriber</em> regardless of payer — lowest effective dose, quantity no greater than needed for the expected duration of pain.</p></div>
+        <div class="ic"><h5>Layer 3 — Plan / Formulary Edits</h5><p style="font-size:13px">Commercial and Medicaid plans layer on their own quantity limits and PA criteria (MME thresholds, early-refill blocks, etc.).</p></div>
+      </div>
+
+      <!-- LAYER 1 -->
+      <div class="sub"><div class="sub-title">Layer 1 — Federal: CMS Medicare Part D Opioid Safety Edits (CY 2026)</div></div>
+      <p style="font-size:13px;margin-bottom:8px">Applies to <strong>ALL Medicare Advantage (MA-PD) and standalone Part D plans in Maryland</strong> — CareFirst, UnitedHealthcare, Aetna, Humana, Wellpoint, Kaiser, and any other MA plan a patient carries.</p>
+      <div class="two" style="margin-bottom:14px">
+        <div class="ic">
+          <h5>Key Edits</h5>
+          <ul class="cl">
+            <li><strong>7-day hard edit:</strong> Initial opioid fill for acute pain in an opioid-naïve patient is limited to 7-day supply. More than 7 days rejects at the pharmacy — requires coverage determination (PA)</li>
+            <li><strong>90 MME/day care-coordination edit:</strong> Soft edit prompting pharmacist review when cumulative daily morphine milligram equivalents reach 90</li>
+            <li><strong>200 MME/day hard edit:</strong> Some plans block fills at/above 200 MME/day pending PA</li>
+          </ul>
+        </div>
+        <div class="ic">
+          <h5>Exemptions (edit does NOT apply)</h5>
+          <ul class="cl">
+            <li>Hospice care</li>
+            <li>Cancer-related pain</li>
+            <li>Palliative / end-of-life care</li>
+            <li>Long-term-care residents (per plan)</li>
+          </ul>
+          <div class="al ac" style="margin-top:8px"><span class="al-icon">📝</span><span style="font-size:12px">Document the exemption in the chart — it removes the edit at the pharmacy.</span></div>
+        </div>
+      </div>
+
+      <!-- LAYER 2 -->
+      <div class="sub"><div class="sub-title">Layer 2 — Maryland State Law (All Payers)</div></div>
+      <div class="ic" style="margin-bottom:16px">
+        <p style="font-size:13px"><strong>Md. Health Occupations §1-223 (HB 1432, 2017).</strong> When treating pain, the prescriber must order the lowest effective dose of an opioid and a quantity no greater than needed for the expected duration of the pain.</p>
+        <p style="font-size:13px;margin-top:6px"><strong>Exemptions from the prescribing limit:</strong> substance-use-disorder treatment, cancer pain, hospice/palliative/end-of-life care, and chronic pain. Violations are grounds for Board discipline.</p>
+      </div>
+
+      <!-- LAYER 3 — MEDICARE ADVANTAGE -->
+      <div class="sub"><div class="sub-title">Layer 3 — Payer-Specific Rules: Medicare Advantage Plans</div></div>
+      <p style="font-size:12px;color:var(--muted);margin-bottom:8px">All MA plans follow the federal 7-day opioid-naïve edit above. Plan-specific details below.</p>
+      <div style="overflow-x:auto;margin-bottom:18px">
+        <table style="width:100%;border-collapse:collapse;font-size:13px">
+          <thead><tr style="background:#f0f4f8"><th style="padding:8px 10px;text-align:left;border-bottom:2px solid #e2e8f0">Plan</th><th style="padding:8px 10px;text-align:left;border-bottom:2px solid #e2e8f0">Schedule II Limit</th><th style="padding:8px 10px;text-align:left;border-bottom:2px solid #e2e8f0">Prior Authorization</th></tr></thead>
+          <tbody>
+            <tr style="border-bottom:1px solid #f0f4f8"><td style="padding:7px 10px"><strong>CareFirst BCBS Medicare Advantage</strong></td><td style="padding:7px 10px">Opioid-naïve fill &gt;7-day supply rejects; pharmacist may dispense 7 days</td><td style="padding:7px 10px">PA/coverage determination for &gt;7 days; also for &gt;90 MME or &gt;14 days. Post-limit approvals up to 200 MME/day and 30-day supply</td></tr>
+            <tr style="border-bottom:1px solid #f0f4f8"><td style="padding:7px 10px"><strong>UnitedHealthcare Medicare Advantage (2026)</strong></td><td style="padding:7px 10px">Opioid limited to 7-day supply if no recent opioid history; cumulative MME limit applies</td><td style="padding:7px 10px">Prescriber may request coverage of additional quantity</td></tr>
+            <tr><td style="padding:7px 10px"><strong>Aetna / Humana / Other MA-PD Plans</strong></td><td style="padding:7px 10px">Same CMS 7-day opioid-naïve edit (federal requirement)</td><td style="padding:7px 10px">Coverage determination for quantities beyond the edit</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- LAYER 3 — COMMERCIAL -->
+      <div class="sub"><div class="sub-title">Layer 3 — Payer-Specific Rules: Commercial Plans</div></div>
+      <div style="overflow-x:auto;margin-bottom:10px">
+        <table style="width:100%;border-collapse:collapse;font-size:13px">
+          <thead><tr style="background:#f0f4f8"><th style="padding:8px 10px;text-align:left;border-bottom:2px solid #e2e8f0">Plan</th><th style="padding:8px 10px;text-align:left;border-bottom:2px solid #e2e8f0">Schedule II Limit</th><th style="padding:8px 10px;text-align:left;border-bottom:2px solid #e2e8f0">Prior Authorization</th></tr></thead>
+          <tbody>
+            <tr><td style="padding:7px 10px"><strong>CareFirst BCBS (Commercial)</strong></td><td style="padding:7px 10px">Opioid-naïve fill &gt;7-day supply rejects (7-day allowed)</td><td style="padding:7px 10px">PA for additional quantity; also for &gt;90 MME or &gt;14 days. Post-limit up to 200 MME/day, 30-day supply</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:12px;color:var(--muted);margin-bottom:16px">Commercial plans vary by employer group and formulary — verify each member's benefit. CII stimulant quantity limits, when present, are formulary-specific.</p>
+
+      <!-- LAYER 3 — MEDICAID -->
+      <div class="sub"><div class="sub-title">Layer 3 — Maryland Medicaid HealthChoice MCOs</div></div>
+      <div class="ic" style="margin-bottom:10px">
+        <h5>Statewide Medicaid Rule (FFS and All MCOs)</h5>
+        <ul class="cl" style="font-size:13px">
+          <li>PA required for opioid-naïve patient receiving &gt;7 days or &gt;50 MME/day</li>
+          <li>PA required for any opioid regimen exceeding 90 MME/day</li>
+          <li>Immediate-release opioids need PA beyond 7 days (acute pain) or 30 days (chronic pain)</li>
+          <li>Early refills of controlled medications are generally <strong>not authorized</strong></li>
+        </ul>
+      </div>
+      <div style="overflow-x:auto;margin-bottom:18px">
+        <table style="width:100%;border-collapse:collapse;font-size:13px">
+          <thead><tr style="background:#f0f4f8"><th style="padding:8px 10px;text-align:left;border-bottom:2px solid #e2e8f0">MCO</th><th style="padding:8px 10px;text-align:left;border-bottom:2px solid #e2e8f0">Schedule II Limit</th><th style="padding:8px 10px;text-align:left;border-bottom:2px solid #e2e8f0">Prior Authorization / Notes</th></tr></thead>
+          <tbody>
+            <tr style="border-bottom:1px solid #f0f4f8"><td style="padding:7px 10px"><strong>Aetna Better Health of Maryland</strong></td><td style="padding:7px 10px">State opioid-naïve 7-day / 50 MME edit</td><td style="padding:7px 10px">PA beyond limits; follows MD Medicaid PDL</td></tr>
+            <tr style="border-bottom:1px solid #f0f4f8"><td style="padding:7px 10px"><strong>CareFirst Community Health Plan MD</strong></td><td style="padding:7px 10px">IR opioid &gt;7 days (acute pain) rejects</td><td style="padding:7px 10px">PA approves up to 1-month supply</td></tr>
+            <tr style="border-bottom:1px solid #f0f4f8"><td style="padding:7px 10px"><strong>Jai Medical Systems</strong></td><td style="padding:7px 10px">State opioid-naïve 7-day / 50 MME edit</td><td style="padding:7px 10px">PA beyond limits; follows MD Medicaid PDL</td></tr>
+            <tr style="border-bottom:1px solid #f0f4f8"><td style="padding:7px 10px"><strong>Kaiser Permanente</strong></td><td style="padding:7px 10px">State opioid-naïve 7-day / 50 MME edit</td><td style="padding:7px 10px">PA beyond limits; follows MD Medicaid PDL</td></tr>
+            <tr style="border-bottom:1px solid #f0f4f8"><td style="padding:7px 10px"><strong>Maryland Physicians Care</strong></td><td style="padding:7px 10px">State opioid-naïve 7-day / 50 MME edit</td><td style="padding:7px 10px">PA beyond limits; follows MD Medicaid PDL</td></tr>
+            <tr style="border-bottom:1px solid #f0f4f8"><td style="padding:7px 10px"><strong>MedStar Family Choice</strong></td><td style="padding:7px 10px">State opioid-naïve 7-day / 50 MME edit</td><td style="padding:7px 10px">No early refills of controlled meds (since 1/1/2019); exceptions: cancer, sickle cell, hospice/palliative</td></tr>
+            <tr style="border-bottom:1px solid #f0f4f8"><td style="padding:7px 10px"><strong>Priority Partners</strong></td><td style="padding:7px 10px">State opioid-naïve 7-day / 50 MME edit</td><td style="padding:7px 10px">PA beyond limits; follows MD Medicaid PDL</td></tr>
+            <tr style="border-bottom:1px solid #f0f4f8"><td style="padding:7px 10px"><strong>UnitedHealthcare Community Plan</strong></td><td style="padding:7px 10px">State opioid-naïve 7-day / 50 MME edit</td><td style="padding:7px 10px">PA beyond limits; follows MD Medicaid PDL</td></tr>
+            <tr><td style="padding:7px 10px"><strong>Wellpoint Maryland</strong></td><td style="padding:7px 10px">State opioid-naïve 7-day / 50 MME edit</td><td style="padding:7px 10px">PA beyond limits; follows MD Medicaid PDL</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- WORKFLOW -->
+      <div class="sub"><div class="sub-title">Clinical &amp; Front-Desk Workflow</div></div>
+      <ul class="cl" style="margin-bottom:16px">
+        <li>At scheduling or check-in, identify the patient's plan type (Medicare Advantage, commercial, or Medicaid MCO)</li>
+        <li>For any opioid-naïve patient starting a CII opioid for acute pain, <strong>expect a 7-day fill</strong> — start the PA/coverage determination at the same visit if a longer supply is clinically needed</li>
+        <li>For CII stimulants (ADHD/narcolepsy), the 7-day acute-pain edit generally does not apply — but check the member's formulary for quantity limits or step/PA requirements</li>
+        <li>Document the exemption (cancer, hospice, palliative, chronic pain, SUD) when one applies — it removes the edit at the pharmacy</li>
+        <li>Keep this list current — verify each payer's rule against its live formulary at least annually; plan edits change with the plan year</li>
+      </ul>
+
+      <!-- SOURCES -->
+      <div class="sub"><div class="sub-title">Sources</div></div>
+      <ul class="cl" style="font-size:12px;color:var(--muted)">
+        <li>Federal / CMS: CY 2026 Opioid Safety Edit Submission Instructions; AMCP summary</li>
+        <li>Maryland law: Md. Health Occupations §1-223; HB 1432 (2017)</li>
+        <li>CareFirst: Opioids IR MME Limit &amp; Post-Limit PA criteria; CareFirst Medicare drug-management programs; CareFirst CHPMD pharmaceutical management</li>
+        <li>UnitedHealthcare: 2026 Complete Drug List (Formulary), Medicare Advantage</li>
+        <li>Maryland Medicaid: Pharmacy Program Quantity Limits; MedStar Family Choice opioid PA requirements; HealthChoice MCO list</li>
+      </ul>
 
     </div>
   </div>
@@ -4040,12 +4442,13 @@ table.fml-plans tr:hover td{background:#f7fafc;}
         </ul>
       </div>
 
-      <div class="sub"><div class="sub-title">C. MVA / Workers' Compensation Screening</div>
-        <div class="al aw"><span class="al-icon">🚗</span><span>Always ask whether the visit is related to a Motor Vehicle Accident or a Workers' Compensation claim. These require separate billing and intake workflows.</span></div>
+      <div class="sub"><div class="sub-title">C. MVA / Workers' Compensation &amp; Fall History Screening</div>
+        <div class="al aw"><span class="al-icon">🚗</span><span>Always ask whether the visit is related to a Motor Vehicle Accident, a Workers' Compensation claim, or a fall that occurred at work or on someone else's property. These require separate billing and intake workflows.</span></div>
+        <div class="al ai" style="margin-top:8px;margin-bottom:4px"><span class="al-icon">🚶</span><span><strong>Fall History:</strong> If a patient's visit involves a fall, always ask <em>where</em> the fall occurred. A fall at work may be a Workers' Compensation case. A fall at a place of business may involve premises liability. Flag these to the provider — do not schedule as a routine visit without noting the circumstance.</span></div>
         <div class="two" style="margin-top:10px">
           <div class="ic">
-            <h5>If MVA — Collect</h5>
-            <ul class="cl"><li>Date of accident</li><li>Auto insurance claim number</li><li>Auto insurance carrier name</li><li>Adjuster name and contact information</li><li>Attorney name and fax (if patient is represented)</li></ul>
+            <h5>If MVA or Work Injury — Collect</h5>
+            <ul class="cl"><li>Date of accident or fall</li><li>Location of fall (home, work, store, public property)</li><li>Auto insurance claim number (if MVA)</li><li>Auto insurance carrier name (if MVA)</li><li>Adjuster name and contact information</li><li>Attorney name and fax (if patient is represented)</li></ul>
           </div>
           <div class="ic">
             <h5>D. Financial Responsibility Disclosure</h5>
@@ -4358,6 +4761,35 @@ table.fml-plans tr:hover td{background:#f7fafc;}
         </div>
         <div class="al ai" style="margin-top:10px"><span class="al-icon">ℹ️</span><span><strong>One-call resolution</strong> is the standard. When a patient calls about PA status, referral status, or forms — check the tracking sheet and answer them on that call. Avoid transferring the call whenever possible.</span></div>
       </div>
+      <div class="sub"><div class="sub-title">Cross-Department Coordination — Required Standards</div></div>
+      <div class="prob"><strong>Issue Identified</strong>Communication and coordination among the front desk, scheduling, MAs, and PA teams needs improvement. Workflow gaps are causing patient delays, scheduling errors, and missed prior authorizations that could have been prevented with earlier communication.</div>
+      <div class="three" style="margin-bottom:14px">
+        <div class="ic" style="border-left:4px solid var(--primary)">
+          <h5>Front Desk → MAs</h5>
+          <ul class="cl">
+            <li>Notify MAs immediately when a patient is checked in and roomed</li>
+            <li>Flag any missing items (insurance, forms, records) before the patient reaches the room</li>
+            <li>Alert MAs to any patient concerns, complaints, or requests noted at check-in</li>
+          </ul>
+        </div>
+        <div class="ic" style="border-left:4px solid var(--accent)">
+          <h5>Front Desk → Scheduling</h5>
+          <ul class="cl">
+            <li>Confirm appointment types are correct before patients arrive</li>
+            <li>Report any scheduling errors immediately — do not wait until the appointment date</li>
+            <li>Communicate provider-plan changes that affect future scheduling</li>
+          </ul>
+        </div>
+        <div class="ic" style="border-left:4px solid var(--warn)">
+          <h5>Front Desk → PA Team</h5>
+          <ul class="cl">
+            <li>When a patient mentions a medication not covered or a PA denial at check-in, immediately flag it to the PA team — do not wait</li>
+            <li>Notify the PA team of any formulary restriction identified during insurance verification</li>
+            <li>Proactive early communication prevents treatment delays</li>
+          </ul>
+        </div>
+      </div>
+
       <div class="sub"><div class="sub-title">Customer Service Standards</div>
         <div class="two">
           <div class="ic" style="border-left:4px solid var(--success)">
@@ -4452,13 +4884,15 @@ table.fml-plans tr:hover td{background:#f7fafc;}
           <div class="al aw" style="margin-bottom:10px"><span class="al-icon">⚠️</span><span><strong>Operational &amp; Communication Errors</strong></span></div>
           <ul class="cl">
             <li>Wrong provider assigned to appointment</li>
-            <li>Wrong appointment type selected</li>
+            <li>Wrong appointment type selected — <strong>always review the provider's documented plan</strong>; if an EMG (e.g., lower extremity EMG) is ordered, schedule the EMG, not a routine follow-up</li>
             <li>Not checking insurance participation before scheduling referral</li>
             <li>Not documenting urgent referral escalation</li>
             <li>Allowing urgent patients to wait months for specialist appointments without escalating</li>
             <li>Transferring calls instead of checking tracking sheets</li>
             <li>Cancelling appointments solely because patient did not answer a phone call</li>
             <li>Scheduling referrals to out-of-network providers without provider/patient discussion</li>
+            <li><strong>Calling a patient without first verifying their status</strong> — before calling, confirm the patient is not already checked in, roomed, or currently being seen; patients must never receive outbound calls from the office while in an exam room</li>
+            <li>Relying on memory for verbal provider instructions — any follow-up task from a verbal instruction must be documented in the chart or tracking system immediately</li>
           </ul>
         </div>
       </div>
@@ -4519,6 +4953,71 @@ table.fml-plans tr:hover td{background:#f7fafc;}
         </ul>
       </div>
       <div class="al ai" style="margin-top:14px"><span class="al-icon">ℹ️</span><span><strong>Section 4 Key Principle:</strong> "The Scheduling Department is responsible for timely access to care. Every appointment should reflect the patient's clinical needs, provider instructions, and practice protocols. Scheduling does not end when an appointment is booked — it ends when the patient has received the care they need."</span></div>
+    </div>
+  </div>
+
+  <!-- SCHEDULER OPERATIONAL CONCERNS -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si id">⚠️</div>Operational Concerns &amp; Quality Standards <span class="badge bd">Quality Standard</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+
+      <div class="prob"><strong>Issues Identified</strong>Scheduling errors have included: ordering wrong appointment types when providers documented a specific procedure; ordered tests (labs, imaging, referrals) not tracked through to completion; verbal provider instructions lost without documentation; patients called while already checked in and being seen; and complex neurological patients assigned to staff not yet approved to manage them.</div>
+
+      <!-- ORDER TRACKING -->
+      <div class="sub"><div class="sub-title">1 · Order Tracking &amp; Loop Closure</div></div>
+      <div class="al ac" style="margin-bottom:10px"><span class="al-icon">🚫</span><span>A provider must <strong>never discover during an encounter</strong> that an ordered test was never sent, scheduled, or completed. Every open order must be tracked from placement to result.</span></div>
+      <ul class="cl" style="margin-bottom:14px">
+        <li>Every laboratory, imaging, and referral order must be entered into the <strong>centralized tracking sheet</strong> at the time it is placed</li>
+        <li>Confirm: order was <strong>sent</strong> → appointment was <strong>scheduled</strong> → results were <strong>received</strong> — before the patient's follow-up visit</li>
+        <li>Review outstanding orders during pre-visit chart prep; flag any gaps to the provider or MA immediately</li>
+        <li>Every tracked item must have a defined owner, current status, and next follow-up date — not just an entry date</li>
+      </ul>
+
+      <!-- ACCURATE PROCEDURE SCHEDULING -->
+      <div class="sub"><div class="sub-title">2 · Accurate Procedure Scheduling — Read the Provider's Plan</div></div>
+      <div class="al aw" style="margin-bottom:10px"><span class="al-icon">⚠️</span><span>Do not default to a routine follow-up when the provider has documented a specific procedure. Scheduling the wrong appointment type wastes a visit and delays care.</span></div>
+      <ul class="cl" style="margin-bottom:14px">
+        <li>Before scheduling any follow-up, review the provider's documented plan in the chart</li>
+        <li>If an EMG is ordered (e.g., lower extremity EMG), schedule the <strong>EMG</strong> — not a routine office visit</li>
+        <li>If EEG, imaging, or another study is ordered, schedule it at the same time as the follow-up visit, or as directed by the provider</li>
+        <li>When uncertain about the correct appointment type, confirm with the MA or provider — <strong>do not guess</strong></li>
+      </ul>
+
+      <!-- PROVIDER VERBAL INSTRUCTIONS -->
+      <div class="sub"><div class="sub-title">3 · Document Provider Instructions — Never Rely on Memory</div></div>
+      <ul class="cl" style="margin-bottom:14px">
+        <li>Any verbal instruction from the provider that requires follow-up action (e.g., "schedule a pre-op visit," "repeat the MRI in 6 weeks," "call the patient about their lab result") must be <strong>documented in the chart or tracking system immediately</strong></li>
+        <li>Do not assume it will be remembered — document it before moving to the next task</li>
+        <li>Verbal instructions with no written record are lost; patient care consequences fall on the practice</li>
+      </ul>
+
+      <!-- PATIENT COMMUNICATION RULE -->
+      <div class="sub"><div class="sub-title">4 · Patient Communication — Verify Status Before Calling</div></div>
+      <div class="al ac" style="margin-bottom:10px"><span class="al-icon">🚫</span><span>Patients must <strong>never receive outbound calls from the office while they are in an exam room</strong>. Before calling any patient, verify their current status in the schedule.</span></div>
+      <ul class="cl" style="margin-bottom:14px">
+        <li>Before placing any outbound call to a patient, check the schedule: is the patient checked in, roomed, or currently being seen?</li>
+        <li>If yes — do not call. Hold the task and address it after the visit concludes</li>
+        <li>This applies to all outbound calls: appointment reminders, PA status, lab results, referral updates</li>
+      </ul>
+
+      <!-- PROVIDER ASSIGNMENT -->
+      <div class="sub"><div class="sub-title">5 · Provider Assignment — Complex Patients Require Competency Approval</div></div>
+      <div class="al aw" style="margin-bottom:10px"><span class="al-icon">⚠️</span><span>Newly hired Nurse Practitioners must <strong>not be scheduled to manage Multiple Sclerosis patients or other complex neurological cases</strong> until they have completed the required competency assessments and been explicitly approved to do so.</span></div>
+      <ul class="cl" style="margin-bottom:14px">
+        <li>MS patients and other complex neurological cases require specialized training; do not assign these to a newly hired NP without supervisor approval</li>
+        <li>If you are unsure whether a provider is cleared to see a specific patient population, confirm with the supervisor before scheduling</li>
+        <li>Scheduling a complex patient with an unqualified provider — even inadvertently — creates a patient safety risk</li>
+      </ul>
+
+      <!-- COMMUNICATION & ACCOUNTABILITY -->
+      <div class="sub"><div class="sub-title">6 · Communication &amp; Accountability</div></div>
+      <ul class="cl">
+        <li>Use <strong>standardized documentation and shared tracking systems</strong> for all orders, appointments, and follow-up tasks — personal notes and memory are not acceptable substitutes</li>
+        <li>Every task must have a defined owner, completion deadline, and documented status</li>
+        <li><strong>Closed-loop communication</strong> is the standard — a task is not complete until it has been performed, confirmed, documented, and followed up</li>
+        <li>Clear responsibilities and shared visibility prevent delays, scheduling errors, and gaps in patient care</li>
+      </ul>
+
     </div>
   </div>
 
@@ -5115,6 +5614,74 @@ table.fml-plans tr:hover td{background:#f7fafc;}
       <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:8px">
         <div class="ic" style="padding:10px 14px"><strong>Vik Poonai</strong><span style="color:var(--muted);font-size:12px;margin-left:6px">MD</span></div>
       </div>
+    </div>
+  </div>
+
+  <!-- OPERATIONAL CONCERNS — REFERRALS & RECORDS -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si id">⚠️</div>Operational Concerns — Records &amp; Referral Tracking <span class="badge bd">Quality Standard</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+
+      <div class="prob"><strong>Issues Identified</strong>Medical record requests are being documented but not consistently sent, tracked, or followed up. Outside records are frequently missing at follow-up visits. Ordered referrals are sometimes never received by the specialist, and the issue is only discovered during the patient's next visit. Critical workflows rely on memory rather than standardized tracking.</div>
+
+      <!-- MEDICAL RECORDS FOLLOW-UP -->
+      <div class="sub"><div class="sub-title">1 · Medical Records Follow-Up</div></div>
+      <ul class="cl" style="margin-bottom:14px">
+        <li>Medical record requests must be <strong>sent, tracked, and followed up</strong> — documentation alone is not sufficient</li>
+        <li>Outside records are frequently missing at follow-up visits because there is no centralized tracking system</li>
+        <li>A dedicated <strong>Medical Records Tracking Sheet</strong> with assigned ownership and follow-up dates is required to ensure every request is completed</li>
+      </ul>
+
+      <!-- CLOSING THE LOOP -->
+      <div class="sub"><div class="sub-title">2 · Closing the Loop on Referrals &amp; Orders</div></div>
+      <div class="al ac" style="margin-bottom:10px"><span class="al-icon">🚫</span><span>An order is <strong>never</strong> complete simply because it was placed. Verify all four steps below.</span></div>
+      <div style="overflow-x:auto;margin-bottom:14px">
+        <table style="width:100%;border-collapse:collapse;font-size:13px">
+          <thead><tr style="background:#f0f4f8"><th style="padding:8px 10px;text-align:left;border-bottom:2px solid #e2e8f0">#</th><th style="padding:8px 10px;text-align:left;border-bottom:2px solid #e2e8f0">Step</th><th style="padding:8px 10px;text-align:left;border-bottom:2px solid #e2e8f0">How to Verify</th></tr></thead>
+          <tbody>
+            <tr style="border-bottom:1px solid #f0f4f8"><td style="padding:7px 10px">1</td><td style="padding:7px 10px">Receiving facility <strong>received</strong> the referral / order</td><td style="padding:7px 10px">Call or confirm fax receipt</td></tr>
+            <tr style="border-bottom:1px solid #f0f4f8"><td style="padding:7px 10px">2</td><td style="padding:7px 10px">Patient has been <strong>scheduled</strong></td><td style="padding:7px 10px">Confirm appointment date with facility or patient</td></tr>
+            <tr style="border-bottom:1px solid #f0f4f8"><td style="padding:7px 10px">3</td><td style="padding:7px 10px">Referral / study has been <strong>completed</strong></td><td style="padding:7px 10px">Follow up if appointment date has passed</td></tr>
+            <tr><td style="padding:7px 10px">4</td><td style="padding:7px 10px">Results / consultation note <strong>received and uploaded</strong> into chart</td><td style="padding:7px 10px">Confirm in EHR before closing the task</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- PRE-VISIT PREP -->
+      <div class="sub"><div class="sub-title">3 · Pre-Visit Chart Preparation</div></div>
+      <ul class="cl" style="margin-bottom:14px">
+        <li>Follow-up charts must be reviewed <strong>before</strong> the patient arrives — not during the encounter</li>
+        <li>Identify and resolve missing consultation notes and outside records ahead of time</li>
+        <li>Providers should never have to pause an encounter to contact facilities for missing records — that preparation is staff's responsibility</li>
+      </ul>
+
+      <!-- ACCOUNTABILITY -->
+      <div class="sub"><div class="sub-title">4 · Accountability &amp; Task Ownership</div></div>
+      <div class="two" style="margin-bottom:14px">
+        <div class="ic">
+          <h5>Every Pending Task Must Have:</h5>
+          <ul class="cl">
+            <li>A <strong>responsible staff member</strong> assigned</li>
+            <li>A <strong>tracking location</strong> (Google Sheet or tracking log)</li>
+            <li>A <strong>follow-up date</strong></li>
+            <li>A <strong>documented completion date</strong> when done</li>
+          </ul>
+        </div>
+        <div class="ic">
+          <h5>Standardized Tracking Required For:</h5>
+          <ul class="cl">
+            <li>Medical record requests</li>
+            <li>Referrals (sent → scheduled → resulted → uploaded)</li>
+            <li>Prior authorizations</li>
+            <li>Any outstanding patient-related task requiring follow-up</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- IMPACT -->
+      <div class="sub"><div class="sub-title">5 · Why This Matters — Patient Care Impact</div></div>
+      <div class="al ai"><span class="al-icon">ℹ️</span><span>Delays in obtaining outside records and referral results can delay diagnosis and treatment. A structured follow-up system improves continuity of care, reduces missed studies, and ensures providers have complete information at the time of the visit. Time lost during encounters to locate missing records directly reduces provider efficiency and patient throughput.</span></div>
+
     </div>
   </div>
 
@@ -6325,6 +6892,83 @@ table.fml-plans tr:hover td{background:#f7fafc;}
         </div>
       </div>
       <div class="al aw" style="margin-top:12px"><span class="al-icon">⚠️</span><span><strong>Be vigilant about how results are filed at external facilities.</strong> Labs completed by a patient who also sees a PCP at the same facility may be filed under the PCP's name or the PCP's order. When requesting records or fax authorization, specify both the patient name and the date of service — do not assume results will be easy to locate.</span></div>
+    </div>
+  </div>
+
+  <!-- OPERATIONAL CONCERNS — LABS & IMAGING -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si id">⚠️</div>Operational Concerns — Labs, Imaging &amp; Order Tracking <span class="badge bd">Quality Standard</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+
+      <div class="prob"><strong>Issues Identified</strong>Ordered studies (such as PET scans) are sometimes never received by the performing facility, with the gap only discovered at the patient's follow-up visit. There is insufficient tracking of whether orders were successfully transmitted, scheduled, completed, and resulted. Follow-up charts are not consistently reviewed before appointments, leaving providers to discover missing results mid-encounter.</div>
+
+      <!-- LABS, IMAGING & REFERRAL TRACKING -->
+      <div class="sub"><div class="sub-title">1 · Labs, Imaging &amp; Referral Tracking</div></div>
+      <ul class="cl" style="margin-bottom:14px">
+        <li>A <strong>centralized Google Sheet</strong> must track every lab order, imaging order, and referral until the loop is fully closed</li>
+        <li>Tracking begins the moment an order is placed — not when results arrive</li>
+        <li>It is not sufficient to verify that an order was entered in the EHR — you must confirm the receiving facility actually received it</li>
+      </ul>
+
+      <!-- CLOSING THE LOOP -->
+      <div class="sub"><div class="sub-title">2 · Closing the Loop — Four Required Steps</div></div>
+      <div class="al ac" style="margin-bottom:10px"><span class="al-icon">🚫</span><span>An order is <strong>never</strong> complete simply because it was placed. Every lab and imaging order must pass all four steps before the task is closed.</span></div>
+      <div style="overflow-x:auto;margin-bottom:14px">
+        <table style="width:100%;border-collapse:collapse;font-size:13px">
+          <thead><tr style="background:#f0f4f8"><th style="padding:8px 10px;text-align:left;border-bottom:2px solid #e2e8f0">#</th><th style="padding:8px 10px;text-align:left;border-bottom:2px solid #e2e8f0">Step</th><th style="padding:8px 10px;text-align:left;border-bottom:2px solid #e2e8f0">How to Verify</th></tr></thead>
+          <tbody>
+            <tr style="border-bottom:1px solid #f0f4f8"><td style="padding:7px 10px">1</td><td style="padding:7px 10px">Receiving facility <strong>received</strong> the order</td><td style="padding:7px 10px">Call or confirm fax/interface receipt</td></tr>
+            <tr style="border-bottom:1px solid #f0f4f8"><td style="padding:7px 10px">2</td><td style="padding:7px 10px">Patient has been <strong>scheduled</strong></td><td style="padding:7px 10px">Confirm appointment date with facility or patient</td></tr>
+            <tr style="border-bottom:1px solid #f0f4f8"><td style="padding:7px 10px">3</td><td style="padding:7px 10px">Study has been <strong>completed</strong></td><td style="padding:7px 10px">Follow up if appointment date has passed with no results</td></tr>
+            <tr><td style="padding:7px 10px">4</td><td style="padding:7px 10px">Results have been <strong>received and uploaded</strong> into the chart</td><td style="padding:7px 10px">Confirm in EHR before the follow-up visit</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- PRE-VISIT PREP -->
+      <div class="sub"><div class="sub-title">3 · Pre-Visit Chart Preparation</div></div>
+      <ul class="cl" style="margin-bottom:14px">
+        <li>Follow-up charts must be reviewed <strong>before</strong> the patient arrives — not during the encounter</li>
+        <li>Missing imaging results, laboratory results, and consultation notes should be identified and resolved before the appointment</li>
+        <li>If results are missing: contact the facility before the visit, not while the provider is in the room with the patient</li>
+      </ul>
+
+      <!-- ACCOUNTABILITY -->
+      <div class="sub"><div class="sub-title">4 · Accountability &amp; Task Ownership</div></div>
+      <div class="two" style="margin-bottom:14px">
+        <div class="ic">
+          <h5>Every Pending Task Must Have:</h5>
+          <ul class="cl">
+            <li>A <strong>responsible staff member</strong> assigned</li>
+            <li>A <strong>tracking location</strong> (centralized Google Sheet)</li>
+            <li>A <strong>follow-up date</strong></li>
+            <li>A <strong>documented completion date</strong> when done</li>
+          </ul>
+        </div>
+        <div class="ic">
+          <h5>Standardized Tracking Required For:</h5>
+          <ul class="cl">
+            <li>Lab orders (sent → completed → resulted → uploaded)</li>
+            <li>Imaging orders (sent → scheduled → completed → report received)</li>
+            <li>Referrals and prior authorizations</li>
+            <li>Any outstanding patient task requiring follow-up</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- WORKFLOW STANDARDIZATION -->
+      <div class="sub"><div class="sub-title">5 · Workflow Standardization</div></div>
+      <div class="al aw" style="margin-bottom:10px"><span class="al-icon">⚠️</span><span>Critical workflows currently rely on memory rather than standardized tracking. If it isn't in the tracking sheet, it doesn't exist. Every order placed must be logged immediately.</span></div>
+      <ul class="cl" style="margin-bottom:14px">
+        <li>Lab and imaging tracking sheets must be maintained and reviewed daily</li>
+        <li>Staff must not rely on the EHR order status alone — interface failures can silently drop orders</li>
+        <li>Outstanding items approaching the follow-up visit date require immediate escalation if not resolved</li>
+      </ul>
+
+      <!-- IMPACT -->
+      <div class="sub"><div class="sub-title">6 · Why This Matters — Patient Care &amp; Provider Impact</div></div>
+      <div class="al ai"><span class="al-icon">ℹ️</span><span>Delays in receiving imaging and laboratory results can directly delay diagnosis and treatment. Time lost during encounters to locate missing studies reduces provider efficiency and patient throughput. A structured tracking system ensures providers have complete information at the time of every visit — and that no ordered study falls through the cracks.</span></div>
+
     </div>
   </div>
 
@@ -10716,6 +11360,192 @@ table.fml-plans tr:hover td{background:#f7fafc;}
     </div>
   </div>
 
+  <!-- CII SCHEDULE II REFERENCE -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ip">💊</div>Schedule II Prescription Limits &amp; Prior Authorization by Payer <span class="badge bc">Maryland Reference</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+
+      <p style="color:var(--muted);font-size:13px;margin-bottom:4px"><strong>Last updated: July 2026</strong> &nbsp;·&nbsp; Verify against each payer's live formulary at least annually — plan edits change with the plan year.</p>
+      <p style="font-size:13px;margin-bottom:14px">Several Maryland payers — especially Medicare Advantage plans — will only cover a short initial fill of a Schedule II (CII) prescription (typically a 7-day supply) and require prior authorization or a coverage determination for anything beyond that. Use this section to set patient expectations and start the PA early.</p>
+
+      <div class="al aw" style="margin-bottom:16px"><span class="al-icon">⚠️</span><div><strong>This mostly affects OPIOIDS, not stimulants.</strong> The 7-day limits below target opioid prescriptions for acute pain in opioid-naïve patients. Schedule II stimulants neurology commonly prescribes (methylphenidate, amphetamine salts, dextroamphetamine, lisdexamfetamine — for ADHD/narcolepsy) are generally <em>not</em> subject to the 7-day acute-pain edit, though they may carry their own quantity limits or PA on specific formularies. Always confirm on the member's active formulary.</div></div>
+
+      <!-- THREE LAYERS -->
+      <div class="sub"><div class="sub-title">How the Limits Stack — Three Layers (check all three)</div></div>
+      <div class="three" style="margin-bottom:20px">
+        <div class="ic"><h5>Layer 1 — Federal (Medicare)</h5><p style="font-size:13px">CMS requires every Medicare Advantage–PD and Part D plan to run the same opioid point-of-sale safety edits. This is why CareFirst, UnitedHealthcare, Aetna, and Humana MA plans all behave identically for opioids.</p></div>
+        <div class="ic"><h5>Layer 2 — Maryland State Law</h5><p style="font-size:13px">Applies to the <em>prescriber</em> regardless of payer — lowest effective dose, quantity no greater than needed for the expected duration of pain.</p></div>
+        <div class="ic"><h5>Layer 3 — Plan / Formulary Edits</h5><p style="font-size:13px">Commercial and Medicaid plans layer on their own quantity limits and PA criteria (MME thresholds, early-refill blocks, etc.).</p></div>
+      </div>
+
+      <!-- LAYER 1 -->
+      <div class="sub"><div class="sub-title">Layer 1 — Federal: CMS Medicare Part D Opioid Safety Edits (CY 2026)</div></div>
+      <p style="font-size:13px;margin-bottom:8px">Applies to <strong>ALL Medicare Advantage (MA-PD) and standalone Part D plans in Maryland</strong> — CareFirst, UnitedHealthcare, Aetna, Humana, Wellpoint, Kaiser, and any other MA plan a patient carries.</p>
+      <div class="two" style="margin-bottom:14px">
+        <div class="ic">
+          <h5>Key Edits</h5>
+          <ul class="cl">
+            <li><strong>7-day hard edit:</strong> Initial opioid fill for acute pain in an opioid-naïve patient is limited to 7-day supply. More than 7 days rejects at the pharmacy — requires coverage determination (PA)</li>
+            <li><strong>90 MME/day care-coordination edit:</strong> Soft edit prompting pharmacist review when cumulative daily morphine milligram equivalents reach 90</li>
+            <li><strong>200 MME/day hard edit:</strong> Some plans block fills at/above 200 MME/day pending PA</li>
+          </ul>
+        </div>
+        <div class="ic">
+          <h5>Exemptions (edit does NOT apply)</h5>
+          <ul class="cl">
+            <li>Hospice care</li>
+            <li>Cancer-related pain</li>
+            <li>Palliative / end-of-life care</li>
+            <li>Long-term-care residents (per plan)</li>
+          </ul>
+          <div class="al ac" style="margin-top:8px"><span class="al-icon">📝</span><span style="font-size:12px">Document the exemption in the chart — it removes the edit at the pharmacy.</span></div>
+        </div>
+      </div>
+
+      <!-- LAYER 2 -->
+      <div class="sub"><div class="sub-title">Layer 2 — Maryland State Law (All Payers)</div></div>
+      <div class="ic" style="margin-bottom:16px">
+        <h5>Md. Health Occupations §1-223 (HB 1432, 2017)</h5>
+        <p style="font-size:13px">When treating pain, the prescriber must order the lowest effective dose of an opioid and a quantity no greater than needed for the expected duration of the pain.</p>
+        <p style="font-size:13px;margin-top:6px"><strong>Exemptions from the prescribing limit:</strong> substance-use-disorder treatment, cancer pain, hospice/palliative/end-of-life care, and chronic pain. Violations are grounds for Board discipline.</p>
+      </div>
+
+      <!-- LAYER 3 — MEDICARE ADVANTAGE -->
+      <div class="sub"><div class="sub-title">Layer 3 — Payer-Specific Rules: Medicare Advantage Plans</div></div>
+      <p style="font-size:12px;color:var(--muted);margin-bottom:8px">All MA plans follow the federal 7-day opioid-naïve edit above. Plan-specific details below.</p>
+      <div style="overflow-x:auto;margin-bottom:18px">
+        <table style="width:100%;border-collapse:collapse;font-size:13px">
+          <thead><tr style="background:#f0f4f8"><th style="padding:8px 10px;text-align:left;border-bottom:2px solid #e2e8f0">Plan</th><th style="padding:8px 10px;text-align:left;border-bottom:2px solid #e2e8f0">Schedule II Limit</th><th style="padding:8px 10px;text-align:left;border-bottom:2px solid #e2e8f0">Prior Authorization</th></tr></thead>
+          <tbody>
+            <tr style="border-bottom:1px solid #f0f4f8"><td style="padding:7px 10px"><strong>CareFirst BCBS Medicare Advantage</strong></td><td style="padding:7px 10px">Opioid-naïve fill &gt;7-day supply rejects; pharmacist may dispense 7 days</td><td style="padding:7px 10px">PA/coverage determination for &gt;7 days; also for &gt;90 MME or &gt;14 days. Post-limit approvals up to 200 MME/day and 30-day supply</td></tr>
+            <tr style="border-bottom:1px solid #f0f4f8"><td style="padding:7px 10px"><strong>UnitedHealthcare Medicare Advantage (2026)</strong></td><td style="padding:7px 10px">Opioid limited to 7-day supply if no recent opioid history; cumulative MME limit applies</td><td style="padding:7px 10px">Prescriber may request coverage of additional quantity</td></tr>
+            <tr><td style="padding:7px 10px"><strong>Aetna / Humana / Other MA-PD Plans</strong></td><td style="padding:7px 10px">Same CMS 7-day opioid-naïve edit (federal requirement)</td><td style="padding:7px 10px">Coverage determination for quantities beyond the edit</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- LAYER 3 — COMMERCIAL -->
+      <div class="sub"><div class="sub-title">Layer 3 — Payer-Specific Rules: Commercial Plans</div></div>
+      <div style="overflow-x:auto;margin-bottom:10px">
+        <table style="width:100%;border-collapse:collapse;font-size:13px">
+          <thead><tr style="background:#f0f4f8"><th style="padding:8px 10px;text-align:left;border-bottom:2px solid #e2e8f0">Plan</th><th style="padding:8px 10px;text-align:left;border-bottom:2px solid #e2e8f0">Schedule II Limit</th><th style="padding:8px 10px;text-align:left;border-bottom:2px solid #e2e8f0">Prior Authorization</th></tr></thead>
+          <tbody>
+            <tr><td style="padding:7px 10px"><strong>CareFirst BCBS (Commercial)</strong></td><td style="padding:7px 10px">Opioid-naïve fill &gt;7-day supply rejects (7-day allowed)</td><td style="padding:7px 10px">PA for additional quantity; also for &gt;90 MME or &gt;14 days. Post-limit up to 200 MME/day, 30-day supply</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:12px;color:var(--muted);margin-bottom:16px">Commercial plans vary by employer group and formulary — verify each member's benefit. CII stimulant quantity limits, when present, are formulary-specific.</p>
+
+      <!-- LAYER 3 — MEDICAID -->
+      <div class="sub"><div class="sub-title">Layer 3 — Maryland Medicaid HealthChoice MCOs</div></div>
+      <div class="ic" style="margin-bottom:10px">
+        <h5>Statewide Medicaid Rule (FFS and All MCOs)</h5>
+        <ul class="cl" style="font-size:13px">
+          <li>PA required for opioid-naïve patient receiving &gt;7 days or &gt;50 MME/day</li>
+          <li>PA required for any opioid regimen exceeding 90 MME/day</li>
+          <li>Immediate-release opioids need PA beyond 7 days (acute pain) or 30 days (chronic pain)</li>
+          <li>Early refills of controlled medications are generally <strong>not authorized</strong></li>
+        </ul>
+      </div>
+      <div style="overflow-x:auto;margin-bottom:18px">
+        <table style="width:100%;border-collapse:collapse;font-size:13px">
+          <thead><tr style="background:#f0f4f8"><th style="padding:8px 10px;text-align:left;border-bottom:2px solid #e2e8f0">MCO</th><th style="padding:8px 10px;text-align:left;border-bottom:2px solid #e2e8f0">Schedule II Limit</th><th style="padding:8px 10px;text-align:left;border-bottom:2px solid #e2e8f0">Prior Authorization / Notes</th></tr></thead>
+          <tbody>
+            <tr style="border-bottom:1px solid #f0f4f8"><td style="padding:7px 10px"><strong>Aetna Better Health of Maryland</strong></td><td style="padding:7px 10px">State opioid-naïve 7-day / 50 MME edit</td><td style="padding:7px 10px">PA beyond limits; follows MD Medicaid PDL</td></tr>
+            <tr style="border-bottom:1px solid #f0f4f8"><td style="padding:7px 10px"><strong>CareFirst Community Health Plan MD</strong></td><td style="padding:7px 10px">IR opioid &gt;7 days (acute pain) rejects</td><td style="padding:7px 10px">PA approves up to 1-month supply</td></tr>
+            <tr style="border-bottom:1px solid #f0f4f8"><td style="padding:7px 10px"><strong>Jai Medical Systems</strong></td><td style="padding:7px 10px">State opioid-naïve 7-day / 50 MME edit</td><td style="padding:7px 10px">PA beyond limits; follows MD Medicaid PDL</td></tr>
+            <tr style="border-bottom:1px solid #f0f4f8"><td style="padding:7px 10px"><strong>Kaiser Permanente</strong></td><td style="padding:7px 10px">State opioid-naïve 7-day / 50 MME edit</td><td style="padding:7px 10px">PA beyond limits; follows MD Medicaid PDL</td></tr>
+            <tr style="border-bottom:1px solid #f0f4f8"><td style="padding:7px 10px"><strong>Maryland Physicians Care</strong></td><td style="padding:7px 10px">State opioid-naïve 7-day / 50 MME edit</td><td style="padding:7px 10px">PA beyond limits; follows MD Medicaid PDL</td></tr>
+            <tr style="border-bottom:1px solid #f0f4f8"><td style="padding:7px 10px"><strong>MedStar Family Choice</strong></td><td style="padding:7px 10px">State opioid-naïve 7-day / 50 MME edit</td><td style="padding:7px 10px">No early refills of controlled meds (since 1/1/2019); exceptions: cancer, sickle cell, hospice/palliative</td></tr>
+            <tr style="border-bottom:1px solid #f0f4f8"><td style="padding:7px 10px"><strong>Priority Partners</strong></td><td style="padding:7px 10px">State opioid-naïve 7-day / 50 MME edit</td><td style="padding:7px 10px">PA beyond limits; follows MD Medicaid PDL</td></tr>
+            <tr style="border-bottom:1px solid #f0f4f8"><td style="padding:7px 10px"><strong>UnitedHealthcare Community Plan</strong></td><td style="padding:7px 10px">State opioid-naïve 7-day / 50 MME edit</td><td style="padding:7px 10px">PA beyond limits; follows MD Medicaid PDL</td></tr>
+            <tr><td style="padding:7px 10px"><strong>Wellpoint Maryland</strong></td><td style="padding:7px 10px">State opioid-naïve 7-day / 50 MME edit</td><td style="padding:7px 10px">PA beyond limits; follows MD Medicaid PDL</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- WORKFLOW -->
+      <div class="sub"><div class="sub-title">Clinical &amp; Front-Desk Workflow</div></div>
+      <ul class="cl" style="margin-bottom:16px">
+        <li>At scheduling or check-in, identify the patient's plan type (Medicare Advantage, commercial, or Medicaid MCO)</li>
+        <li>For any opioid-naïve patient starting a CII opioid for acute pain, <strong>expect a 7-day fill</strong> — start the PA/coverage determination at the same visit if a longer supply is clinically needed</li>
+        <li>For CII stimulants (ADHD/narcolepsy), the 7-day acute-pain edit generally does not apply — but check the member's formulary for quantity limits or step/PA requirements</li>
+        <li>Document the exemption (cancer, hospice, palliative, chronic pain, SUD) when one applies — it removes the edit at the pharmacy</li>
+        <li>Keep this list current — verify each payer's rule against its live formulary at least annually; plan edits change with the plan year</li>
+      </ul>
+
+      <!-- SOURCES -->
+      <div class="sub"><div class="sub-title">Sources</div></div>
+      <ul class="cl" style="font-size:12px;color:var(--muted)">
+        <li>Federal / CMS: CY 2026 Opioid Safety Edit Submission Instructions; AMCP summary</li>
+        <li>Maryland law: Md. Health Occupations §1-223; HB 1432 (2017)</li>
+        <li>CareFirst: Opioids IR MME Limit &amp; Post-Limit PA criteria; CareFirst Medicare drug-management programs; CareFirst CHPMD pharmaceutical management</li>
+        <li>UnitedHealthcare: 2026 Complete Drug List (Formulary), Medicare Advantage</li>
+        <li>Maryland Medicaid: Pharmacy Program Quantity Limits; MedStar Family Choice opioid PA requirements; HealthChoice MCO list</li>
+      </ul>
+
+    </div>
+  </div>
+
+  <!-- PA OPERATIONAL QUALITY CONCERNS -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si id">⚠️</div>PA Operational Concerns &amp; Quality Standards <span class="badge bd">Quality Standard</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+
+      <div class="prob"><strong>Issues Identified</strong>Delays in obtaining prior authorizations for anticonvulsant medications resulted in a patient going without essential medication for an extended period. Formulary coverage was not identified promptly, leading to repeated patient inquiries and delayed treatment. Manufacturer sample programs are underutilized, and plan-specific coverage restrictions are not consistently tracked.</div>
+
+      <!-- ANTICONVULSANT URGENCY -->
+      <div class="sub"><div class="sub-title">1 · Anticonvulsant &amp; Seizure Medications — Treat as Urgent</div></div>
+      <div class="al ac" style="margin-bottom:10px"><span class="al-icon">🚫</span><span>Delays in anticonvulsant PA put patients at risk of <strong>breakthrough seizures</strong>. These are not routine PAs — they must be treated as urgent from the moment the prescription is written.</span></div>
+      <ul class="cl" style="margin-bottom:14px">
+        <li>Prior authorization requests for anticonvulsant and other high-priority neurological medications must be <strong>submitted immediately</strong> — the same day the order is placed</li>
+        <li>Mark the request as <strong>urgent</strong> whenever the payer's process allows it; document the reason (active seizure disorder, risk of breakthrough seizure)</li>
+        <li><strong>Follow up daily</strong> with the payer until a determination is received — do not wait for the standard 5–7 business day follow-up cycle</li>
+        <li>Notify the provider immediately if a determination is delayed beyond 24–48 hours so clinical alternatives (samples, bridge supply, peer-to-peer) can be initiated</li>
+        <li>Document every follow-up contact with date, time, representative name or reference number, and outcome</li>
+      </ul>
+
+      <!-- FORMULARY VERIFICATION & PATIENT COMMUNICATION -->
+      <div class="sub"><div class="sub-title">2 · Formulary Verification &amp; Patient Communication</div></div>
+      <div class="al aw" style="margin-bottom:10px"><span class="al-icon">⚠️</span><span>Discovering a formulary exclusion after a prescription is written wastes time and delays treatment. Verify formulary status <strong>before or at the time of prescribing</strong> — not after a pharmacy rejection.</span></div>
+      <ul class="cl" style="margin-bottom:14px">
+        <li>Verify the patient's formulary status for any new or high-cost medication <strong>promptly</strong> — use the Formulary &amp; PA Tool (🔍 tab) and the plan's live formulary</li>
+        <li>If a medication is not covered or is subject to restrictions, notify the provider immediately so alternatives, step therapy, or an appeal can be initiated without delay</li>
+        <li><strong>Keep patients informed</strong> at every stage — acknowledge their inquiry, provide a status update, and give an expected resolution timeframe</li>
+        <li>Do not leave patients without a response while a PA or formulary issue is being resolved — proactive communication prevents repeat calls and patient frustration</li>
+        <li>Document all patient communications related to PA and formulary status in the chart</li>
+      </ul>
+
+      <!-- MANUFACTURER SAMPLES -->
+      <div class="sub"><div class="sub-title">3 · Manufacturer Sample Programs — Bridge While PA Pending</div></div>
+      <ul class="cl" style="margin-bottom:12px">
+        <li>Pharmaceutical manufacturer sample programs must be <strong>fully utilized</strong> to prevent therapy interruptions while a prior authorization or appeal is pending</li>
+        <li>As soon as a PA is submitted and approval is not immediate, check whether the manufacturer offers samples, a bridge program, or a patient assistance enrollment</li>
+        <li>Patients should not go without medication while waiting for insurance approval when a bridge option is available</li>
+      </ul>
+      <div class="ic" style="border-left:4px solid var(--primary);margin-bottom:14px">
+        <h5>Designated Sample Manager — Required Role</h5>
+        <ul class="cl">
+          <li>A <strong>designated staff member</strong> must be responsible for the sample program — ordering, inventory, expiration tracking, provider distribution, and patient dispensing logs</li>
+          <li>A backup must be trained so sample management never depends on a single person</li>
+          <li>All samples dispensed to patients must be documented in the patient's chart</li>
+        </ul>
+      </div>
+
+      <!-- PLAN-SPECIFIC RESTRICTIONS -->
+      <div class="sub"><div class="sub-title">4 · Plan-Specific Restrictions — Maintain a Reference List</div></div>
+      <div class="al ai" style="margin-bottom:10px"><span class="al-icon">ℹ️</span><span>Some insurance plans — particularly certain Medicare Advantage plans — impose restrictions not found in standard Part D rules. For example, plans may allow only a limited initial supply of a medication before requiring PA for any additional quantity. These restrictions vary by plan and change annually.</span></div>
+      <ul class="cl">
+        <li>Maintain an <strong>up-to-date reference list</strong> of known plan-specific restrictions for the payers most commonly seen in the practice</li>
+        <li>Review the list at least annually, or whenever a plan's coverage policy changes</li>
+        <li>When a patient's plan has a known restriction, anticipate the PA requirement and initiate it proactively — before the pharmacy rejects the fill</li>
+        <li>Use the Formulary &amp; PA Tool (🔍 tab) and the Schedule II Prescription Limits reference above as starting points; supplement with plan-specific formulary lookups for other medication classes</li>
+        <li>When an unexpected restriction is encountered, document it in the reference list so the entire team benefits from the discovery</li>
+      </ul>
+
+    </div>
+  </div>
+
   <!-- Prior Authorization QUIZ -->
   <div class="acc">
     <div class="ah" onclick="tog(this)"><div class="at"><div class="si ig">🎓</div>Prior Authorization Knowledge Quiz <span class="badge bc">Required — All Staff</span></div><span class="chev">▼</span></div>
@@ -14255,7 +15085,6 @@ document.addEventListener('DOMContentLoaded',function(){fmlRenderDrugs();});
 </script>
 </body>
 </html>
-
 </div>
 
 <script>
