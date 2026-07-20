@@ -11,7 +11,6 @@
 
 
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,8 +30,10 @@ header p{font-size:.82rem;opacity:.75;margin-top:3px;}
 #si:focus{background:rgba(255,255,255,.25);}
 #clr{background:rgba(255,255,255,.18);border:none;color:#fff;padding:8px 12px;border-radius:8px;cursor:pointer;font-size:13px;display:none;}
 mark{background:#fde68a;color:#92400e;border-radius:2px;padding:0 2px;}
-.tab-nav{background:var(--primary);padding:0 14px;display:flex;gap:3px;overflow-x:auto;scrollbar-width:none;}
-.tab-nav::-webkit-scrollbar{display:none;}
+.tab-nav{background:var(--primary);padding:0 14px;display:flex;gap:3px;overflow-x:auto;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.3) transparent;}
+.tab-nav::-webkit-scrollbar{height:4px;}
+.tab-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,.35);border-radius:2px;}
+.tab-nav::-webkit-scrollbar-track{background:transparent;}
 .tb{background:transparent;border:none;color:rgba(255,255,255,.7);padding:13px 16px;cursor:pointer;font-size:13px;font-weight:500;white-space:nowrap;border-bottom:3px solid transparent;transition:all .2s;display:flex;align-items:center;gap:6px;}
 .tb:hover{color:#fff;background:rgba(255,255,255,.08);}
 .tb.active{color:#fff;border-bottom-color:var(--accent);background:rgba(255,255,255,.12);}
@@ -206,6 +207,8 @@ table.fml-plans tr:hover td{background:#f7fafc;}
   <button class="tb" onclick="sw('rx',this)">💊 Pharmacy Contacts</button>
   <button class="tb" onclick="sw('fml',this)">🔍 Formulary &amp; PA Tool</button>
   <button class="tb" onclick="sw('dir',this)">📞 Phone Directory</button>
+  <button class="tb" onclick="sw('portal',this)">🏥 Patient Portal</button>
+  <button class="tb" onclick="sw('support',this)">🛠️ Support Contacts</button>
 </nav>
 <div class="content">
   <div id="sb"></div>
@@ -238,6 +241,8 @@ table.fml-plans tr:hover td{background:#f7fafc;}
     <div class="ovc" onclick="swId('rx')"><div class="oi">🏥</div><div class="ot">Pharmacy Contacts</div><div class="os">Specialty · Home Infusion · PBM · Buy &amp; Bill</div></div>
     <div class="ovc" onclick="swId('fml')"><div class="oi">🔍</div><div class="ot">Formulary &amp; PA Tool</div><div class="os">Drug Lookup · Plan Directory · PA Status</div></div>
     <div class="ovc" onclick="swId('dir')"><div class="oi">📞</div><div class="ot">Phone Directory</div><div class="os">Extensions · Departments · Staff</div></div>
+    <div class="ovc" onclick="swId('portal')"><div class="oi">🏥</div><div class="ot">Patient Portal</div><div class="os">TalkPHR · Registration · Setup Guide</div></div>
+    <div class="ovc" onclick="swId('support')"><div class="oi">🛠️</div><div class="ot">Support Contacts</div><div class="os">TalkEHR · Everyware · Vendor Support</div></div>
   </div>
   <!-- SECTION 1 BANNER -->
   <div style="background:linear-gradient(135deg,#1a4a7a,#0f3460);color:#fff;border-radius:14px;padding:22px 26px;margin-bottom:20px;box-shadow:0 4px 16px rgba(0,0,0,.15)">
@@ -1047,6 +1052,80 @@ table.fml-plans tr:hover td{background:#f7fafc;}
     </div>
   </div>
 
+  <!-- WORKERS' COMP INTAKE FORM — FD -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ip">📋</div>Workers' Compensation Intake Form <span class="badge bw">Print &amp; Complete</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="al aw" style="margin-bottom:14px"><span class="al-icon">⚠️</span><span>Complete this form for every Workers' Compensation visit. All fields must be filled before the patient leaves. Missing information causes billing failures and legal documentation gaps.</span></div>
+      <button onclick="printWCForm()" style="background:var(--primary);color:#fff;border:none;border-radius:8px;padding:10px 22px;font-size:14px;font-weight:700;cursor:pointer;margin-bottom:16px;display:flex;align-items:center;gap:8px;">🖨️ Print Blank Form</button>
+      <div id="wc-form-preview" style="background:#fff;border:2px solid #cbd5e0;border-radius:10px;padding:24px 28px;font-family:Arial,sans-serif;max-width:700px;">
+        <div style="text-align:center;margin-bottom:18px;">
+          <img src="https://mirneurology.com/wp-content/uploads/2026/02/698c98c84a7b64fa534a12a4.png" alt="Mir Neurology" style="height:48px;margin-bottom:6px;"><br>
+          <div style="font-size:16px;font-weight:800;color:#1a4a7a;letter-spacing:.03em;margin-top:4px;">WORKERS' COMPENSATION INTAKE FORM</div>
+          <div style="font-size:12px;color:#666;margin-top:2px;">Mir Neurology &amp; Spine Center · (301) 797-7600</div>
+        </div>
+        <div style="height:1px;background:#1a4a7a;margin-bottom:16px;"></div>
+        <!-- Patient Info -->
+        <div style="margin-bottom:14px;">
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#1a4a7a;margin-bottom:6px;">Patient Information</div>
+          <div style="display:flex;gap:16px;margin-bottom:10px;">
+            <div style="flex:2;"><label style="font-size:11px;font-weight:700;color:#555;">PATIENT'S NAME</label><div style="border-bottom:1px solid #333;min-height:22px;margin-top:2px;"></div></div>
+            <div style="flex:1;"><label style="font-size:11px;font-weight:700;color:#555;">DATE OF INJURY</label><div style="border-bottom:1px solid #333;min-height:22px;margin-top:2px;"></div></div>
+          </div>
+          <div>
+            <label style="font-size:11px;font-weight:700;color:#555;">DESCRIBE INJURY AND PART OF BODY AFFECTED</label>
+            <div style="border-bottom:1px solid #333;min-height:22px;margin-top:2px;"></div>
+            <div style="border-bottom:1px solid #333;min-height:22px;margin-top:8px;"></div>
+          </div>
+        </div>
+        <!-- WC Insurance -->
+        <div style="height:1px;background:#e2e8f0;margin-bottom:14px;"></div>
+        <div style="margin-bottom:14px;">
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#1a4a7a;margin-bottom:8px;">Workers' Compensation Insurance Information</div>
+          <div style="margin-bottom:8px;"><label style="font-size:11px;font-weight:700;color:#555;">NAME OF WORKERS' COMP INSURANCE COMPANY</label><div style="border-bottom:1px solid #333;min-height:22px;margin-top:2px;"></div></div>
+          <div style="margin-bottom:8px;"><label style="font-size:11px;font-weight:700;color:#555;">WORKERS' COMP INSURANCE COMPANY ADDRESS</label><div style="border-bottom:1px solid #333;min-height:22px;margin-top:2px;"></div></div>
+          <div style="display:flex;gap:16px;margin-bottom:8px;">
+            <div style="flex:1;"><label style="font-size:11px;font-weight:700;color:#555;">WORKERS' COMP INSURANCE CO.</label><div style="border-bottom:1px solid #333;min-height:22px;margin-top:2px;"></div></div>
+          </div>
+          <div style="display:flex;gap:16px;margin-bottom:8px;">
+            <div style="flex:1;"><label style="font-size:11px;font-weight:700;color:#555;">PHONE #</label><div style="border-bottom:1px solid #333;min-height:22px;margin-top:2px;"></div></div>
+            <div style="flex:1;"><label style="font-size:11px;font-weight:700;color:#555;">CLAIM #</label><div style="border-bottom:1px solid #333;min-height:22px;margin-top:2px;"></div></div>
+          </div>
+        </div>
+        <!-- Adjuster -->
+        <div style="height:1px;background:#e2e8f0;margin-bottom:14px;"></div>
+        <div style="margin-bottom:14px;">
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#1a4a7a;margin-bottom:8px;">Insurance Adjuster Information</div>
+          <div style="margin-bottom:8px;"><label style="font-size:11px;font-weight:700;color:#555;">NAME OF INSURANCE ADJUSTER</label><div style="border-bottom:1px solid #333;min-height:22px;margin-top:2px;"></div></div>
+          <div style="display:flex;gap:16px;">
+            <div style="flex:1;"><label style="font-size:11px;font-weight:700;color:#555;">PHONE #</label><div style="border-bottom:1px solid #333;min-height:22px;margin-top:2px;"></div></div>
+            <div style="flex:2;"><label style="font-size:11px;font-weight:700;color:#555;">EMAIL</label><div style="border-bottom:1px solid #333;min-height:22px;margin-top:2px;"></div></div>
+          </div>
+        </div>
+        <!-- Attorney -->
+        <div style="height:1px;background:#e2e8f0;margin-bottom:14px;"></div>
+        <div style="margin-bottom:14px;">
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#d97706;margin-bottom:6px;">★ If Applicable — Attorney Information</div>
+          <div style="margin-bottom:8px;"><label style="font-size:11px;font-weight:700;color:#555;">ATTORNEY'S NAME</label><div style="border-bottom:1px solid #333;min-height:22px;margin-top:2px;"></div></div>
+          <div style="margin-bottom:8px;"><label style="font-size:11px;font-weight:700;color:#555;">ATTORNEY'S ADDRESS</label><div style="border-bottom:1px solid #333;min-height:22px;margin-top:2px;"></div></div>
+          <div style="display:flex;gap:16px;margin-bottom:8px;">
+            <div style="flex:1;"><label style="font-size:11px;font-weight:700;color:#555;">ATTORNEY'S PHONE #</label><div style="border-bottom:1px solid #333;min-height:22px;margin-top:2px;"></div></div>
+          </div>
+          <div style="display:flex;gap:16px;">
+            <div style="flex:1;"><label style="font-size:11px;font-weight:700;color:#555;">PARALEGAL NAME</label><div style="border-bottom:1px solid #333;min-height:22px;margin-top:2px;"></div></div>
+            <div style="flex:1;"><label style="font-size:11px;font-weight:700;color:#555;">PARALEGAL PHONE #</label><div style="border-bottom:1px solid #333;min-height:22px;margin-top:2px;"></div></div>
+          </div>
+        </div>
+        <!-- Signature -->
+        <div style="height:1px;background:#1a4a7a;margin-bottom:14px;"></div>
+        <div style="display:flex;gap:24px;">
+          <div style="flex:2;"><label style="font-size:11px;font-weight:700;color:#555;">FORM COMPLETED BY</label><div style="border-bottom:1px solid #333;min-height:22px;margin-top:2px;"></div></div>
+          <div style="flex:1;"><label style="font-size:11px;font-weight:700;color:#555;">DATE</label><div style="border-bottom:1px solid #333;min-height:22px;margin-top:2px;"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="acc">
     <div class="ah" onclick="tog(this)"><div class="at"><div class="si it">🧲</div>MRI & Imaging Order Tracking <span class="badge bw">Important</span></div><span class="chev">▼</span></div>
     <div class="ab">
@@ -1703,6 +1782,28 @@ table.fml-plans tr:hover td{background:#f7fafc;}
         </div>
       </div>
       <div class="al ai" style="margin-top:8px"><span class="al-icon">💡</span><span><strong>MRI Anxiety / Claustrophobia:</strong> Patients requesting anxiolytic medication to tolerate an MRI should be scheduled for an <strong>Open MRI</strong> whenever clinically appropriate, rather than initiating anxiolytic therapy.</span></div>
+
+      <div class="sub"><div class="sub-title">Staff Education — Generic/Brand Names, Duplicates &amp; Look-Alike Medications</div></div>
+      <div class="al aw" style="margin-bottom:10px"><span class="al-icon">⚠️</span><span>Staff must be familiar with common neurological medications — including generic and brand name equivalents — to avoid duplicate documentation, medication errors, and EHR entry mistakes.</span></div>
+      <div class="two" style="margin-bottom:12px">
+        <div class="ic" style="border-left:4px solid var(--warn)">
+          <h5>⚠️ Duplicate Therapy — Stimulants</h5>
+          <ul class="cl">
+            <li><strong>Concerta is methylphenidate</strong> — if a patient lists both, this is a duplicate stimulant entry, not two separate medications</li>
+            <li>Do not document duplicate stimulant therapy without first clarifying with the provider</li>
+            <li>Common generic/brand pairs staff must know: Concerta/Ritalin = methylphenidate · Adderall = amphetamine salts · Vyvanse = lisdexamfetamine</li>
+          </ul>
+        </div>
+        <div class="ic" style="border-left:4px solid var(--danger)">
+          <h5>🔴 Look-Alike / Sound-Alike Medications</h5>
+          <ul class="cl">
+            <li><strong>Nortriptyline</strong> (tricyclic antidepressant / nerve pain) vs. <strong>Naratriptan</strong> (triptan / migraine) — these are entirely different medications; confusing them is a medication error</li>
+            <li>When in doubt about a medication name, look it up or ask before documenting</li>
+            <li>Never guess at a medication spelling — confirm with the patient, medication bottle, or pharmacy record</li>
+          </ul>
+        </div>
+      </div>
+      <div class="al ac" style="margin-bottom:10px"><span class="al-icon">🚫</span><span><strong>Custom Medication Entries in EHR — Senior MAs Only.</strong> Only Senior MAs may create a custom medication entry in TalkEHR, and only after verifying the medication and discussing it with the provider or designated clinical supervisor. <strong>Never create a custom medication entry for an unverified or nonexistent medication.</strong> Incorrect custom entries corrupt the medication record and create patient safety risks.</span></div>
 
     </div>
   </div>
@@ -4458,6 +4559,71 @@ table.fml-plans tr:hover td{background:#f7fafc;}
         </div>
       </div>
 
+    </div>
+  </div>
+
+  <!-- WORKERS' COMP INTAKE FORM — SCHEDULER -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ip">📋</div>Workers' Compensation Intake Form <span class="badge bw">Print &amp; Complete</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="al aw" style="margin-bottom:14px"><span class="al-icon">⚠️</span><span>Complete this form for every Workers' Compensation visit. All fields must be filled before the patient leaves. Missing information causes billing failures and legal documentation gaps.</span></div>
+      <button onclick="printWCForm()" style="background:var(--primary);color:#fff;border:none;border-radius:8px;padding:10px 22px;font-size:14px;font-weight:700;cursor:pointer;margin-bottom:16px;display:flex;align-items:center;gap:8px;">🖨️ Print Blank Form</button>
+      <div style="background:#fff;border:2px solid #cbd5e0;border-radius:10px;padding:24px 28px;font-family:Arial,sans-serif;max-width:700px;">
+        <div style="text-align:center;margin-bottom:18px;">
+          <img src="https://mirneurology.com/wp-content/uploads/2026/02/698c98c84a7b64fa534a12a4.png" alt="Mir Neurology" style="height:48px;margin-bottom:6px;"><br>
+          <div style="font-size:16px;font-weight:800;color:#1a4a7a;letter-spacing:.03em;margin-top:4px;">WORKERS' COMPENSATION INTAKE FORM</div>
+          <div style="font-size:12px;color:#666;margin-top:2px;">Mir Neurology &amp; Spine Center · (301) 797-7600</div>
+        </div>
+        <div style="height:1px;background:#1a4a7a;margin-bottom:16px;"></div>
+        <div style="margin-bottom:14px;">
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#1a4a7a;margin-bottom:6px;">Patient Information</div>
+          <div style="display:flex;gap:16px;margin-bottom:10px;">
+            <div style="flex:2;"><label style="font-size:11px;font-weight:700;color:#555;">PATIENT'S NAME</label><div style="border-bottom:1px solid #333;min-height:22px;margin-top:2px;"></div></div>
+            <div style="flex:1;"><label style="font-size:11px;font-weight:700;color:#555;">DATE OF INJURY</label><div style="border-bottom:1px solid #333;min-height:22px;margin-top:2px;"></div></div>
+          </div>
+          <div>
+            <label style="font-size:11px;font-weight:700;color:#555;">DESCRIBE INJURY AND PART OF BODY AFFECTED</label>
+            <div style="border-bottom:1px solid #333;min-height:22px;margin-top:2px;"></div>
+            <div style="border-bottom:1px solid #333;min-height:22px;margin-top:8px;"></div>
+          </div>
+        </div>
+        <div style="height:1px;background:#e2e8f0;margin-bottom:14px;"></div>
+        <div style="margin-bottom:14px;">
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#1a4a7a;margin-bottom:8px;">Workers' Compensation Insurance Information</div>
+          <div style="margin-bottom:8px;"><label style="font-size:11px;font-weight:700;color:#555;">NAME OF WORKERS' COMP INSURANCE COMPANY</label><div style="border-bottom:1px solid #333;min-height:22px;margin-top:2px;"></div></div>
+          <div style="margin-bottom:8px;"><label style="font-size:11px;font-weight:700;color:#555;">WORKERS' COMP INSURANCE COMPANY ADDRESS</label><div style="border-bottom:1px solid #333;min-height:22px;margin-top:2px;"></div></div>
+          <div style="margin-bottom:8px;"><label style="font-size:11px;font-weight:700;color:#555;">WORKERS' COMP INSURANCE CO.</label><div style="border-bottom:1px solid #333;min-height:22px;margin-top:2px;"></div></div>
+          <div style="display:flex;gap:16px;margin-bottom:8px;">
+            <div style="flex:1;"><label style="font-size:11px;font-weight:700;color:#555;">PHONE #</label><div style="border-bottom:1px solid #333;min-height:22px;margin-top:2px;"></div></div>
+            <div style="flex:1;"><label style="font-size:11px;font-weight:700;color:#555;">CLAIM #</label><div style="border-bottom:1px solid #333;min-height:22px;margin-top:2px;"></div></div>
+          </div>
+        </div>
+        <div style="height:1px;background:#e2e8f0;margin-bottom:14px;"></div>
+        <div style="margin-bottom:14px;">
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#1a4a7a;margin-bottom:8px;">Insurance Adjuster Information</div>
+          <div style="margin-bottom:8px;"><label style="font-size:11px;font-weight:700;color:#555;">NAME OF INSURANCE ADJUSTER</label><div style="border-bottom:1px solid #333;min-height:22px;margin-top:2px;"></div></div>
+          <div style="display:flex;gap:16px;">
+            <div style="flex:1;"><label style="font-size:11px;font-weight:700;color:#555;">PHONE #</label><div style="border-bottom:1px solid #333;min-height:22px;margin-top:2px;"></div></div>
+            <div style="flex:2;"><label style="font-size:11px;font-weight:700;color:#555;">EMAIL</label><div style="border-bottom:1px solid #333;min-height:22px;margin-top:2px;"></div></div>
+          </div>
+        </div>
+        <div style="height:1px;background:#e2e8f0;margin-bottom:14px;"></div>
+        <div style="margin-bottom:14px;">
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#d97706;margin-bottom:6px;">★ If Applicable — Attorney Information</div>
+          <div style="margin-bottom:8px;"><label style="font-size:11px;font-weight:700;color:#555;">ATTORNEY'S NAME</label><div style="border-bottom:1px solid #333;min-height:22px;margin-top:2px;"></div></div>
+          <div style="margin-bottom:8px;"><label style="font-size:11px;font-weight:700;color:#555;">ATTORNEY'S ADDRESS</label><div style="border-bottom:1px solid #333;min-height:22px;margin-top:2px;"></div></div>
+          <div style="margin-bottom:8px;"><label style="font-size:11px;font-weight:700;color:#555;">ATTORNEY'S PHONE #</label><div style="border-bottom:1px solid #333;min-height:22px;margin-top:2px;"></div></div>
+          <div style="display:flex;gap:16px;">
+            <div style="flex:1;"><label style="font-size:11px;font-weight:700;color:#555;">PARALEGAL NAME</label><div style="border-bottom:1px solid #333;min-height:22px;margin-top:2px;"></div></div>
+            <div style="flex:1;"><label style="font-size:11px;font-weight:700;color:#555;">PARALEGAL PHONE #</label><div style="border-bottom:1px solid #333;min-height:22px;margin-top:2px;"></div></div>
+          </div>
+        </div>
+        <div style="height:1px;background:#1a4a7a;margin-bottom:14px;"></div>
+        <div style="display:flex;gap:24px;">
+          <div style="flex:2;"><label style="font-size:11px;font-weight:700;color:#555;">FORM COMPLETED BY</label><div style="border-bottom:1px solid #333;min-height:22px;margin-top:2px;"></div></div>
+          <div style="flex:1;"><label style="font-size:11px;font-weight:700;color:#555;">DATE</label><div style="border-bottom:1px solid #333;min-height:22px;margin-top:2px;"></div></div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -14277,6 +14443,259 @@ table.fml-plans tr:hover td{background:#f7fafc;}
 
 </div>
 
+
+<div id="panel-portal" class="tab-panel">
+  <div class="dept-hdr">
+    <h2>🏥 Patient Portal — TalkPHR Registration Guide</h2>
+    <p>Step-by-step guide for helping patients register and access the Mir Neurology Patient Portal (TalkPHR 360). Use this guide when onboarding new patients or troubleshooting portal access issues.</p>
+    <div class="tags"><span class="tag">Patient Portal</span><span class="tag">TalkPHR</span><span class="tag">Registration</span><span class="tag">All Staff</span><span class="tag">Patient Onboarding</span></div>
+  </div>
+
+  <style>
+    .portal-step{display:flex;gap:20px;align-items:flex-start;background:#fff;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,.08);padding:20px 22px;margin-bottom:18px;border-left:5px solid var(--primary);}
+    .portal-step:nth-child(even){border-left-color:var(--accent);}
+    .portal-num{min-width:48px;height:48px;border-radius:50%;background:var(--primary);color:#fff;font-size:20px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .portal-step:nth-child(even) .portal-num{background:var(--accent);}
+    .portal-step-body{flex:1;}
+    .portal-step-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:3px;}
+    .portal-step-title{font-size:17px;font-weight:700;color:var(--primary);margin:0 0 6px;}
+    .portal-step:nth-child(even) .portal-step-title{color:var(--accent);}
+    .portal-step-desc{font-size:14px;color:var(--text);line-height:1.6;margin-bottom:0;}
+    .portal-img{width:120px;flex-shrink:0;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,.12);border:1px solid #e2e8f0;}
+    .portal-app-btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;}
+    .portal-app-btn{display:inline-flex;align-items:center;gap:8px;background:#000;color:#fff;text-decoration:none;padding:10px 18px;border-radius:10px;font-size:14px;font-weight:600;transition:opacity .2s;}
+    .portal-app-btn:hover{opacity:.8;}
+    .portal-tip{background:#f0f9ff;border:1px solid #bae6fd;border-radius:8px;padding:10px 14px;font-size:13px;color:#0369a1;margin-top:10px;}
+    .portal-tip strong{color:#0c4a6e;}
+  </style>
+
+  <!-- INTRO ALERT -->
+  <div class="al ai" style="margin-bottom:20px"><span class="al-icon">ℹ️</span><span><strong>For Staff:</strong> When a new patient is entered into TalkEHR, send them a portal invitation from the system. Walk them through these steps if they call for help. The portal link is <strong><a href="https://talkphr.com/" target="_blank">talkphr.com</a></strong>.</span></div>
+
+  <!-- VIDEO SECTION -->
+  <div style="background:#fff;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,.08);padding:20px 22px;margin-bottom:24px;text-align:center;">
+    <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:10px">📹 Video Walkthrough</div>
+    <video controls style="width:100%;max-width:560px;border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,.12);" poster="https://mirneurology.com/wp-content/uploads/2026/05/unnamed-8.png">
+      <source src="https://mirneurology.com/wp-content/uploads/2026/05/TalkPHR_Onboarding_Guide-1.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <p style="font-size:13px;color:var(--muted);margin:10px 0 0">Full onboarding walkthrough — share this link with patients: <a href="https://mirneurology.com/talkphr/" target="_blank" style="color:var(--accent)">mirneurology.com/talkphr</a></p>
+  </div>
+
+  <h3 style="color:var(--primary);margin:0 0 16px;font-size:1.1rem;font-weight:700">📋 Registration Process — Step by Step</h3>
+
+  <!-- STEP 1 -->
+  <div class="portal-step">
+    <div class="portal-num">1</div>
+    <div class="portal-step-body">
+      <div class="portal-step-label">Step 01</div>
+      <div class="portal-step-title">Receive Your Invitation</div>
+      <p class="portal-step-desc">The patient will receive an invitation on <strong>both their email and cellphone</strong> containing a secure registration link and a PIN code.</p>
+      <div class="portal-tip"><strong>Staff tip:</strong> If the patient says they didn't receive the invitation, verify their email and phone number in TalkEHR and resend the invite.</div>
+    </div>
+    <img src="https://mirneurology.com/wp-content/uploads/2026/05/unnamed-7.png" alt="Invitation Message" class="portal-img">
+  </div>
+
+  <!-- STEP 2 -->
+  <div class="portal-step">
+    <div class="portal-num">2</div>
+    <div class="portal-step-body">
+      <div class="portal-step-label">Step 02</div>
+      <div class="portal-step-title">Verify PIN &amp; Continue</div>
+      <p class="portal-step-desc">Open the registration link. The phone/email and PIN will already be pre-filled. If the PIN becomes invalid, the patient should click <strong>Re-Generate PIN</strong> and continue.</p>
+      <div class="portal-tip"><strong>Staff tip:</strong> PINs expire after a short time. If the patient waited too long to click the link, advise them to click "Re-Generate PIN" on the screen.</div>
+    </div>
+    <img src="https://mirneurology.com/wp-content/uploads/2026/05/unnamed-8.png" alt="PIN Verification Screen" class="portal-img">
+  </div>
+
+  <!-- STEP 3 -->
+  <div class="portal-step">
+    <div class="portal-num">3</div>
+    <div class="portal-step-body">
+      <div class="portal-step-label">Step 03</div>
+      <div class="portal-step-title">Create Your Password</div>
+      <p class="portal-step-desc">The patient sets up a secure password using <strong>uppercase letters, numbers, and special characters</strong>. This password will be used to log in to both the web portal and the mobile app.</p>
+      <div class="portal-tip"><strong>Staff tip:</strong> Remind patients to save their password. If they forget it later, they can use the "Forgot Password" link on the login screen.</div>
+    </div>
+    <img src="https://mirneurology.com/wp-content/uploads/2026/05/unnamed-19.png" alt="Create Password Screen" class="portal-img">
+  </div>
+
+  <!-- STEP 4 -->
+  <div class="portal-step">
+    <div class="portal-num">4</div>
+    <div class="portal-step-body">
+      <div class="portal-step-label">Step 04</div>
+      <div class="portal-step-title">Complete Intake Forms</div>
+      <p class="portal-step-desc">The patient fills out intake information including <strong>contact details, medical history, and required consent forms</strong>. This information feeds directly into TalkEHR.</p>
+      <div class="portal-tip"><strong>Staff tip:</strong> Encourage patients to complete this before their first visit — it saves time at check-in and ensures the chart is complete before the provider sees them.</div>
+    </div>
+    <img src="https://mirneurology.com/wp-content/uploads/2026/05/unnamed-18.png" alt="Intake Form" class="portal-img">
+  </div>
+
+  <!-- STEP 5 -->
+  <div class="portal-step">
+    <div class="portal-num">5</div>
+    <div class="portal-step-body">
+      <div class="portal-step-label">Step 05</div>
+      <div class="portal-step-title">Access Your Dashboard</div>
+      <p class="portal-step-desc">After completing registration, the patient is redirected to their <strong>Patient Portal Dashboard</strong> where they can view appointments, messages, and health records.</p>
+    </div>
+    <img src="https://mirneurology.com/wp-content/uploads/2026/05/unnamed-14.png" alt="Dashboard Screen" class="portal-img">
+  </div>
+
+  <!-- STEP 6 -->
+  <div class="portal-step">
+    <div class="portal-num">6</div>
+    <div class="portal-step-body">
+      <div class="portal-step-label">Step 06</div>
+      <div class="portal-step-title">Download TalkPHR 360</div>
+      <p class="portal-step-desc">Visit the <strong>App Store</strong> (iPhone) or <strong>Google Play</strong> (Android) and install the <strong>TalkPHR 360 – CareCloud</strong> app on the mobile device.</p>
+      <div class="portal-app-btns">
+        <a href="https://apps.apple.com/us/app/talkphr-360-carecloud/id6746710207" target="_blank" class="portal-app-btn">🍎 App Store</a>
+        <a href="https://play.google.com/store/apps/details?id=com.carecloud.primephr&pcampaignid=web_share" target="_blank" class="portal-app-btn">▶ Google Play</a>
+      </div>
+    </div>
+    <img src="https://mirneurology.com/wp-content/uploads/2026/05/unnamed-12.png" alt="App Download Screen" class="portal-img">
+  </div>
+
+  <!-- STEP 7 -->
+  <div class="portal-step">
+    <div class="portal-num">7</div>
+    <div class="portal-step-body">
+      <div class="portal-step-label">Step 07</div>
+      <div class="portal-step-title">Sign Into The App</div>
+      <p class="portal-step-desc">Login using the <strong>registered email or phone number</strong> and the password created during step 3.</p>
+      <div class="portal-tip"><strong>Staff tip:</strong> If the patient can't log in to the app, have them try logging in on the web first at <a href="https://talkphr.com/" target="_blank" style="color:var(--accent)">talkphr.com</a> to confirm their credentials work.</div>
+    </div>
+    <img src="https://mirneurology.com/wp-content/uploads/2026/05/unnamed-11.png" alt="Login Screen" class="portal-img">
+  </div>
+
+  <!-- STEP 8 -->
+  <div class="portal-step">
+    <div class="portal-num">8</div>
+    <div class="portal-step-body">
+      <div class="portal-step-label">Step 08</div>
+      <div class="portal-step-title">You're All Set!</div>
+      <p class="portal-step-desc">The Patient Portal is now active and ready to use for <strong>appointments, forms, secure messaging, and billing</strong>.</p>
+    </div>
+    <img src="https://mirneurology.com/wp-content/uploads/2026/05/unnamed-10.png" alt="TalkPHR Dashboard" class="portal-img">
+  </div>
+
+  <!-- SUCCESS BANNER -->
+  <div style="background:linear-gradient(135deg,#0d2e5c,#1a4a7a);color:#fff;border-radius:12px;padding:22px 26px;margin-top:8px;text-align:center;">
+    <div style="font-size:32px;margin-bottom:8px">✅</div>
+    <h3 style="margin:0 0 6px;font-size:1.1rem">Successfully Registered!</h3>
+    <p style="opacity:.85;font-size:13px;margin:0 0 16px">The patient now has full access to the Mir Neurology Patient Portal.</p>
+    <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
+      <a href="https://apps.apple.com/us/app/talkphr-360-carecloud/id6746710207" target="_blank" class="portal-app-btn" style="text-decoration:none">🍎 Download on App Store</a>
+      <a href="https://play.google.com/store/apps/details?id=com.carecloud.primephr&pcampaignid=web_share" target="_blank" class="portal-app-btn" style="text-decoration:none">▶ Get it on Google Play</a>
+    </div>
+  </div>
+
+  <!-- COMMON ISSUES -->
+  <div class="acc" style="margin-top:24px">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ir">🔧</div>Common Patient Issues &amp; How to Help</div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="two">
+        <div class="ic" style="border-left:4px solid var(--danger)">
+          <h5 style="color:var(--danger)">Issue: Didn't receive invitation</h5>
+          <ul class="cl">
+            <li>Verify email and phone number in TalkEHR</li>
+            <li>Check if invitation went to spam/junk folder</li>
+            <li>Resend invitation from TalkEHR</li>
+            <li>Confirm the patient's preferred contact method</li>
+          </ul>
+        </div>
+        <div class="ic" style="border-left:4px solid var(--warn)">
+          <h5 style="color:var(--warn)">Issue: PIN is invalid or expired</h5>
+          <ul class="cl">
+            <li>Instruct patient to click <strong>Re-Generate PIN</strong> on the registration screen</li>
+            <li>PINs expire quickly — patient should complete registration in one sitting</li>
+          </ul>
+        </div>
+        <div class="ic" style="border-left:4px solid var(--warn)">
+          <h5 style="color:var(--warn)">Issue: Forgot password</h5>
+          <ul class="cl">
+            <li>Direct patient to <a href="https://talkphr.com/" target="_blank">talkphr.com</a></li>
+            <li>Click "Forgot Password" on the login screen</li>
+            <li>They will receive a reset link via email or phone</li>
+          </ul>
+        </div>
+        <div class="ic" style="border-left:4px solid var(--primary)">
+          <h5 style="color:var(--primary)">Issue: Can't log in to the app</h5>
+          <ul class="cl">
+            <li>Have patient try web login at <a href="https://talkphr.com/" target="_blank">talkphr.com</a> first</li>
+            <li>Confirm they are using the correct app: <strong>TalkPHR 360 – CareCloud</strong></li>
+            <li>Confirm email/phone used during registration</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div id="panel-support" class="tab-panel">
+  <div class="dept-hdr">
+    <h2>🛠️ Important Support Contacts</h2>
+    <p>Vendor support lines for the practice's key systems. When contacting support, always document the case number, representative name, date, and issue summary. Follow up persistently until the issue is fully resolved.</p>
+    <div class="tags"><span class="tag">TalkEHR</span><span class="tag">Everyware</span><span class="tag">Vendor Support</span><span class="tag">IT</span></div>
+  </div>
+
+  <div class="al aw" style="margin-bottom:20px"><span class="al-icon">⚠️</span><span><strong>Follow-Up Is Required.</strong> Opening a support case is only the first step. Continue calling and following up until your issue is fully resolved. Do not assume a case will be handled without active follow-through on your end.</span></div>
+
+  <div class="two">
+
+    <!-- TalkEHR -->
+    <div class="ic" style="border-left:4px solid var(--primary)">
+      <h4 style="color:var(--primary);margin:0 0 12px">🖥️ TalkEHR Support</h4>
+      <div style="font-size:26px;font-weight:800;color:var(--primary);letter-spacing:.04em;margin-bottom:4px">732-873-5133</div>
+      <div style="font-size:14px;color:var(--muted);margin-bottom:12px">Press <strong>Option 1</strong>, then enter <strong>Extension 106</strong></div>
+      <div style="background:var(--bg);border-radius:8px;padding:10px 14px;margin-bottom:14px">
+        <div style="font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">Point of Contact</div>
+        <div style="font-size:15px;font-weight:700;color:var(--primary)">Ahtisham</div>
+      </div>
+      <div class="al ac" style="margin-bottom:10px"><span class="al-icon">🔁</span><span><strong>Keep following up.</strong> After opening a case, continue calling until the issue is resolved. Do not wait for them to call back.</span></div>
+      <div class="sub"><div class="sub-title">When You Contact Support — Always Document</div></div>
+      <ul class="cl">
+        <li>Date and time of call</li>
+        <li>Case or ticket number provided</li>
+        <li>Name of representative you spoke with</li>
+        <li>Summary of the issue and what was done</li>
+        <li>Expected resolution date or next follow-up date</li>
+      </ul>
+      <div class="tpl"><strong>Follow-Up Script</strong>"Hi, I'm calling to follow up on case [#]. The issue is [description]. It has not yet been resolved. What is the current status and when can we expect a fix?"</div>
+    </div>
+
+    <!-- Everyware -->
+    <div class="ic" style="border-left:4px solid var(--accent)">
+      <h4 style="color:var(--accent);margin:0 0 12px">💬 Everyware Support</h4>
+      <div style="font-size:26px;font-weight:800;color:var(--accent);letter-spacing:.04em;margin-bottom:4px">888-831-6288</div>
+      <div style="font-size:14px;color:var(--muted);margin-bottom:12px">Ask to speak with <strong>Mark</strong> or <strong>Karen</strong></div>
+      <div style="background:var(--bg);border-radius:8px;padding:10px 14px;margin-bottom:14px">
+        <div style="font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">Points of Contact</div>
+        <div style="font-size:15px;font-weight:700;color:var(--accent)">Mark &nbsp;·&nbsp; Karen</div>
+      </div>
+      <div class="sub"><div class="sub-title">When You Contact Support — Always Document</div></div>
+      <ul class="cl">
+        <li>Date and time of call</li>
+        <li>Name of representative you spoke with (Mark or Karen)</li>
+        <li>Summary of the issue and what was done</li>
+        <li>Any case or ticket number provided</li>
+        <li>Next follow-up date if not immediately resolved</li>
+      </ul>
+      <div class="tpl"><strong>Follow-Up Script</strong>"Hi, this is [your name] from Mir Neurology. I'm following up on an issue we reported on [date]. We haven't received a resolution yet — can you give me a status update?"</div>
+    </div>
+
+  </div>
+
+  <div style="margin-top:24px;background:linear-gradient(135deg,#0d2e5c,#1a4a7a);color:#fff;border-radius:12px;padding:18px 22px">
+    <div style="font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#C9A227;margin-bottom:6px">General Principle — Vendor Support</div>
+    <p style="margin:0;font-size:14px;line-height:1.7">Vendor support teams handle many clients simultaneously. <strong style="color:#C9A227">Your issue will not resolve itself.</strong> The responsibility is on you to open the case, document the details, and follow up consistently until the problem is closed. If you are not getting resolution, escalate to the operations manager.</p>
+  </div>
+
+</div>
+
 </div><!-- end .content -->
 
 <script>
@@ -15081,8 +15500,71 @@ function fmlRenderPlanDirectory(){
   grid.innerHTML=FML_PLANS.map(p=>`<div class="fml-plan-card"><span class="fml-ptb ${p.badge}">${p.type}</span><h3>${p.name}</h3><div class="fml-plan-phone">📞 ${p.phone}</div><div class="fml-plan-fax">📠 PA Fax: ${p.paFax}</div><a href="${p.formularyUrl}" target="_blank">Open Formulary ↗</a></div>`).join('');
 }
 document.addEventListener('DOMContentLoaded',function(){fmlRenderDrugs();});
+
+// ── Workers' Comp Form Print ─────────────────────────────────────────────────
+function printWCForm(){
+  var w=window.open('','_blank','width=800,height=900');
+  var formHTML=document.getElementById('wc-form-preview').innerHTML;
+  w.document.write(`<!DOCTYPE html><html><head><title>Workers' Compensation Intake Form — Mir Neurology</title>
+  <style>
+    body{font-family:Arial,sans-serif;margin:0;padding:32px;color:#1a1a1a;}
+    @media print{body{padding:20px;}}
+    img{max-height:52px;}
+  </style></head><body>`+formHTML+`
+  <script>window.onload=function(){window.print();}<\/script></body></html>`);
+  w.document.close();
+}
+// ── End Workers' Comp Form Print ─────────────────────────────────────────────
+
+// ── Emergency Disclaimer — auto-insert into all clinical tab panels ──────────
+(function(){
+  const EXCLUDE = ['panel-ov','panel-about','panel-fml','panel-dir','panel-support','panel-portal'];
+  const DISCLAIMER = `
+  <div style="display:flex;align-items:flex-start;gap:14px;background:#fff1f2;border:2px solid #dc2626;border-radius:10px;padding:14px 18px;margin-bottom:20px;">
+    <div style="font-size:28px;line-height:1;flex-shrink:0;">🚨</div>
+    <div>
+      <div style="font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.07em;color:#dc2626;margin-bottom:4px;">Emergency Protocol — All Staff</div>
+      <div style="font-size:13.5px;color:#7f1d1d;line-height:1.65;">
+        <strong>If a patient is experiencing a medical emergency</strong> — whether by phone, in the office, or identified during any patient interaction — staff must act immediately:<br>
+        <span style="display:block;margin-top:6px;padding-left:4px;">
+          🔴 <strong>In the office:</strong> Call <strong>911</strong> immediately. Do not wait. Stay with the patient and send someone to meet emergency responders at the entrance.<br>
+          🔴 <strong>By phone or remotely:</strong> Direct the patient to call <strong>911</strong> or go to the nearest <strong>Emergency Room</strong> immediately. Do not place them on hold.<br>
+          🖨️ <strong>When EMS arrives to transport:</strong> Before the patient leaves, print and hand to EMS:<br>
+          <span style="display:inline-block;margin:6px 0 6px 16px;background:#dc2626;color:#fff;border-radius:8px;padding:6px 14px;font-weight:700;font-size:13px;letter-spacing:.03em;">Demographics &nbsp;·&nbsp; Insurance &nbsp;·&nbsp; Medication List</span><br>
+          📋 <strong>Document everything:</strong> All emergency-related communications, actions taken, and outcomes must be recorded in <strong>patient communications</strong> and in the <strong>patient chart</strong> with the time, date, and staff member involved.
+        </span>
+      </div>
+    </div>
+  </div>`;
+  document.querySelectorAll('.tab-panel').forEach(function(panel){
+    if(EXCLUDE.indexOf(panel.id) !== -1) return;
+    const hdr = panel.querySelector('.dept-hdr');
+    if(hdr){
+      hdr.insertAdjacentHTML('afterend', DISCLAIMER);
+    } else {
+      panel.insertAdjacentHTML('afterbegin', DISCLAIMER);
+    }
+  });
+})();
+// ── End Emergency Disclaimer ─────────────────────────────────────────────────
 // ── End Formulary Tool ──────────────────────────────────────────
 </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>
 </div>
