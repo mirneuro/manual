@@ -9,8 +9,6 @@
 
 <div id="protectedContent" style="display:none;">
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -207,6 +205,7 @@ table.fml-plans tr:hover td{background:#f7fafc;}
   <button class="tb" onclick="sw('rx',this)">💊 Pharmacy Contacts</button>
   <button class="tb" onclick="sw('fml',this)">🔍 Formulary &amp; PA Tool</button>
   <button class="tb" onclick="sw('dir',this)">📞 Phone Directory</button>
+  <button class="tb" onclick="sw('pdmp',this)">🔐 PDMP Checker</button>
   <button class="tb" onclick="sw('portal',this)">🏥 Patient Portal</button>
   <button class="tb" onclick="sw('support',this)">🛠️ Support Contacts</button>
 </nav>
@@ -241,6 +240,7 @@ table.fml-plans tr:hover td{background:#f7fafc;}
     <div class="ovc" onclick="swId('rx')"><div class="oi">🏥</div><div class="ot">Pharmacy Contacts</div><div class="os">Specialty · Home Infusion · PBM · Buy &amp; Bill</div></div>
     <div class="ovc" onclick="swId('fml')"><div class="oi">🔍</div><div class="ot">Formulary &amp; PA Tool</div><div class="os">Drug Lookup · Plan Directory · PA Status</div></div>
     <div class="ovc" onclick="swId('dir')"><div class="oi">📞</div><div class="ot">Phone Directory</div><div class="os">Extensions · Departments · Staff</div></div>
+    <div class="ovc" onclick="swId('pdmp')"><div class="oi">🔐</div><div class="ot">PDMP Checker</div><div class="os">MD · WV · Provider Roster · Check Log</div></div>
     <div class="ovc" onclick="swId('portal')"><div class="oi">🏥</div><div class="ot">Patient Portal</div><div class="os">TalkPHR · Registration · Setup Guide</div></div>
     <div class="ovc" onclick="swId('support')"><div class="oi">🛠️</div><div class="ot">Support Contacts</div><div class="os">TalkEHR · Everyware · Vendor Support</div></div>
   </div>
@@ -571,6 +571,54 @@ table.fml-plans tr:hover td{background:#f7fafc;}
           <li>How your work contributes to the overall patient experience</li>
         </ul>
       </div>
+    </div>
+  </div>
+
+  <!-- STAFFING & CROSS-TRAINING -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ir">📋</div>Staffing &amp; Cross-Training Standards <span class="badge bc">Operational Policy</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="al ac"><span class="al-icon">🚫</span><span>Critical workflows must <strong>never</strong> depend entirely on one employee. Loss of a single key staff member must not cause prolonged disruption to patient care. This has happened before — and must not happen again.</span></div>
+      <div class="al ai" style="margin-top:10px"><span class="al-icon">ℹ️</span><span><strong>Lesson from prior disruption:</strong> The departure of one key staff member (PA) caused prolonged disruption to multiple patients across several months. Every team lead and key resource must have a trained, current backup.</span></div>
+      <div class="sub"><div class="sub-title">Cross-Training Matrix — Required for All Critical Workflows</div>
+        <div style="overflow-x:auto;margin-bottom:14px">
+          <table style="width:100%;border-collapse:collapse;font-size:13px">
+            <thead><tr style="background:#f0f4f8"><th style="padding:8px 10px;text-align:left;border-bottom:2px solid #e2e8f0">Critical Workflow</th><th style="padding:8px 10px;text-align:left;border-bottom:2px solid #e2e8f0">Primary Owner</th><th style="padding:8px 10px;text-align:left;border-bottom:2px solid #e2e8f0">Backup Owner</th><th style="padding:8px 10px;text-align:left;border-bottom:2px solid #e2e8f0">Backup Trained?</th><th style="padding:8px 10px;text-align:left;border-bottom:2px solid #e2e8f0">Training Needed</th></tr></thead>
+            <tbody>
+              <tr style="border-bottom:1px solid #f0f4f8"><td style="padding:7px 10px">Medication reconciliation</td><td style="padding:7px 10px">Assigned MA</td><td style="padding:7px 10px">Designated backup MA</td><td style="padding:7px 10px">TBD</td><td style="padding:7px 10px">Yes — per training plan</td></tr>
+              <tr style="border-bottom:1px solid #f0f4f8"><td style="padding:7px 10px">Botox administration / consent</td><td style="padding:7px 10px">Primary MA</td><td style="padding:7px 10px">Burnice / Ruth</td><td style="padding:7px 10px">In progress</td><td style="padding:7px 10px">Yes — training scheduled</td></tr>
+              <tr style="border-bottom:1px solid #f0f4f8"><td style="padding:7px 10px">Patient assistance programs</td><td style="padding:7px 10px">Assigned MA/VMA</td><td style="padding:7px 10px">Designated backup</td><td style="padding:7px 10px">TBD</td><td style="padding:7px 10px">Yes</td></tr>
+              <tr style="border-bottom:1px solid #f0f4f8"><td style="padding:7px 10px">Urgent referral processing</td><td style="padding:7px 10px">Documentation team</td><td style="padding:7px 10px">Designated backup</td><td style="padding:7px 10px">TBD</td><td style="padding:7px 10px">Yes</td></tr>
+              <tr style="border-bottom:1px solid #f0f4f8"><td style="padding:7px 10px">Prior authorization management</td><td style="padding:7px 10px">PA specialist</td><td style="padding:7px 10px">Designated backup</td><td style="padding:7px 10px">TBD</td><td style="padding:7px 10px">Yes</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <ul class="cl">
+        <li>Every team lead and key resource must have a named, trained backup</li>
+        <li>Backups should periodically perform the actual workflow — not just observe — to keep their knowledge current</li>
+        <li>Supervisors are responsible for maintaining the cross-training matrix and ensuring backups are kept up to date</li>
+        <li>When a staff member is absent, the backup must be immediately deployed — not identified after the fact</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PRACTICE-WIDE TRAINING PRIORITIES -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ig">📋</div>Practice-Wide Training Priorities <span class="badge bc">All Departments</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="al ai"><span class="al-icon">ℹ️</span><span>The following training topics have been identified from operational audits and workflow failures. All are actively being scheduled. Department leads are responsible for ensuring their staff complete each applicable training.</span></div>
+      <ol class="st" style="margin-top:10px">
+        <li><strong>Medication reconciliation</strong> — MAs &amp; CA staff (standardized 30-minute session)</li>
+        <li><strong>Patient portal</strong> — Front Desk (registration, activation, verification, login)</li>
+        <li><strong>Botox BB/Rx, consent documentation, vial stickers, J-code</strong> — MAs, VMAs &amp; providers</li>
+        <li><strong>Lab and imaging follow-up</strong> — MAs (portals, tracking, reminder systems)</li>
+        <li><strong>Urgent referral workflow</strong> — MAs &amp; Documentation team</li>
+        <li><strong>Medication assistance programs</strong> — Front Desk, MAs/VMAs &amp; Documentation team</li>
+        <li><strong>Waiting room / patient-flow management</strong> — Front Desk</li>
+        <li><strong>Vital-sign documentation and root-cause investigation</strong> — Front Desk &amp; MAs</li>
+        <li><strong>Cross-training and backup coverage</strong> — All department leads</li>
+      </ol>
     </div>
   </div>
 
@@ -1602,6 +1650,128 @@ table.fml-plans tr:hover td{background:#f7fafc;}
         </ul>
       </div>
 
+    </div>
+  </div>
+
+  <!-- PATIENT PHOTOGRAPHS -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ig">📋</div>Patient Photographs <span class="badge bc">Check-In Standard</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="al ai"><span class="al-icon">ℹ️</span><span>Front Desk staff are responsible for obtaining or updating the patient photograph in the chart. This helps with patient identification and is part of the standard check-in process.</span></div>
+      <ul class="cl" style="margin-top:10px">
+        <li>At check-in, obtain a patient photograph if one is not already in the chart</li>
+        <li>If the existing photo is outdated, offer to take a new one</li>
+        <li>Upload the photo to the correct location in TalkEHR</li>
+        <li>Patient photographs support accurate identification and contribute to a complete chart</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- MEDICATION LISTS AT CHECK-IN -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ig">📋</div>Medication Lists at Check-In <span class="badge bc">Required — Every Visit</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="al aw"><span class="al-icon">⚠️</span><span>Undated medication lists must not be uploaded to the chart. Every copied medication list requires a date.</span></div>
+      <ul class="cl" style="margin-top:10px">
+        <li>At check-in, ask the patient: <em>"Did you bring a current medication list today?"</em></li>
+        <li>If yes: copy or scan it into the chart immediately</li>
+        <li>Every copied medication list <strong>must be dated</strong> before uploading: <em>"Current as of: MM/DD/YYYY"</em></li>
+        <li>Write the date on the physical copy before scanning — an undated list is not acceptable</li>
+        <li>If the patient did not bring a list, note this and route to the MA for verbal reconciliation</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- VITAL SIGNS — FRONT DESK -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ig">📋</div>Vital Signs — Front Desk Responsibilities <span class="badge bw">Operational</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="al aw"><span class="al-icon">⚠️</span><span>Vital signs missing from a chart — including weight — must be identified and addressed before the provider encounter begins. Missing vitals delay the provider and compromise clinical documentation.</span></div>
+      <ul class="cl" style="margin-top:10px">
+        <li>Front Desk should ensure vital signs including weight are obtained during or immediately after rooming</li>
+        <li>If vitals are not yet documented, notify the clinical team before the provider enters the room</li>
+        <li>Known issue: staff have reported entering vital signs that do not appear in the chart — this must be investigated</li>
+        <li>Work with the MA team to identify whether the issue is a data-entry problem, a TalkEHR system issue, a communication gap, a workflow gap, or a training gap</li>
+        <li>Until the root cause is resolved, double-check that entered vitals are visible in the chart before the encounter starts</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- EMG REPORTS — FRONT DESK SCAN DUTIES -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ig">📋</div>EMG Reports — Front Desk Scan Duties <span class="badge bc">Required</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="al ac"><span class="al-icon">🚫</span><span>The printed EMG machine report <strong>must</strong> be scanned into the chart before the provider can complete and sign the EMG encounter. Do not allow an EMG patient to be discharged without confirming this step.</span></div>
+      <ul class="cl" style="margin-top:10px">
+        <li>When discharging an EMG patient, verify the provider printed the EMG report</li>
+        <li>If the provider has not yet printed the report, remind them before the patient leaves</li>
+        <li>Scan the printed report into the chart under the Procedures category with the correct Date of Service</li>
+        <li>Prefer single-sided printing: if the report printed double-sided, either scan both sides or ask for a reprint single-sided</li>
+        <li>The encounter cannot be signed until the scanned report is in the chart — do not skip this step</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CA PATIENTS MUST SEE PROVIDER -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ir">🧠</div>Cognitive Assessment Patients — Must See Provider Before Leaving <span class="badge bc">Critical</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="al ac"><span class="al-icon">🚫</span><span>Do <strong>NOT</strong> check out or discharge a Cognitive Assessment patient without confirmation that the provider has reviewed the results. Every CA patient must see the provider before leaving.</span></div>
+      <ul class="cl" style="margin-top:10px">
+        <li>Every patient who completes a Cognitive Assessment must see the provider before being discharged</li>
+        <li>Do not initiate check-out for a CA patient until the provider has reviewed the results and released the patient</li>
+        <li>Front Desk staff may — and should — interrupt the provider to request a brief result review if the CA patient is waiting</li>
+        <li>If the CA results appear abnormal or the provider has not yet been notified, escalate immediately — do not wait</li>
+        <li>Discharging a CA patient before provider review is a patient safety concern and is not acceptable</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PATIENTS ATTEMPTING TO LEAVE -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si iy">📋</div>Patients Attempting to Leave — Front Desk Protocol</div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="al aw"><span class="al-icon">⚠️</span><span>A patient choosing to leave before being seen is a preventable walkout in many cases. Front Desk staff should make a reasonable, professional attempt to address the patient's concern before they leave.</span></div>
+      <ol class="st" style="margin-top:10px">
+        <li><strong>Ask why the patient is leaving</strong> — is there something that can be resolved? (wait time, a concern, a question?)</li>
+        <li><strong>Immediately notify the clinical team and provider</strong> — the provider needs to know right away</li>
+        <li><strong>Inform the patient</strong> if the provider can see them promptly — give them a realistic time estimate</li>
+        <li>Make a reasonable attempt to prevent an avoidable walkout without pressuring or detaining the patient</li>
+        <li>If the patient still chooses to leave: document what happened, the time, and the reason stated</li>
+        <li>Arrange follow-up or rescheduling — do not leave outstanding clinical concerns unaddressed</li>
+      </ol>
+      <div class="al ai" style="margin-top:10px"><span class="al-icon">ℹ️</span><span>A patient who leaves is not just a lost visit — they may have outstanding clinical needs. Documentation and follow-up are required regardless of why they left.</span></div>
+    </div>
+  </div>
+
+  <!-- WAITING ROOM AWARENESS & FLOW -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si iy">📋</div>Waiting Room Awareness &amp; Patient Flow Management <span class="badge bw">Operational</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="al ai"><span class="al-icon">ℹ️</span><span>Front Desk staff are the eyes and ears of the waiting room. Active awareness prevents frustration, walkouts, and missed patients.</span></div>
+      <ul class="cl" style="margin-top:10px">
+        <li>At all times, know who is in the waiting room, how long they have been waiting, which patients have been roomed, and which room each patient is in</li>
+        <li>Be aware of patients who appear frustrated, confused, or in distress — proactively address concerns before they escalate</li>
+        <li>Do not room patients excessively early if it means they will sit alone in an exam room for a prolonged period — balance prompt rooming with patient comfort</li>
+        <li>When clinic is running behind, update patients proactively — do not wait to be asked</li>
+        <li>If the expected wait time changes after you have already given an estimate, update the patient again</li>
+        <li>Silence in the waiting room creates anxiety — communication is always preferred even when there is no new information</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PORTAL TRAINING REQUIREMENTS -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ig">📋</div>Patient Portal — Staff Training Requirements <span class="badge bw">Training Standard</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="al aw"><span class="al-icon">⚠️</span><span>Every Front Desk employee must be able to independently help a patient access the patient portal. Referring a patient to someone else for portal help is not acceptable.</span></div>
+      <ul class="cl" style="margin-top:10px">
+        <li>All Front Desk staff must complete full portal training: patient registration, account activation, identity verification, and the login process</li>
+        <li>The existing portal training video must be incorporated into onboarding for all new Front Desk staff</li>
+        <li>Every Front Desk employee should be able to walk any patient through portal setup from start to finish without assistance</li>
+        <li>If a patient cannot complete setup at the time of their visit, document the barrier and schedule a follow-up to resolve it</li>
+        <li>Portal enrollment rate is a monitored metric — each front desk employee's ability to enroll patients reflects directly on their performance</li>
+      </ul>
     </div>
   </div>
 
@@ -4169,6 +4339,181 @@ table.fml-plans tr:hover td{background:#f7fafc;}
     </div>
   </div>
 
+  <!-- MED RECONCILIATION STANDARDS UPDATE -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ig">📋</div>Medication Reconciliation — Updated Standards &amp; Training Plan <span class="badge bc">Critical</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="al ac"><span class="al-icon">🚫</span><span>The provider must <strong>never</strong> have to redo medication reconciliation during the encounter. If the provider corrects the medication list during every visit, it means reconciliation was not performed correctly beforehand.</span></div>
+      <ul class="cl" style="margin-top:10px">
+        <li><strong>Remove medications the patient is no longer taking</strong> — an outdated medication list is a patient safety risk. Do not leave discontinued medications as active.</li>
+        <li>Verify each medication directly with the patient: confirm what they <strong>ARE</strong> taking and what they <strong>ARE NOT</strong> taking</li>
+        <li>Include vitamins, supplements, OTC products, and herbal products — these are part of the medication list</li>
+        <li>If the patient does not know the dose of a supplement or vitamin, enter <strong>"Dose Unknown"</strong> — do not leave the field blank or guess</li>
+        <li>The completed reconciliation must be accurate and complete before the provider enters the room</li>
+      </ul>
+      <div class="al aw" style="margin-top:10px"><span class="al-icon">⚠️</span><span><strong>Training planned:</strong> A 30-minute standardized training session for MAs and Cognitive Assessment staff will be scheduled to align medication reconciliation procedures across all team members. Attend and complete this training when scheduled.</span></div>
+    </div>
+  </div>
+
+  <!-- PRE-VISIT PREP TIMING STANDARD -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ig">📋</div>Pre-Visit Chart Preparation — Timing Standard <span class="badge bc">Required</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="al ac"><span class="al-icon">🚫</span><span>Missing information must be pursued <strong>before</strong> the patient arrives — not during the provider encounter. Chasing records while a patient is in the room delays every subsequent patient.</span></div>
+      <ul class="cl" style="margin-top:10px">
+        <li>Chart preparation must be complete by the <strong>end of business day before the appointment</strong> — not the morning of</li>
+        <li>Must have available and reviewed: blood test results, MRI reports, CT reports, other imaging reports, outside records, and consultation notes</li>
+        <li>If any required information is missing, pursue it that same day — call facilities, use portals, contact the ordering office</li>
+        <li>If information is still unavailable the day before the visit, notify the provider so they are aware before walking into the room</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- LAB FOLLOW-UP — MA SPECIFIC -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ig">📋</div>Laboratory Follow-Up — MA Tracking Responsibilities <span class="badge bw">Process Standard</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="al aw"><span class="al-icon">⚠️</span><span>Do not wait for the patient to return to their next visit before checking whether ordered labs were completed. Active follow-up is required.</span></div>
+      <ul class="cl" style="margin-top:10px">
+        <li>Know and document which laboratory the patient uses (Quest, LabCorp, hospital lab, etc.)</li>
+        <li>Use available lab portals (e.g., Quest portal) to actively retrieve outstanding results — do not wait for results to be faxed</li>
+        <li>Set a future reminder or task in TalkEHR, Google Calendar, or the tracking system to check for outstanding results within 1–2 weeks of the order date</li>
+        <li>If results are still unavailable after approximately 1–2 weeks, investigate further: confirm the order was received, the patient completed the draw, and results are available</li>
+        <li>Contact the patient if they have not completed ordered labs — document all contact attempts</li>
+        <li>Every outstanding lab must have a defined owner, current status, and next follow-up date</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- IMAGING FOLLOW-UP — MA SPECIFIC -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ig">📋</div>Imaging Follow-Up — MA Tracking Duties <span class="badge bw">Process Standard</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="al aw"><span class="al-icon">⚠️</span><span>Every imaging order must be tracked from placement to report receipt. Do not assume an ordered MRI or CT was completed — confirm it.</span></div>
+      <ul class="cl" style="margin-top:10px">
+        <li>Document where the patient plans to have imaging done and the scheduled date at the time the order is placed</li>
+        <li>Before each return visit, check whether ordered imaging has been completed and whether the report is in the chart</li>
+        <li>Track all imaging orders on the shared Google Sheet: Facility, Scheduled date, Authorization status, Current status</li>
+        <li>Front Desk, MAs, Scheduling, and Documentation should all have access to the imaging tracking Google Sheet</li>
+        <li>Document investigation status in the appropriate flowsheet or chart note</li>
+        <li><strong>Always include the full date — including the year</strong> — when documenting imaging status</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CA IDENTIFICATION — MA ROLE -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ig">📋</div>Cognitive Assessment (CA) Identification — MA Role <span class="badge bw">Workflow Standard</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="al aw"><span class="al-icon">⚠️</span><span>MAs must <strong>not</strong> independently decide to perform or omit a Cognitive Assessment. The provider makes that decision. The MA's role is to <strong>remind</strong> the provider that a CA indication exists.</span></div>
+      <ul class="cl" style="margin-top:10px">
+        <li>Before each clinic session, review the list of patients with CA indications with the provider</li>
+        <li>During chart prep, identify which patients have a documented CA indication or pending order</li>
+        <li>At the appropriate time, <strong>remind the provider</strong> that the patient has a CA indication — do not assume the provider will remember</li>
+        <li>The provider makes the final decision whether a CA should be performed that day</li>
+        <li>Never initiate or skip a CA without provider direction — this workflow must be followed consistently</li>
+      </ul>
+      <div class="al ai" style="margin-top:10px"><span class="al-icon">ℹ️</span><span>This agreed workflow has not been followed consistently. Going forward, MAs are expected to follow this process at every applicable visit without exception.</span></div>
+    </div>
+  </div>
+
+  <!-- VITAL SIGNS — MA RESPONSIBILITIES -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ig">📋</div>Vital Signs — MA Documentation Responsibilities <span class="badge bw">Required</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="al aw"><span class="al-icon">⚠️</span><span>A chart with missing vital signs — including weight — is an incomplete chart. Verify vitals are present before the provider encounter begins.</span></div>
+      <ul class="cl" style="margin-top:10px">
+        <li>Verify that vital signs including weight are present and visible in the chart before the provider enters the room</li>
+        <li>If any vitals are missing, notify Front Desk and the provider immediately</li>
+        <li>Known issue: staff have reported entering vital signs that do not appear or save in the chart — this is a recognized problem requiring investigation</li>
+        <li>The root cause must be determined: Is this a data-entry problem? A TalkEHR system issue? A communication or workflow gap? A training gap?</li>
+        <li>Until the issue is resolved, double-check that entered vitals are visible in the chart before moving on</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- URGENT REFERRALS — MA DUTIES -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ir">📋</div>Urgent Referrals — MA Escalation Duties <span class="badge bc">Critical</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="al ac"><span class="al-icon">🚫</span><span>The established urgent referral process is not being followed consistently. Urgent referrals must be handled as a priority — not processed the same as routine referrals.</span></div>
+      <ul class="cl" style="margin-top:10px">
+        <li>Urgent referrals must be clearly marked <strong>URGENT</strong> so the Documentation team can identify and prioritize them immediately</li>
+        <li>Supporting records must accompany the referral: relevant office notes, labs, and applicable imaging — do not send a bare referral</li>
+        <li>For particularly urgent consultations, notify the provider — direct physician-to-physician communication may help secure an earlier appointment</li>
+        <li>Follow up to confirm receipt and scheduling — urgent referrals require the same closed-loop tracking as all referrals, with faster timelines</li>
+        <li>Document all steps taken and the timeline in the chart</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- BOTOX J-CODE & BILLING -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ig">📋</div>Botox — J-Code Documentation &amp; Buy and Bill <span class="badge bc">Critical</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="al ac"><span class="al-icon">🚫</span><span>VMAs/MAs have missed entering the required Botox J-code documentation when Botox came from practice stock. A claim being billed or paid does <strong>not</strong> eliminate the requirement for correct encounter documentation.</span></div>
+      <div class="sub"><div class="sub-title">Buy and Bill vs. Prescription Benefit</div>
+        <div class="two">
+          <div class="ic" style="border-left:4px solid var(--primary)">
+            <h5>BB — Buy and Bill (Practice Stock)</h5>
+            <ul class="cl">
+              <li>Practice purchases and administers the medication</li>
+              <li>The appropriate J-code and documentation <strong>must always be present</strong> in the encounter</li>
+              <li>This is not optional — missing J-code documentation is a compliance failure</li>
+            </ul>
+          </div>
+          <div class="ic" style="border-left:4px solid var(--accent)">
+            <h5>Rx — Patient Prescription Benefit</h5>
+            <ul class="cl">
+              <li>Patient's prescription insurance covers the medication</li>
+              <li>Document accordingly — J-code requirements differ from BB</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <ul class="cl" style="margin-top:10px">
+        <li>MAs and providers should double-check Botox billing documentation together — do not rely on one person to catch all errors</li>
+        <li>Audit recent practice-stock Botox encounters to identify similar documentation omissions</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- BOTOX CONSENT DOCUMENTATION -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ig">📋</div>Botox Consent Documentation Standards <span class="badge bw">Training Required</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="al aw"><span class="al-icon">⚠️</span><span>All MAs working with Botox-performing providers need the same standardized training on consent documentation. Inconsistency across staff creates compliance risk.</span></div>
+      <ul class="cl" style="margin-top:10px">
+        <li>For Buy and Bill (practice stock): write <strong>"BB"</strong> on the consent form in the designated field</li>
+        <li>For prescription-supplied Botox: write <strong>"Rx"</strong> on the consent form</li>
+        <li>For Rx Botox: attach the patient's prescription sticker to the consent form when applicable</li>
+        <li>Use the peel-off vial sticker for lot number and expiration date — do not manually re-write this information when the sticker is available</li>
+        <li>Scan the completed consent form into the chart under Administrative with the correct Date of Service</li>
+      </ul>
+      <div class="al ai" style="margin-top:10px"><span class="al-icon">ℹ️</span><span>Brittany should be trained on these standards and can assist with training onsite MAs when ready.</span></div>
+    </div>
+  </div>
+
+  <!-- MEDICATION ASSISTANCE PROGRAMS — OPERATIONAL ISSUES -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si iy">📋</div>Medication Assistance Programs — Operational Issues &amp; Training Needs <span class="badge bw">Training Needed</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="al aw"><span class="al-icon">⚠️</span><span>Current manufacturer medication assistance programs are not functioning smoothly. Additional training and centralized tracking are required immediately.</span></div>
+      <div class="sub"><div class="sub-title">Training Needed — All Staff Involved in PAP Applications</div>
+        <ul class="cl">
+          <li>Identifying patients who may qualify for a manufacturer assistance program</li>
+          <li>Finding the correct manufacturer program for the specific medication</li>
+          <li>Completing applications accurately — including all required fields</li>
+          <li>Obtaining patient and provider signatures before submission</li>
+          <li>Submitting documentation to the correct program address or portal</li>
+          <li>Following up on application status at defined intervals</li>
+          <li>Tracking approval or denial and communicating results to the patient and provider</li>
+        </ul>
+      </div>
+      <div class="al ac" style="margin-top:10px"><span class="al-icon">🚫</span><span>Every pending PAP application must have: a named owner, current status, next action required, and a follow-up date. Applications submitted without tracking are unacceptable — they get lost.</span></div>
+    </div>
+  </div>
+
   <!-- Medical Assistants QUIZ -->
   <div class="acc">
     <div class="ah" onclick="tog(this)"><div class="at"><div class="si ig">🎓</div>Medical Assistants Knowledge Quiz <span class="badge bc">Required — All Staff</span></div><span class="chev">▼</span></div>
@@ -5187,6 +5532,80 @@ table.fml-plans tr:hover td{background:#f7fafc;}
     </div>
   </div>
 
+  <!-- DEAF / HARD OF HEARING PATIENTS -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ig">📋</div>Deaf / Hard-of-Hearing Patients &amp; Professional Interpreters <span class="badge bw">Coordination Standard</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="al ai"><span class="al-icon">ℹ️</span><span>Professional interpreters (e.g., Deaf Net) are paid by the hour. Unnecessary wait time or scheduling delays have a direct cost. Coordinate visits to minimize interpreter wait time.</span></div>
+      <ul class="cl" style="margin-top:10px">
+        <li>Determine in advance whether the interpreter is a paid professional (e.g., Deaf Net) or a family / personal interpreter</li>
+        <li>Professional interpreters are billed by the hour — do not book them for times when the provider is unavailable or running significantly behind</li>
+        <li>Coordinate so the provider can see the patient promptly when the interpreter arrives</li>
+        <li>If the patient arrives early: room them appropriately and obtain vitals while waiting when feasible — make productive use of the time</li>
+        <li>Communicate any known delays to the interpreter contact as early as possible</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PROVIDER TIME PRIORITY -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ir">📋</div>Provider Time Takes Priority <span class="badge bc">Critical</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="al ac"><span class="al-icon">🚫</span><span>Do not delay a provider-patient clinical encounter because an administrative task is still in progress. Provider availability takes priority.</span></div>
+      <ul class="cl" style="margin-top:10px">
+        <li>Provider availability takes priority over administrative processes such as virtual MA history-taking or intake completion</li>
+        <li>If the provider is ready to see the patient, the clinical encounter must begin — administrative tasks can be completed in parallel or after the encounter</li>
+        <li>Schedulers should communicate to virtual MAs and other staff when the provider is ready, so workflows can be adjusted accordingly</li>
+        <li>Never tell a ready provider to wait while an administrative step finishes unless it is clinically essential</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SCHEDULE STABILITY -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ig">📋</div>Schedule Stability — Avoid Last-Minute Changes <span class="badge bw">Operational Standard</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="al aw"><span class="al-icon">⚠️</span><span>Last-minute schedule changes create downstream delays that affect multiple patients and staff. Schedules should be finalized well in advance.</span></div>
+      <ul class="cl" style="margin-top:10px">
+        <li>Schedules should be established approximately <strong>one week in advance</strong> — changes within one or two days of clinic are disruptive</li>
+        <li>Avoid changing schedules one or two days before clinic without a clear clinical or operational justification</li>
+        <li>When a change is unavoidable, notify all affected staff (MAs, Front Desk, providers) as early as possible</li>
+        <li>Every last-minute change creates downstream delays for multiple patients — minimize them wherever possible</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SCHEDULING ERRORS — SERVICE RECOVERY -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si iy">📋</div>Scheduling Errors — Service Recovery</div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="al ai"><span class="al-icon">ℹ️</span><span>When a scheduling error affects a patient, the goal is to minimize disruption and preserve trust through appropriate service recovery.</span></div>
+      <ul class="cl" style="margin-top:10px">
+        <li>If a scheduling error occurs, immediately assess the impact on the patient and on subsequent patients in the schedule</li>
+        <li>Take action to minimize disruption — do not simply apologize and move on</li>
+        <li>When a scheduling error causes significant inconvenience, a management-approved goodwill gesture may be appropriate — discuss with a supervisor</li>
+        <li>Document the error, what caused it, and steps taken to prevent recurrence</li>
+        <li>Use errors as learning opportunities to improve the scheduling process going forward</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- BOTOX APPOINTMENTS -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ir">📋</div>Botox Appointments — Avoid Delays <span class="badge bc">Clinical Priority</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="al ac"><span class="al-icon">🚫</span><span>Delaying a Botox appointment may result in increased headaches and potentially urgent or emergency care. Botox appointments must be protected when rescheduling.</span></div>
+      <ul class="cl" style="margin-top:10px">
+        <li>Avoid moving Botox appointments when rescheduling — the treatment interval is clinically important</li>
+        <li>Before delaying a Botox appointment: first check whether the original time can be preserved</li>
+        <li>Check whether another trained provider is available to administer Botox at the original time</li>
+        <li>If the Cumberland office cannot accommodate, offer Hagerstown as an alternative before delaying the appointment</li>
+        <li>Burnice and Ruth are scheduled to receive Botox training — once trained, they should be available for coverage when needed</li>
+        <li>Document any Botox appointment delay along with the clinical reason and alternative offered to the patient</li>
+      </ul>
+    </div>
+  </div>
+
   <!-- Schedulers QUIZ -->
   <div class="acc">
     <div class="ah" onclick="tog(this)"><div class="at"><div class="si ig">🎓</div>Schedulers Knowledge Quiz <span class="badge bc">Required — All Staff</span></div><span class="chev">▼</span></div>
@@ -5848,6 +6267,68 @@ table.fml-plans tr:hover td{background:#f7fafc;}
       <div class="sub"><div class="sub-title">5 · Why This Matters — Patient Care Impact</div></div>
       <div class="al ai"><span class="al-icon">ℹ️</span><span>Delays in obtaining outside records and referral results can delay diagnosis and treatment. A structured follow-up system improves continuity of care, reduces missed studies, and ensures providers have complete information at the time of the visit. Time lost during encounters to locate missing records directly reduces provider efficiency and patient throughput.</span></div>
 
+    </div>
+  </div>
+
+  <!-- REFERRAL ACCURACY -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ir">📋</div>Referral Accuracy — Correct Provider &amp; Location Verification <span class="badge bc">Critical</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="al ac"><span class="al-icon">🚫</span><span>A referral sent to the wrong provider, wrong specialist, or wrong location is not a minor error — it can result in the patient being seen by the wrong specialist or not being seen at all. Every field must be verified before sending.</span></div>
+      <ul class="cl" style="margin-top:10px">
+        <li><strong>Verify the correct referring provider</strong> — confirm the provider of record for this referral before submitting</li>
+        <li><strong>Verify the correct specialist AND specific location</strong> — for example, a referral intended for JHU / Wilmer Eye Clinic in Frederick must NOT go to the Baltimore Wilmer Eye Clinic location</li>
+        <li>Review all fields before sending: patient name, date of birth, referring provider, receiving specialist, facility name, and facility address/fax</li>
+        <li>When in doubt, call the receiving facility to confirm the correct fax number and contact before transmitting</li>
+        <li>After sending, confirm receipt — especially for urgent or time-sensitive referrals</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- COMPLETE REFERRAL PACKETS -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ig">📋</div>Complete Referral Packets — Required Supporting Documentation <span class="badge bc">Required</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="al aw"><span class="al-icon">⚠️</span><span>A referral without supporting clinical documentation is an incomplete referral. Important referrals must not reach the specialist without the information needed to evaluate the patient.</span></div>
+      <ul class="cl" style="margin-top:10px">
+        <li>Every referral packet must include: office notes (most recent, and relevant prior notes), laboratory results (where applicable), imaging reports (where applicable), and other supporting clinical documentation</li>
+        <li>The specialist needs enough information to evaluate the patient before the appointment — not just the referral form</li>
+        <li>Review the referral order and any provider instructions to determine which specific records should be included</li>
+        <li>When records are pending or unavailable, note this in the referral and follow up to send them before the appointment date</li>
+        <li>Document what was sent and when in the chart</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- URGENT REFERRAL IDENTIFICATION -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ir">📋</div>Urgent Referral Identification — Priority Handling <span class="badge bc">Critical</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="al ac"><span class="al-icon">🚫</span><span>Urgent referrals must be processed immediately — they cannot sit in the queue alongside routine referrals. The Documentation team must have a reliable way to identify URGENT orders at the time they are received.</span></div>
+      <ul class="cl" style="margin-top:10px">
+        <li>MAs will mark urgent referral orders clearly as <strong>URGENT</strong> — the Documentation team must recognize and act on this designation immediately</li>
+        <li>Develop and use a reliable system to identify URGENT orders in the queue (e.g., red label, urgent flag, priority tag)</li>
+        <li>Urgent referrals must be processed same day — do not defer to the next business day</li>
+        <li>Confirm receipt by the receiving facility same day for URGENT referrals</li>
+        <li>Follow up on URGENT referrals more frequently than routine referrals — timeline targets should be tracked</li>
+        <li>If an urgent referral cannot be processed immediately, notify the referring MA and provider</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- MEDICATION ASSISTANCE PROGRAMS — DOC ROLE -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si iy">📋</div>Medication Assistance Programs — Documentation Team Role <span class="badge bw">Training Needed</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="al aw"><span class="al-icon">⚠️</span><span>Manufacturer Patient Assistance Program applications are sometimes submitted and then lost or forgotten. The Documentation team plays a key role in ensuring applications are tracked through completion.</span></div>
+      <ul class="cl" style="margin-top:10px">
+        <li>Documentation staff should be trained on their specific role in the manufacturer Patient Assistance Program workflow</li>
+        <li>Responsibilities may include: scanning and filing completed applications, confirming submission, tracking application status, and routing approvals or denials to the appropriate team member</li>
+        <li>Every PAP application must be entered into a centralized tracking system from submission through completion — not submitted and forgotten</li>
+        <li>Track: patient name, medication, program name, submission date, expected response date, current status, and follow-up date</li>
+        <li>If an application is approved: document and route the approval to the clinical team and patient</li>
+        <li>If an application is denied: route the denial immediately to the MA/VMA and provider for next steps</li>
+      </ul>
     </div>
   </div>
 
@@ -14444,6 +14925,418 @@ table.fml-plans tr:hover td{background:#f7fafc;}
 </div>
 
 
+<div id="panel-pdmp" class="tab-panel" style="position:relative;min-height:500px;">
+
+</div>
+
+<div class="dept-hdr">
+  <h2>🔐 PDMP Verification Hub</h2>
+  <p>Prescription Drug Monitoring Program lookup resource for Maryland and West Virginia. Use before prescribing or dispensing controlled substances. All check records are stored locally in this browser and never transmitted externally.</p>
+  <div class="tags"><span class="tag">Maryland CRISP</span><span class="tag">WV RxGov</span><span class="tag">Controlled Substances</span><span class="tag">Compliance</span><span class="tag">Provider Roster</span></div>
+</div>
+
+<style>
+.pdmp-portal-card{border-radius:12px;padding:20px 22px;color:#fff;display:flex;flex-direction:column;gap:10px;}
+.pdmp-portal-card a.pdmp-btn{display:inline-block;background:rgba(255,255,255,.2);border:2px solid rgba(255,255,255,.5);color:#fff;text-decoration:none;padding:9px 20px;border-radius:8px;font-weight:700;font-size:14px;transition:background .2s;text-align:center;}
+.pdmp-portal-card a.pdmp-btn:hover{background:rgba(255,255,255,.35);}
+.pdmp-tbl{width:100%;border-collapse:collapse;font-size:13px;margin-top:8px;}
+.pdmp-tbl th{background:var(--primary);color:#fff;padding:8px 12px;text-align:left;font-size:12px;}
+.pdmp-tbl td{padding:8px 12px;border-bottom:1px solid #f0f4f8;vertical-align:top;}
+.pdmp-tbl tr:hover td{background:#f7faff;}
+.pdmp-badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700;}
+.pdmp-md{background:#dbeafe;color:#1e40af;}
+.pdmp-wv{background:#dcfce7;color:#166534;}
+.pdmp-both{background:#fef9c3;color:#92400e;}
+.pdmp-warn{background:#fee2e2;color:#991b1b;}
+.pdmp-section{margin:20px 0 8px;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--primary);border-bottom:2px solid var(--primary);padding-bottom:4px;}
+.pdmp-input{width:100%;border:1px solid #cbd5e0;border-radius:6px;padding:7px 10px;font-size:13px;font-family:inherit;box-sizing:border-box;}
+.pdmp-input:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(26,74,122,.1);}
+.pdmp-row-entry{background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:14px 16px;margin-bottom:8px;font-size:13px;}
+.pdmp-check-entry{background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:12px 16px;margin-bottom:6px;font-size:13px;display:flex;gap:12px;align-items:flex-start;}
+</style>
+
+<!-- PORTAL LAUNCH BUTTONS -->
+<div class="two" style="margin-bottom:20px;">
+  <div class="pdmp-portal-card" style="background:linear-gradient(135deg,#1e3a5f,#2563eb);">
+    <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;opacity:.7;">Maryland</div>
+    <div style="font-size:18px;font-weight:800;">CRISP PDMP</div>
+    <div style="font-size:13px;opacity:.85;">Coordinated Health Information Exchange. Covers opioids &amp; benzodiazepines. Re-check every 90 days.</div>
+    <a href="https://pdmp.crisphealth.org/" target="_blank" class="pdmp-btn">🔗 Launch CRISP PDMP →</a>
+    <div style="font-size:11px;opacity:.65;">crisp.health.org · (410) 559-2600</div>
+  </div>
+  <div class="pdmp-portal-card" style="background:linear-gradient(135deg,#14532d,#16a34a);">
+    <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;opacity:.7;">West Virginia</div>
+    <div style="font-size:18px;font-weight:800;">RxGov CSMP</div>
+    <div style="font-size:13px;opacity:.85;">Replaced CSAPP Feb 2026. Covers all Sch. II + opioids/benzos. Annual re-check. Delegate links must be rebuilt.</div>
+    <a href="https://pmpwv.rxgov.com/" target="_blank" class="pdmp-btn">🔗 Launch WV RxGov →</a>
+    <div style="font-size:11px;opacity:.65;">pmpwv.rxgov.com · WV Board of Pharmacy</div>
+  </div>
+</div>
+
+<!-- HOW TO USE PDMP -->
+<div class="acc">
+  <div class="ah open" onclick="tog(this)"><div class="at"><div class="si ig">📖</div>How to Use the PDMP — Step-by-Step Instructions <span class="badge bc">Start Here</span></div><span class="chev">▼</span></div>
+  <div class="ab open">
+
+    <div class="al ai" style="margin-bottom:16px"><span class="al-icon">ℹ️</span><span>The PDMP (Prescription Drug Monitoring Program) is a secure, state-run database of all controlled substance prescriptions dispensed in that state. Checking it before prescribing controlled substances helps prevent drug diversion, duplicate prescribing, and overdose risk.</span></div>
+
+    <div class="al ac" style="margin-bottom:16px"><span class="al-icon">🔐</span><span><strong>Provider Accounts Only — No Exceptions</strong><br>PDMP portals (CRISP for Maryland, RxGov for West Virginia) are registered under <strong>the prescribing provider's credentials</strong>. Staff may only access the PDMP by logging in through the provider's account or via a properly configured <strong>delegate account</strong> set up by that provider. Staff must never create their own independent PDMP accounts. If you do not have delegate access configured, ask the provider to set it up before attempting a check — do not proceed without proper authorization.</span></div>
+
+    <!-- WHEN TO CHECK -->
+    <div class="sub"><div class="sub-title">When Must You Check the PDMP?</div></div>
+    <div class="two" style="margin-bottom:16px">
+      <div class="ic" style="border-left:4px solid var(--danger)">
+        <h5 style="color:var(--danger)">🔴 Required — Check Before Prescribing</h5>
+        <ul class="cl">
+          <li>Any new patient being prescribed an opioid or benzodiazepine (MD &amp; WV)</li>
+          <li>Any Schedule II controlled substance in West Virginia (stimulants, opioids, etc.)</li>
+          <li>Existing patients at every 90-day refill for opioids/benzos in Maryland</li>
+          <li>Existing patients annually for covered substances in West Virginia</li>
+          <li>Any patient where there is clinical concern about misuse or multiple prescribers</li>
+        </ul>
+      </div>
+      <div class="ic" style="border-left:4px solid var(--warn)">
+        <h5 style="color:var(--warn)">⚠️ Strongly Recommended — Check Even If Not Mandated</h5>
+        <ul class="cl">
+          <li>Patients prescribed gabapentin (Schedule V in WV, unscheduled in MD)</li>
+          <li>Any patient with a history of substance use disorder</li>
+          <li>New patients requesting early refills or reporting lost/stolen medications</li>
+          <li>Patients prescribed stimulants in Maryland (not mandated but best practice)</li>
+          <li>Any clinical situation where the prescription history is unclear</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- MARYLAND CRISP INSTRUCTIONS -->
+    <div class="sub"><div class="sub-title">Maryland — How to Query CRISP PDMP</div></div>
+    <div class="ic" style="border-left:4px solid #2563eb;margin-bottom:16px">
+      <h5 style="color:#2563eb;">🔵 CRISP PDMP — Step by Step</h5>
+      <ol class="st">
+        <li>Go to <a href="https://pdmp.crisphealth.org/" target="_blank" style="color:#2563eb;">pdmp.crisphealth.org</a> and log in with your CRISP credentials (each provider has their own login)</li>
+        <li>Select <strong>Patient Lookup</strong> from the dashboard</li>
+        <li>Enter the patient's <strong>First Name, Last Name, and Date of Birth</strong> — at minimum. Adding the last 4 of SSN or address improves accuracy</li>
+        <li>Review the results — CRISP pulls data from Maryland dispensers and interstate partners (PMPInterConnect)</li>
+        <li>Look for: multiple prescribers, overlapping prescriptions, high quantities, or controlled substances from providers outside your practice</li>
+        <li>If delegate access is set up, staff may query on the provider's behalf — select the provider's name from the delegate dropdown before searching</li>
+        <li><strong>Document the check</strong> in the patient chart and in the Check Log below — include date, findings, and who performed the check</li>
+      </ol>
+      <div class="tpl"><strong>Documentation Template — Maryland</strong>"CRISP PDMP queried on [date] by [staff name] on behalf of [provider]. No concerns identified. / Findings: [describe]. Provider notified."</div>
+    </div>
+
+    <!-- WEST VIRGINIA RXGOV INSTRUCTIONS -->
+    <div class="sub"><div class="sub-title">West Virginia — How to Query RxGov (New Platform as of Feb 2026)</div></div>
+    <div class="al ac" style="margin-bottom:10px"><span class="al-icon">🚨</span><span><strong>CSAPP is retired.</strong> The old WV PDMP platform (csappwv.com) is no longer active. All queries must go through the new <strong>RxGov platform</strong> at pmpwv.rxgov.com. Delegate assignments from CSAPP did NOT transfer — they must be rebuilt manually.</span></div>
+    <div class="ic" style="border-left:4px solid #16a34a;margin-bottom:16px">
+      <h5 style="color:#16a34a;">🟢 WV RxGov — Step by Step</h5>
+      <ol class="st">
+        <li>Go to <a href="https://pmpwv.rxgov.com/" target="_blank" style="color:#16a34a;">pmpwv.rxgov.com</a> and log in with your RxGov credentials</li>
+        <li>If you are a delegate querying on behalf of a provider: ensure the provider has added you as a delegate in RxGov (this must be done on the new platform — CSAPP delegate links expired)</li>
+        <li>Click <strong>Patient Lookup / Search</strong></li>
+        <li>Enter the patient's <strong>First Name, Last Name, Date of Birth, and State</strong> — select West Virginia</li>
+        <li>Review the controlled substance history — WV covers all Schedule II medications AND any opioid or benzodiazepine. Gabapentin (Schedule V in WV) also appears</li>
+        <li>Flag any concerns: multiple providers, overlapping schedules, high-dose opioids, concurrent opioid + benzodiazepine prescribing</li>
+        <li><strong>Document the check</strong> in the patient chart and in the Check Log below</li>
+      </ol>
+      <div class="tpl"><strong>Documentation Template — West Virginia</strong>"WV RxGov PDMP queried on [date] by [staff name] on behalf of [provider]. No concerns identified. / Findings: [describe]. Provider notified."</div>
+    </div>
+
+    <!-- SETTING UP DELEGATE ACCESS -->
+    <div class="sub"><div class="sub-title">Setting Up Delegate Access (Staff Querying on Provider's Behalf)</div></div>
+    <div class="two" style="margin-bottom:16px">
+      <div class="ic">
+        <h5>Maryland — CRISP Delegate Setup</h5>
+        <ol class="st">
+          <li>The <strong>provider</strong> logs in to CRISP and goes to Account Settings → Delegate Management</li>
+          <li>Adds the staff member by name/email</li>
+          <li>Staff can then log in and select the provider's name before querying</li>
+          <li>Delegate access should be reviewed and updated when staff changes occur</li>
+        </ol>
+      </div>
+      <div class="ic">
+        <h5>West Virginia — RxGov Delegate Setup <span class="pdmp-badge pdmp-warn" style="font-size:10px;vertical-align:middle;">Must Rebuild</span></h5>
+        <ol class="st">
+          <li>The <strong>provider</strong> logs in to RxGov at pmpwv.rxgov.com</li>
+          <li>Goes to Account → Delegate Management and adds each staff delegate</li>
+          <li>Staff log in to RxGov with their own credentials and select the provider before querying</li>
+          <li><strong>Important:</strong> Every delegate link must be rebuilt — CSAPP assignments are gone</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- INTERPRETING RESULTS -->
+    <div class="sub"><div class="sub-title">How to Interpret Results — Red Flags to Report to the Provider</div></div>
+    <div class="three" style="margin-bottom:16px">
+      <div class="ic" style="border-left:4px solid var(--danger)">
+        <h5 style="color:var(--danger)">🔴 Always Escalate</h5>
+        <ul class="cl">
+          <li>Controlled substances prescribed by <strong>3 or more providers</strong> in the past 90 days</li>
+          <li>Overlapping opioid prescriptions from different prescribers</li>
+          <li>Concurrent opioid + benzodiazepine from different providers</li>
+          <li>High-dose opioid prescriptions not consistent with documented diagnosis</li>
+          <li>Prescriptions filled at multiple pharmacies in the same timeframe</li>
+        </ul>
+      </div>
+      <div class="ic" style="border-left:4px solid var(--warn)">
+        <h5 style="color:var(--warn)">⚠️ Flag and Document</h5>
+        <ul class="cl">
+          <li>Prescriptions from out-of-state providers in quantities or combinations that seem unusual</li>
+          <li>Pattern of early refills across multiple medications</li>
+          <li>Recent ER visits involving controlled substance prescriptions</li>
+          <li>Gabapentin in high doses combined with opioids (overdose risk)</li>
+        </ul>
+      </div>
+      <div class="ic" style="border-left:4px solid var(--success)">
+        <h5 style="color:var(--success)">✅ No Concern</h5>
+        <ul class="cl">
+          <li>Single prescriber (our practice) only</li>
+          <li>Consistent quantities and pharmacy</li>
+          <li>Medications match the patient's documented diagnoses</li>
+          <li>Refill timing is consistent with prescription dates</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- DOCUMENTATION REQUIREMENT -->
+    <div class="sub"><div class="sub-title">Documentation Requirements — Every Check Must Be Recorded</div></div>
+    <div class="al ac" style="margin-bottom:10px"><span class="al-icon">🚫</span><span>A PDMP check that is not documented is treated as if it never happened. Document every query in the patient chart AND in the Check Log in this tab.</span></div>
+    <ul class="cl">
+      <li>Record: date of query, state(s) checked, who performed the query, which provider it was for, and the findings</li>
+      <li>If findings were flagged: document that the provider was notified and what the provider's decision was</li>
+      <li>Use the <strong>Check Log below</strong> to track all queries — export to CSV and file in the patient chart or shared drive</li>
+      <li>Maryland: keep documentation of each 90-day check on file</li>
+      <li>West Virginia: keep documentation of annual check on file</li>
+    </ul>
+
+  </div>
+</div>
+
+<!-- MANDATE COMPARISON -->
+<div class="acc">
+  <div class="ah" onclick="tog(this)"><div class="at"><div class="si ib">📋</div>MD vs. WV Mandate Comparison <span class="badge bc">Know the Rules</span></div><span class="chev">▼</span></div>
+  <div class="ab">
+    <div class="al aw" style="margin-bottom:12px"><span class="al-icon">⚠️</span><span><strong>Important:</strong> WV delegate assignments did NOT transfer to the new RxGov platform. If staff query on a prescriber's behalf in WV, delegate access must be rebuilt manually at pmpwv.rxgov.com.</span></div>
+    <table class="pdmp-tbl">
+      <thead><tr><th>Rule</th><th>Maryland (CRISP)</th><th>West Virginia (RxGov)</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Substances covered</strong></td><td>Opioids &amp; benzodiazepines only</td><td>All Schedule II + any opioid or benzodiazepine</td></tr>
+        <tr><td><strong>Re-check frequency</strong></td><td><span class="pdmp-warn pdmp-badge">Every 90 days</span></td><td><span class="pdmp-badge pdmp-wv">Annually</span></td></tr>
+        <tr><td><strong>Stimulants (e.g., Adderall, Ritalin)</strong></td><td>❌ Not mandated (not opioids/benzos)</td><td>✅ Mandated (Schedule II)</td></tr>
+        <tr><td><strong>Clonazepam / benzodiazepines</strong></td><td>✅ Mandated — every 90 days</td><td>✅ Mandated — annually</td></tr>
+        <tr><td><strong>Gabapentin</strong></td><td>Not scheduled in MD</td><td><span class="pdmp-badge pdmp-wv">Schedule V in WV — check recommended</span></td></tr>
+        <tr><td><strong>Delegate querying</strong></td><td>Permitted via CRISP delegate setup</td><td>Must re-register on RxGov (CSAPP links expired)</td></tr>
+        <tr><td><strong>Interstate data sharing</strong></td><td>Yes — MDH interstate hub</td><td>Yes — PMPInterConnect</td></tr>
+        <tr><td><strong>New patient check required</strong></td><td>Yes, before prescribing</td><td>Yes, before prescribing</td></tr>
+      </tbody>
+    </table>
+    <div class="al ai" style="margin-top:12px"><span class="al-icon">ℹ️</span><span>A Maryland patient on long-term clonazepam requires <strong>4× more checks per year</strong> than a WV patient on the same medication. Build your reminder cadence accordingly.</span></div>
+  </div>
+</div>
+
+<!-- NEUROLOGY DRUG MAP -->
+<div class="acc">
+  <div class="ah" onclick="tog(this)"><div class="at"><div class="si ip">💊</div>Neurology Drug Schedule Map <span class="badge bw">Reference</span></div><span class="chev">▼</span></div>
+  <div class="ab">
+    <table class="pdmp-tbl">
+      <thead><tr><th>Medication</th><th>Use</th><th>MD Status</th><th>WV Status</th><th>PDMP Check Required</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Oxycodone, Hydrocodone, Morphine</strong></td><td>Pain</td><td>Sch. II</td><td>Sch. II</td><td><span class="pdmp-badge pdmp-both">Both states</span></td></tr>
+        <tr><td><strong>Amphetamine salts (Adderall)</strong></td><td>ADHD / Narcolepsy</td><td>Sch. II</td><td>Sch. II</td><td><span class="pdmp-badge pdmp-wv">WV mandated · MD optional</span></td></tr>
+        <tr><td><strong>Methylphenidate (Concerta, Ritalin)</strong></td><td>ADHD / MS fatigue</td><td>Sch. II</td><td>Sch. II</td><td><span class="pdmp-badge pdmp-wv">WV mandated · MD optional</span></td></tr>
+        <tr><td><strong>Clonazepam (Klonopin)</strong></td><td>Epilepsy / anxiety</td><td>Sch. IV / benzo</td><td>Sch. IV / benzo</td><td><span class="pdmp-badge pdmp-both">Both states</span></td></tr>
+        <tr><td><strong>Diazepam (Valium)</strong></td><td>Spasticity / anxiety</td><td>Sch. IV / benzo</td><td>Sch. IV / benzo</td><td><span class="pdmp-badge pdmp-both">Both states</span></td></tr>
+        <tr><td><strong>Alprazolam (Xanax)</strong></td><td>Anxiety</td><td>Sch. IV / benzo</td><td>Sch. IV / benzo</td><td><span class="pdmp-badge pdmp-both">Both states</span></td></tr>
+        <tr><td><strong>Gabapentin (Neurontin)</strong></td><td>Neuropathy / epilepsy</td><td>Not scheduled</td><td>Sch. V</td><td><span class="pdmp-badge pdmp-wv">WV only</span></td></tr>
+        <tr><td><strong>Pregabalin (Lyrica)</strong></td><td>Neuropathy</td><td>Sch. V</td><td>Sch. V</td><td>Recommended both</td></tr>
+        <tr><td><strong>Tramadol</strong></td><td>Pain</td><td>Sch. IV / opioid</td><td>Sch. IV / opioid</td><td><span class="pdmp-badge pdmp-both">Both states</span></td></tr>
+        <tr><td><strong>Carisoprodol (Soma)</strong></td><td>Muscle spasm</td><td>Sch. IV</td><td>Sch. IV</td><td>Recommended both</td></tr>
+        <tr><td><strong>Modafinil (Provigil)</strong></td><td>Narcolepsy / MS fatigue</td><td>Sch. IV</td><td>Sch. IV</td><td>Recommended both</td></tr>
+        <tr><td><strong>Zolpidem (Ambien)</strong></td><td>Sleep</td><td>Sch. IV</td><td>Sch. IV</td><td>Recommended both</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- PROVIDER ROSTER -->
+<div class="acc">
+  <div class="ah open" onclick="tog(this)"><div class="at"><div class="si it">👥</div>Provider PDMP Access Roster <span class="badge bd">Manage Per Provider</span></div><span class="chev">▼</span></div>
+  <div class="ab open">
+    <div class="al ai" style="margin-bottom:14px"><span class="al-icon">ℹ️</span><span>Track each provider's PDMP account status and delegate setup. Data saved in this browser. Use the form below to add providers.</span></div>
+    <!-- Add Provider Form -->
+    <div style="background:#f7faff;border:1px solid #e2e8f0;border-radius:10px;padding:16px;margin-bottom:16px;">
+      <div style="font-size:13px;font-weight:700;color:var(--primary);margin-bottom:12px;">➕ Add / Update Provider</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:10px;">
+        <div><label style="font-size:11px;font-weight:700;color:#555;display:block;margin-bottom:3px;">PROVIDER NAME</label><input class="pdmp-input" id="pv-name" placeholder="Dr. Smith"></div>
+        <div><label style="font-size:11px;font-weight:700;color:#555;display:block;margin-bottom:3px;">NPI</label><input class="pdmp-input" id="pv-npi" placeholder="1234567890"></div>
+        <div><label style="font-size:11px;font-weight:700;color:#555;display:block;margin-bottom:3px;">ROLE / CREDENTIAL</label><input class="pdmp-input" id="pv-role" placeholder="MD, NP, PA"></div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:10px;margin-bottom:12px;">
+        <div><label style="font-size:11px;font-weight:700;color:#555;display:block;margin-bottom:3px;">MD CRISP ACCESS</label>
+          <select class="pdmp-input" id="pv-md"><option value="">Select</option><option value="✅ Active">✅ Active</option><option value="⚠️ Pending">⚠️ Pending</option><option value="❌ None">❌ None</option></select></div>
+        <div><label style="font-size:11px;font-weight:700;color:#555;display:block;margin-bottom:3px;">WV RXGOV ACCESS</label>
+          <select class="pdmp-input" id="pv-wv"><option value="">Select</option><option value="✅ Active">✅ Active</option><option value="⚠️ Pending">⚠️ Pending</option><option value="❌ None">❌ None</option></select></div>
+        <div><label style="font-size:11px;font-weight:700;color:#555;display:block;margin-bottom:3px;">WV DELEGATE SET UP</label>
+          <select class="pdmp-input" id="pv-del"><option value="">Select</option><option value="✅ Done">✅ Done</option><option value="⚠️ Needs rebuild">⚠️ Needs rebuild</option><option value="❌ Not set up">❌ Not set up</option><option value="N/A">N/A</option></select></div>
+        <div><label style="font-size:11px;font-weight:700;color:#555;display:block;margin-bottom:3px;">NOTES</label><input class="pdmp-input" id="pv-notes" placeholder="Optional notes"></div>
+      </div>
+      <button onclick="pvSave()" style="background:var(--primary);color:#fff;border:none;border-radius:7px;padding:9px 20px;font-weight:700;font-size:13px;cursor:pointer;">Save Provider</button>
+    </div>
+    <div id="pv-list"></div>
+    <button onclick="pvExport()" style="background:#64748b;color:#fff;border:none;border-radius:7px;padding:7px 16px;font-size:12px;font-weight:600;cursor:pointer;margin-top:8px;">⬇ Export CSV</button>
+  </div>
+</div>
+
+<!-- CHECK LOG -->
+<div class="acc">
+  <div class="ah open" onclick="tog(this)"><div class="at"><div class="si ig">📝</div>Per-Patient PDMP Check Log <span class="badge bc">Required Documentation</span></div><span class="chev">▼</span></div>
+  <div class="ab open">
+    <div class="al ac" style="margin-bottom:14px"><span class="al-icon">🔐</span><span>Patient identifiers are stored only in this browser (localStorage). Nothing is transmitted externally. Export to CSV and save to the patient chart or a HIPAA-compliant shared drive.</span></div>
+    <!-- Log Entry Form -->
+    <div style="background:#f7faff;border:1px solid #e2e8f0;border-radius:10px;padding:16px;margin-bottom:16px;">
+      <div style="font-size:13px;font-weight:700;color:var(--primary);margin-bottom:12px;">➕ Log a PDMP Check</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:10px;">
+        <div><label style="font-size:11px;font-weight:700;color:#555;display:block;margin-bottom:3px;">DATE CHECKED</label><input class="pdmp-input" id="cl-date" type="date"></div>
+        <div><label style="font-size:11px;font-weight:700;color:#555;display:block;margin-bottom:3px;">PATIENT NAME</label><input class="pdmp-input" id="cl-pt" placeholder="Last, First"></div>
+        <div><label style="font-size:11px;font-weight:700;color:#555;display:block;margin-bottom:3px;">DATE OF BIRTH</label><input class="pdmp-input" id="cl-dob" type="date"></div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:10px;margin-bottom:12px;">
+        <div><label style="font-size:11px;font-weight:700;color:#555;display:block;margin-bottom:3px;">PRESCRIBING PROVIDER</label>
+          <select class="pdmp-input" id="cl-prov"><option value="">Select provider</option></select></div>
+        <div><label style="font-size:11px;font-weight:700;color:#555;display:block;margin-bottom:3px;">STATE(S) CHECKED</label>
+          <select class="pdmp-input" id="cl-state"><option value="MD">Maryland only</option><option value="WV">West Virginia only</option><option value="MD + WV">Both MD + WV</option></select></div>
+        <div><label style="font-size:11px;font-weight:700;color:#555;display:block;margin-bottom:3px;">CHECKED BY</label><input class="pdmp-input" id="cl-by" placeholder="Staff name"></div>
+        <div><label style="font-size:11px;font-weight:700;color:#555;display:block;margin-bottom:3px;">NEXT CHECK DUE</label><input class="pdmp-input" id="cl-next" type="date"></div>
+      </div>
+      <div style="margin-bottom:12px;"><label style="font-size:11px;font-weight:700;color:#555;display:block;margin-bottom:3px;">FINDINGS / NOTES</label><input class="pdmp-input" id="cl-notes" placeholder="e.g. No concerns · Multiple prescribers noted — flagged to provider · Report printed and filed"></div>
+      <button onclick="clSave()" style="background:var(--primary);color:#fff;border:none;border-radius:7px;padding:9px 20px;font-weight:700;font-size:13px;cursor:pointer;">Save Log Entry</button>
+    </div>
+    <div style="display:flex;gap:10px;align-items:center;margin-bottom:12px;flex-wrap:wrap;">
+      <input class="pdmp-input" id="cl-filter" placeholder="🔍 Filter by patient or provider…" oninput="clRender()" style="max-width:280px;">
+      <button onclick="clExport()" style="background:#64748b;color:#fff;border:none;border-radius:7px;padding:7px 16px;font-size:12px;font-weight:600;cursor:pointer;">⬇ Export CSV</button>
+      <button onclick="clClear()" style="background:#ef4444;color:#fff;border:none;border-radius:7px;padding:7px 14px;font-size:12px;font-weight:600;cursor:pointer;">🗑 Clear All Logs</button>
+    </div>
+    <div id="cl-list"></div>
+  </div>
+</div>
+
+<div style="font-size:11px;color:var(--muted);margin-top:16px;line-height:1.6;">
+  <strong>Sources:</strong> <a href="https://health.maryland.gov/pdmp/Pages/pdmp-use-mandate-information.aspx" target="_blank">MDH PDMP Mandate</a> · <a href="https://www.crisphealth.org/pdmp/" target="_blank">CRISP PDMP</a> · <a href="https://www.wvbop.com/RxGovCSMP.asp" target="_blank">WVBOP RxGov Transition</a> · <a href="https://code.wvlegislature.gov/60A-9-5a/" target="_blank">WV Code §60A-9-5a</a> · <a href="https://www.wvbop.com/article.asp?id=23" target="_blank">WV Gabapentin Scheduling</a>
+</div>
+
+<script>
+
+// ── PDMP PROVIDER ROSTER ──────────────────────────────────────────────────────
+function pvLoad(){try{return JSON.parse(localStorage.getItem('pdmp_providers')||'[]');}catch(e){return[];}}
+function pvSave(){
+  var name=document.getElementById('pv-name').value.trim();
+  if(!name){alert('Provider name is required.');return;}
+  var providers=pvLoad();
+  var idx=providers.findIndex(function(p){return p.name===name;});
+  var entry={name:name,npi:document.getElementById('pv-npi').value.trim(),role:document.getElementById('pv-role').value.trim(),md:document.getElementById('pv-md').value,wv:document.getElementById('pv-wv').value,del:document.getElementById('pv-del').value,notes:document.getElementById('pv-notes').value.trim(),updated:new Date().toLocaleDateString()};
+  if(idx>=0)providers[idx]=entry;else providers.push(entry);
+  localStorage.setItem('pdmp_providers',JSON.stringify(providers));
+  ['pv-name','pv-npi','pv-role','pv-notes'].forEach(function(id){document.getElementById(id).value='';});
+  ['pv-md','pv-wv','pv-del'].forEach(function(id){document.getElementById(id).selectedIndex=0;});
+  pvRender();clProviders();
+}
+function pvDelete(name){if(!confirm('Remove '+name+'?'))return;var p=pvLoad().filter(function(x){return x.name!==name;});localStorage.setItem('pdmp_providers',JSON.stringify(p));pvRender();clProviders();}
+function pvRender(){
+  var providers=pvLoad();
+  var el=document.getElementById('pv-list');
+  if(!el)return;
+  if(!providers.length){el.innerHTML='<div style="text-align:center;padding:20px;color:var(--muted);font-size:13px;">No providers added yet. Use the form above to add your first provider.</div>';return;}
+  var html='<table class="pdmp-tbl"><thead><tr><th>Provider</th><th>NPI</th><th>Role</th><th>MD CRISP</th><th>WV RxGov</th><th>WV Delegate</th><th>Notes</th><th>Updated</th><th></th></tr></thead><tbody>';
+  providers.forEach(function(p){
+    html+='<tr><td><strong>'+esc2(p.name)+'</strong></td><td style="font-family:monospace">'+esc2(p.npi)+'</td><td>'+esc2(p.role)+'</td><td>'+esc2(p.md)+'</td><td>'+esc2(p.wv)+'</td><td>'+esc2(p.del)+'</td><td style="max-width:160px;font-size:12px;color:var(--muted)">'+esc2(p.notes)+'</td><td style="font-size:11px;color:var(--muted);white-space:nowrap">'+esc2(p.updated)+'</td><td><button onclick="pvDelete(\''+esc2(p.name).replace(/'/g,"\\'")+'\')" style="background:#ef4444;color:#fff;border:none;border-radius:5px;padding:3px 8px;font-size:11px;cursor:pointer;">✕</button></td></tr>';
+  });
+  html+='</tbody></table>';el.innerHTML=html;
+}
+function pvExport(){
+  var providers=pvLoad();
+  var csv='Provider,NPI,Role,MD CRISP,WV RxGov,WV Delegate,Notes,Updated\n';
+  providers.forEach(function(p){csv+=csvRow([p.name,p.npi,p.role,p.md,p.wv,p.del,p.notes,p.updated]);});
+  dlCSV(csv,'pdmp_provider_roster.csv');
+}
+
+// ── PDMP CHECK LOG ────────────────────────────────────────────────────────────
+function clLoad(){try{return JSON.parse(localStorage.getItem('pdmp_log')||'[]');}catch(e){return[];}}
+function clSave(){
+  var pt=document.getElementById('cl-pt').value.trim();
+  var dt=document.getElementById('cl-date').value;
+  if(!pt||!dt){alert('Patient name and date are required.');return;}
+  var logs=clLoad();
+  var entry={id:Date.now(),date:dt,patient:pt,dob:document.getElementById('cl-dob').value,provider:document.getElementById('cl-prov').value,state:document.getElementById('cl-state').value,by:document.getElementById('cl-by').value.trim(),next:document.getElementById('cl-next').value,notes:document.getElementById('cl-notes').value.trim()};
+  logs.unshift(entry);
+  localStorage.setItem('pdmp_log',JSON.stringify(logs));
+  ['cl-pt','cl-by','cl-notes'].forEach(function(id){document.getElementById(id).value='';});
+  ['cl-date','cl-dob','cl-next'].forEach(function(id){document.getElementById(id).value='';});
+  clRender();
+}
+function clDelete(id){var logs=clLoad().filter(function(x){return x.id!==id;});localStorage.setItem('pdmp_log',JSON.stringify(logs));clRender();}
+function clClear(){if(!confirm('Delete ALL check log entries? This cannot be undone.'))return;localStorage.removeItem('pdmp_log');clRender();}
+function clRender(){
+  var logs=clLoad();
+  var filter=(document.getElementById('cl-filter')||{}).value||'';
+  var fl=filter.toLowerCase();
+  if(fl)logs=logs.filter(function(l){return (l.patient+l.provider+l.notes).toLowerCase().indexOf(fl)!==-1;});
+  var el=document.getElementById('cl-list');if(!el)return;
+  if(!logs.length){el.innerHTML='<div style="text-align:center;padding:20px;color:var(--muted);font-size:13px;">'+(filter?'No matching entries.':'No check logs yet. Use the form above to record your first PDMP check.')+'</div>';return;}
+  var today=new Date().toISOString().split('T')[0];
+  var html='';
+  logs.forEach(function(l){
+    var overdue=l.next&&l.next<today;
+    var due=l.next&&l.next===today;
+    var borderColor=overdue?'#ef4444':due?'#f59e0b':'#e2e8f0';
+    html+='<div class="pdmp-check-entry" style="border-color:'+borderColor+';">';
+    html+='<div style="flex:1;">';
+    html+='<div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:4px;">';
+    html+='<strong>'+esc2(l.patient)+'</strong>';
+    if(l.dob)html+='<span style="font-size:11px;color:var(--muted);">DOB: '+l.dob+'</span>';
+    html+='<span class="pdmp-badge '+(l.state==='MD'?'pdmp-md':l.state==='WV'?'pdmp-wv':'pdmp-both')+'">'+esc2(l.state)+'</span>';
+    if(overdue)html+='<span class="pdmp-badge pdmp-warn">⚠️ OVERDUE — next check was '+l.next+'</span>';
+    if(due)html+='<span class="pdmp-badge" style="background:#fef3c7;color:#92400e;">📅 Due Today</span>';
+    html+='</div>';
+    html+='<div style="font-size:12px;color:var(--muted);display:flex;gap:16px;flex-wrap:wrap;">';
+    html+='<span>📅 Checked: '+esc2(l.date)+'</span>';
+    if(l.provider)html+='<span>👤 Provider: '+esc2(l.provider)+'</span>';
+    if(l.by)html+='<span>🧑‍💼 By: '+esc2(l.by)+'</span>';
+    if(l.next&&!overdue&&!due)html+='<span>🔁 Next due: '+esc2(l.next)+'</span>';
+    html+='</div>';
+    if(l.notes)html+='<div style="font-size:12px;margin-top:4px;color:#334155;">'+esc2(l.notes)+'</div>';
+    html+='</div>';
+    html+='<button onclick="clDelete('+l.id+')" style="background:#ef4444;color:#fff;border:none;border-radius:5px;padding:3px 8px;font-size:11px;cursor:pointer;flex-shrink:0;">✕</button>';
+    html+='</div>';
+  });
+  el.innerHTML=html;
+}
+function clExport(){
+  var logs=clLoad();
+  var csv='Date Checked,Patient,DOB,Provider,State(s),Checked By,Next Due,Findings/Notes\n';
+  logs.forEach(function(l){csv+=csvRow([l.date,l.patient,l.dob,l.provider,l.state,l.by,l.next,l.notes]);});
+  dlCSV(csv,'pdmp_check_log.csv');
+}
+function clProviders(){
+  var sel=document.getElementById('cl-prov');if(!sel)return;
+  var current=sel.value;
+  sel.innerHTML='<option value="">Select provider</option>';
+  pvLoad().forEach(function(p){var o=document.createElement('option');o.value=p.name;o.textContent=p.name+(p.role?' ('+p.role+')':'');sel.appendChild(o);});
+  sel.value=current;
+}
+
+// ── SHARED HELPERS ────────────────────────────────────────────────────────────
+function esc2(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function csvRow(cols){return cols.map(function(c){return '"'+String(c||'').replace(/"/g,'""')+'"';}).join(',')+'\n';}
+function dlCSV(csv,fname){var a=document.createElement('a');a.href='data:text/csv;charset=utf-8,'+encodeURIComponent(csv);a.download=fname;a.click();}
+
+// Init on tab show
+document.addEventListener('DOMContentLoaded',function(){
+  setTimeout(function(){pvRender();clRender();clProviders();
+    var d=document.getElementById('cl-date');if(d)d.value=new Date().toISOString().split('T')[0];
+  },400);
+});
+</script>
+
+</div>
+
 <div id="panel-portal" class="tab-panel">
   <div class="dept-hdr">
     <h2>🏥 Patient Portal — TalkPHR Registration Guide</h2>
@@ -14729,75 +15622,135 @@ function resetCL(pfx){
   document.getElementById(pfx+'-cl').querySelectorAll('li').forEach(li=>li.classList.remove('ck'));
   upd(pfx);
 }
+// ── SEARCH ENGINE (index-based, no DOM mutation) ─────────────────────────────
+let srIndex=[];
 let stimer;
+
+function buildIndex(){
+  srIndex=[];
+  const TAB_LABELS={ov:'Overview',about:'About Us',fd:'Front Desk',ma:'Medical Assistants',sc:'Schedulers',ref:'Referrals & Records',labs:'Labs & Imaging',ops:'Operations & Compliance',qi:'Quality Improvement',inf:'Infusions',ck:'Daily Checklists',hipaa:'HIPAA & Privacy',billing:'Billing',pa:'Prior Authorization',cm:'Care Management',cog:'Cognitive Assessment',map:'Medication Assistance',rx:'Pharmacy Contacts',fml:'Formulary Tool',dir:'Phone Directory',portal:'Patient Portal',support:'Support Contacts'};
+  document.querySelectorAll('.tab-panel').forEach(function(panel){
+    var tabId=panel.id.replace('panel-','');
+    var tabLabel=TAB_LABELS[tabId]||tabId;
+    // Index each accordion block separately for context
+    var blocks=panel.querySelectorAll('.acc, .ic, .sub, p, li, .tpl, .al, .exp, .tp, h3, h4, h5');
+    if(!blocks.length) blocks=[panel];
+    blocks.forEach(function(block){
+      var heading='';
+      var ah=block.closest('.acc');
+      if(ah){var t=ah.querySelector('.at');if(t)heading=t.innerText||t.textContent||'';}
+      var text=(block.innerText||block.textContent||'').trim().replace(/\s+/g,' ');
+      if(text.length>10){
+        srIndex.push({tabId:tabId,tabLabel:tabLabel,heading:heading.trim().substring(0,80),text:text,el:block});
+      }
+    });
+  });
+}
+
 function doSearch(v){
   clearTimeout(stimer);
-  stimer=setTimeout(()=>runSearch(v.trim()),200);
-  document.getElementById('clr').style.display=v?'block':'none';
+  var clr=document.getElementById('clr');
+  if(clr)clr.style.display=v?'block':'none';
+  stimer=setTimeout(function(){runSearch(v.trim());},250);
 }
+
 function runSearch(q){
-  clearHL();
-  const sb=document.getElementById('sb');
-  const nr=document.getElementById('nr');
-  if(!q){sb.style.display='none';nr.style.display='none';return;}
-  const rx=new RegExp('('+esc(q)+')','gi');
-  let total=0;const pm={};
-  document.querySelectorAll('.tab-panel').forEach(panel=>{
-    const id=panel.id.replace('panel-','');
-    let cnt=0;
-    getTN(panel).forEach(n=>{
-      if(rx.test(n.nodeValue)){
-        cnt+=(n.nodeValue.match(rx)||[]).length;
-        const s=document.createElement('span');
-        s.innerHTML=n.nodeValue.replace(rx,'<mark>$1</mark>');
-        n.parentNode.replaceChild(s,n);
-      }
-      rx.lastIndex=0;
-    });
-    if(cnt>0){pm[id]=cnt;total+=cnt;}
-  });
-  if(!total){sb.style.display='none';nr.style.display='block';return;}
-  nr.style.display='none';
-  const first=Object.keys(pm)[0];
-  if(first){
-    const btn=Array.from(document.querySelectorAll('.tb')).find(b=>b.getAttribute('onclick')&&b.getAttribute('onclick').includes("'"+first+"'"));
-    if(btn)btn.click();
-    document.querySelectorAll('#panel-'+first+' .ab').forEach(ab=>{
-      if(ab.querySelector('mark')){ab.classList.add('open');ab.previousElementSibling.classList.add('open');}
-    });
+  var drop=document.getElementById('sr-drop');
+  var sb=document.getElementById('sb');
+  var nr=document.getElementById('nr');
+  if(!drop){
+    drop=document.createElement('div');
+    drop.id='sr-drop';
+    drop.style.cssText='position:absolute;top:100%;left:0;right:0;background:#fff;border-radius:0 0 10px 10px;box-shadow:0 8px 24px rgba(0,0,0,.18);max-height:380px;overflow-y:auto;z-index:9999;border:1px solid #e2e8f0;border-top:none;';
+    var wrap=document.querySelector('.search-wrap');
+    if(wrap){wrap.style.position='relative';wrap.appendChild(drop);}
   }
-  const sum=Object.entries(pm).map(([k,v])=>'<strong>'+lbl(k)+'</strong> ('+v+')').join(' · ');
-  sb.innerHTML='🔍 Found <strong>'+total+'</strong> match'+(total!==1?'es':'')+' for "<em>'+q+'</em>" — '+sum;
-  sb.style.display='block';
-}
-function clearS(){
-  document.getElementById('si').value='';
-  document.getElementById('clr').style.display='none';
-  document.getElementById('sb').style.display='none';
-  document.getElementById('nr').style.display='none';
-  clearHL();
-}
-function clearHL(){
-  document.querySelectorAll('mark').forEach(m=>{
-    m.parentNode.replaceChild(document.createTextNode(m.textContent),m);
-  });
-  document.querySelectorAll('span').forEach(s=>{
-    if(s.parentNode&&!s.className&&!s.querySelector('mark')&&s.childNodes.length===1&&s.childNodes[0].nodeType===3){
-      s.parentNode.replaceChild(s.childNodes[0],s);
+  drop.innerHTML='';
+  if(sb)sb.style.display='none';
+  if(nr)nr.style.display='none';
+  if(!q||q.length<2){drop.style.display='none';return;}
+  if(!srIndex.length)buildIndex();
+  var ql=q.toLowerCase();
+  var seen={};var results=[];
+  srIndex.forEach(function(item){
+    if(item.text.toLowerCase().indexOf(ql)!==-1){
+      var key=item.tabId+'|'+item.heading;
+      if(!seen[key]){seen[key]=true;results.push(item);}
     }
   });
+  if(!results.length){
+    drop.style.display='block';
+    drop.innerHTML='<div style="padding:16px 18px;font-size:13px;color:#718096;">No results found for "<strong>'+q+'</strong>"</div>';
+    return;
+  }
+  // Group by tab
+  var byTab={};
+  results.forEach(function(r){
+    if(!byTab[r.tabId])byTab[r.tabId]=[];
+    byTab[r.tabId].push(r);
+  });
+  var html='<div style="padding:8px 14px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#718096;border-bottom:1px solid #f0f4f8;">'+results.length+' result'+(results.length!==1?'s':'')+' for "'+q+'"</div>';
+  Object.keys(byTab).forEach(function(tabId){
+    var items=byTab[tabId];
+    html+='<div style="padding:6px 14px 2px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.07em;color:#1a4a7a;background:#f7faff;">'+items[0].tabLabel+'</div>';
+    items.slice(0,5).forEach(function(item){
+      var snippet=item.text.substring(0,120).replace(/</g,'&lt;');
+      var idx=snippet.toLowerCase().indexOf(ql);
+      if(idx!==-1){
+        snippet=snippet.substring(0,idx)+'<mark style="background:#fef08a;border-radius:2px;padding:0 2px;">'+snippet.substring(idx,idx+q.length)+'</mark>'+snippet.substring(idx+q.length);
+      }
+      var heading=item.heading?'<span style="font-size:11px;color:#64748b;display:block;margin-bottom:2px;">'+item.heading.substring(0,60).replace(/</g,'&lt;')+'</span>':'';
+      html+='<div onclick="srGo(\''+tabId+'\',this)" data-el-idx="'+srIndex.indexOf(item)+'" style="padding:9px 16px;cursor:pointer;border-bottom:1px solid #f0f4f8;font-size:13px;color:#1e293b;transition:background .1s;" onmouseover="this.style.background=\'#f0f9ff\'" onmouseout="this.style.background=\'\'">'+heading+snippet+'…</div>';
+    });
+    if(items.length>5){html+='<div style="padding:5px 16px;font-size:11px;color:#94a3b8;font-style:italic;">+'+(items.length-5)+' more in this tab</div>';}
+  });
+  drop.innerHTML=html;
+  drop.style.display='block';
 }
-function getTN(el){
-  const w=document.createTreeWalker(el,NodeFilter.SHOW_TEXT,{acceptNode:n=>{
-    const p=n.parentNode;if(!p)return NodeFilter.FILTER_REJECT;
-    if(['SCRIPT','STYLE','INPUT','BUTTON'].includes(p.tagName))return NodeFilter.FILTER_REJECT;
-    if(p.tagName==='MARK')return NodeFilter.FILTER_REJECT;
-    return n.nodeValue.trim()?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_REJECT;
-  }});
-  const r=[];let n;while((n=w.nextNode()))r.push(n);return r;
+
+function srGo(tabId,el){
+  // Navigate to tab
+  var btn=Array.from(document.querySelectorAll('.tb')).find(function(b){return b.getAttribute('onclick')&&b.getAttribute('onclick').indexOf("'"+tabId+"'")!==-1;});
+  if(btn)btn.click();
+  // Try to open the accordion containing the result
+  var idx=parseInt(el.getAttribute('data-el-idx'));
+  if(!isNaN(idx)&&srIndex[idx]){
+    var targetEl=srIndex[idx].el;
+    var acc=targetEl.closest('.acc');
+    if(acc){
+      var ah=acc.querySelector('.ah');
+      var ab=acc.querySelector('.ab');
+      if(ah&&ab&&!ab.classList.contains('open')){ah.classList.add('open');ab.classList.add('open');}
+    }
+    setTimeout(function(){targetEl.scrollIntoView({behavior:'smooth',block:'center'});},200);
+  }
+  closeDrop();
 }
-function esc(s){return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');}
-function lbl(id){const m={ov:'Overview',about:'About Us',fd:'Front Desk',ma:'Medical Assistants',sc:'Schedulers',ref:'Referrals',labs:'Labs & Imaging',ops:'Operations',qi:'Quality',inf:'Infusions',ck:'Checklists',hipaa:'HIPAA & Privacy',billing:'Billing',pa:'Prior Authorization',cm:'Care Management',cog:'Cognitive Assessment',map:'Medication Assistance',rx:'Pharmacy Contacts',dir:'Phone Directory',fml:'Formulary Tool'};return m[id]||id;}
+
+function closeDrop(){
+  var drop=document.getElementById('sr-drop');
+  if(drop)drop.style.display='none';
+}
+
+function clearS(){
+  var si=document.getElementById('si');
+  var clr=document.getElementById('clr');
+  var sb=document.getElementById('sb');
+  var nr=document.getElementById('nr');
+  if(si)si.value='';
+  if(clr)clr.style.display='none';
+  if(sb)sb.style.display='none';
+  if(nr)nr.style.display='none';
+  closeDrop();
+}
+
+function clearHL(){}  // kept for compatibility
+
+document.addEventListener('click',function(e){
+  var drop=document.getElementById('sr-drop');
+  if(drop&&!drop.contains(e.target)&&e.target.id!=='si')closeDrop();
+});
+// ── END SEARCH ENGINE ─────────────────────────────────────────────────────────
 
 // ── HIPAA QUIZ ──────────────────────────────────────────────────────────────
 const hqData=[
@@ -15499,7 +16452,7 @@ function fmlRenderPlanDirectory(){
   fmlPlanDirRendered=true;
   grid.innerHTML=FML_PLANS.map(p=>`<div class="fml-plan-card"><span class="fml-ptb ${p.badge}">${p.type}</span><h3>${p.name}</h3><div class="fml-plan-phone">📞 ${p.phone}</div><div class="fml-plan-fax">📠 PA Fax: ${p.paFax}</div><a href="${p.formularyUrl}" target="_blank">Open Formulary ↗</a></div>`).join('');
 }
-document.addEventListener('DOMContentLoaded',function(){fmlRenderDrugs();});
+document.addEventListener('DOMContentLoaded',function(){fmlRenderDrugs();setTimeout(buildIndex,600);});
 
 // ── Workers' Comp Form Print ─────────────────────────────────────────────────
 function printWCForm(){
@@ -15551,24 +16504,6 @@ function printWCForm(){
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</body>
-</html>
-</div>
-
 <script>
 function checkPassword() {
   const correctPassword = "mirneuro";
