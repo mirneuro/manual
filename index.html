@@ -9,6 +9,7 @@
 
 <div id="protectedContent" style="display:none;">
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15996,35 +15997,164 @@ document.addEventListener('DOMContentLoaded',function(){
 
   <!-- REM QUALIFYING CONDITIONS -->
   <div class="acc">
-    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ir">🧠</div>REM Program — Neurologically Relevant Qualifying Conditions <span class="badge bd">Screen Before Submitting</span></div><span class="chev">▼</span></div>
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ir">📋</div>REM Program — Complete Official Qualifying Conditions (COMAR 10.09.69.17) <span class="badge bd">Verify ICD-10 Before Submitting</span></div><span class="chev">▼</span></div>
     <div class="ab">
-      <div class="al ac" style="margin-bottom:16px"><span class="al-icon">⚠️</span><span>Always verify the patient's specific ICD-10 code against the current REM qualifying list before sending the state packet. The list below is a guide — the official REM table is the authoritative source. If the code is not listed, do not send the packet.</span></div>
-      <div class="two">
-        <div class="ic">
-          <h5>Neurological Conditions That May Qualify</h5>
-          <ul class="cl">
-            <li>Amyotrophic Lateral Sclerosis (ALS)</li>
-            <li>Multiple Sclerosis (certain codes)</li>
-            <li>Muscular Dystrophy</li>
-            <li>Spina Bifida with complications</li>
-            <li>Traumatic Brain Injury (TBI) — severe</li>
-            <li>Spinal Cord Injury</li>
-            <li>Huntington's Disease</li>
-          </ul>
-        </div>
-        <div class="ic">
-          <h5>Other Conditions That May Qualify</h5>
-          <ul class="cl">
-            <li>HIV/AIDS</li>
-            <li>Hemophilia</li>
-            <li>Cystic Fibrosis</li>
-            <li>Sickle Cell Disease</li>
-            <li>Organ transplant (certain)</li>
-            <li>Technology-dependent conditions</li>
-          </ul>
-        </div>
-      </div>
-      <div class="al aw" style="margin-top:12px"><span class="al-icon">⚠️</span><span><strong>Most common neurology diagnoses (headache, neuropathy, epilepsy without severe disability, Parkinson's, dementia) do NOT qualify for REM.</strong> They still qualify for standard MCO care management — always send the MCO referral regardless.</span></div>
+      <div class="al ac" style="margin-bottom:16px"><span class="al-icon">⚠️</span><span>The ICD-10 code must appear exactly in this official table. Age limits apply per condition — verify both the code AND the patient's age. If the code is not listed or the patient exceeds the age limit, do NOT send the state REM packet. Source: <a href="https://regs.maryland.gov/us/md/exec/comar/10.09.69.17" target="_blank" style="color:#fff;text-decoration:underline;">COMAR 10.09.69.17</a> · <a href="https://health.maryland.gov/mmcp/Documents/rem/REM_Intake_Packet_March2026_fillableform%20%281%29.pdf" target="_blank" style="color:#fff;text-decoration:underline;">Download REM Intake Form (March 2026) →</a></span></div>
+
+      <div class="al aw" style="margin-bottom:16px"><span class="al-icon">⚠️</span><span><strong>Most common neurology diagnoses seen at Mir Neurology DO NOT qualify for REM</strong> — headache, migraine, epilepsy (without quadriplegia), neuropathy, Parkinson's disease, dementia, MS (most codes), TBI without quadriplegia. These patients still qualify for standard MCO care management — always send the MCO referral regardless.</span></div>
+
+      <style>
+        .rem-tbl{width:100%;border-collapse:collapse;font-size:12.5px;margin-bottom:18px;}
+        .rem-tbl th{background:var(--primary);color:#fff;padding:7px 10px;text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.05em;}
+        .rem-tbl td{padding:7px 10px;border-bottom:1px solid #f0f4f8;vertical-align:top;}
+        .rem-tbl tr:nth-child(even) td{background:#f7faff;}
+        .rem-tbl tr:hover td{background:#e8f0fa;}
+        .rem-cat{background:linear-gradient(90deg,#1a4a7a,#2563eb);color:#fff;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.08em;padding:8px 10px;}
+        .rem-neuro{background:#fff8e1!important;}
+        .age-chip{display:inline-block;background:#e8f0fa;color:var(--primary);border-radius:4px;padding:1px 6px;font-size:11px;font-weight:700;white-space:nowrap;}
+      </style>
+
+      <!-- NEUROMUSCULAR / NEUROLOGICAL — most relevant for Mir Neurology -->
+      <div class="sub"><div class="sub-title">🧠 Neurological &amp; Neuromuscular Conditions — Most Relevant to Mir Neurology</div></div>
+      <table class="rem-tbl">
+        <thead><tr><th>ICD-10</th><th>Condition</th><th>Age Limit</th></tr></thead>
+        <tbody>
+          <tr class="rem-neuro"><td><strong>G11.0</strong></td><td>Congenital nonprogressive ataxia</td><td><span class="age-chip">0–20</span></td></tr>
+          <tr class="rem-neuro"><td><strong>G11.10</strong></td><td>Early-onset cerebellar ataxia, unspecified</td><td><span class="age-chip">0–20</span></td></tr>
+          <tr class="rem-neuro"><td><strong>G11.11</strong></td><td>Friedreich ataxia</td><td><span class="age-chip">0–20</span></td></tr>
+          <tr class="rem-neuro"><td><strong>G11.19</strong></td><td>Other early-onset cerebellar ataxia</td><td><span class="age-chip">0–20</span></td></tr>
+          <tr class="rem-neuro"><td><strong>G11.2</strong></td><td>Late-onset cerebellar ataxia</td><td><span class="age-chip">0–20</span></td></tr>
+          <tr class="rem-neuro"><td><strong>G11.3</strong></td><td>Cerebellar ataxia with defective DNA repair</td><td><span class="age-chip">0–20</span></td></tr>
+          <tr class="rem-neuro"><td><strong>G11.4</strong></td><td>Hereditary spastic paraplegia</td><td><span class="age-chip">0–20</span></td></tr>
+          <tr class="rem-neuro"><td><strong>G11.8</strong></td><td>Other hereditary ataxias</td><td><span class="age-chip">0–20</span></td></tr>
+          <tr class="rem-neuro"><td><strong>G11.9</strong></td><td>Hereditary ataxia, unspecified</td><td><span class="age-chip">0–20</span></td></tr>
+          <tr class="rem-neuro"><td><strong>G12.0</strong></td><td>Infantile spinal muscular atrophy, type I (Werdnig-Hoffman)</td><td><span class="age-chip">0–20</span></td></tr>
+          <tr class="rem-neuro"><td><strong>G12.1</strong></td><td>Other inherited spinal muscular atrophy</td><td><span class="age-chip">0–20</span></td></tr>
+          <tr class="rem-neuro"><td><strong>G12.21</strong></td><td>Amyotrophic lateral sclerosis (ALS)</td><td><span class="age-chip">0–20</span></td></tr>
+          <tr class="rem-neuro"><td><strong>G12.22</strong></td><td>Progressive bulbar palsy</td><td><span class="age-chip">0–20</span></td></tr>
+          <tr class="rem-neuro"><td><strong>G12.29</strong></td><td>Other motor neuron disease</td><td><span class="age-chip">0–20</span></td></tr>
+          <tr class="rem-neuro"><td><strong>G12.8</strong></td><td>Other spinal muscular atrophies and related syndromes</td><td><span class="age-chip">0–20</span></td></tr>
+          <tr class="rem-neuro"><td><strong>G12.9</strong></td><td>Spinal muscular atrophy, unspecified</td><td><span class="age-chip">0–20</span></td></tr>
+          <tr class="rem-neuro"><td><strong>G24.1</strong></td><td>Genetic torsion dystonia</td><td><span class="age-chip">0–64</span></td></tr>
+          <tr class="rem-neuro"><td><strong>G24.8</strong></td><td>Other dystonia</td><td><span class="age-chip">0–64</span></td></tr>
+          <tr class="rem-neuro"><td><strong>G25.3</strong></td><td>Myoclonus</td><td><span class="age-chip">0–5</span></td></tr>
+          <tr class="rem-neuro"><td><strong>G25.9</strong></td><td>Extrapyramidal and movement disorder, unspecified</td><td><span class="age-chip">0–20</span></td></tr>
+          <tr class="rem-neuro"><td><strong>G31.81</strong></td><td>Alpers disease</td><td><span class="age-chip">0–20</span></td></tr>
+          <tr class="rem-neuro"><td><strong>G31.82</strong></td><td>Leigh's disease</td><td><span class="age-chip">0–20</span></td></tr>
+          <tr class="rem-neuro"><td><strong>G31.9</strong></td><td>Degenerative disease of nervous system, unspecified</td><td><span class="age-chip">0–20</span></td></tr>
+          <tr class="rem-neuro"><td><strong>G32.81</strong></td><td>Cerebellar ataxia in diseases classified elsewhere</td><td><span class="age-chip">0–20</span></td></tr>
+          <tr class="rem-neuro"><td><strong>G37.0</strong></td><td>Diffuse sclerosis of central nervous system</td><td><span class="age-chip">0–64</span></td></tr>
+          <tr class="rem-neuro"><td><strong>G37.5</strong></td><td>Concentric sclerosis (Balo) of central nervous system</td><td><span class="age-chip">0–64</span></td></tr>
+          <tr class="rem-neuro"><td><strong>G71.00</strong></td><td>Muscular dystrophy, unspecified</td><td><span class="age-chip">0–64</span></td></tr>
+          <tr class="rem-neuro"><td><strong>G71.01</strong></td><td>Duchenne or Becker muscular dystrophy</td><td><span class="age-chip">0–64</span></td></tr>
+          <tr class="rem-neuro"><td><strong>G71.02</strong></td><td>Facioscapulohumeral muscular dystrophy</td><td><span class="age-chip">0–64</span></td></tr>
+          <tr class="rem-neuro"><td><strong>G71.031–G71.039</strong></td><td>Limb girdle muscular dystrophy (all subtypes)</td><td><span class="age-chip">0–64</span></td></tr>
+          <tr class="rem-neuro"><td><strong>G71.09</strong></td><td>Other specified muscular dystrophies</td><td><span class="age-chip">0–64</span></td></tr>
+          <tr class="rem-neuro"><td><strong>G71.11</strong></td><td>Myotonic muscular dystrophy</td><td><span class="age-chip">0–64</span></td></tr>
+          <tr class="rem-neuro"><td><strong>G71.20–G71.29</strong></td><td>Congenital myopathy (nemaline, centronuclear, others)</td><td><span class="age-chip">0–64</span></td></tr>
+          <tr class="rem-neuro"><td><strong>G80.0</strong></td><td>Spastic quadriplegic cerebral palsy</td><td><span class="age-chip">0–64</span></td></tr>
+          <tr class="rem-neuro"><td><strong>G80.1</strong></td><td>Spastic diplegic cerebral palsy</td><td><span class="age-chip">0–20</span></td></tr>
+          <tr class="rem-neuro"><td><strong>G80.3</strong></td><td>Athetoid cerebral palsy</td><td><span class="age-chip">0–64</span></td></tr>
+          <tr class="rem-neuro"><td><strong>G82.50–G82.54</strong></td><td>Quadriplegia (all types — C1-C4 and C5-C7, complete and incomplete)</td><td><span class="age-chip">0–64</span></td></tr>
+          <tr class="rem-neuro"><td><strong>G91.0</strong></td><td>Communicating hydrocephalus</td><td><span class="age-chip">0–20</span></td></tr>
+          <tr class="rem-neuro"><td><strong>G91.1</strong></td><td>Obstructive hydrocephalus</td><td><span class="age-chip">0–20</span></td></tr>
+          <tr class="rem-neuro"><td><strong>I67.5</strong></td><td>Moyamoya disease</td><td><span class="age-chip">0–64</span></td></tr>
+          <tr class="rem-neuro"><td><strong>F84.2</strong></td><td>Rett's syndrome</td><td><span class="age-chip">0–20</span></td></tr>
+          <tr class="rem-neuro"><td><strong>Q05.0–Q05.9</strong></td><td>Spina bifida (all types, with and without hydrocephalus)</td><td><span class="age-chip">0–64</span></td></tr>
+          <tr class="rem-neuro"><td><strong>Q06.0–Q06.8</strong></td><td>Congenital malformations of spinal cord (amyelia, diastematomyelia, hydromyelia, others)</td><td><span class="age-chip">0–64</span></td></tr>
+          <tr class="rem-neuro"><td><strong>Q07.01–Q07.03</strong></td><td>Arnold-Chiari syndrome (with spina bifida, hydrocephalus, or both)</td><td><span class="age-chip">0–64</span></td></tr>
+          <tr class="rem-neuro"><td><strong>Q03.0–Q03.9</strong></td><td>Congenital hydrocephalus (aqueduct of Sylvius, Magendie/Luschka, others)</td><td><span class="age-chip">0–20</span></td></tr>
+          <tr class="rem-neuro"><td><strong>Z99.11</strong></td><td>Dependence on respirator / ventilator</td><td><span class="age-chip">1–64</span></td></tr>
+        </tbody>
+      </table>
+
+      <!-- METABOLIC / GENETIC -->
+      <div class="sub"><div class="sub-title">🧬 Metabolic &amp; Genetic Conditions</div></div>
+      <table class="rem-tbl">
+        <thead><tr><th>ICD-10</th><th>Condition</th><th>Age Limit</th></tr></thead>
+        <tbody>
+          <tr><td>E70.0–E70.89</td><td>Phenylketonuria (PKU), hyperphenylalaninemia, tyrosinemia, albinism, histidine/tryptophan disorders, AADC deficiency, other amino acid disorders</td><td><span class="age-chip">0–20</span></td></tr>
+          <tr><td>E71.110–E71.2</td><td>Organic acidurias — isovaleric acidemia, methylmalonic acidemia, propionic acidemia, glutaric aciduria, other branched-chain disorders</td><td><span class="age-chip">0–20</span></td></tr>
+          <tr><td>E71.310–E71.548</td><td>Fatty acid oxidation disorders, peroxisomal disorders, X-linked adrenoleukodystrophy, Zellweger syndrome, rhizomelic chondrodysplasia</td><td><span class="age-chip">0–64</span></td></tr>
+          <tr><td>E72.01–E72.89</td><td>Cystinosis, Lowe's syndrome, homocystinuria, urea cycle disorders (argininemia, citrullinemia, arginosuccinic aciduria), glycine/ornithine metabolism disorders</td><td><span class="age-chip">0–20</span></td></tr>
+          <tr><td>E74.00–E74.4</td><td>Glycogen storage diseases (von Gierke, Pompe, McArdle, Cori), galactosemia, hereditary fructose intolerance, pyruvate metabolism disorders</td><td><span class="age-chip">0–20</span></td></tr>
+          <tr><td>E75.00–E75.5</td><td>Lipid storage disorders — Tay-Sachs, Sandhoff, Gaucher, Fabry, Krabbe, Niemann-Pick, metachromatic leukodystrophy, neuronal ceroid lipofuscinosis</td><td><span class="age-chip">0–20</span></td></tr>
+          <tr><td>E76.01–E76.8</td><td>Mucopolysaccharidoses — Hurler's, Scheie's, Hunter's (type II), Morquio (IVA/IVB), Sanfilippo, and others</td><td><span class="age-chip">0–64</span></td></tr>
+          <tr><td>E77.0–E77.8</td><td>Defects in lysosomal enzyme modification, glycoprotein degradation disorders</td><td><span class="age-chip">0–20</span></td></tr>
+          <tr><td>E79.1</td><td>Lesch-Nyhan syndrome</td><td><span class="age-chip">0–64</span></td></tr>
+          <tr><td>E88.40–E88.49</td><td>Mitochondrial disorders — MELAS syndrome, MERRF syndrome, other mitochondrial metabolism disorders</td><td><span class="age-chip">0–64</span></td></tr>
+          <tr><td>E84.0–E84.9</td><td>Cystic fibrosis (all manifestations — pulmonary, intestinal, other)</td><td><span class="age-chip">0–64</span></td></tr>
+        </tbody>
+      </table>
+
+      <!-- HEMATOLOGIC -->
+      <div class="sub"><div class="sub-title">🩸 Hematologic Conditions</div></div>
+      <table class="rem-tbl">
+        <thead><tr><th>ICD-10</th><th>Condition</th><th>Age Limit</th></tr></thead>
+        <tbody>
+          <tr><td>D66</td><td>Hereditary factor VIII deficiency (Hemophilia A)</td><td><span class="age-chip">0–64</span></td></tr>
+          <tr><td>D67</td><td>Hereditary factor IX deficiency (Hemophilia B)</td><td><span class="age-chip">0–64</span></td></tr>
+          <tr><td>D68.00–D68.09</td><td>Von Willebrand disease (types 1, 2A, 2B, 2M, 2N, 3, acquired, other)</td><td><span class="age-chip">0–64</span></td></tr>
+          <tr><td>D68.1</td><td>Hereditary factor XI deficiency</td><td><span class="age-chip">0–64</span></td></tr>
+          <tr><td>D68.2</td><td>Hereditary deficiency of other clotting factors</td><td><span class="age-chip">0–64</span></td></tr>
+          <tr><td>D61.01, D61.09</td><td>Constitutional red blood cell aplasia, other constitutional aplastic anemia</td><td><span class="age-chip">0–20</span></td></tr>
+          <tr><td>C96.0, C96.5, C96.6</td><td>Langerhans-cell histiocytosis (multifocal multisystemic, multifocal unisystemic, unifocal)</td><td><span class="age-chip">0–64</span></td></tr>
+        </tbody>
+      </table>
+
+      <!-- INFECTIOUS -->
+      <div class="sub"><div class="sub-title">🦠 Infectious Conditions</div></div>
+      <table class="rem-tbl">
+        <thead><tr><th>ICD-10</th><th>Condition</th><th>Age Limit</th></tr></thead>
+        <tbody>
+          <tr><td>B20</td><td>HIV disease</td><td><span class="age-chip">0–20</span></td></tr>
+          <tr><td>R75</td><td>Inconclusive laboratory evidence of HIV</td><td><span class="age-chip">0–12 mo</span></td></tr>
+          <tr><td>Z21</td><td>Asymptomatic HIV infection status</td><td><span class="age-chip">0–20</span></td></tr>
+        </tbody>
+      </table>
+
+      <!-- RENAL -->
+      <div class="sub"><div class="sub-title">🫘 Renal Conditions</div></div>
+      <table class="rem-tbl">
+        <thead><tr><th>ICD-10</th><th>Condition</th><th>Age Limit</th></tr></thead>
+        <tbody>
+          <tr><td>N03.1–N03.9, N03.A</td><td>Chronic nephritic syndrome (focal/segmental, membranous, mesangial, C3 glomerulonephritis, other)</td><td><span class="age-chip">0–20</span></td></tr>
+          <tr><td>N08</td><td>Glomerular disorders in diseases classified elsewhere</td><td><span class="age-chip">0–20</span></td></tr>
+          <tr><td>N18.1–N18.9</td><td>Chronic kidney disease stages 1–5, end stage renal disease (ESRD), unspecified CKD</td><td><span class="age-chip">0–20</span></td></tr>
+          <tr><td>Q60.1, Q60.4, Q60.6</td><td>Bilateral renal agenesis, bilateral renal hypoplasia, Potter's syndrome</td><td><span class="age-chip">0–20</span></td></tr>
+          <tr><td>Q61.02–Q61.9</td><td>Bilateral polycystic kidney disease (infantile, adult, dysplasia, medullary cystic)</td><td><span class="age-chip">0–20</span></td></tr>
+          <tr><td>Z99.2</td><td>Dependence on renal dialysis</td><td><span class="age-chip">21–64</span></td></tr>
+        </tbody>
+      </table>
+
+      <!-- CONGENITAL / STRUCTURAL -->
+      <div class="sub"><div class="sub-title">🏗️ Congenital &amp; Structural Conditions</div></div>
+      <table class="rem-tbl">
+        <thead><tr><th>ICD-10</th><th>Condition</th><th>Age Limit</th></tr></thead>
+        <tbody>
+          <tr><td>Q01.9</td><td>Encephalocele, unspecified</td><td><span class="age-chip">0–20</span></td></tr>
+          <tr><td>Q02</td><td>Microcephaly</td><td><span class="age-chip">0–20</span></td></tr>
+          <tr><td>Q04.3–Q04.8</td><td>Brain reduction deformities, megalencephaly, congenital cerebral cysts, other brain malformations</td><td><span class="age-chip">0–20</span></td></tr>
+          <tr><td>Q75.0–Q75.8</td><td>Craniosynostosis, craniofacial dysostosis, hypertelorism, mandibulofacial/oculomandibular dysostosis</td><td><span class="age-chip">0–20</span></td></tr>
+          <tr><td>Q78.0</td><td>Osteogenesis imperfecta</td><td><span class="age-chip">0–20</span></td></tr>
+          <tr><td>Q35.1–Q37.9</td><td>Cleft palate and cleft lip (various combinations)</td><td><span class="age-chip">0–20</span></td></tr>
+          <tr><td>Q31.0–Q33.6</td><td>Congenital malformations of larynx, trachea, bronchus, and lung (atresia/agenesis)</td><td><span class="age-chip">0–20</span></td></tr>
+          <tr><td>Q39.0–Q39.4</td><td>Esophageal atresia, tracheoesophageal fistula, esophageal stenosis and web</td><td><span class="age-chip">0–3</span></td></tr>
+          <tr><td>Q42.0–Q42.9</td><td>Congenital absence/atresia of rectum, anus, and large intestine</td><td><span class="age-chip">0–5</span></td></tr>
+          <tr><td>Q43.1</td><td>Hirschsprung's disease</td><td><span class="age-chip">0–15</span></td></tr>
+          <tr><td>Q44.2–Q44.6</td><td>Biliary atresia, bile duct stenosis, cystic liver disease</td><td><span class="age-chip">0–20</span></td></tr>
+          <tr><td>Q77.4–Q78.9</td><td>Achondroplasia, osteochondrodysplasias, osteopetrosis, enchondromatosis, multiple exostoses</td><td><span class="age-chip">0–1</span></td></tr>
+          <tr><td>Q79.0–Q79.59</td><td>Congenital diaphragmatic hernia, exomphalos, gastroschisis, prune belly syndrome</td><td><span class="age-chip">0–1</span></td></tr>
+          <tr><td>Q89.7</td><td>Multiple congenital malformations, NEC</td><td><span class="age-chip">0–10</span></td></tr>
+        </tbody>
+      </table>
+
+      <div class="al ai"><span class="al-icon">🔗</span><span>
+        <strong>Official REM Resources:</strong><br>
+        📄 <a href="https://health.maryland.gov/mmcp/Documents/rem/REM_Intake_Packet_March2026_fillableform%20%281%29.pdf" target="_blank" style="color:var(--primary);font-weight:700;">REM Intake &amp; Referral Form — March 2026 (Fillable PDF) →</a><br>
+        📋 <a href="https://regs.maryland.gov/us/md/exec/comar/10.09.69.17" target="_blank" style="color:var(--primary);">COMAR 10.09.69.17 — Official Qualifying Conditions Table →</a><br>
+        📞 <strong>REM Program Phone:</strong> 1-800-565-8190 &nbsp;|&nbsp; 📠 <strong>Fax:</strong> 410-333-5426
+      </span></div>
     </div>
   </div>
 
@@ -16999,6 +17129,7 @@ function printWCForm(){
 </script>
 </body>
 </html>
+
 <script>
 function checkPassword() {
   const correctPassword = "mirneuro";
