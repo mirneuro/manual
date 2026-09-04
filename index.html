@@ -208,6 +208,8 @@ table.fml-plans tr:hover td{background:#f7fafc;}
   <button class="tb" onclick="sw('pdmp',this)">🔐 PDMP Checker</button>
   <button class="tb" onclick="sw('portal',this)">🏥 Patient Portal</button>
   <button class="tb" onclick="sw('support',this)">🛠️ Support Contacts</button>
+  <button class="tb" onclick="sw('cala',this)">🤲 Cala Health</button>
+  <button class="tb" onclick="sw('mco',this)">🏥 MD MCO Care</button>
 </nav>
 <div class="content">
   <div id="sb"></div>
@@ -243,6 +245,8 @@ table.fml-plans tr:hover td{background:#f7fafc;}
     <div class="ovc" onclick="swId('pdmp')"><div class="oi">🔐</div><div class="ot">PDMP Checker</div><div class="os">MD · WV · Provider Roster · Check Log</div></div>
     <div class="ovc" onclick="swId('portal')"><div class="oi">🏥</div><div class="ot">Patient Portal</div><div class="os">TalkPHR · Registration · Setup Guide</div></div>
     <div class="ovc" onclick="swId('support')"><div class="oi">🛠️</div><div class="ot">Support Contacts</div><div class="os">TalkEHR · Everyware · Vendor Support</div></div>
+    <div class="ovc" onclick="swId('cala')"><div class="oi">🤲</div><div class="ot">Cala Health</div><div class="os">TAPS Therapy · Essential Tremor · Medicare Criteria</div></div>
+    <div class="ovc" onclick="swId('mco')"><div class="oi">🏥</div><div class="ot">MD MCO Care Mgmt</div><div class="os">Case Manager · REM Program · HealthChoice MCOs</div></div>
   </div>
   <!-- SECTION 1 BANNER -->
   <div style="background:linear-gradient(135deg,#1a4a7a,#0f3460);color:#fff;border-radius:14px;padding:22px 26px;margin-bottom:20px;box-shadow:0 4px 16px rgba(0,0,0,.15)">
@@ -2985,7 +2989,7 @@ table.fml-plans tr:hover td{background:#f7fafc;}
 
       <!-- OPIOIDS -->
       <div class="sub"><div class="sub-title">5. Opioids &amp; Controlled Analgesics</div>
-        <div class="prob"><strong>All Opioid Refills Require Provider Authorization.</strong>Do not process opioid refills without explicit provider direction. PDMP review is mandatory before every refill.</div>
+        <div class="prob"><strong>All Opioid Refills Require Provider Authorization.</strong>Do not process opioid refills without explicit provider direction. Controlled substance checks must be completed per the provider's direction — see the <strong>🔐 PDMP Checker</strong> tab for full instructions.</div>
         <div class="two">
           <div class="ic">
             <h5>Common Opioids</h5>
@@ -2998,7 +3002,7 @@ table.fml-plans tr:hover td{background:#f7fafc;}
               <li>Do not provide more than a <strong>2-month supply</strong> at one time unless provider-directed</li>
               <li>Schedule follow-up every <strong>1–2 months</strong></li>
               <li>Verify a current <strong>pain contract</strong> is on file</li>
-              <li>Review <strong>PDMP</strong> before processing — document all PDMP reviews in the chart</li>
+              <li>Complete controlled substance monitoring per provider direction — see the <strong>🔐 PDMP Checker</strong> tab</li>
             </ul>
           </div>
         </div>
@@ -3018,14 +3022,14 @@ table.fml-plans tr:hover td{background:#f7fafc;}
             </ul>
           </div>
           <div class="ic" style="border-left:4px solid var(--danger)">
-            <h5 style="color:var(--danger)">🚩 PDMP Red Flags — Escalate to Provider</h5>
+            <h5 style="color:var(--danger)">🚩 Controlled Substance Red Flags — Escalate to Provider</h5>
             <ul class="cl">
-              <li>Multiple opioid prescriptions</li>
-              <li>Multiple prescribers</li>
+              <li>Multiple opioid prescriptions from different prescribers</li>
               <li>Early refill patterns</li>
               <li>Drug-seeking behavior</li>
+              <li>Inconsistent medication use history</li>
             </ul>
-            <p style="font-size:13px;color:var(--muted);margin-top:6px">Counsel patient regarding potential pain contract violation and refer to provider immediately.</p>
+            <p style="font-size:13px;color:var(--muted);margin-top:6px">Counsel patient regarding potential pain contract violation and refer to provider immediately. For controlled substance monitoring details, see the <strong>🔐 PDMP Checker</strong> tab.</p>
           </div>
         </div>
       </div>
@@ -3093,7 +3097,7 @@ table.fml-plans tr:hover td{background:#f7fafc;}
           <li onclick="tck(this,'rx-gen')"><div class="cb">✓</div><span class="cl-lbl">Review recent laboratory studies when applicable</span></li>
           <li onclick="tck(this,'rx-gen')"><div class="cb">✓</div><span class="cl-lbl">Assess for medication interactions</span></li>
           <li onclick="tck(this,'rx-gen')"><div class="cb">✓</div><span class="cl-lbl">Verify provider refill plan</span></li>
-          <li onclick="tck(this,'rx-gen')"><div class="cb">✓</div><span class="cl-lbl">Review PDMP for controlled substances</span></li>
+          <li onclick="tck(this,'rx-gen')"><div class="cb">✓</div><span class="cl-lbl">Complete controlled substance monitoring per provider direction (see 🔐 PDMP Checker tab)</span></li>
           <li onclick="tck(this,'rx-gen')"><div class="cb">✓</div><span class="cl-lbl">Ensure required UDS testing is up to date when applicable</span></li>
           <li onclick="tck(this,'rx-gen')"><div class="cb">✓</div><span class="cl-lbl">Document all refill-related communications in the medical record</span></li>
         </ul>
@@ -14927,8 +14931,6 @@ table.fml-plans tr:hover td{background:#f7fafc;}
 
 <div id="panel-pdmp" class="tab-panel" style="position:relative;min-height:500px;">
 
-</div>
-
 <div class="dept-hdr">
   <h2>🔐 PDMP Verification Hub</h2>
   <p>Prescription Drug Monitoring Program lookup resource for Maryland and West Virginia. Use before prescribing or dispensing controlled substances. All check records are stored locally in this browser and never transmitted externally.</p>
@@ -15588,6 +15590,499 @@ document.addEventListener('DOMContentLoaded',function(){
   </div>
 
 </div>
+
+<!-- ===== CALA HEALTH ===== -->
+<div id="panel-cala" class="tab-panel">
+  <div class="dept-hdr">
+    <h2>🤲 Cala Health — TAPS Therapy for Essential Tremor</h2>
+    <p>Cala TAPS Therapy is a non-invasive wrist-worn device for Essential Tremor. Covered under Medicare and select Medicare Advantage plans. Cala Health handles the bulk of the prior authorization and enrollment process — our role is to submit the required documentation accurately.</p>
+    <div class="tags"><span class="tag">Essential Tremor</span><span class="tag">TAPS Therapy</span><span class="tag">Medicare</span><span class="tag">Wristband Device</span><span class="tag">No PA Required</span></div>
+  </div>
+
+  <div class="al as" style="margin-bottom:20px"><span class="al-icon">✅</span><span><strong>No Prior Authorization Required</strong> — as long as the Medicare coverage criteria are met and appropriately documented in the chart notes, no PA is needed. Submit the required documents and Cala Health handles the rest. They will contact us if any changes are required.</span></div>
+
+  <!-- CONTACT INFORMATION -->
+  <div class="acc">
+    <div class="ah open" onclick="tog(this)"><div class="at"><div class="si ib">📞</div>Cala Health — Contact Information</div><span class="chev">▼</span></div>
+    <div class="ab open">
+      <div class="two">
+        <div class="ic">
+          <h5>Submission Channels</h5>
+          <ul class="cl">
+            <li>📠 <strong>Fax:</strong> 833-230-9251</li>
+            <li>📧 <strong>Encrypted Email:</strong> Intake@CalaHealth.com</li>
+            <li>🔒 <strong>Secure Upload Portal:</strong> <a href="https://CalaRx.com" target="_blank" style="color:var(--primary)">CalaRx.com</a></li>
+            <li>📞 <strong>Provider's Line:</strong> 888-585-7101</li>
+            <li>📞 <strong>Customer Care:</strong> 888-699-1009</li>
+          </ul>
+        </div>
+        <div class="ic">
+          <h5>Sales Representative — Lindsey Courtney</h5>
+          <ul class="cl">
+            <li>📞 <strong>Direct:</strong> 302-270-7482</li>
+            <li>📧 <strong>Email:</strong> Lindsey.Courtney@CalaHealth.com</li>
+            <li>🔗 <strong>Shared Resources:</strong> <a href="https://calahealth.showpad.biz/s/01krm5j14c65fbgxywcs084zqt" target="_blank" style="color:var(--primary)">Cala Health Showpad Library →</a></li>
+          </ul>
+          <div class="al ai" style="margin-top:12px"><span class="al-icon">ℹ️</span><span>Lindsey can come into the office to see the patient directly if any assistance is needed during onboarding or setup.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INSURANCE COVERAGE -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ig">💳</div>Insurance Coverage <span class="badge bw">Verify Before Submitting</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="two">
+        <div class="ic" style="border-left:4px solid var(--success)">
+          <h5 style="color:var(--success)">✅ Covered</h5>
+          <ul class="cl">
+            <li><strong>Medicare</strong> (Traditional/Fee-for-Service)</li>
+            <li><strong>Medicare Advantage</strong> plans</li>
+            <li>Some <strong>commercial insurances</strong> may cover — verify individually as criteria may differ</li>
+          </ul>
+        </div>
+        <div class="ic" style="border-left:4px solid var(--warning)">
+          <h5 style="color:#b45309">⚠️ Check First</h5>
+          <ul class="cl">
+            <li>Commercial insurance criteria may vary from Medicare criteria</li>
+            <li>Always verify commercial plan coverage before submission</li>
+            <li>Contact Lindsey Courtney or the Provider's Line (888-585-7101) if unsure</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MEDICARE COVERAGE CRITERIA -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ir">📋</div>Medicare Coverage Criteria for TAPS Therapy <span class="badge bd">Must Be in Chart Notes</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="al ac" style="margin-bottom:16px"><span class="al-icon">⚠️</span><span>All 8 criteria below must be documented in the chart notes. This is what Medicare reviews. Missing or incomplete documentation is the most common reason for denial.</span></div>
+      <ol class="st">
+        <li>Diagnosis of <strong>Essential Tremor (ET)</strong>.</li>
+        <li>Beneficiary is <strong>18 years or older</strong>.</li>
+        <li><strong>No contraindications</strong> to external upper limb tremor stimulator therapy.</li>
+        <li>TAPS stimulator is prescribed to treat the <strong>dominant upper limb</strong>.</li>
+        <li>ET symptoms significantly impair dominant-hand ADLs, with <strong>BF-ADL score ≥ 3</strong> for at least one item: eating, drinking, self-care, or writing.</li>
+        <li>If medically appropriate, <strong>tremor-exacerbating medications</strong> have been reduced or eliminated.</li>
+        <li>At least <strong>two pharmacologic ET treatment options</strong> have been tried and failed at maximal tolerable dose, or considered and ruled out. <em>(If not tried, document the reason.)</em></li>
+        <li>TAPS therapy is prescribed as an <strong>alternative to invasive/permanent surgical options</strong> such as DBS, MR-guided focused ultrasound, or radiosurgery.</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- CONTINUED COVERAGE -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ig">🔄</div>Continued Medicare Coverage — Beyond First 3 Months <span class="badge bw">Day 60–91 Re-Evaluation</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="al aw" style="margin-bottom:16px"><span class="al-icon">⚠️</span><span>For Medicare to continue covering Cala TAPS Therapy after the initial 3 months, the patient must complete a follow-up re-evaluation between <strong>Day 60 and Day 91</strong> after starting therapy. This can be done in person or via Medicare-approved telehealth.</span></div>
+
+      <div class="sub"><div class="sub-title">Provider Must Document BOTH of the Following</div></div>
+      <div class="two">
+        <div class="ic" style="border-left:4px solid var(--primary)">
+          <h5>1. Clinical Benefit</h5>
+          <ul class="cl">
+            <li>Patient shows at least a <strong>1-point improvement in BF-ADL score</strong> in any of: eating, drinking, self-care, or writing</li>
+            <li>The original score for that task must have been <strong>≥ 3</strong> before therapy started</li>
+          </ul>
+        </div>
+        <div class="ic" style="border-left:4px solid var(--primary)">
+          <h5>2. Therapy Adherence</h5>
+          <ul class="cl">
+            <li>Patient used the TAPS device on at least <strong>70% of days</strong></li>
+            <li>During any <strong>consecutive 30-day period</strong></li>
+            <li>Within the <strong>first 3 months</strong> of therapy</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sub"><div class="sub-title">Documentation Required for Continued Coverage</div></div>
+      <ul class="cl">
+        <li>Updated chart notes</li>
+        <li>BF-ADL reassessment</li>
+        <li>Usage/adherence report from Cala Health</li>
+        <li>Provider follow-up evaluation documentation</li>
+        <li>Documentation that patient is benefiting from therapy</li>
+      </ul>
+
+      <div class="al ai" style="margin-top:12px"><span class="al-icon">ℹ️</span><span>If the re-evaluation happens <strong>after Day 91</strong>, Medicare may still continue coverage, but only starting from the date of the documented re-evaluation. Replacement bands/electrodes continue to be covered <strong>every 90 days</strong> when criteria remain met.</span></div>
+    </div>
+  </div>
+
+  <!-- INTAKE & SUBMISSION WORKFLOW -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ig">📤</div>Cala TAPS Therapy — Intake &amp; Submission Workflow</div><span class="chev">▼</span></div>
+    <div class="ab">
+
+      <div class="sub"><div class="sub-title">Required Documentation — Gather Before Submitting</div></div>
+      <ol class="st">
+        <li><strong>Patient Intake Forms</strong> — completed and signed by the patient.</li>
+        <li><strong>Prescription Form</strong> — completed and signed by the provider.</li>
+        <li><strong>Wrist Measurement &amp; Tremor Task</strong> — document wrist measurement and specify tremor type: Wing-beating or Outstretched.</li>
+        <li><strong>Diagnosis</strong> — confirmed diagnosis of Essential Tremor (ET).</li>
+        <li><strong>Insurance Information</strong> — front and back copy of the insurance card.</li>
+        <li><strong>Chart Notes</strong> — clinical notes must support all 8 Medicare coverage criteria listed above.</li>
+        <li><strong>Patient Assessment (ADL forms)</strong> — completed by the patient, can be done at check-in. <span class="badge bw">Fax over</span></li>
+      </ol>
+
+      <div class="sub"><div class="sub-title">Submission Methods — Use Any of the Following</div></div>
+      <div class="three">
+        <div class="ic" style="text-align:center">
+          <div style="font-size:28px;margin-bottom:6px">📠</div>
+          <div style="font-weight:700;font-size:14px">Fax</div>
+          <div style="color:var(--muted);font-size:13px;margin-top:4px">833-230-9251</div>
+        </div>
+        <div class="ic" style="text-align:center">
+          <div style="font-size:28px;margin-bottom:6px">🔒</div>
+          <div style="font-weight:700;font-size:14px">Secure Upload</div>
+          <div style="color:var(--muted);font-size:13px;margin-top:4px"><a href="https://CalaRx.com" target="_blank" style="color:var(--primary)">CalaRx.com</a></div>
+        </div>
+        <div class="ic" style="text-align:center">
+          <div style="font-size:28px;margin-bottom:6px">📧</div>
+          <div style="font-weight:700;font-size:14px">Encrypted Email</div>
+          <div style="color:var(--muted);font-size:13px;margin-top:4px">Intake@CalaHealth.com</div>
+        </div>
+      </div>
+
+      <div class="al as" style="margin-top:16px"><span class="al-icon">✅</span><span><strong>No Prior Authorization Required</strong> — if Medicare criteria are met and documented. Cala Health will handle the PA process and contact us if anything additional is needed.</span></div>
+    </div>
+  </div>
+
+  <!-- DEVICE & SUPPLY INFO -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si it">⌚</div>Device &amp; Supply Information</div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="two">
+        <div class="ic">
+          <h5>TAPS Stimulator Device</h5>
+          <ul class="cl">
+            <li><strong>Warranty:</strong> 2-year warranty included</li>
+            <li>Worn on the wrist — non-invasive, external device</li>
+            <li>Calibrated to the patient's individual tremor pattern</li>
+          </ul>
+        </div>
+        <div class="ic">
+          <h5>Bands / Electrodes (Disposable)</h5>
+          <ul class="cl">
+            <li>Replaced <strong>every 90 days</strong> due to electrode wear</li>
+            <li>Continued Medicare coverage for replacement bands when criteria remain met</li>
+            <li>Track replacement dates to ensure timely reorders</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end panel-cala -->
+
+<!-- ===== MD MCO CARE MANAGEMENT ===== -->
+<div id="panel-mco" class="tab-panel">
+  <div class="dept-hdr">
+    <h2>🏥 Maryland MCO Care Management & REM Program</h2>
+    <p>A resource for helping Maryland Medicaid (HealthChoice) patients access a care manager through their MCO and, where eligible, enroll in the state's Rare and Expensive Medical Conditions (REM) program. Both pathways should be pursued simultaneously — they are not alternatives.</p>
+    <div class="tags"><span class="tag">Maryland Medicaid</span><span class="tag">HealthChoice</span><span class="tag">Care Management</span><span class="tag">REM Program</span><span class="tag">Special Needs Coordinator</span></div>
+  </div>
+
+  <div class="al ai" style="margin-bottom:20px"><span class="al-icon">📋</span><span>Source: <strong>Maryland MCO Care Referral Desk</strong> — verified September 4, 2026 against plan provider manuals &amp; COMAR 10.09.69. Covers all 9 HealthChoice MCOs. For the full plan-by-plan fax directory, see: <a href="https://claude.ai/code/artifact/58a26c32-1db1-4aee-9d05-a1adec80d9af" target="_blank" style="color:var(--primary);font-weight:700;">Maryland MCO Care Referral Desk →</a></span></div>
+
+  <!-- WHAT IS THIS -->
+  <div class="acc">
+    <div class="ah open" onclick="tog(this)"><div class="at"><div class="si ib">ℹ️</div>What Is Care Management &amp; Why Does It Matter for Our Patients?</div><span class="chev">▼</span></div>
+    <div class="ab open">
+      <div class="two">
+        <div class="ic">
+          <h5>MCO Care Management</h5>
+          <p style="font-size:13.5px;color:var(--muted);line-height:1.65;">Every Maryland HealthChoice MCO is required by law (COMAR 10.09.69) to run a care management program and staff a <strong>Special Needs Coordinator</strong>. When a patient is enrolled in care management, a dedicated coordinator helps them navigate appointments, medications, transportation, social services, and follow-up — reducing gaps in care that commonly affect patients with complex neurological conditions.</p>
+          <ul class="cl">
+            <li>No cost to the patient</li>
+            <li>Coordinator assigned from within their own MCO</li>
+            <li>Especially valuable for patients with MS, epilepsy, ALS, dementia, Parkinson's, or complex multi-system disease</li>
+          </ul>
+        </div>
+        <div class="ic">
+          <h5>REM Program (Rare &amp; Expensive Medical Conditions)</h5>
+          <p style="font-size:13.5px;color:var(--muted);line-height:1.65;">The REM program is a <strong>separate, state-administered</strong> intensive care management pathway for patients with qualifying diagnoses. REM provides more intensive support and coordination than standard MCO care management. Most neurological disabilities do not qualify — always screen the ICD-10 code first.</p>
+          <ul class="cl">
+            <li>Administered by the Maryland Department of Health, not the MCO</li>
+            <li>Requires a qualifying ICD-10 diagnosis and age criteria</li>
+            <li>Much more intensive than standard care management</li>
+            <li>Application faxed to the state, not to the MCO</li>
+          </ul>
+        </div>
+      </div>
+      <div class="al aw" style="margin-top:12px"><span class="al-icon">⚠️</span><span><strong>Important:</strong> Care management and REM are not alternatives — you pursue both simultaneously on the same day. Most neurologic diagnoses will not qualify for REM, but you still fax the MCO referral for standard care management regardless.</span></div>
+    </div>
+  </div>
+
+  <!-- ORDER OF OPERATIONS -->
+  <div class="acc">
+    <div class="ah open" onclick="tog(this)"><div class="at"><div class="si ig">📋</div>Order of Operations — Do All 3 Steps on the Same Day <span class="badge bc">Start Here</span></div><span class="chev">▼</span></div>
+    <div class="ab open">
+      <div class="three">
+        <div class="ic" style="border-left:4px solid var(--primary)">
+          <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--primary);margin-bottom:4px">Step 1 · Do Today</div>
+          <h5>📠 Fax the MCO Referral</h5>
+          <ul class="cl">
+            <li>Submit on the <strong>plan's own referral form</strong> — each MCO has a different form</li>
+            <li>Request both <strong>Care Management</strong> and <strong>Special Needs Coordinator</strong> assignment</li>
+            <li>Response due in <strong>10 business days</strong> (Priority Partners; other plans may vary)</li>
+            <li>Use the plan-by-plan fax directory in the reference link above</li>
+          </ul>
+        </div>
+        <div class="ic" style="border-left:4px solid var(--warning)">
+          <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#b45309;margin-bottom:4px">Step 2 · Same Visit</div>
+          <h5>🔍 Screen the Diagnosis for REM</h5>
+          <ul class="cl">
+            <li>Check the patient's <strong>ICD-10 code and age</strong> against the REM qualifying table</li>
+            <li>If the diagnosis is <strong>not listed</strong> in the REM table — stop here. Do not send a state packet.</li>
+            <li>Most neurologic diagnoses <strong>do not</strong> qualify for REM</li>
+            <li>If unsure, check with the provider before sending the state packet</li>
+          </ul>
+        </div>
+        <div class="ic" style="border-left:4px solid var(--success)">
+          <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#166534;margin-bottom:4px">Step 3 · If REM Eligible</div>
+          <h5>📦 Send the State REM Packet</h5>
+          <ul class="cl">
+            <li>Fax to the Maryland Department of Health: <strong>📠 410-333-5426</strong></li>
+            <li>Include complete clinical documentation</li>
+            <li>Decision due within <strong>5 business days</strong> of a complete application</li>
+            <li>If the application is incomplete, the clock does not start until all required documents are received</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 9 MCOs -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si it">📞</div>Maryland HealthChoice MCOs — The 9 Plans <span class="badge bw">Use Plan-Specific Form &amp; Fax</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="al ai" style="margin-bottom:16px"><span class="al-icon">ℹ️</span><span>Each plan has its own referral form and care management fax number. Always use the plan's own form — generic letters are not sufficient. For verified fax numbers pulled directly from current plan provider manuals, use the reference link: <a href="https://claude.ai/code/artifact/58a26c32-1db1-4aee-9d05-a1adec80d9af" target="_blank" style="color:var(--primary);font-weight:700;">Maryland MCO Care Referral Desk →</a></span></div>
+
+      <!-- MCO PLAN CARDS -->
+      <style>
+        .mco-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:16px 18px;margin-bottom:14px;}
+        .mco-card-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;flex-wrap:wrap;gap:8px;}
+        .mco-name{font-size:14px;font-weight:800;color:var(--primary);}
+        .mco-row{display:flex;gap:8px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-bottom:6px;align-items:center;}
+        .mco-row strong{color:#1a1a1a;min-width:60px;}
+        .mco-link{display:inline-block;background:var(--primary);color:#fff!important;text-decoration:none;padding:5px 12px;border-radius:6px;font-size:12px;font-weight:700;margin-top:4px;}
+        .mco-link:hover{opacity:.85;}
+        .mco-link.sec{background:#e8f0fa;color:var(--primary)!important;}
+      </style>
+
+      <!-- 1. Aetna Better Health -->
+      <div class="mco-card">
+        <div class="mco-card-hdr">
+          <div class="mco-name">1. Aetna Better Health of Maryland</div>
+          <span class="badge bc">HealthChoice MCO</span>
+        </div>
+        <div class="mco-row"><strong>📞 Phone:</strong> 1-866-827-2710</div>
+        <div class="mco-row"><strong>📠 Fax:</strong> 1-855-661-1695 (care management / referrals)</div>
+        <div class="mco-row"><strong>📋 Form:</strong> Download from provider forms page — use Aetna's own care management referral form</div>
+        <a href="https://www.aetnabetterhealth.com/maryland/providers/forms.html" target="_blank" class="mco-link">Provider Forms &amp; Downloads →</a>
+        <a href="https://www.aetnabetterhealth.com/maryland/providers/portal.html" target="_blank" class="mco-link sec" style="margin-left:6px;">Provider Portal →</a>
+      </div>
+
+      <!-- 2. Amerigroup Maryland -->
+      <div class="mco-card">
+        <div class="mco-card-hdr">
+          <div class="mco-name">2. Amerigroup Maryland (Anthem)</div>
+          <span class="badge bc">HealthChoice MCO</span>
+        </div>
+        <div class="mco-row"><strong>📞 Phone:</strong> 1-800-454-3730</div>
+        <div class="mco-row"><strong>📠 Fax:</strong> Use form-specific fax listed on the plan's care management form</div>
+        <div class="mco-row"><strong>📋 Form:</strong> Download from provider portal — use Amerigroup's own care management referral form</div>
+        <a href="https://provider.amerigroup.com/md" target="_blank" class="mco-link">Provider Portal →</a>
+        <a href="https://health.maryland.gov/pophealth/Documents/Local%20Health%20Department%20Billing%20Manual/LHD%20Billing%20Manual%20V28/Section%20VI/Amerigroup%20Provider%20Manual%202021.pdf" target="_blank" class="mco-link sec" style="margin-left:6px;">Provider Manual (PDF) →</a>
+      </div>
+
+      <!-- 3. Jai Medical Systems -->
+      <div class="mco-card">
+        <div class="mco-card-hdr">
+          <div class="mco-name">3. Jai Medical Systems MCO</div>
+          <span class="badge bc">HealthChoice MCO</span>
+        </div>
+        <div class="mco-row"><strong>📞 Phone:</strong> Contact via provider manual for care management line</div>
+        <div class="mco-row"><strong>📠 Fax:</strong> Use fax listed on Jai's care management form</div>
+        <div class="mco-row"><strong>📋 Form:</strong> Obtain from Jai Medical provider portal or call provider relations</div>
+        <a href="https://health.maryland.gov/pophealth/documents/local%20health%20department%20billing%20manual/pdf%20manual/section%20vi/jai%20mco%20provider-manual-2019-final.pdf" target="_blank" class="mco-link">Provider Manual (PDF) →</a>
+      </div>
+
+      <!-- 4. Kaiser Permanente -->
+      <div class="mco-card">
+        <div class="mco-card-hdr">
+          <div class="mco-name">4. Kaiser Permanente Mid-Atlantic States</div>
+          <span class="badge bc">HealthChoice MCO</span>
+        </div>
+        <div class="mco-row"><strong>📞 Phone:</strong> Contact Kaiser Permanente provider line for care management referrals</div>
+        <div class="mco-row"><strong>📠 Fax:</strong> Use fax listed on Kaiser's care management / case management form</div>
+        <div class="mco-row"><strong>📋 Form:</strong> Obtain care management referral form from Kaiser provider services</div>
+        <a href="https://healthy.kaiserpermanente.org/middle-atlantic/providers" target="_blank" class="mco-link">Provider Resources →</a>
+      </div>
+
+      <!-- 5. Maryland Physicians Care -->
+      <div class="mco-card">
+        <div class="mco-card-hdr">
+          <div class="mco-name">5. Maryland Physicians Care (MPC)</div>
+          <span class="badge bc">HealthChoice MCO</span>
+        </div>
+        <div class="mco-row"><strong>📞 Phone:</strong> Use provider line listed on their provider portal</div>
+        <div class="mco-row"><strong>📠 Fax (Special Needs Coordinator):</strong> 1-844-284-7698</div>
+        <div class="mco-row"><strong>📧 Email:</strong> MPCSNC@mpcmedicaid.com</div>
+        <div class="mco-row"><strong>📋 Form:</strong> Download from Medical Management page</div>
+        <a href="https://www.marylandphysicianscare.com/providers/medical-management/" target="_blank" class="mco-link">Medical Management &amp; Forms →</a>
+      </div>
+
+      <!-- 6. MedStar Family Choice -->
+      <div class="mco-card">
+        <div class="mco-card-hdr">
+          <div class="mco-name">6. MedStar Family Choice</div>
+          <span class="badge bc">HealthChoice MCO</span>
+        </div>
+        <div class="mco-row"><strong>📞 Phone:</strong> 800-905-1722 (M–F 8:30am–5pm)</div>
+        <div class="mco-row"><strong>📠 Fax (Case/Disease Mgmt):</strong> 410-933-2209</div>
+        <div class="mco-row"><strong>📠 Fax (Outreach Referral Form):</strong> 410-933-2232 or 1-888-991-2232</div>
+        <div class="mco-row"><strong>📋 Form:</strong> Fillable Outreach Referral Form available below</div>
+        <a href="https://www.medstarfamilychoicemd.com/-/media/project/mho/mfc/mfc/pdf/md-outreach-referral-form-2017_fillable.pdf" target="_blank" class="mco-link">Fillable Referral Form (PDF) →</a>
+        <a href="https://www.medstarfamilychoicemd.com/maryland-providers/provider-support/case-management" target="_blank" class="mco-link sec" style="margin-left:6px;">Case Management Info →</a>
+      </div>
+
+      <!-- 7. Priority Partners -->
+      <div class="mco-card" style="border-color:#1a4a7a;">
+        <div class="mco-card-hdr">
+          <div class="mco-name">7. Priority Partners MCO (Johns Hopkins)</div>
+          <span class="badge bc">HealthChoice MCO</span>
+        </div>
+        <div class="mco-row"><strong>📞 Phone:</strong> 800-654-9728</div>
+        <div class="mco-row"><strong>📠 Fax (Referrals — no medical review needed):</strong> 410-424-4603</div>
+        <div class="mco-row"><strong>📠 Fax (Outpatient Medical Review):</strong> 410-762-5205</div>
+        <div class="mco-row"><strong>⏱️ Response time:</strong> 10 business days</div>
+        <div class="mco-row"><strong>📋 Form:</strong> Member Referral Form — download from links below</div>
+        <a href="https://www.hopkinsmedicine.org/-/media/johns-hopkins-health-plans/documents/ppmco/pp_member_referral_form.pdf" target="_blank" class="mco-link">Member Referral Form (PDF) →</a>
+        <a href="https://www.ppmco.org/member-resources/important-forms/" target="_blank" class="mco-link sec" style="margin-left:6px;">All PP Forms →</a>
+        <a href="https://www.hopkinsmedicine.org/johns-hopkins-health-plans/providers-physicians/our-plans/priority-partners/forms" target="_blank" class="mco-link sec" style="margin-left:6px;">Provider Forms →</a>
+      </div>
+
+      <!-- 8. UnitedHealthcare Community Plan -->
+      <div class="mco-card">
+        <div class="mco-card-hdr">
+          <div class="mco-name">8. UnitedHealthcare Community Plan of Maryland</div>
+          <span class="badge bc">HealthChoice MCO</span>
+        </div>
+        <div class="mco-row"><strong>📞 Phone:</strong> Use provider line on UHC provider portal</div>
+        <div class="mco-row"><strong>📠 Fax:</strong> Use form-specific fax listed on UHC's care management referral form</div>
+        <div class="mco-row"><strong>📋 Form:</strong> Access via UHC provider portal</div>
+        <a href="https://www.uhcprovider.com/en/health-plans-by-state/maryland-health-plans/md-comm-plan-home.html" target="_blank" class="mco-link">UHC Provider Portal (MD) →</a>
+      </div>
+
+      <!-- 9. University of Maryland Health Partners -->
+      <div class="mco-card">
+        <div class="mco-card-hdr">
+          <div class="mco-name">9. University of Maryland Health Partners</div>
+          <span class="badge bc">HealthChoice MCO</span>
+        </div>
+        <div class="mco-row"><strong>📞 Phone:</strong> Contact provider relations for care management line</div>
+        <div class="mco-row"><strong>📠 Fax:</strong> Use form-specific fax listed on UM Health Partners care management form</div>
+        <div class="mco-row"><strong>📋 Form:</strong> Obtain from UM Health Partners provider resources</div>
+        <a href="https://www.umhealthpartners.com/providers" target="_blank" class="mco-link">Provider Resources →</a>
+        <a href="https://health.maryland.gov/pophealth/Documents/Local%20Health%20Department%20Billing%20Manual/PDF%20Manual/Section%20VI/Univ%20MD%202017%20Provider-Manual.pdf" target="_blank" class="mco-link sec" style="margin-left:6px;">Provider Manual (PDF) →</a>
+      </div>
+
+      <div class="al ai" style="margin-top:8px"><span class="al-icon">ℹ️</span><span>Fax numbers and form URLs may change when plans update their provider manuals. Always verify contact info before submitting. For the most current verified directory, see: <a href="https://claude.ai/code/artifact/58a26c32-1db1-4aee-9d05-a1adec80d9af" target="_blank" style="color:var(--primary);font-weight:700;">Maryland MCO Care Referral Desk →</a></span></div>
+    </div>
+  </div>
+
+  <!-- REM QUALIFYING CONDITIONS -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ir">🧠</div>REM Program — Neurologically Relevant Qualifying Conditions <span class="badge bd">Screen Before Submitting</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="al ac" style="margin-bottom:16px"><span class="al-icon">⚠️</span><span>Always verify the patient's specific ICD-10 code against the current REM qualifying list before sending the state packet. The list below is a guide — the official REM table is the authoritative source. If the code is not listed, do not send the packet.</span></div>
+      <div class="two">
+        <div class="ic">
+          <h5>Neurological Conditions That May Qualify</h5>
+          <ul class="cl">
+            <li>Amyotrophic Lateral Sclerosis (ALS)</li>
+            <li>Multiple Sclerosis (certain codes)</li>
+            <li>Muscular Dystrophy</li>
+            <li>Spina Bifida with complications</li>
+            <li>Traumatic Brain Injury (TBI) — severe</li>
+            <li>Spinal Cord Injury</li>
+            <li>Huntington's Disease</li>
+          </ul>
+        </div>
+        <div class="ic">
+          <h5>Other Conditions That May Qualify</h5>
+          <ul class="cl">
+            <li>HIV/AIDS</li>
+            <li>Hemophilia</li>
+            <li>Cystic Fibrosis</li>
+            <li>Sickle Cell Disease</li>
+            <li>Organ transplant (certain)</li>
+            <li>Technology-dependent conditions</li>
+          </ul>
+        </div>
+      </div>
+      <div class="al aw" style="margin-top:12px"><span class="al-icon">⚠️</span><span><strong>Most common neurology diagnoses (headache, neuropathy, epilepsy without severe disability, Parkinson's, dementia) do NOT qualify for REM.</strong> They still qualify for standard MCO care management — always send the MCO referral regardless.</span></div>
+    </div>
+  </div>
+
+  <!-- WHAT TO INCLUDE IN REFERRAL -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ig">📄</div>What to Include in the MCO Care Management Referral</div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div class="two">
+        <div class="ic">
+          <h5>📋 Standard MCO Referral — Required Fields (All Plans)</h5>
+          <ol class="st">
+            <li><strong>Completed plan-specific referral form</strong> — do not substitute with a generic letter or progress note</li>
+            <li><strong>Patient demographics:</strong> Full name, date of birth, Medicaid ID / member ID number</li>
+            <li><strong>Diagnosis:</strong> Primary ICD-10 code and plain-language reason for referral</li>
+            <li><strong>Referring provider information:</strong> Name, Tax ID, NPI, office phone, office fax, contact name, email</li>
+            <li><strong>Explicit request for:</strong> Care Management AND Special Needs Coordinator assignment (state both)</li>
+            <li><strong>Brief clinical summary:</strong> 2–3 sentences describing the patient's complexity, functional limitations, and barriers to care</li>
+            <li><strong>Patient contact information:</strong> Best phone number and preferred contact time (helps the coordinator reach them)</li>
+          </ol>
+          <div class="al aw" style="margin-top:10px"><span class="al-icon">⚠️</span><span>Each MCO has its own form — verify you are using the correct plan's form before faxing. Wrong-form submissions are typically rejected or significantly delayed.</span></div>
+        </div>
+        <div class="ic">
+          <h5>📦 State REM Packet — Required Documents (If Eligible)</h5>
+          <ol class="st">
+            <li><strong>State REM application form</strong> — completed and signed</li>
+            <li><strong>Qualifying ICD-10 code</strong> — must appear on the official REM qualifying list</li>
+            <li><strong>Clinical documentation:</strong> Office notes confirming the diagnosis and medical necessity</li>
+            <li><strong>Relevant labs and/or imaging</strong> supporting the diagnosis if applicable</li>
+            <li><strong>Current medication list</strong></li>
+            <li><strong>Functional status documentation</strong> — ADLs, disability level, care needs</li>
+            <li><strong>Signed provider attestation</strong> where required by the form</li>
+          </ol>
+          <div style="background:#f0f9ff;border:1px solid #bae6fd;border-radius:8px;padding:10px 14px;margin-top:10px;font-size:13px;">
+            <strong>📠 State REM Fax:</strong> <span style="font-size:15px;font-weight:800;color:var(--primary);">410-333-5426</span><br>
+            <span style="color:var(--muted);">Maryland Department of Health — decision within 5 business days of a <em>complete</em> application. Incomplete packets reset the clock.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TIPS -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si it">💡</div>Practical Tips &amp; Common Mistakes</div><span class="chev">▼</span></div>
+    <div class="ab">
+      <ul class="cl">
+        <li><strong>Always identify the patient's MCO first</strong> — check the front of their Medicaid card or verify in the eligibility portal. A referral sent to the wrong plan will not be processed.</li>
+        <li><strong>Use the plan's own form</strong> — generic cover letters or progress notes are not sufficient for care management referrals. Download the correct form from the plan's provider portal.</li>
+        <li><strong>Document the fax confirmation</strong> — save the fax confirmation page in the patient chart under communications.</li>
+        <li><strong>Follow up if no response in 10–15 business days</strong> — call the plan's provider line to confirm receipt and assignment status.</li>
+        <li><strong>Inform the patient</strong> — let them know a care manager may be contacting them and encourage them to respond. Some patients ignore MCO calls thinking they are spam.</li>
+        <li><strong>For REM: submit a complete packet the first time</strong> — the 5-business-day decision clock does not start until the application is complete. Incomplete submissions cause significant delays.</li>
+        <li><strong>Note the referral in TalkEHR</strong> — document the date of submission, fax number used, and who submitted it. Set a follow-up reminder for 2 weeks.</li>
+      </ul>
+    </div>
+  </div>
+
+</div><!-- end panel-mco -->
 
 </div><!-- end .content -->
 
@@ -16471,7 +16966,7 @@ function printWCForm(){
 
 // ── Emergency Disclaimer — auto-insert into all clinical tab panels ──────────
 (function(){
-  const EXCLUDE = ['panel-ov','panel-about','panel-fml','panel-dir','panel-support','panel-portal'];
+  const EXCLUDE = ['panel-ov','panel-about','panel-fml','panel-dir','panel-support','panel-portal','panel-cala','panel-mco'];
   const DISCLAIMER = `
   <div style="display:flex;align-items:flex-start;gap:14px;background:#fff1f2;border:2px solid #dc2626;border-radius:10px;padding:14px 18px;margin-bottom:20px;">
     <div style="font-size:28px;line-height:1;flex-shrink:0;">🚨</div>
