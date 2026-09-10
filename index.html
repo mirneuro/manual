@@ -9,7 +9,6 @@
 
 <div id="protectedContent" style="display:none;">
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11567,7 +11566,7 @@ table.fml-plans tr:hover td{background:#f7fafc;}
             <li>UHC has a <strong>PA Lookup Tool</strong> on their provider portal — use it first to confirm if PA is required before submitting</li>
             <li>UHC Community Plan (Medicaid) has different requirements than commercial UHC — verify separately</li>
             <li>Turnaround: 3–5 business days standard; 24 hours for urgent requests</li>
-            <li>Cognitive Assessment (CA): UHC is a non-accepted plan for full CA — MMSE only (see Cognitive Assessment tab)</li>
+            <li>Cognitive Assessment (CA): UHC does not require PA — full CA may proceed when provider indicates (see Cognitive Assessment tab)</li>
           </ul>
         </div>
       </div>
@@ -13098,28 +13097,64 @@ table.fml-plans tr:hover td{background:#f7fafc;}
     </div>
   </div>
 
+  <!-- PATIENT LIST PREPARATION -->
+  <div class="acc">
+    <div class="ah open" onclick="tog(this)"><div class="at"><div class="si ig">📋</div>Preparing &amp; Sharing Patient Lists for CA</div><span class="chev">▼</span></div>
+    <div class="ab open">
+      <div class="prob" style="margin-bottom:16px">
+        ⚠ <strong>IMPORTANT — Language Policy:</strong> Do <strong>NOT</strong> refer to this as a <em>"CA list."</em> Always describe it as the <strong>"list of patients with covered Dx for CA"</strong> or <strong>"list of patients due for repeat CA."</strong> Using "CA list" is ambiguous and may cause confusion — be specific about what the list represents.
+      </div>
+
+      <div class="two">
+        <div class="ic" style="border-left:4px solid var(--primary)">
+          <h5>📄 List 1 — Patients With Covered Dx for CA</h5>
+          <p style="margin-bottom:10px">Pull and share a list of patients whose <strong>diagnoses (ICD-10 codes) qualify them for Cognitive Assessment</strong> based on their covered conditions and insurance.</p>
+          <ul class="cl">
+            <li>Include patients with eligible neurological, memory-related, or psychiatric diagnoses on file (see Conditions Eligible for CA accordion)</li>
+            <li>Cross-reference insurance against the accepted/conditional plans list — flag those requiring PA</li>
+            <li>Patients with non-accepted insurance should be flagged separately — CA is not billable without PA</li>
+            <li>Do not describe this list to providers or scheduling as a "CA list" — say <em>"patients with covered Dx for CA"</em></li>
+          </ul>
+          <div class="al ai" style="margin-top:10px"><span class="al-icon">ℹ️</span><span>This list is for identifying candidates — provider review and indication is still required before scheduling any CA</span></div>
+        </div>
+        <div class="ic" style="border-left:4px solid var(--warn)">
+          <h5>⏰ List 2 — Patients Due for Repeat CA (Abnormal Result ≥ 6 Months Ago)</h5>
+          <p style="margin-bottom:10px">Pull a separate list of patients who had a <strong>prior abnormal CA result and whose last CA was at least 6 months ago</strong> — these patients are due for a follow-up assessment.</p>
+          <ul class="cl">
+            <li>Filter for patients with a documented <strong>abnormal or impaired</strong> CA result in their chart</li>
+            <li>Confirm the date of their last CA — only include patients whose last CA was <strong>≥ 6 months ago</strong></li>
+            <li>Do not include patients with a recent CA (within the past 6 months) even if abnormal</li>
+            <li>Share this as a <em>"list of patients with abnormal CA due for repeat assessment"</em> — not a "CA list"</li>
+            <li>Provider should review and confirm each patient before scheduling the repeat CA</li>
+          </ul>
+          <div class="al aw" style="margin-top:10px"><span class="al-icon">⚠️</span><span>Repeat CA for abnormal results should occur at <strong>3–6 months</strong> (see Age-Based Criteria tab for repeat testing schedule)</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- INSURANCE COVERAGE GUIDELINES -->
   <div class="acc">
     <div class="ah open" onclick="tog(this)"><div class="at"><div class="si ir">🚫</div>Insurance Coverage Guidelines — Accepted vs. Non-Accepted Plans</div><span class="chev">▼</span></div>
     <div class="ab open">
       <div class="prob" style="margin-bottom:16px">
-        ⚠ <strong>CRITICAL:</strong> For patients with non-accepted insurance plans, do <strong>NOT</strong> perform a full Cognitive Assessment. Administer the <strong>MMSE (paper test) only</strong>. All other insurance plans are accepted for full CA.
+        ⚠ <strong>CRITICAL:</strong> For patients with non-accepted insurance plans, do <strong>NOT</strong> perform a full Cognitive Assessment — administer the <strong>MMSE (paper test) only</strong>, unless prior authorization for CA has been obtained. <strong>All non-accepted insurance plans require PA before full CA can be performed.</strong>
       </div>
-      <div class="two">
+
+      <div class="two" style="margin-bottom:16px">
         <div class="ic" style="border-left:4px solid var(--danger)">
-          <h5 style="color:var(--danger)">❌ Non-Accepted Insurance Plans for Full CA</h5>
+          <h5 style="color:var(--danger)">❌ Non-Accepted Plans — MMSE Only (Unless PA Obtained)</h5>
           <ul class="cl">
             <li>Maryland Physicians Care (MPC)</li>
             <li>WellPoint / Unicare</li>
             <li>Johns Hopkins (all plans — EHP, Priority Partners, USFHP)</li>
-            <li>UnitedHealthcare (UHC)</li>
             <li>Aetna Better Health MD</li>
             <li>American Correctional</li>
             <li>Railroad Medicare</li>
-            <li>Workers' Compensation (WC) — <em>unless prior authorization for CA is obtained</em></li>
-            <li>Motor Vehicle Accident (MVA)</li>
+            <li>Workers' Compensation (WC)</li>
           </ul>
-          <div class="al aw" style="margin-top:10px"><strong>Action:</strong> Administer MMSE (paper test) only for these plans</div>
+          <div class="al aw" style="margin-top:10px"><span class="al-icon">⚠️</span><span><strong>MMSE only</strong> for these plans — full CA requires PA first. Once PA is approved and on file, full CA may proceed.</span></div>
+          <div class="al ac" style="margin-top:8px"><span class="al-icon">🚫</span><span><strong>Motor Vehicle Accident (MVA):</strong> Do <strong>NOT</strong> perform full Cognitive Assessment on MVA cases. MMSE (paper test) is permitted.</span></div>
         </div>
         <div class="ic" style="border-left:4px solid var(--success)">
           <h5 style="color:var(--success)">✅ Accepted Plans — Full CA Permitted</h5>
@@ -13127,11 +13162,41 @@ table.fml-plans tr:hover td{background:#f7fafc;}
           <ul class="cl">
             <li>Medicare (standard)</li>
             <li>Most commercial/private insurance plans</li>
-            <li>Medicaid MD (standard managed care plans)</li>
+            <li>UnitedHealthcare (UHC) — <strong>no PA required</strong>; full CA may proceed when provider indicates</li>
             <li>Tricare — confirm PA requirements first</li>
-            <li>Any plan not listed in the non-accepted column</li>
+            <li>Any plan not listed in the non-accepted or conditional columns</li>
           </ul>
           <div class="al ai" style="margin-top:10px"><strong>When in doubt:</strong> Verify with billing before proceeding with full CA</div>
+        </div>
+      </div>
+
+      <!-- CONDITIONAL PLANS -->
+      <div class="sub"><div class="sub-title">⚠️ Conditional Plans — Full CA Allowed With Authorization on File</div></div>
+      <div class="al aw" style="margin-bottom:12px">
+        <span class="al-icon">⚠️</span>
+        <span>
+          <strong>Medicaid (All Plans — MD, WV &amp; Other States):</strong> Prior authorization is required for full CA across all Medicaid managed care plans. Verify PA is on file before proceeding — MMSE only if no PA. Each MCO may have different criteria; see the MD MCO Care Management tab for MD HealthChoice plan-specific details.
+        </span>
+      </div>
+      <div class="two">
+        <div class="ic" style="border-left:4px solid var(--warning)">
+          <h5>CareFirst (Select Plans)</h5>
+          <ul class="cl">
+            <li>Some CareFirst plans require <strong>prior authorization for CA</strong> — verify the specific plan before proceeding</li>
+            <li>If PA is required and not on file → MMSE only until PA is obtained</li>
+            <li>CareFirst plans that do not require PA → full CA permitted</li>
+            <li>Check eligibility/benefits or call CareFirst provider line to confirm PA requirement per plan</li>
+          </ul>
+        </div>
+        <div class="ic" style="border-left:4px solid var(--warning)">
+          <h5>Veterans Affairs (VA)</h5>
+          <ul class="cl">
+            <li>Full CA is permitted if the patient has <strong>authorization on file for a relevant diagnosis</strong></li>
+            <li>Verify the VA auth references the applicable diagnosis/procedure before proceeding</li>
+            <li>If no VA auth on file → do not perform full CA; contact the VA to request authorization</li>
+            <li>VA authorizations are visit/episode specific — confirm the current auth covers this encounter</li>
+          </ul>
+          <div class="al as" style="margin-top:8px"><span class="al-icon">✅</span><span>With valid VA auth on file — full CA may proceed</span></div>
         </div>
       </div>
     </div>
