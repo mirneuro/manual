@@ -8,7 +8,6 @@
 </div>
 
 <div id="protectedContent" style="display:none;">
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -210,6 +209,7 @@ table.fml-plans tr:hover td{background:#f7fafc;}
   <button class="tb" onclick="sw('support',this)">🛠️ Support Contacts</button>
   <button class="tb" onclick="sw('cala',this)">🤲 Cala Health</button>
   <button class="tb" onclick="sw('mco',this)">🏥 MD MCO Care</button>
+  <button class="tb" onclick="sw('quiz',this)">🎓 Quiz Center</button>
 </nav>
 <div class="content">
   <div id="sb"></div>
@@ -247,6 +247,7 @@ table.fml-plans tr:hover td{background:#f7fafc;}
     <div class="ovc" onclick="swId('support')"><div class="oi">🛠️</div><div class="ot">Support Contacts</div><div class="os">TalkEHR · Everyware · Vendor Support</div></div>
     <div class="ovc" onclick="swId('cala')"><div class="oi">🤲</div><div class="ot">Cala Health</div><div class="os">TAPS Therapy · Essential Tremor · Medicare Criteria</div></div>
     <div class="ovc" onclick="swId('mco')"><div class="oi">🏥</div><div class="ot">MD MCO Care Mgmt</div><div class="os">Case Manager · REM Program · HealthChoice MCOs</div></div>
+    <div class="ovc" onclick="swId('quiz')"><div class="oi">🎓</div><div class="ot">Quiz Center</div><div class="os">Knowledge Assessments · All Departments</div></div>
   </div>
   <!-- SECTION 1 BANNER -->
   <div style="background:linear-gradient(135deg,#1a4a7a,#0f3460);color:#fff;border-radius:14px;padding:22px 26px;margin-bottom:20px;box-shadow:0 4px 16px rgba(0,0,0,.15)">
@@ -1779,34 +1780,6 @@ table.fml-plans tr:hover td{background:#f7fafc;}
     </div>
   </div>
 
-  <!-- Front Desk QUIZ -->
-  <div class="acc">
-    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ig">🎓</div>Front Desk Knowledge Quiz <span class="badge bc">Required — All Staff</span></div><span class="chev">▼</span></div>
-    <div class="ab">
-      <div id="gq-fdq-start">
-        <div style="text-align:center;padding:24px 0 8px">
-          <div style="font-size:48px;margin-bottom:12px">📋</div>
-          <h3 style="color:var(--primary);margin:0 0 8px">Front Desk Knowledge Check</h3>
-          <p style="color:var(--muted);margin:0 0 20px;font-size:14px">10 questions &nbsp;·&nbsp; 80% required to pass &nbsp;·&nbsp; Certificate awarded on successful completion</p>
-          <input id="gq-fdq-name" type="text" placeholder="Enter your full name" style="display:block;margin:0 auto 14px;padding:10px 16px;border:2px solid #e2e8f0;border-radius:8px;font-size:15px;width:320px;max-width:100%;text-align:center">
-          <button class="btn" onclick="gqStart('fdq')">Start Quiz →</button>
-        </div>
-      </div>
-      <div id="gq-fdq-quiz" style="display:none">
-        <div style="margin-bottom:6px;font-size:13px;color:var(--muted);font-weight:600" id="gq-fdq-qcnt"></div>
-        <div class="gq-prog-bar"><div class="gq-prog-fill" id="gq-fdq-pb" style="width:0%"></div></div>
-        <div id="gq-fdq-qtxt" style="font-size:16px;font-weight:600;color:var(--primary);margin-bottom:14px;line-height:1.5"></div>
-        <div id="gq-fdq-opts"></div>
-        <div id="gq-fdq-fb" style="margin-top:10px;font-weight:600;font-size:14px;min-height:20px"></div>
-        <div style="margin-top:14px"><button id="gq-fdq-nxt" class="btn" style="display:none" onclick="gqNext('fdq')">Next →</button></div>
-      </div>
-      <div id="gq-fdq-result" style="display:none;text-align:center;padding:20px 0">
-        <div id="gq-fdq-score"></div>
-        <canvas id="gq-fdq-cert-canvas" style="display:none;max-width:100%;margin:16px auto;border:1px solid #e2e8f0;border-radius:8px;box-shadow:0 2px 12px rgba(0,0,0,.1)"></canvas>
-        <button id="gq-fdq-dl" class="btn" style="display:none;margin-top:10px" onclick="gqDownload('fdq')">⬇ Download Certificate</button>
-      </div>
-    </div>
-  </div>
 
 </div>
 
@@ -3152,6 +3125,7 @@ table.fml-plans tr:hover td{background:#f7fafc;}
           <li>Omitting a procedure diagnosis (EMG, EEG, Botox) — these require a billable ICD-10 code</li>
         </ul>
       </div>
+      <div class="al ac" style="margin-top:10px"><span class="al-icon">🚨</span><span><strong>Cervical Botox (CPT 64616) — Bilateral Procedure:</strong> CPT 64616 is a <strong>bilateral procedure</strong>. Always confirm modifier <strong>-50</strong> is appended (i.e., <code>64616-50</code>) when submitting to billing. Submitting without modifier -50 causes underpayment or denial. Do not bill unilaterally unless only one side was treated and documented by the provider.</span></div>
     </div>
   </div>
 
@@ -4518,34 +4492,6 @@ table.fml-plans tr:hover td{background:#f7fafc;}
     </div>
   </div>
 
-  <!-- Medical Assistants QUIZ -->
-  <div class="acc">
-    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ig">🎓</div>Medical Assistants Knowledge Quiz <span class="badge bc">Required — All Staff</span></div><span class="chev">▼</span></div>
-    <div class="ab">
-      <div id="gq-maq-start">
-        <div style="text-align:center;padding:24px 0 8px">
-          <div style="font-size:48px;margin-bottom:12px">📋</div>
-          <h3 style="color:var(--primary);margin:0 0 8px">Medical Assistants Knowledge Check</h3>
-          <p style="color:var(--muted);margin:0 0 20px;font-size:14px">10 questions &nbsp;·&nbsp; 80% required to pass &nbsp;·&nbsp; Certificate awarded on successful completion</p>
-          <input id="gq-maq-name" type="text" placeholder="Enter your full name" style="display:block;margin:0 auto 14px;padding:10px 16px;border:2px solid #e2e8f0;border-radius:8px;font-size:15px;width:320px;max-width:100%;text-align:center">
-          <button class="btn" onclick="gqStart('maq')">Start Quiz →</button>
-        </div>
-      </div>
-      <div id="gq-maq-quiz" style="display:none">
-        <div style="margin-bottom:6px;font-size:13px;color:var(--muted);font-weight:600" id="gq-maq-qcnt"></div>
-        <div class="gq-prog-bar"><div class="gq-prog-fill" id="gq-maq-pb" style="width:0%"></div></div>
-        <div id="gq-maq-qtxt" style="font-size:16px;font-weight:600;color:var(--primary);margin-bottom:14px;line-height:1.5"></div>
-        <div id="gq-maq-opts"></div>
-        <div id="gq-maq-fb" style="margin-top:10px;font-weight:600;font-size:14px;min-height:20px"></div>
-        <div style="margin-top:14px"><button id="gq-maq-nxt" class="btn" style="display:none" onclick="gqNext('maq')">Next →</button></div>
-      </div>
-      <div id="gq-maq-result" style="display:none;text-align:center;padding:20px 0">
-        <div id="gq-maq-score"></div>
-        <canvas id="gq-maq-cert-canvas" style="display:none;max-width:100%;margin:16px auto;border:1px solid #e2e8f0;border-radius:8px;box-shadow:0 2px 12px rgba(0,0,0,.1)"></canvas>
-        <button id="gq-maq-dl" class="btn" style="display:none;margin-top:10px" onclick="gqDownload('maq')">⬇ Download Certificate</button>
-      </div>
-    </div>
-  </div>
 
 </div>
 
@@ -5610,32 +5556,40 @@ table.fml-plans tr:hover td{background:#f7fafc;}
     </div>
   </div>
 
-  <!-- Schedulers QUIZ -->
+
+  <!-- DR KHAN SCHEDULING -->
   <div class="acc">
-    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ig">🎓</div>Schedulers Knowledge Quiz <span class="badge bc">Required — All Staff</span></div><span class="chev">▼</span></div>
-    <div class="ab">
-      <div id="gq-scq-start">
-        <div style="text-align:center;padding:24px 0 8px">
-          <div style="font-size:48px;margin-bottom:12px">📋</div>
-          <h3 style="color:var(--primary);margin:0 0 8px">Schedulers Knowledge Check</h3>
-          <p style="color:var(--muted);margin:0 0 20px;font-size:14px">10 questions &nbsp;·&nbsp; 80% required to pass &nbsp;·&nbsp; Certificate awarded on successful completion</p>
-          <input id="gq-scq-name" type="text" placeholder="Enter your full name" style="display:block;margin:0 auto 14px;padding:10px 16px;border:2px solid #e2e8f0;border-radius:8px;font-size:15px;width:320px;max-width:100%;text-align:center">
-          <button class="btn" onclick="gqStart('scq')">Start Quiz →</button>
-        </div>
-      </div>
-      <div id="gq-scq-quiz" style="display:none">
-        <div style="margin-bottom:6px;font-size:13px;color:var(--muted);font-weight:600" id="gq-scq-qcnt"></div>
-        <div class="gq-prog-bar"><div class="gq-prog-fill" id="gq-scq-pb" style="width:0%"></div></div>
-        <div id="gq-scq-qtxt" style="font-size:16px;font-weight:600;color:var(--primary);margin-bottom:14px;line-height:1.5"></div>
-        <div id="gq-scq-opts"></div>
-        <div id="gq-scq-fb" style="margin-top:10px;font-weight:600;font-size:14px;min-height:20px"></div>
-        <div style="margin-top:14px"><button id="gq-scq-nxt" class="btn" style="display:none" onclick="gqNext('scq')">Next →</button></div>
-      </div>
-      <div id="gq-scq-result" style="display:none;text-align:center;padding:20px 0">
-        <div id="gq-scq-score"></div>
-        <canvas id="gq-scq-cert-canvas" style="display:none;max-width:100%;margin:16px auto;border:1px solid #e2e8f0;border-radius:8px;box-shadow:0 2px 12px rgba(0,0,0,.1)"></canvas>
-        <button id="gq-scq-dl" class="btn" style="display:none;margin-top:10px" onclick="gqDownload('scq')">⬇ Download Certificate</button>
-      </div>
+    <div class="ah open" onclick="tog(this)"><div class="at"><div class="si ib">📅</div>Dr. Khan — Appointment Scheduling &amp; Timings</div><span class="chev">▼</span></div>
+    <div class="ab open">
+      <div class="al ai" style="margin-bottom:12px"><span class="al-icon">🎬</span><span>Watch the training video below for Dr. Khan's appointment scheduling instructions and timings.</span></div>
+      <video controls style="width:100%;max-width:860px;border-radius:8px;border:1px solid var(--border);display:block;margin:0 auto">
+        <source src="Dr Khan.webm" type="video/webm">
+        Your browser does not support the video tag. Please ensure the file <strong>Dr Khan.webm</strong> is in the same folder as this manual.
+      </video>
+    </div>
+  </div>
+
+  <!-- DR MIR SCHEDULING -->
+  <div class="acc">
+    <div class="ah open" onclick="tog(this)"><div class="at"><div class="si ib">📅</div>Dr. Mir — Appointment Scheduling &amp; Timings</div><span class="chev">▼</span></div>
+    <div class="ab open">
+      <div class="al ai" style="margin-bottom:12px"><span class="al-icon">🎬</span><span>Watch the training video below for Dr. Mir's appointment scheduling instructions and timings.</span></div>
+      <video controls style="width:100%;max-width:860px;border-radius:8px;border:1px solid var(--border);display:block;margin:0 auto">
+        <source src="Dr Mir.webm" type="video/webm">
+        Your browser does not support the video tag. Please ensure the file <strong>Dr Mir.webm</strong> is in the same folder as this manual.
+      </video>
+    </div>
+  </div>
+
+  <!-- NP SCHEDULING -->
+  <div class="acc">
+    <div class="ah open" onclick="tog(this)"><div class="at"><div class="si ib">📅</div>Nurse Practitioners — Appointment Scheduling &amp; Timings</div><span class="chev">▼</span></div>
+    <div class="ab open">
+      <div class="al ai" style="margin-bottom:12px"><span class="al-icon">🎬</span><span>Watch the training video below for Nurse Practitioner appointment scheduling instructions and timings.</span></div>
+      <video controls style="width:100%;max-width:860px;border-radius:8px;border:1px solid var(--border);display:block;margin:0 auto">
+        <source src="NP's.webm" type="video/webm">
+        Your browser does not support the video tag. Please ensure the file <strong>NP's.webm</strong> is in the same folder as this manual.
+      </video>
     </div>
   </div>
 
@@ -6336,34 +6290,6 @@ table.fml-plans tr:hover td{background:#f7fafc;}
     </div>
   </div>
 
-  <!-- Referrals & Records QUIZ -->
-  <div class="acc">
-    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ig">🎓</div>Referrals &amp; Records Knowledge Quiz <span class="badge bc">Required — All Staff</span></div><span class="chev">▼</span></div>
-    <div class="ab">
-      <div id="gq-rfq-start">
-        <div style="text-align:center;padding:24px 0 8px">
-          <div style="font-size:48px;margin-bottom:12px">📋</div>
-          <h3 style="color:var(--primary);margin:0 0 8px">Referrals &amp; Records Knowledge Check</h3>
-          <p style="color:var(--muted);margin:0 0 20px;font-size:14px">10 questions &nbsp;·&nbsp; 80% required to pass &nbsp;·&nbsp; Certificate awarded on successful completion</p>
-          <input id="gq-rfq-name" type="text" placeholder="Enter your full name" style="display:block;margin:0 auto 14px;padding:10px 16px;border:2px solid #e2e8f0;border-radius:8px;font-size:15px;width:320px;max-width:100%;text-align:center">
-          <button class="btn" onclick="gqStart('rfq')">Start Quiz →</button>
-        </div>
-      </div>
-      <div id="gq-rfq-quiz" style="display:none">
-        <div style="margin-bottom:6px;font-size:13px;color:var(--muted);font-weight:600" id="gq-rfq-qcnt"></div>
-        <div class="gq-prog-bar"><div class="gq-prog-fill" id="gq-rfq-pb" style="width:0%"></div></div>
-        <div id="gq-rfq-qtxt" style="font-size:16px;font-weight:600;color:var(--primary);margin-bottom:14px;line-height:1.5"></div>
-        <div id="gq-rfq-opts"></div>
-        <div id="gq-rfq-fb" style="margin-top:10px;font-weight:600;font-size:14px;min-height:20px"></div>
-        <div style="margin-top:14px"><button id="gq-rfq-nxt" class="btn" style="display:none" onclick="gqNext('rfq')">Next →</button></div>
-      </div>
-      <div id="gq-rfq-result" style="display:none;text-align:center;padding:20px 0">
-        <div id="gq-rfq-score"></div>
-        <canvas id="gq-rfq-cert-canvas" style="display:none;max-width:100%;margin:16px auto;border:1px solid #e2e8f0;border-radius:8px;box-shadow:0 2px 12px rgba(0,0,0,.1)"></canvas>
-        <button id="gq-rfq-dl" class="btn" style="display:none;margin-top:10px" onclick="gqDownload('rfq')">⬇ Download Certificate</button>
-      </div>
-    </div>
-  </div>
 
 </div>
 
@@ -7623,34 +7549,6 @@ table.fml-plans tr:hover td{background:#f7fafc;}
     </div>
   </div>
 
-  <!-- Labs & Imaging QUIZ -->
-  <div class="acc">
-    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ig">🎓</div>Labs &amp; Imaging Knowledge Quiz <span class="badge bc">Required — All Staff</span></div><span class="chev">▼</span></div>
-    <div class="ab">
-      <div id="gq-lbq-start">
-        <div style="text-align:center;padding:24px 0 8px">
-          <div style="font-size:48px;margin-bottom:12px">📋</div>
-          <h3 style="color:var(--primary);margin:0 0 8px">Labs &amp; Imaging Knowledge Check</h3>
-          <p style="color:var(--muted);margin:0 0 20px;font-size:14px">10 questions &nbsp;·&nbsp; 80% required to pass &nbsp;·&nbsp; Certificate awarded on successful completion</p>
-          <input id="gq-lbq-name" type="text" placeholder="Enter your full name" style="display:block;margin:0 auto 14px;padding:10px 16px;border:2px solid #e2e8f0;border-radius:8px;font-size:15px;width:320px;max-width:100%;text-align:center">
-          <button class="btn" onclick="gqStart('lbq')">Start Quiz →</button>
-        </div>
-      </div>
-      <div id="gq-lbq-quiz" style="display:none">
-        <div style="margin-bottom:6px;font-size:13px;color:var(--muted);font-weight:600" id="gq-lbq-qcnt"></div>
-        <div class="gq-prog-bar"><div class="gq-prog-fill" id="gq-lbq-pb" style="width:0%"></div></div>
-        <div id="gq-lbq-qtxt" style="font-size:16px;font-weight:600;color:var(--primary);margin-bottom:14px;line-height:1.5"></div>
-        <div id="gq-lbq-opts"></div>
-        <div id="gq-lbq-fb" style="margin-top:10px;font-weight:600;font-size:14px;min-height:20px"></div>
-        <div style="margin-top:14px"><button id="gq-lbq-nxt" class="btn" style="display:none" onclick="gqNext('lbq')">Next →</button></div>
-      </div>
-      <div id="gq-lbq-result" style="display:none;text-align:center;padding:20px 0">
-        <div id="gq-lbq-score"></div>
-        <canvas id="gq-lbq-cert-canvas" style="display:none;max-width:100%;margin:16px auto;border:1px solid #e2e8f0;border-radius:8px;box-shadow:0 2px 12px rgba(0,0,0,.1)"></canvas>
-        <button id="gq-lbq-dl" class="btn" style="display:none;margin-top:10px" onclick="gqDownload('lbq')">⬇ Download Certificate</button>
-      </div>
-    </div>
-  </div>
 
 </div>
 
@@ -7835,34 +7733,7 @@ table.fml-plans tr:hover td{background:#f7fafc;}
     </div>
   </div>
 
-  <!-- Quality Improvement QUIZ -->
-  <div class="acc">
-    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ig">🎓</div>Quality Improvement Knowledge Quiz <span class="badge bc">Required — All Staff</span></div><span class="chev">▼</span></div>
-    <div class="ab">
-      <div id="gq-qiq-start">
-        <div style="text-align:center;padding:24px 0 8px">
-          <div style="font-size:48px;margin-bottom:12px">📋</div>
-          <h3 style="color:var(--primary);margin:0 0 8px">Quality Improvement Knowledge Check</h3>
-          <p style="color:var(--muted);margin:0 0 20px;font-size:14px">10 questions &nbsp;·&nbsp; 80% required to pass &nbsp;·&nbsp; Certificate awarded on successful completion</p>
-          <input id="gq-qiq-name" type="text" placeholder="Enter your full name" style="display:block;margin:0 auto 14px;padding:10px 16px;border:2px solid #e2e8f0;border-radius:8px;font-size:15px;width:320px;max-width:100%;text-align:center">
-          <button class="btn" onclick="gqStart('qiq')">Start Quiz →</button>
-        </div>
-      </div>
-      <div id="gq-qiq-quiz" style="display:none">
-        <div style="margin-bottom:6px;font-size:13px;color:var(--muted);font-weight:600" id="gq-qiq-qcnt"></div>
-        <div class="gq-prog-bar"><div class="gq-prog-fill" id="gq-qiq-pb" style="width:0%"></div></div>
-        <div id="gq-qiq-qtxt" style="font-size:16px;font-weight:600;color:var(--primary);margin-bottom:14px;line-height:1.5"></div>
-        <div id="gq-qiq-opts"></div>
-        <div id="gq-qiq-fb" style="margin-top:10px;font-weight:600;font-size:14px;min-height:20px"></div>
-        <div style="margin-top:14px"><button id="gq-qiq-nxt" class="btn" style="display:none" onclick="gqNext('qiq')">Next →</button></div>
-      </div>
-      <div id="gq-qiq-result" style="display:none;text-align:center;padding:20px 0">
-        <div id="gq-qiq-score"></div>
-        <canvas id="gq-qiq-cert-canvas" style="display:none;max-width:100%;margin:16px auto;border:1px solid #e2e8f0;border-radius:8px;box-shadow:0 2px 12px rgba(0,0,0,.1)"></canvas>
-        <button id="gq-qiq-dl" class="btn" style="display:none;margin-top:10px" onclick="gqDownload('qiq')">⬇ Download Certificate</button>
-      </div>
-    </div>
-  </div>
+
 </div>
 
 <!-- ===== INFUSIONS ===== -->
@@ -8495,108 +8366,309 @@ table.fml-plans tr:hover td{background:#f7fafc;}
 
   <!-- LEQEMBI -->
   <div class="acc">
-    <div class="ah" onclick="tog(this)"><div class="at"><div class="si it">💊</div>Leqembi (Lecanemab) — Process Checklist <span class="badge bi">Alzheimer's Disease</span></div><span class="chev">▼</span></div>
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si it">💊</div>Leqembi (Lecanemab) — Prescribing, Enrollment &amp; PA Workflow <span class="badge bi">Alzheimer's Disease</span></div><span class="chev">▼</span></div>
     <div class="ab">
-      <div class="al ai"><span class="al-icon">ℹ️</span><span>Indication: MCI due to Alzheimer disease or mild Alzheimer dementia with confirmed amyloid pathology. Dosing: 10 mg/kg IV every 2 weeks. MRI monitoring required before the 3rd, 5th, 7th, and 14th infusions. CMS registry may be required for Medicare patients.</span></div>
 
-      <div class="sub"><div class="sub-title">⚙️ Medication-Specific Requirements</div>
-        <div class="prog" id="lq-med-p"><span>Progress:</span><div class="pbw"><div class="pb" id="lq-med-b" style="width:0%"></div></div><span class="pt" id="lq-med-t">0 / 6</span><button class="rb" onclick="resetCL('lq-med')">Reset</button></div>
-        <ul class="il" id="lq-med-cl">
-          <li onclick="tck(this,'lq-med')"><div class="cb">✓</div><span class="cl-lbl">Dosing schedule documented: 10 mg/kg IV every 2 weeks per prescribing information</span></li>
-          <li onclick="tck(this,'lq-med')"><div class="cb">✓</div><span class="cl-lbl">Recent baseline brain MRI obtained prior to initiation</span></li>
-          <li onclick="tck(this,'lq-med')"><div class="cb">✓</div><span class="cl-lbl">MRI monitoring schedule set: before the 3rd, 5th, 7th, and 14th infusions; additional MRI for ARIA symptoms</span></li>
-          <li onclick="tck(this,'lq-med')"><div class="cb">✓</div><span class="cl-lbl">Amyloid pathology confirmed before treatment</span></li>
-          <li onclick="tck(this,'lq-med')"><div class="cb">✓</div><span class="cl-lbl">ARIA counseling documented</span></li>
-          <li onclick="tck(this,'lq-med')"><div class="cb">✓</div><span class="cl-lbl">CMS registry/data collection checkpoint completed for Medicare when required</span></li>
+      <!-- ROLE NOTE -->
+      <div class="al ai" style="margin-bottom:16px"><span class="al-icon">ℹ️</span><span><strong>Mir Neurology is the prescribing office — not the infusion site.</strong> Our responsibilities cover patient eligibility, pre-prescribing workup, CMS registry enrollment, PA submission, Companion program enrollment, and referral coordination. Infusion administration is handled by the referred infusion center.</span></div>
+
+      <!-- FORMULATION OVERVIEW -->
+      <div class="sub"><div class="sub-title">Formulation Overview — IV vs. IQLIK</div>
+        <div class="two">
+          <div class="ic" style="border-left:4px solid var(--primary)">
+            <h5>💉 LEQEMBI (Intravenous)</h5>
+            <ul class="cl">
+              <li><strong>Route:</strong> IV infusion at an infusion center (~1 hour)</li>
+              <li><strong>Initiation (18 months):</strong> 10 mg/kg every 2 weeks</li>
+              <li><strong>Maintenance (after 18 months):</strong> 10 mg/kg every 4 weeks</li>
+              <li><strong>Benefit type:</strong> Medical benefit (Part B for Medicare)</li>
+              <li><strong>PA submitted to:</strong> Medical insurance</li>
+              <li><strong>Drug code:</strong> J0174 (1 mg lecanemab-irmb)</li>
+              <li><strong>NDC:</strong> 500 mg/5 mL: 62856-0215-01 · 200 mg/2 mL: 62856-0212-01</li>
+            </ul>
+            <div class="al ai" style="margin-top:8px"><span class="al-icon">📋</span><span>Refer patient to infusion center after PA is obtained. Include infusion site info on Companion enrollment form.</span></div>
+          </div>
+          <div class="ic" style="border-left:4px solid var(--accent)">
+            <h5>💉 LEQEMBI IQLIK (Subcutaneous Autoinjector)</h5>
+            <ul class="cl">
+              <li><strong>Route:</strong> SQ injection at home by patient or caregiver (~15 sec)</li>
+              <li><strong>Initiation (18 months):</strong> 500 mg once weekly (two 250 mg autoinjectors) — <em>FDA approved 2026</em></li>
+              <li><strong>Maintenance (after 18 months):</strong> 360 mg once weekly (4 autoinjectors)</li>
+              <li><strong>Switching IV → SQ maintenance:</strong> First SQ dose given 2 weeks after last IV initiation dose</li>
+              <li><strong>Benefit type:</strong> Pharmacy benefit (Part D / commercial Rx benefit)</li>
+              <li><strong>PA submitted to:</strong> PBM / pharmacy benefit — <em>separate from medical benefit PA</em></li>
+              <li><strong>Ships to:</strong> Patient's home via specialty pharmacy</li>
+            </ul>
+            <div class="al aw" style="margin-top:8px"><span class="al-icon">⚠️</span><span>Payer criteria for IQLIK initiation are still evolving with the 2026 approval — verify each plan's current policy before prescribing SQ for initiation.</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CRITICAL: CMS REGISTRY -->
+      <div class="prob" style="margin-bottom:16px">
+        🚨 <strong>CMS Registry (Coverage with Evidence Development — NCD 200.3)</strong><br><br>
+
+        <strong>Who requires the registry?</strong><br>
+        The CMS registry is required for <strong>all Medicare patients</strong> — both <strong>Traditional Medicare (Original Medicare Part B)</strong> and <strong>Medicare Advantage (MA)</strong>. MA plans must follow the same coverage rules as Traditional Medicare and must collect the registry trial number on every claim. The registry requirement applies regardless of whether the patient is receiving IV infusions or IQLIK subcutaneous injections.
+        <br><br>
+
+        <strong>Which patients specifically?</strong> Registry enrollment is required when ALL of the following are true:
+        <ul style="margin:6px 0 6px 18px">
+          <li>Payer is Medicare (any type — Traditional, MA, dual-eligible Medicare/Medicaid)</li>
+          <li>Diagnosis: MCI due to Alzheimer disease OR mild AD dementia (NOT moderate or severe — those are not covered)</li>
+          <li>Amyloid beta pathology confirmed before treatment (PET scan or CSF biomarkers)</li>
+          <li>Prescribing physician is enrolled in a CMS-approved registry and actively submitting data</li>
+        </ul>
+
+        <strong>Who does NOT require the CMS registry?</strong><br>
+        Commercial/private insurance and Medicaid are <strong>not</strong> subject to the CMS CED registry requirement. Those payers have their own PA criteria — verify separately. Do not include registry trial numbers on commercial claims.
+        <br><br>
+
+        <strong>Registry options (CMS-approved):</strong><br>
+        • <strong>CMS National Patient Registry</strong> — Clinical Trial Number <strong>06058234</strong> (use this number on claims)<br>
+        • <strong>ALZ-NET</strong> (Alzheimer's Network for Treatment and Diagnostics) — also CMS-approved<br>
+        • Other CMS-approved registries: <a href="https://qualitynet.cms.gov/alzheimers-ced-registry" target="_blank">qualitynet.cms.gov/alzheimers-ced-registry</a><br><br>
+
+        ⚠️ Some MA plans still use a placeholder number (e.g., 99999999) — confirm the plan-specific number before submitting. The most common Medicare denial for Leqembi is a prescription or claim submitted before registry enrollment was confirmed. <strong>Enroll the practice in a registry FIRST, then prescribe.</strong>
+      </div>
+
+      <!-- PATIENT ELIGIBILITY -->
+      <div class="sub"><div class="sub-title">⚙️ Patient Eligibility — Pre-Prescribing Requirements</div>
+        <div class="prog" id="lq-elig-p"><span>Progress:</span><div class="pbw"><div class="pb" id="lq-elig-b" style="width:0%"></div></div><span class="pt" id="lq-elig-t">0 / 7</span><button class="rb" onclick="resetCL('lq-elig')">Reset</button></div>
+        <ul class="il" id="lq-elig-cl">
+          <li onclick="tck(this,'lq-elig')"><div class="cb">✓</div><span class="cl-lbl"><strong>Diagnosis confirmed:</strong> MCI due to AD or mild AD dementia (not moderate or severe) — all other causes of dementia must be ruled out and documented</span></li>
+          <li onclick="tck(this,'lq-elig')"><div class="cb">✓</div><span class="cl-lbl"><strong>Amyloid pathology confirmed:</strong> via CSF, blood-based biomarker (BBM), or amyloid PET — document result and method</span></li>
+          <li onclick="tck(this,'lq-elig')"><div class="cb">✓</div><span class="cl-lbl"><strong>Baseline brain MRI:</strong> within 12 months prior to initiating treatment — no exclusionary findings (>4 microhemorrhages, prior ICH &gt;1 cm, superficial siderosis, vasogenic edema)</span></li>
+          <li onclick="tck(this,'lq-elig')"><div class="cb">✓</div><span class="cl-lbl"><strong>Cognitive assessment (at least one):</strong> MMSE, MoCA, AD8, Mini-Cog, CDR Global Score, SLUMS, or CDR-SB — score documented</span></li>
+          <li onclick="tck(this,'lq-elig')"><div class="cb">✓</div><span class="cl-lbl"><strong>Functional assessment (at least one):</strong> FAQ, FAST, ADL, or CDR-SB — score documented</span></li>
+          <li onclick="tck(this,'lq-elig')"><div class="cb">✓</div><span class="cl-lbl"><strong>ApoE ε4 testing:</strong> Discuss with patient — testing required to counsel on ARIA risk; patient may decline but must be informed. Document ApoE ε4 status or refusal. Homozygotes (~15% of AD patients) have significantly higher ARIA risk.</span></li>
+          <li onclick="tck(this,'lq-elig')"><div class="cb">✓</div><span class="cl-lbl"><strong>Anticoagulant/antithrombotic review:</strong> Flag patients on anticoagulants — ICH risk increases to 2.5% with Leqembi + anticoagulant; provider must weigh risk/benefit and document decision</span></li>
         </ul>
       </div>
 
+      <!-- PROVIDER CHECKLIST -->
       <div class="sub"><div class="sub-title">🩺 Provider Checklist</div>
-        <div class="prog" id="lq-prov-p"><span>Progress:</span><div class="pbw"><div class="pb" id="lq-prov-b" style="width:0%"></div></div><span class="pt" id="lq-prov-t">0 / 10</span><button class="rb" onclick="resetCL('lq-prov')">Reset</button></div>
+        <div class="prog" id="lq-prov-p"><span>Progress:</span><div class="pbw"><div class="pb" id="lq-prov-b" style="width:0%"></div></div><span class="pt" id="lq-prov-t">0 / 8</span><button class="rb" onclick="resetCL('lq-prov')">Reset</button></div>
         <ul class="il" id="lq-prov-cl">
-          <li onclick="tck(this,'lq-prov')"><div class="cb">✓</div><span class="cl-lbl">Confirm diagnosis: MCI due to Alzheimer disease or mild Alzheimer dementia</span></li>
-          <li onclick="tck(this,'lq-prov')"><div class="cb">✓</div><span class="cl-lbl">Confirm amyloid pathology by amyloid PET or CSF biomarkers and document result</span></li>
-          <li onclick="tck(this,'lq-prov')"><div class="cb">✓</div><span class="cl-lbl">Complete and document cognitive assessment (MoCA, MMSE, SLUMS, or equivalent)</span></li>
-          <li onclick="tck(this,'lq-prov')"><div class="cb">✓</div><span class="cl-lbl">Document functional assessment / disease stage and medical necessity</span></li>
-          <li onclick="tck(this,'lq-prov')"><div class="cb">✓</div><span class="cl-lbl">Review recent baseline brain MRI before starting therapy</span></li>
-          <li onclick="tck(this,'lq-prov')"><div class="cb">✓</div><span class="cl-lbl">Document ARIA risk counseling, infusion risk counseling, and emergency symptoms</span></li>
-          <li onclick="tck(this,'lq-prov')"><div class="cb">✓</div><span class="cl-lbl">Document APOE e4 testing discussion/counseling when applicable</span></li>
-          <li onclick="tck(this,'lq-prov')"><div class="cb">✓</div><span class="cl-lbl">Review anticoagulants, thrombolytics, antiplatelets, bleeding history, and MRI exclusion findings</span></li>
-          <li onclick="tck(this,'lq-prov')"><div class="cb">✓</div><span class="cl-lbl">Complete consent and signed infusion order</span></li>
-          <li onclick="tck(this,'lq-prov')"><div class="cb">✓</div><span class="cl-lbl">Assign registry/reporting responsibility when Medicare/CMS registry is applicable</span></li>
+          <li onclick="tck(this,'lq-prov')"><div class="cb">✓</div><span class="cl-lbl">Confirm all eligibility criteria above are met and documented in the office note</span></li>
+          <li onclick="tck(this,'lq-prov')"><div class="cb">✓</div><span class="cl-lbl">Select formulation: IV (refer to infusion center) or IQLIK SQ (at-home); discuss options with patient</span></li>
+          <li onclick="tck(this,'lq-prov')"><div class="cb">✓</div><span class="cl-lbl">Counsel on ARIA risks, signs/symptoms (headache, confusion, vision changes, dizziness, gait difficulty, focal neurologic deficit, seizure), and when to seek emergency care</span></li>
+          <li onclick="tck(this,'lq-prov')"><div class="cb">✓</div><span class="cl-lbl">Document ApoE ε4 result and individualized risk discussion — especially for homozygotes</span></li>
+          <li onclick="tck(this,'lq-prov')"><div class="cb">✓</div><span class="cl-lbl">Write signed prescription with correct weight-based wording (see prescription wording below)</span></li>
+          <li onclick="tck(this,'lq-prov')"><div class="cb">✓</div><span class="cl-lbl">For Medicare patients: confirm CMS registry enrollment is in place BEFORE signing the prescription</span></li>
+          <li onclick="tck(this,'lq-prov')"><div class="cb">✓</div><span class="cl-lbl">Sign LEQEMBI Companion enrollment form (pages 1–4) — attest to medical necessity and accuracy</span></li>
+          <li onclick="tck(this,'lq-prov')"><div class="cb">✓</div><span class="cl-lbl">Set MRI monitoring schedule: baseline done; next MRI before 3rd, 5th, 7th, and 14th infusions</span></li>
         </ul>
+        <div class="two" style="margin-top:12px">
+          <div class="ic" style="border-left:4px solid var(--primary)">
+            <h5>Prescription Wording — IV</h5>
+            <div class="tpl" style="font-size:13px"><em>LEQEMBI Intravenous Infusion (lecanemab-irmb 100 mg/mL)<br>Infuse 10 mg/kg intravenously over 60 minutes every 2 weeks.<br>28-day supply · Refills as indicated</em></div>
+          </div>
+          <div class="ic" style="border-left:4px solid var(--accent)">
+            <h5>Prescription Wording — IQLIK SQ</h5>
+            <div class="tpl" style="font-size:13px"><em>Initiation: LEQEMBI IQLIK SQ Injection (250 mg/1.25 mL single dose)<br>Inject 500 mg SQ once weekly (8 autoinjectors). 28-day supply.<br>Maintenance: LEQEMBI IQLIK SQ Injection (360 mg/1.8 mL single dose)<br>Inject 360 mg SQ once weekly (4 autoinjectors). 28-day supply.</em></div>
+            <div class="al ai" style="margin-top:6px;font-size:12px">Patient weight required on form — Leqembi is weight-based; IQLIK doses are fixed but weight still required for enrollment</div>
+          </div>
+        </div>
       </div>
 
+      <!-- MA CHECKLIST -->
       <div class="sub"><div class="sub-title">👩‍⚕️ Medical Assistant Checklist</div>
-        <div class="prog" id="lq-ma-p"><span>Progress:</span><div class="pbw"><div class="pb" id="lq-ma-b" style="width:0%"></div></div><span class="pt" id="lq-ma-t">0 / 6</span><button class="rb" onclick="resetCL('lq-ma')">Reset</button></div>
+        <div class="prog" id="lq-ma-p"><span>Progress:</span><div class="pbw"><div class="pb" id="lq-ma-b" style="width:0%"></div></div><span class="pt" id="lq-ma-t">0 / 7</span><button class="rb" onclick="resetCL('lq-ma')">Reset</button></div>
         <ul class="il" id="lq-ma-cl">
-          <li onclick="tck(this,'lq-ma')"><div class="cb">✓</div><span class="cl-lbl">Verify demographics, phone number, insurance, secondary insurance, emergency contact, and preferred infusion location</span></li>
-          <li onclick="tck(this,'lq-ma')"><div class="cb">✓</div><span class="cl-lbl">Update medication list, allergies, anticoagulants/antiplatelets, and pharmacy</span></li>
-          <li onclick="tck(this,'lq-ma')"><div class="cb">✓</div><span class="cl-lbl">Collect signed office note, cognitive test, amyloid PET or CSF result, baseline MRI report, consent, and infusion order</span></li>
-          <li onclick="tck(this,'lq-ma')"><div class="cb">✓</div><span class="cl-lbl">Send patient education from assigned MA email and route patient replies to assigned MA/provider</span></li>
-          <li onclick="tck(this,'lq-ma')"><div class="cb">✓</div><span class="cl-lbl">Create MRI reminder tasks based on product-specific schedule (before 3rd/5th/7th/14th infusions)</span></li>
+          <li onclick="tck(this,'lq-ma')"><div class="cb">✓</div><span class="cl-lbl">Verify demographics, weight (lbs — required for enrollment form), insurance, secondary insurance, emergency contact, and preferred formulation (IV vs IQLIK)</span></li>
+          <li onclick="tck(this,'lq-ma')"><div class="cb">✓</div><span class="cl-lbl">Update medication list, allergies, anticoagulants/antiplatelets, and pharmacy (for IQLIK: confirm specialty pharmacy preference)</span></li>
+          <li onclick="tck(this,'lq-ma')"><div class="cb">✓</div><span class="cl-lbl">Collect: signed office note, cognitive/functional assessment scores, amyloid confirmation result, baseline MRI report, ApoE ε4 result, consent, and signed prescription</span></li>
+          <li onclick="tck(this,'lq-ma')"><div class="cb">✓</div><span class="cl-lbl">Collect copy of front and back of insurance card(s) — primary, secondary, and pharmacy benefit if applicable</span></li>
+          <li onclick="tck(this,'lq-ma')"><div class="cb">✓</div><span class="cl-lbl">For IV: identify infusion site and collect site NPI, tax ID, address, and contact info for enrollment form</span></li>
+          <li onclick="tck(this,'lq-ma')"><div class="cb">✓</div><span class="cl-lbl">Create MRI reminder tasks: before 3rd, 5th, 7th, and 14th infusions (or equivalent treatment weeks for IQLIK)</span></li>
           <li onclick="tck(this,'lq-ma')"><div class="cb">✓</div><span class="cl-lbl">Route complete packet to Documentation Team</span></li>
         </ul>
       </div>
 
+      <!-- DOCUMENTATION TEAM -->
       <div class="sub"><div class="sub-title">📋 Documentation Team Checklist</div>
         <div class="prog" id="lq-doc-p"><span>Progress:</span><div class="pbw"><div class="pb" id="lq-doc-b" style="width:0%"></div></div><span class="pt" id="lq-doc-t">0 / 7</span><button class="rb" onclick="resetCL('lq-doc')">Reset</button></div>
         <ul class="il" id="lq-doc-cl">
-          <li onclick="tck(this,'lq-doc')"><div class="cb">✓</div><span class="cl-lbl">Confirm diagnosis and disease stage support indication</span></li>
-          <li onclick="tck(this,'lq-doc')"><div class="cb">✓</div><span class="cl-lbl">Confirm amyloid confirmation is present and uploaded</span></li>
-          <li onclick="tck(this,'lq-doc')"><div class="cb">✓</div><span class="cl-lbl">Confirm cognitive testing and functional decline/stage are documented</span></li>
-          <li onclick="tck(this,'lq-doc')"><div class="cb">✓</div><span class="cl-lbl">Confirm baseline MRI is present and exclusionary findings are addressed by provider</span></li>
-          <li onclick="tck(this,'lq-doc')"><div class="cb">✓</div><span class="cl-lbl">Confirm signed note, signed order, consent, medication/allergy list, demographics, and insurance cards are included</span></li>
-          <li onclick="tck(this,'lq-doc')"><div class="cb">✓</div><span class="cl-lbl">CMS checkpoint: confirm Medicare coverage status, qualifying registry/data collection requirement, registry ID or enrollment plan, and responsible staff member</span></li>
-          <li onclick="tck(this,'lq-doc')"><div class="cb">✓</div><span class="cl-lbl">Do not change diagnosis codes; suggest corrections to provider if documentation/code mismatch found — then send complete packet to Prior Auth Team</span></li>
+          <li onclick="tck(this,'lq-doc')"><div class="cb">✓</div><span class="cl-lbl">Confirm diagnosis and disease stage support the indication (MCI or mild AD — not moderate/severe)</span></li>
+          <li onclick="tck(this,'lq-doc')"><div class="cb">✓</div><span class="cl-lbl">Confirm amyloid pathology confirmation is present, documented, and method is noted (CSF / BBM / PET)</span></li>
+          <li onclick="tck(this,'lq-doc')"><div class="cb">✓</div><span class="cl-lbl">Confirm cognitive AND functional assessment scores are documented; confirm all other dementia causes ruled out</span></li>
+          <li onclick="tck(this,'lq-doc')"><div class="cb">✓</div><span class="cl-lbl">Confirm baseline MRI is present; confirm no exclusionary findings, or that provider addressed any present</span></li>
+          <li onclick="tck(this,'lq-doc')"><div class="cb">✓</div><span class="cl-lbl">Confirm signed note, signed prescription, ApoE ε4 result, ARIA counseling note, medication/allergy list, demographics, insurance cards are all included</span></li>
+          <li onclick="tck(this,'lq-doc')"><div class="cb">✓</div><span class="cl-lbl">CMS checkpoint (Medicare): confirm CMS registry enrollment is confirmed BEFORE prescription date — flag if prescription predates registry enrollment (claim will deny)</span></li>
+          <li onclick="tck(this,'lq-doc')"><div class="cb">✓</div><span class="cl-lbl">Do not change diagnosis codes; suggest corrections to provider if documentation/code mismatch — then route complete packet to PA Team</span></li>
         </ul>
       </div>
 
-      <div class="sub"><div class="sub-title">📑 Prior Authorization Team Checklist</div>
-        <div class="prog" id="lq-pa-p"><span>Progress:</span><div class="pbw"><div class="pb" id="lq-pa-b" style="width:0%"></div></div><span class="pt" id="lq-pa-t">0 / 5</span><button class="rb" onclick="resetCL('lq-pa')">Reset</button></div>
+      <!-- PA TEAM -->
+      <div class="sub"><div class="sub-title">📑 Prior Authorization Team — IV vs. IQLIK Differences</div>
+        <div class="two" style="margin-bottom:14px">
+          <div class="ic" style="border-left:4px solid var(--primary)">
+            <h5>IV — Medical Benefit PA</h5>
+            <ul class="cl">
+              <li>Submit PA to <strong>medical insurance</strong> (not PBM)</li>
+              <li>Benefit type: medical (Part B for Medicare)</li>
+              <li>Includes CMS registry Clinical Trial Number on claim: <strong>06058234</strong></li>
+              <li>Modifiers for Medicare: <strong>Q0</strong> (investigational) or <strong>Q1</strong> (routine)</li>
+              <li>Add ICD-10 <strong>Z00.6</strong> for Medicare registry patients</li>
+              <li>Condition code 30, Value code D4 with 8-digit trial number on institutional claims</li>
+              <li>Authorization typically 12 months; reauthorize for maintenance if plan requires</li>
+            </ul>
+          </div>
+          <div class="ic" style="border-left:4px solid var(--accent)">
+            <h5>IQLIK — Pharmacy Benefit PA</h5>
+            <ul class="cl">
+              <li>Submit PA to <strong>PBM / pharmacy benefit manager</strong> — entirely separate from medical benefit PA</li>
+              <li>Benefit type: pharmacy (Part D for Medicare / commercial Rx)</li>
+              <li><strong>CMS registry still required for Medicare patients on IQLIK</strong> — NCD 200.3 CED applies to the drug class, not the delivery route. The requirement is on the <em>prescribing physician</em> (enrolled in registry, submitting outcomes data), not the pharmacy. Enforcement is through PA: Part D plans verify registry enrollment before approving — no claim-level trial number on pharmacy claims like Part B.</li>
+              <li>Dispensed through specialty pharmacy (not buy-and-bill); route Rx to specialty pharmacy after PA approved</li>
+              <li>As of 2026: IQLIK approved for both initiation AND maintenance — verify each plan's current policy; payer criteria are actively updating</li>
+              <li>PA form: obtain from insurer/PBM website or contact customer service</li>
+              <li>Authorization typically issued for 12 months; reauthorize annually</li>
+              <li>Reauthorization: confirm diagnosis, staging, no concurrent use of other Aβ mAbs (e.g., Kisunla)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="prog" id="lq-pa-p"><span>Progress:</span><div class="pbw"><div class="pb" id="lq-pa-b" style="width:0%"></div></div><span class="pt" id="lq-pa-t">0 / 6</span><button class="rb" onclick="resetCL('lq-pa')">Reset</button></div>
         <ul class="il" id="lq-pa-cl">
-          <li onclick="tck(this,'lq-pa')"><div class="cb">✓</div><span class="cl-lbl">Verify active coverage, Medicare/Medicare Advantage status, medical vs pharmacy benefit, buy-and-bill rules, specialty pharmacy, site-of-care restrictions, and payer forms</span></li>
-          <li onclick="tck(this,'lq-pa')"><div class="cb">✓</div><span class="cl-lbl">Submit note, cognitive testing, amyloid confirmation, baseline MRI, consent/order, demographics, insurance cards, and registry documentation if applicable</span></li>
-          <li onclick="tck(this,'lq-pa')"><div class="cb">✓</div><span class="cl-lbl">Track pending status, additional information requests, peer-to-peer, approval, denial, and appeal</span></li>
-          <li onclick="tck(this,'lq-pa')"><div class="cb">✓</div><span class="cl-lbl">Document authorization number, effective dates, approved drug, approved dose/units, approved location, and approved visits</span></li>
-          <li onclick="tck(this,'lq-pa')"><div class="cb">✓</div><span class="cl-lbl">Upload approval/denial and notify scheduling/documentation team</span></li>
+          <li onclick="tck(this,'lq-pa')"><div class="cb">✓</div><span class="cl-lbl">Identify formulation prescribed (IV or IQLIK) and route PA to the correct benefit: medical (IV) or pharmacy/PBM (IQLIK)</span></li>
+          <li onclick="tck(this,'lq-pa')"><div class="cb">✓</div><span class="cl-lbl">Verify active coverage, Medicare/MA status, CMS registry enrollment confirmed (Medicare), and PA form/requirements for this specific plan</span></li>
+          <li onclick="tck(this,'lq-pa')"><div class="cb">✓</div><span class="cl-lbl">Submit with: office note, cognitive/functional assessment, amyloid confirmation, baseline MRI, ApoE ε4 result, letter of medical necessity if required, signed prescription, demographics, insurance cards</span></li>
+          <li onclick="tck(this,'lq-pa')"><div class="cb">✓</div><span class="cl-lbl">Track pending status, additional info requests, peer-to-peer, approval, denial, and appeal</span></li>
+          <li onclick="tck(this,'lq-pa')"><div class="cb">✓</div><span class="cl-lbl">Document authorization number, effective dates, approved drug/formulation, approved dose/units, approved visits</span></li>
+          <li onclick="tck(this,'lq-pa')"><div class="cb">✓</div><span class="cl-lbl">Upload approval/denial and notify provider, scheduling, and documentation team</span></li>
         </ul>
       </div>
 
-      <div class="sub"><div class="sub-title">💉 Infusion Day Checklist</div>
-        <div class="prog" id="lq-inf-p"><span>Progress:</span><div class="pbw"><div class="pb" id="lq-inf-b" style="width:0%"></div></div><span class="pt" id="lq-inf-t">0 / 6</span><button class="rb" onclick="resetCL('lq-inf')">Reset</button></div>
-        <ul class="il" id="lq-inf-cl">
-          <li onclick="tck(this,'lq-inf')"><div class="cb">✓</div><span class="cl-lbl">Confirm authorization or no-PA-required note is on file</span></li>
-          <li onclick="tck(this,'lq-inf')"><div class="cb">✓</div><span class="cl-lbl">Confirm no new neurologic symptoms before infusion; route symptoms urgently to provider</span></li>
-          <li onclick="tck(this,'lq-inf')"><div class="cb">✓</div><span class="cl-lbl">Check vitals, allergies, medication changes, and active illness</span></li>
-          <li onclick="tck(this,'lq-inf')"><div class="cb">✓</div><span class="cl-lbl">Administer infusion per order and monitor for infusion reaction</span></li>
-          <li onclick="tck(this,'lq-inf')"><div class="cb">✓</div><span class="cl-lbl">Document infusion note and observation</span></li>
-          <li onclick="tck(this,'lq-inf')"><div class="cb">✓</div><span class="cl-lbl">Schedule next infusion and product-specific MRI/follow-up</span></li>
+      <!-- COMPANION ENROLLMENT -->
+      <div class="sub"><div class="sub-title">📝 LEQEMBI Companion™ Program Enrollment</div>
+        <div class="three" style="margin-bottom:14px">
+          <div class="ic" style="border-left:4px solid var(--primary);text-align:center">
+            <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">Online Enrollment</div>
+            <div style="font-size:15px;font-weight:800;color:var(--primary)"><a href="https://leqembienrollment.com" target="_blank">LEQEMBIEnrollment.com</a></div>
+          </div>
+          <div class="ic" style="border-left:4px solid var(--accent);text-align:center">
+            <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">Phone / Fax</div>
+            <div style="font-size:18px;font-weight:800;color:var(--accent)">1-833-453-7362</div>
+            <div style="font-size:12px;color:var(--muted)">Fax: 1-833-770-7017 · M–F 9 AM–6 PM ET</div>
+          </div>
+          <div class="ic" style="border-left:4px solid var(--success);text-align:center">
+            <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">Specialty Pharmacy (IQLIK / PAP)</div>
+            <div style="font-size:13px;font-weight:700;color:var(--success)">Eisai Patient Support Pharmacy</div>
+            <div style="font-size:12px;color:var(--muted)">NCPDP: 5942176 · NPI: 1861259194</div>
+          </div>
+        </div>
+        <div class="two">
+          <div class="ic">
+            <h5>Provider Section (Pages 1–4) — What We Fill Out</h5>
+            <ul class="cl">
+              <li>Prescriber name, title, NPI, Medicare PTAN, Tax ID</li>
+              <li>Office address, phone, fax</li>
+              <li>Primary ICD-10 code (and secondary if applicable)</li>
+              <li>Patient name, DOB, and <strong>weight in lbs</strong></li>
+              <li>Select treatment formulation: IV Initiation / IV Maintenance / IQLIK Initiation / IQLIK Maintenance</li>
+              <li>Insurance info or copy of insurance card (front and back)</li>
+              <li>PA status — if PA is in place: auth #, approval date, expiration date</li>
+              <li><strong>IV patients only:</strong> Infusion site name, address, NPI, tax ID, and contact</li>
+              <li>Select program(s): Benefits Investigation / Copay Assistance / PAP / IQLIK Welcome Kit</li>
+              <li>Prescriber signature — attestation of medical necessity</li>
+            </ul>
+          </div>
+          <div class="ic">
+            <h5>Patient Section (Pages 5–9) — Patient Signs</h5>
+            <ul class="cl">
+              <li>Demographics, contact preferences, preferred language</li>
+              <li>Alternate contact / caregiver authorization (optional)</li>
+              <li>HIPAA authorization for Eisai to process health info</li>
+              <li>Program-specific attestations (PAP, Temp Supply, Copay)</li>
+              <li>Can be completed digitally at LEQEMBIEnrollment.com</li>
+            </ul>
+            <div class="al ai" style="margin-top:10px"><span class="al-icon">ℹ️</span><span>For IQLIK patients: Eisai ships the autoinjectors directly to the patient's home address on the enrollment form.</span></div>
+            <div class="al aw" style="margin-top:8px"><span class="al-icon">⚠️</span><span><strong>IQLIK Welcome Kit</strong> (demo autoinjector + educational materials) is available only to patients on the SQ formulation — check the box on the enrollment form.</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FINANCIAL ASSISTANCE -->
+      <div class="sub"><div class="sub-title">💰 Financial Assistance Programs</div>
+        <div class="al aw" style="margin-bottom:12px"><span class="al-icon">⚠️</span><span>Copay Assistance and Temporary Supply programs are <strong>not available</strong> for Medicare, Medicaid, Medigap, VA, DoD, or Tricare patients. PAP is available for Medicare/Medicaid patients who meet financial need criteria.</span></div>
+        <div class="two">
+          <div class="ic" style="border-left:4px solid var(--success)">
+            <h5>✅ Commercial Insurance Patients</h5>
+            <ul class="cl">
+              <li><strong>Benefits Investigation</strong> — Eisai verifies coverage; no cost; available to all</li>
+              <li><strong>Copay Assistance Program</strong> — Up to <strong>$10,000/year</strong> toward out-of-pocket costs (deductibles, copays, coinsurance); patient may pay <strong>$0</strong> per treatment date</li>
+              <li><strong>Temporary Supply Program</strong> — Up to <strong>30 days</strong> free supply while awaiting coverage decision after PA denial + first-level appeal filed</li>
+            </ul>
+          </div>
+          <div class="ic" style="border-left:4px solid var(--primary)">
+            <h5>Medicare / Medicaid / Uninsured / Financial Need</h5>
+            <ul class="cl">
+              <li><strong>Benefits Investigation</strong> — available to all patients</li>
+              <li><strong>Patient Assistance Program (PAP)</strong> — free drug for eligible patients with financial need; income verification required; available regardless of insurance type</li>
+              <li><strong>Annual cost context:</strong> Medicare Part B covers ~80% after deductible; annual drug cost ~$26,500; patient responsible for ~$5,300 (20%) unless covered by supplemental</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- IQLIK PATIENT TRAINING -->
+      <div class="sub"><div class="sub-title">🏠 IQLIK Patient Training — Prescriber Must Ensure Completion</div>
+        <div class="prog" id="lq-iq-p"><span>Progress:</span><div class="pbw"><div class="pb" id="lq-iq-b" style="width:0%"></div></div><span class="pt" id="lq-iq-t">0 / 5</span><button class="rb" onclick="resetCL('lq-iq')">Reset</button></div>
+        <ul class="il" id="lq-iq-cl">
+          <li onclick="tck(this,'lq-iq')"><div class="cb">✓</div><span class="cl-lbl">Patient or caregiver trained on proper SQ injection technique before first dose is administered</span></li>
+          <li onclick="tck(this,'lq-iq')"><div class="cb">✓</div><span class="cl-lbl">Patient instructed: remove autoinjector from refrigerator and leave at room temperature <strong>20 minutes</strong> before injecting — do not use heat</span></li>
+          <li onclick="tck(this,'lq-iq')"><div class="cb">✓</div><span class="cl-lbl">Injection sites reviewed: abdomen, upper thigh, or back of upper arm — rotate sites; avoid bruised, red, or irritated skin</span></li>
+          <li onclick="tck(this,'lq-iq')"><div class="cb">✓</div><span class="cl-lbl">ARIA symptom recognition reviewed with patient and caregiver: headache, confusion, visual changes, dizziness, gait difficulty, focal neurologic deficit — seek emergency care immediately</span></li>
+          <li onclick="tck(this,'lq-iq')"><div class="cb">✓</div><span class="cl-lbl">Welcome Kit (demo autoinjector) ordered via Companion enrollment form to support training</span></li>
         </ul>
       </div>
 
-      <div class="sub"><div class="sub-title">📞 Post-Infusion Follow-Up</div>
-        <div class="prog" id="lq-post-p"><span>Progress:</span><div class="pbw"><div class="pb" id="lq-post-b" style="width:0%"></div></div><span class="pt" id="lq-post-t">0 / 5</span><button class="rb" onclick="resetCL('lq-post')">Reset</button></div>
-        <ul class="il" id="lq-post-cl">
-          <li onclick="tck(this,'lq-post')"><div class="cb">✓</div><span class="cl-lbl">Call patient after infusion when required by practice protocol</span></li>
-          <li onclick="tck(this,'lq-post')"><div class="cb">✓</div><span class="cl-lbl">Screen for ARIA symptoms: headache, confusion, dizziness, vision change, gait change, focal neurologic deficit, seizure, or acute mental status change</span></li>
-          <li onclick="tck(this,'lq-post')"><div class="cb">✓</div><span class="cl-lbl">Escalate symptoms to provider immediately and arrange MRI/ER instructions as directed</span></li>
-          <li onclick="tck(this,'lq-post')"><div class="cb">✓</div><span class="cl-lbl">Confirm next infusion and MRI reminders are active</span></li>
-          <li onclick="tck(this,'lq-post')"><div class="cb">✓</div><span class="cl-lbl">Maintain registry/outcomes reporting when required</span></li>
-        </ul>
+      <!-- MRI MONITORING -->
+      <div class="sub"><div class="sub-title">🧠 MRI Monitoring Schedule (Both Formulations)</div>
+        <div class="two">
+          <div class="ic" style="border-left:4px solid var(--warn)">
+            <h5>Required MRI Timepoints</h5>
+            <ul class="cl">
+              <li>Baseline MRI — within 12 months, <strong>before starting treatment</strong></li>
+              <li>Before the <strong>3rd infusion</strong> (or equivalent treatment week)</li>
+              <li>Before the <strong>5th infusion</strong></li>
+              <li>Before the <strong>7th infusion</strong></li>
+              <li>Before the <strong>14th infusion</strong></li>
+              <li>Any time ARIA symptoms are reported — urgent MRI + provider evaluation</li>
+            </ul>
+            <div class="al aw" style="margin-top:8px"><span class="al-icon">⚠️</span><span>Most ARIA-E events occur within the first 7 doses. Enhanced vigilance during the first 14 weeks.</span></div>
+          </div>
+          <div class="ic" style="border-left:4px solid var(--danger)">
+            <h5>🚨 ARIA Symptoms — When to Escalate Urgently</h5>
+            <ul class="cl">
+              <li>Headache (new or worsening)</li>
+              <li>Confusion or mental status change</li>
+              <li>Visual changes</li>
+              <li>Dizziness or balance problems</li>
+              <li>Gait difficulty</li>
+              <li>Focal neurologic deficit</li>
+              <li>Seizure or status epilepticus</li>
+            </ul>
+            <div class="al ac" style="margin-top:8px"><span class="al-icon">🚫</span><span><strong>ARIA-E mimics ischemic stroke.</strong> Rule out ARIA-E before giving thrombolytics to any patient on Leqembi.</span></div>
+          </div>
+        </div>
       </div>
 
+      <!-- DENIAL WORKFLOW -->
       <div class="sub"><div class="sub-title">🚫 Denial / Missing-Information Workflow</div>
         <div class="prog" id="lq-den-p"><span>Progress:</span><div class="pbw"><div class="pb" id="lq-den-b" style="width:0%"></div></div><span class="pt" id="lq-den-t">0 / 5</span><button class="rb" onclick="resetCL('lq-den')">Reset</button></div>
         <ul class="il" id="lq-den-cl">
-          <li onclick="tck(this,'lq-den')"><div class="cb">✓</div><span class="cl-lbl">Identify denial or missing-info reason</span></li>
-          <li onclick="tck(this,'lq-den')"><div class="cb">✓</div><span class="cl-lbl">Request missing amyloid, MRI, cognitive testing, consent, or registry documentation</span></li>
-          <li onclick="tck(this,'lq-den')"><div class="cb">✓</div><span class="cl-lbl">Prepare medical necessity/appeal packet</span></li>
-          <li onclick="tck(this,'lq-den')"><div class="cb">✓</div><span class="cl-lbl">Schedule peer-to-peer if requested</span></li>
-          <li onclick="tck(this,'lq-den')"><div class="cb">✓</div><span class="cl-lbl">Document outcome and update team</span></li>
+          <li onclick="tck(this,'lq-den')"><div class="cb">✓</div><span class="cl-lbl">Identify denial reason — common causes: prescription written before CMS registry confirmed (Medicare), missing amyloid confirmation, missing MRI, incomplete cognitive/functional assessments</span></li>
+          <li onclick="tck(this,'lq-den')"><div class="cb">✓</div><span class="cl-lbl">For IQLIK denials: confirm whether plan still requires prior IV therapy establishment — if so, ensure medical benefit PA and IV infusion history are documented</span></li>
+          <li onclick="tck(this,'lq-den')"><div class="cb">✓</div><span class="cl-lbl">Prepare medical necessity / appeal packet with full clinical documentation</span></li>
+          <li onclick="tck(this,'lq-den')"><div class="cb">✓</div><span class="cl-lbl">Schedule peer-to-peer if requested by payer</span></li>
+          <li onclick="tck(this,'lq-den')"><div class="cb">✓</div><span class="cl-lbl">Consider Temporary Supply Program (commercial only) for patients awaiting appeal decision</span></li>
         </ul>
       </div>
-      <div class="al ai" style="margin-top:14px"><span class="al-icon">🔗</span><span>References: <a href="https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761375s000lbl.pdf" target="_blank">Leqembi FDA Label (2025)</a> · <a href="https://www.cms.gov/newsroom/fact-sheets/medicare-coverage-policy-monoclonal-antibodies-directed-against-amyloid-treatment-alzheimers-disease" target="_blank">CMS Anti-Amyloid mAbs CED/Registry</a></span></div>
+
+      <div class="al ai" style="margin-top:14px"><span class="al-icon">🔗</span><span>References: <a href="https://www.eisaipatientsupport.com/hcp/leqembi" target="_blank">Eisai LEQEMBI Companion Program</a> · <a href="https://leqembienrollment.com" target="_blank">LEQEMBIEnrollment.com</a> · <a href="https://qualitynet.cms.gov/alzheimers-ced-registry" target="_blank">CMS Alzheimer's CED Registry</a> · <a href="https://www.eisaipatientsupport.com/-/media/Files/PatientSupport/Prior-Authorization-Checklist.pdf" target="_blank">Eisai PA Checklist (PDF)</a></span></div>
+
     </div>
   </div>
 
@@ -8964,34 +9036,6 @@ table.fml-plans tr:hover td{background:#f7fafc;}
     </div>
   </div>
 
-  <!-- Infusions QUIZ -->
-  <div class="acc">
-    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ig">🎓</div>Infusions Knowledge Quiz <span class="badge bc">Required — All Staff</span></div><span class="chev">▼</span></div>
-    <div class="ab">
-      <div id="gq-ifq-start">
-        <div style="text-align:center;padding:24px 0 8px">
-          <div style="font-size:48px;margin-bottom:12px">📋</div>
-          <h3 style="color:var(--primary);margin:0 0 8px">Infusions Knowledge Check</h3>
-          <p style="color:var(--muted);margin:0 0 20px;font-size:14px">10 questions &nbsp;·&nbsp; 80% required to pass &nbsp;·&nbsp; Certificate awarded on successful completion</p>
-          <input id="gq-ifq-name" type="text" placeholder="Enter your full name" style="display:block;margin:0 auto 14px;padding:10px 16px;border:2px solid #e2e8f0;border-radius:8px;font-size:15px;width:320px;max-width:100%;text-align:center">
-          <button class="btn" onclick="gqStart('ifq')">Start Quiz →</button>
-        </div>
-      </div>
-      <div id="gq-ifq-quiz" style="display:none">
-        <div style="margin-bottom:6px;font-size:13px;color:var(--muted);font-weight:600" id="gq-ifq-qcnt"></div>
-        <div class="gq-prog-bar"><div class="gq-prog-fill" id="gq-ifq-pb" style="width:0%"></div></div>
-        <div id="gq-ifq-qtxt" style="font-size:16px;font-weight:600;color:var(--primary);margin-bottom:14px;line-height:1.5"></div>
-        <div id="gq-ifq-opts"></div>
-        <div id="gq-ifq-fb" style="margin-top:10px;font-weight:600;font-size:14px;min-height:20px"></div>
-        <div style="margin-top:14px"><button id="gq-ifq-nxt" class="btn" style="display:none" onclick="gqNext('ifq')">Next →</button></div>
-      </div>
-      <div id="gq-ifq-result" style="display:none;text-align:center;padding:20px 0">
-        <div id="gq-ifq-score"></div>
-        <canvas id="gq-ifq-cert-canvas" style="display:none;max-width:100%;margin:16px auto;border:1px solid #e2e8f0;border-radius:8px;box-shadow:0 2px 12px rgba(0,0,0,.1)"></canvas>
-        <button id="gq-ifq-dl" class="btn" style="display:none;margin-top:10px" onclick="gqDownload('ifq')">⬇ Download Certificate</button>
-      </div>
-    </div>
-  </div>
 
 </div>
 
@@ -10401,34 +10445,6 @@ table.fml-plans tr:hover td{background:#f7fafc;}
     </div>
   </div>
 
-  <!-- Billing QUIZ -->
-  <div class="acc">
-    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ig">🎓</div>Billing Knowledge Quiz <span class="badge bc">Required — All Staff</span></div><span class="chev">▼</span></div>
-    <div class="ab">
-      <div id="gq-blq-start">
-        <div style="text-align:center;padding:24px 0 8px">
-          <div style="font-size:48px;margin-bottom:12px">📋</div>
-          <h3 style="color:var(--primary);margin:0 0 8px">Billing Knowledge Check</h3>
-          <p style="color:var(--muted);margin:0 0 20px;font-size:14px">10 questions &nbsp;·&nbsp; 80% required to pass &nbsp;·&nbsp; Certificate awarded on successful completion</p>
-          <input id="gq-blq-name" type="text" placeholder="Enter your full name" style="display:block;margin:0 auto 14px;padding:10px 16px;border:2px solid #e2e8f0;border-radius:8px;font-size:15px;width:320px;max-width:100%;text-align:center">
-          <button class="btn" onclick="gqStart('blq')">Start Quiz →</button>
-        </div>
-      </div>
-      <div id="gq-blq-quiz" style="display:none">
-        <div style="margin-bottom:6px;font-size:13px;color:var(--muted);font-weight:600" id="gq-blq-qcnt"></div>
-        <div class="gq-prog-bar"><div class="gq-prog-fill" id="gq-blq-pb" style="width:0%"></div></div>
-        <div id="gq-blq-qtxt" style="font-size:16px;font-weight:600;color:var(--primary);margin-bottom:14px;line-height:1.5"></div>
-        <div id="gq-blq-opts"></div>
-        <div id="gq-blq-fb" style="margin-top:10px;font-weight:600;font-size:14px;min-height:20px"></div>
-        <div style="margin-top:14px"><button id="gq-blq-nxt" class="btn" style="display:none" onclick="gqNext('blq')">Next →</button></div>
-      </div>
-      <div id="gq-blq-result" style="display:none;text-align:center;padding:20px 0">
-        <div id="gq-blq-score"></div>
-        <canvas id="gq-blq-cert-canvas" style="display:none;max-width:100%;margin:16px auto;border:1px solid #e2e8f0;border-radius:8px;box-shadow:0 2px 12px rgba(0,0,0,.1)"></canvas>
-        <button id="gq-blq-dl" class="btn" style="display:none;margin-top:10px" onclick="gqDownload('blq')">⬇ Download Certificate</button>
-      </div>
-    </div>
-  </div>
 
 </div>
 
@@ -11129,7 +11145,7 @@ table.fml-plans tr:hover td{background:#f7fafc;}
           <ul class="cl" style="font-size:13px">
             <li><code>64612</code> — Blepharospasm</li>
             <li><code>64615</code> — Chronic Migraine</li>
-            <li><code>64616</code> — Cervical Dystonia</li>
+            <li><code>64616</code> — Cervical Dystonia <span style="color:var(--danger);font-weight:700">★ Bilateral — append modifier <code>-50</code></span></li>
             <li><code>64642</code> — Upper limb spasticity</li>
             <li><code>64653</code> — Hyperhidrosis</li>
           </ul>
@@ -11157,6 +11173,7 @@ table.fml-plans tr:hover td{background:#f7fafc;}
           </ul>
         </div>
       </div>
+      <div class="al ac" style="margin-top:10px"><span class="al-icon">🚨</span><span><strong>64616 — Cervical Botox — Bilateral Procedure:</strong> CPT 64616 is a bilateral procedure. Always append <strong>modifier -50</strong> when billing (e.g., <code>64616-50</code>). Submitting without modifier -50 will result in underpayment or denial. Do not bill unilaterally unless only one side was treated and documented.</span></div>
       <div class="al aw" style="margin-top:10px"><span class="al-icon">⚠️</span><span><strong>Humana Medicare:</strong> Requires auth for J code J0585 (not CPT code) — they do pay at regular Medicare rates.</span></div>
     </div>
   </div>
@@ -12197,34 +12214,6 @@ table.fml-plans tr:hover td{background:#f7fafc;}
     </div>
   </div>
 
-  <!-- Prior Authorization QUIZ -->
-  <div class="acc">
-    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ig">🎓</div>Prior Authorization Knowledge Quiz <span class="badge bc">Required — All Staff</span></div><span class="chev">▼</span></div>
-    <div class="ab">
-      <div id="gq-paq-start">
-        <div style="text-align:center;padding:24px 0 8px">
-          <div style="font-size:48px;margin-bottom:12px">📋</div>
-          <h3 style="color:var(--primary);margin:0 0 8px">Prior Authorization Knowledge Check</h3>
-          <p style="color:var(--muted);margin:0 0 20px;font-size:14px">10 questions &nbsp;·&nbsp; 80% required to pass &nbsp;·&nbsp; Certificate awarded on successful completion</p>
-          <input id="gq-paq-name" type="text" placeholder="Enter your full name" style="display:block;margin:0 auto 14px;padding:10px 16px;border:2px solid #e2e8f0;border-radius:8px;font-size:15px;width:320px;max-width:100%;text-align:center">
-          <button class="btn" onclick="gqStart('paq')">Start Quiz →</button>
-        </div>
-      </div>
-      <div id="gq-paq-quiz" style="display:none">
-        <div style="margin-bottom:6px;font-size:13px;color:var(--muted);font-weight:600" id="gq-paq-qcnt"></div>
-        <div class="gq-prog-bar"><div class="gq-prog-fill" id="gq-paq-pb" style="width:0%"></div></div>
-        <div id="gq-paq-qtxt" style="font-size:16px;font-weight:600;color:var(--primary);margin-bottom:14px;line-height:1.5"></div>
-        <div id="gq-paq-opts"></div>
-        <div id="gq-paq-fb" style="margin-top:10px;font-weight:600;font-size:14px;min-height:20px"></div>
-        <div style="margin-top:14px"><button id="gq-paq-nxt" class="btn" style="display:none" onclick="gqNext('paq')">Next →</button></div>
-      </div>
-      <div id="gq-paq-result" style="display:none;text-align:center;padding:20px 0">
-        <div id="gq-paq-score"></div>
-        <canvas id="gq-paq-cert-canvas" style="display:none;max-width:100%;margin:16px auto;border:1px solid #e2e8f0;border-radius:8px;box-shadow:0 2px 12px rgba(0,0,0,.1)"></canvas>
-        <button id="gq-paq-dl" class="btn" style="display:none;margin-top:10px" onclick="gqDownload('paq')">⬇ Download Certificate</button>
-      </div>
-    </div>
-  </div>
 
 </div>
 
@@ -13036,34 +13025,6 @@ table.fml-plans tr:hover td{background:#f7fafc;}
     </div>
   </div>
 
-  <!-- Care Management QUIZ -->
-  <div class="acc">
-    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ig">🎓</div>Care Management Knowledge Quiz <span class="badge bc">Required — All Staff</span></div><span class="chev">▼</span></div>
-    <div class="ab">
-      <div id="gq-cmq-start">
-        <div style="text-align:center;padding:24px 0 8px">
-          <div style="font-size:48px;margin-bottom:12px">📋</div>
-          <h3 style="color:var(--primary);margin:0 0 8px">Care Management Knowledge Check</h3>
-          <p style="color:var(--muted);margin:0 0 20px;font-size:14px">10 questions &nbsp;·&nbsp; 80% required to pass &nbsp;·&nbsp; Certificate awarded on successful completion</p>
-          <input id="gq-cmq-name" type="text" placeholder="Enter your full name" style="display:block;margin:0 auto 14px;padding:10px 16px;border:2px solid #e2e8f0;border-radius:8px;font-size:15px;width:320px;max-width:100%;text-align:center">
-          <button class="btn" onclick="gqStart('cmq')">Start Quiz →</button>
-        </div>
-      </div>
-      <div id="gq-cmq-quiz" style="display:none">
-        <div style="margin-bottom:6px;font-size:13px;color:var(--muted);font-weight:600" id="gq-cmq-qcnt"></div>
-        <div class="gq-prog-bar"><div class="gq-prog-fill" id="gq-cmq-pb" style="width:0%"></div></div>
-        <div id="gq-cmq-qtxt" style="font-size:16px;font-weight:600;color:var(--primary);margin-bottom:14px;line-height:1.5"></div>
-        <div id="gq-cmq-opts"></div>
-        <div id="gq-cmq-fb" style="margin-top:10px;font-weight:600;font-size:14px;min-height:20px"></div>
-        <div style="margin-top:14px"><button id="gq-cmq-nxt" class="btn" style="display:none" onclick="gqNext('cmq')">Next →</button></div>
-      </div>
-      <div id="gq-cmq-result" style="display:none;text-align:center;padding:20px 0">
-        <div id="gq-cmq-score"></div>
-        <canvas id="gq-cmq-cert-canvas" style="display:none;max-width:100%;margin:16px auto;border:1px solid #e2e8f0;border-radius:8px;box-shadow:0 2px 12px rgba(0,0,0,.1)"></canvas>
-        <button id="gq-cmq-dl" class="btn" style="display:none;margin-top:10px" onclick="gqDownload('cmq')">⬇ Download Certificate</button>
-      </div>
-    </div>
-  </div>
 
 </div>
 
@@ -14168,34 +14129,6 @@ table.fml-plans tr:hover td{background:#f7fafc;}
     </div>
   </div>
 
-  <!-- Cognitive Assessment QUIZ -->
-  <div class="acc">
-    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ig">🎓</div>Cognitive Assessment Knowledge Quiz <span class="badge bc">Required — All Staff</span></div><span class="chev">▼</span></div>
-    <div class="ab">
-      <div id="gq-cgq-start">
-        <div style="text-align:center;padding:24px 0 8px">
-          <div style="font-size:48px;margin-bottom:12px">📋</div>
-          <h3 style="color:var(--primary);margin:0 0 8px">Cognitive Assessment Knowledge Check</h3>
-          <p style="color:var(--muted);margin:0 0 20px;font-size:14px">10 questions &nbsp;·&nbsp; 80% required to pass &nbsp;·&nbsp; Certificate awarded on successful completion</p>
-          <input id="gq-cgq-name" type="text" placeholder="Enter your full name" style="display:block;margin:0 auto 14px;padding:10px 16px;border:2px solid #e2e8f0;border-radius:8px;font-size:15px;width:320px;max-width:100%;text-align:center">
-          <button class="btn" onclick="gqStart('cgq')">Start Quiz →</button>
-        </div>
-      </div>
-      <div id="gq-cgq-quiz" style="display:none">
-        <div style="margin-bottom:6px;font-size:13px;color:var(--muted);font-weight:600" id="gq-cgq-qcnt"></div>
-        <div class="gq-prog-bar"><div class="gq-prog-fill" id="gq-cgq-pb" style="width:0%"></div></div>
-        <div id="gq-cgq-qtxt" style="font-size:16px;font-weight:600;color:var(--primary);margin-bottom:14px;line-height:1.5"></div>
-        <div id="gq-cgq-opts"></div>
-        <div id="gq-cgq-fb" style="margin-top:10px;font-weight:600;font-size:14px;min-height:20px"></div>
-        <div style="margin-top:14px"><button id="gq-cgq-nxt" class="btn" style="display:none" onclick="gqNext('cgq')">Next →</button></div>
-      </div>
-      <div id="gq-cgq-result" style="display:none;text-align:center;padding:20px 0">
-        <div id="gq-cgq-score"></div>
-        <canvas id="gq-cgq-cert-canvas" style="display:none;max-width:100%;margin:16px auto;border:1px solid #e2e8f0;border-radius:8px;box-shadow:0 2px 12px rgba(0,0,0,.1)"></canvas>
-        <button id="gq-cgq-dl" class="btn" style="display:none;margin-top:10px" onclick="gqDownload('cgq')">⬇ Download Certificate</button>
-      </div>
-    </div>
-  </div>
 
 </div>
 
@@ -16279,6 +16212,335 @@ document.addEventListener('DOMContentLoaded',function(){
 
 </div><!-- end panel-mco -->
 
+<!-- ===== QUIZ CENTER ===== -->
+<div id="panel-quiz" class="tab-panel">
+  <div class="dept-hdr">
+    <h2>🎓 Quiz Center</h2>
+    <p>Complete the knowledge assessment for each department. 20 questions per module · 80% required to pass · Certificate awarded on successful completion.</p>
+    <div class="tags"><span class="tag">Front Desk</span><span class="tag">Medical Assistants</span><span class="tag">Schedulers</span><span class="tag">Referrals</span><span class="tag">Labs &amp; Imaging</span><span class="tag">Quality Improvement</span><span class="tag">Infusions</span><span class="tag">Billing</span><span class="tag">Prior Authorization</span><span class="tag">Care Management</span><span class="tag">Cognitive Assessment</span></div>
+  </div>
+
+  <!-- Front Desk QUIZ -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ig">🎓</div>Front Desk Knowledge Quiz <span class="badge bc">Required — All Staff</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div id="gq-fdq-start">
+        <div style="text-align:center;padding:24px 0 8px">
+          <div style="font-size:48px;margin-bottom:12px">📋</div>
+          <h3 style="color:var(--primary);margin:0 0 8px">Front Desk Knowledge Check</h3>
+          <p style="color:var(--muted);margin:0 0 20px;font-size:14px">20 questions &nbsp;·&nbsp; 80% required to pass &nbsp;·&nbsp; Certificate awarded on successful completion</p>
+          <input id="gq-fdq-name" type="text" placeholder="Enter your full name" style="display:block;margin:0 auto 14px;padding:10px 16px;border:2px solid #e2e8f0;border-radius:8px;font-size:15px;width:320px;max-width:100%;text-align:center">
+          <button class="btn" onclick="gqStart('fdq')">Start Quiz →</button>
+        </div>
+      </div>
+      <div id="gq-fdq-quiz" style="display:none">
+        <div style="margin-bottom:6px;font-size:13px;color:var(--muted);font-weight:600" id="gq-fdq-qcnt"></div>
+        <div class="gq-prog-bar"><div class="gq-prog-fill" id="gq-fdq-pb" style="width:0%"></div></div>
+        <div id="gq-fdq-qtxt" style="font-size:16px;font-weight:600;color:var(--primary);margin-bottom:14px;line-height:1.5"></div>
+        <div id="gq-fdq-opts"></div>
+        <div id="gq-fdq-fb" style="margin-top:10px;font-weight:600;font-size:14px;min-height:20px"></div>
+        <div style="margin-top:14px"><button id="gq-fdq-nxt" class="btn" style="display:none" onclick="gqNext('fdq')">Next →</button></div>
+      </div>
+      <div id="gq-fdq-result" style="display:none;text-align:center;padding:20px 0">
+        <div id="gq-fdq-score"></div>
+        <canvas id="gq-fdq-cert-canvas" style="display:none;max-width:100%;margin:16px auto;border:1px solid #e2e8f0;border-radius:8px;box-shadow:0 2px 12px rgba(0,0,0,.1)"></canvas>
+        <button id="gq-fdq-dl" class="btn" style="display:none;margin-top:10px" onclick="gqDownload('fdq')">⬇ Download Certificate</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Medical Assistants QUIZ -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ig">🎓</div>Medical Assistants Knowledge Quiz <span class="badge bc">Required — All Staff</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div id="gq-maq-start">
+        <div style="text-align:center;padding:24px 0 8px">
+          <div style="font-size:48px;margin-bottom:12px">📋</div>
+          <h3 style="color:var(--primary);margin:0 0 8px">Medical Assistants Knowledge Check</h3>
+          <p style="color:var(--muted);margin:0 0 20px;font-size:14px">20 questions &nbsp;·&nbsp; 80% required to pass &nbsp;·&nbsp; Certificate awarded on successful completion</p>
+          <input id="gq-maq-name" type="text" placeholder="Enter your full name" style="display:block;margin:0 auto 14px;padding:10px 16px;border:2px solid #e2e8f0;border-radius:8px;font-size:15px;width:320px;max-width:100%;text-align:center">
+          <button class="btn" onclick="gqStart('maq')">Start Quiz →</button>
+        </div>
+      </div>
+      <div id="gq-maq-quiz" style="display:none">
+        <div style="margin-bottom:6px;font-size:13px;color:var(--muted);font-weight:600" id="gq-maq-qcnt"></div>
+        <div class="gq-prog-bar"><div class="gq-prog-fill" id="gq-maq-pb" style="width:0%"></div></div>
+        <div id="gq-maq-qtxt" style="font-size:16px;font-weight:600;color:var(--primary);margin-bottom:14px;line-height:1.5"></div>
+        <div id="gq-maq-opts"></div>
+        <div id="gq-maq-fb" style="margin-top:10px;font-weight:600;font-size:14px;min-height:20px"></div>
+        <div style="margin-top:14px"><button id="gq-maq-nxt" class="btn" style="display:none" onclick="gqNext('maq')">Next →</button></div>
+      </div>
+      <div id="gq-maq-result" style="display:none;text-align:center;padding:20px 0">
+        <div id="gq-maq-score"></div>
+        <canvas id="gq-maq-cert-canvas" style="display:none;max-width:100%;margin:16px auto;border:1px solid #e2e8f0;border-radius:8px;box-shadow:0 2px 12px rgba(0,0,0,.1)"></canvas>
+        <button id="gq-maq-dl" class="btn" style="display:none;margin-top:10px" onclick="gqDownload('maq')">⬇ Download Certificate</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Schedulers QUIZ -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ig">🎓</div>Schedulers Knowledge Quiz <span class="badge bc">Required — All Staff</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div id="gq-scq-start">
+        <div style="text-align:center;padding:24px 0 8px">
+          <div style="font-size:48px;margin-bottom:12px">📋</div>
+          <h3 style="color:var(--primary);margin:0 0 8px">Schedulers Knowledge Check</h3>
+          <p style="color:var(--muted);margin:0 0 20px;font-size:14px">20 questions &nbsp;·&nbsp; 80% required to pass &nbsp;·&nbsp; Certificate awarded on successful completion</p>
+          <input id="gq-scq-name" type="text" placeholder="Enter your full name" style="display:block;margin:0 auto 14px;padding:10px 16px;border:2px solid #e2e8f0;border-radius:8px;font-size:15px;width:320px;max-width:100%;text-align:center">
+          <button class="btn" onclick="gqStart('scq')">Start Quiz →</button>
+        </div>
+      </div>
+      <div id="gq-scq-quiz" style="display:none">
+        <div style="margin-bottom:6px;font-size:13px;color:var(--muted);font-weight:600" id="gq-scq-qcnt"></div>
+        <div class="gq-prog-bar"><div class="gq-prog-fill" id="gq-scq-pb" style="width:0%"></div></div>
+        <div id="gq-scq-qtxt" style="font-size:16px;font-weight:600;color:var(--primary);margin-bottom:14px;line-height:1.5"></div>
+        <div id="gq-scq-opts"></div>
+        <div id="gq-scq-fb" style="margin-top:10px;font-weight:600;font-size:14px;min-height:20px"></div>
+        <div style="margin-top:14px"><button id="gq-scq-nxt" class="btn" style="display:none" onclick="gqNext('scq')">Next →</button></div>
+      </div>
+      <div id="gq-scq-result" style="display:none;text-align:center;padding:20px 0">
+        <div id="gq-scq-score"></div>
+        <canvas id="gq-scq-cert-canvas" style="display:none;max-width:100%;margin:16px auto;border:1px solid #e2e8f0;border-radius:8px;box-shadow:0 2px 12px rgba(0,0,0,.1)"></canvas>
+        <button id="gq-scq-dl" class="btn" style="display:none;margin-top:10px" onclick="gqDownload('scq')">⬇ Download Certificate</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Referrals & Records QUIZ -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ig">🎓</div>Referrals &amp; Records Knowledge Quiz <span class="badge bc">Required — All Staff</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div id="gq-rfq-start">
+        <div style="text-align:center;padding:24px 0 8px">
+          <div style="font-size:48px;margin-bottom:12px">📋</div>
+          <h3 style="color:var(--primary);margin:0 0 8px">Referrals &amp; Records Knowledge Check</h3>
+          <p style="color:var(--muted);margin:0 0 20px;font-size:14px">20 questions &nbsp;·&nbsp; 80% required to pass &nbsp;·&nbsp; Certificate awarded on successful completion</p>
+          <input id="gq-rfq-name" type="text" placeholder="Enter your full name" style="display:block;margin:0 auto 14px;padding:10px 16px;border:2px solid #e2e8f0;border-radius:8px;font-size:15px;width:320px;max-width:100%;text-align:center">
+          <button class="btn" onclick="gqStart('rfq')">Start Quiz →</button>
+        </div>
+      </div>
+      <div id="gq-rfq-quiz" style="display:none">
+        <div style="margin-bottom:6px;font-size:13px;color:var(--muted);font-weight:600" id="gq-rfq-qcnt"></div>
+        <div class="gq-prog-bar"><div class="gq-prog-fill" id="gq-rfq-pb" style="width:0%"></div></div>
+        <div id="gq-rfq-qtxt" style="font-size:16px;font-weight:600;color:var(--primary);margin-bottom:14px;line-height:1.5"></div>
+        <div id="gq-rfq-opts"></div>
+        <div id="gq-rfq-fb" style="margin-top:10px;font-weight:600;font-size:14px;min-height:20px"></div>
+        <div style="margin-top:14px"><button id="gq-rfq-nxt" class="btn" style="display:none" onclick="gqNext('rfq')">Next →</button></div>
+      </div>
+      <div id="gq-rfq-result" style="display:none;text-align:center;padding:20px 0">
+        <div id="gq-rfq-score"></div>
+        <canvas id="gq-rfq-cert-canvas" style="display:none;max-width:100%;margin:16px auto;border:1px solid #e2e8f0;border-radius:8px;box-shadow:0 2px 12px rgba(0,0,0,.1)"></canvas>
+        <button id="gq-rfq-dl" class="btn" style="display:none;margin-top:10px" onclick="gqDownload('rfq')">⬇ Download Certificate</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Labs & Imaging QUIZ -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ig">🎓</div>Labs &amp; Imaging Knowledge Quiz <span class="badge bc">Required — All Staff</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div id="gq-lbq-start">
+        <div style="text-align:center;padding:24px 0 8px">
+          <div style="font-size:48px;margin-bottom:12px">📋</div>
+          <h3 style="color:var(--primary);margin:0 0 8px">Labs &amp; Imaging Knowledge Check</h3>
+          <p style="color:var(--muted);margin:0 0 20px;font-size:14px">20 questions &nbsp;·&nbsp; 80% required to pass &nbsp;·&nbsp; Certificate awarded on successful completion</p>
+          <input id="gq-lbq-name" type="text" placeholder="Enter your full name" style="display:block;margin:0 auto 14px;padding:10px 16px;border:2px solid #e2e8f0;border-radius:8px;font-size:15px;width:320px;max-width:100%;text-align:center">
+          <button class="btn" onclick="gqStart('lbq')">Start Quiz →</button>
+        </div>
+      </div>
+      <div id="gq-lbq-quiz" style="display:none">
+        <div style="margin-bottom:6px;font-size:13px;color:var(--muted);font-weight:600" id="gq-lbq-qcnt"></div>
+        <div class="gq-prog-bar"><div class="gq-prog-fill" id="gq-lbq-pb" style="width:0%"></div></div>
+        <div id="gq-lbq-qtxt" style="font-size:16px;font-weight:600;color:var(--primary);margin-bottom:14px;line-height:1.5"></div>
+        <div id="gq-lbq-opts"></div>
+        <div id="gq-lbq-fb" style="margin-top:10px;font-weight:600;font-size:14px;min-height:20px"></div>
+        <div style="margin-top:14px"><button id="gq-lbq-nxt" class="btn" style="display:none" onclick="gqNext('lbq')">Next →</button></div>
+      </div>
+      <div id="gq-lbq-result" style="display:none;text-align:center;padding:20px 0">
+        <div id="gq-lbq-score"></div>
+        <canvas id="gq-lbq-cert-canvas" style="display:none;max-width:100%;margin:16px auto;border:1px solid #e2e8f0;border-radius:8px;box-shadow:0 2px 12px rgba(0,0,0,.1)"></canvas>
+        <button id="gq-lbq-dl" class="btn" style="display:none;margin-top:10px" onclick="gqDownload('lbq')">⬇ Download Certificate</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quality Improvement QUIZ -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ig">🎓</div>Quality Improvement Knowledge Quiz <span class="badge bc">Required — All Staff</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div id="gq-qiq-start">
+        <div style="text-align:center;padding:24px 0 8px">
+          <div style="font-size:48px;margin-bottom:12px">📋</div>
+          <h3 style="color:var(--primary);margin:0 0 8px">Quality Improvement Knowledge Check</h3>
+          <p style="color:var(--muted);margin:0 0 20px;font-size:14px">20 questions &nbsp;·&nbsp; 80% required to pass &nbsp;·&nbsp; Certificate awarded on successful completion</p>
+          <input id="gq-qiq-name" type="text" placeholder="Enter your full name" style="display:block;margin:0 auto 14px;padding:10px 16px;border:2px solid #e2e8f0;border-radius:8px;font-size:15px;width:320px;max-width:100%;text-align:center">
+          <button class="btn" onclick="gqStart('qiq')">Start Quiz →</button>
+        </div>
+      </div>
+      <div id="gq-qiq-quiz" style="display:none">
+        <div style="margin-bottom:6px;font-size:13px;color:var(--muted);font-weight:600" id="gq-qiq-qcnt"></div>
+        <div class="gq-prog-bar"><div class="gq-prog-fill" id="gq-qiq-pb" style="width:0%"></div></div>
+        <div id="gq-qiq-qtxt" style="font-size:16px;font-weight:600;color:var(--primary);margin-bottom:14px;line-height:1.5"></div>
+        <div id="gq-qiq-opts"></div>
+        <div id="gq-qiq-fb" style="margin-top:10px;font-weight:600;font-size:14px;min-height:20px"></div>
+        <div style="margin-top:14px"><button id="gq-qiq-nxt" class="btn" style="display:none" onclick="gqNext('qiq')">Next →</button></div>
+      </div>
+      <div id="gq-qiq-result" style="display:none;text-align:center;padding:20px 0">
+        <div id="gq-qiq-score"></div>
+        <canvas id="gq-qiq-cert-canvas" style="display:none;max-width:100%;margin:16px auto;border:1px solid #e2e8f0;border-radius:8px;box-shadow:0 2px 12px rgba(0,0,0,.1)"></canvas>
+        <button id="gq-qiq-dl" class="btn" style="display:none;margin-top:10px" onclick="gqDownload('qiq')">⬇ Download Certificate</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Infusions QUIZ -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ig">🎓</div>Infusions Knowledge Quiz <span class="badge bc">Required — All Staff</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div id="gq-ifq-start">
+        <div style="text-align:center;padding:24px 0 8px">
+          <div style="font-size:48px;margin-bottom:12px">📋</div>
+          <h3 style="color:var(--primary);margin:0 0 8px">Infusions Knowledge Check</h3>
+          <p style="color:var(--muted);margin:0 0 20px;font-size:14px">20 questions &nbsp;·&nbsp; 80% required to pass &nbsp;·&nbsp; Certificate awarded on successful completion</p>
+          <input id="gq-ifq-name" type="text" placeholder="Enter your full name" style="display:block;margin:0 auto 14px;padding:10px 16px;border:2px solid #e2e8f0;border-radius:8px;font-size:15px;width:320px;max-width:100%;text-align:center">
+          <button class="btn" onclick="gqStart('ifq')">Start Quiz →</button>
+        </div>
+      </div>
+      <div id="gq-ifq-quiz" style="display:none">
+        <div style="margin-bottom:6px;font-size:13px;color:var(--muted);font-weight:600" id="gq-ifq-qcnt"></div>
+        <div class="gq-prog-bar"><div class="gq-prog-fill" id="gq-ifq-pb" style="width:0%"></div></div>
+        <div id="gq-ifq-qtxt" style="font-size:16px;font-weight:600;color:var(--primary);margin-bottom:14px;line-height:1.5"></div>
+        <div id="gq-ifq-opts"></div>
+        <div id="gq-ifq-fb" style="margin-top:10px;font-weight:600;font-size:14px;min-height:20px"></div>
+        <div style="margin-top:14px"><button id="gq-ifq-nxt" class="btn" style="display:none" onclick="gqNext('ifq')">Next →</button></div>
+      </div>
+      <div id="gq-ifq-result" style="display:none;text-align:center;padding:20px 0">
+        <div id="gq-ifq-score"></div>
+        <canvas id="gq-ifq-cert-canvas" style="display:none;max-width:100%;margin:16px auto;border:1px solid #e2e8f0;border-radius:8px;box-shadow:0 2px 12px rgba(0,0,0,.1)"></canvas>
+        <button id="gq-ifq-dl" class="btn" style="display:none;margin-top:10px" onclick="gqDownload('ifq')">⬇ Download Certificate</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Billing QUIZ -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ig">🎓</div>Billing Knowledge Quiz <span class="badge bc">Required — All Staff</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div id="gq-blq-start">
+        <div style="text-align:center;padding:24px 0 8px">
+          <div style="font-size:48px;margin-bottom:12px">📋</div>
+          <h3 style="color:var(--primary);margin:0 0 8px">Billing Knowledge Check</h3>
+          <p style="color:var(--muted);margin:0 0 20px;font-size:14px">20 questions &nbsp;·&nbsp; 80% required to pass &nbsp;·&nbsp; Certificate awarded on successful completion</p>
+          <input id="gq-blq-name" type="text" placeholder="Enter your full name" style="display:block;margin:0 auto 14px;padding:10px 16px;border:2px solid #e2e8f0;border-radius:8px;font-size:15px;width:320px;max-width:100%;text-align:center">
+          <button class="btn" onclick="gqStart('blq')">Start Quiz →</button>
+        </div>
+      </div>
+      <div id="gq-blq-quiz" style="display:none">
+        <div style="margin-bottom:6px;font-size:13px;color:var(--muted);font-weight:600" id="gq-blq-qcnt"></div>
+        <div class="gq-prog-bar"><div class="gq-prog-fill" id="gq-blq-pb" style="width:0%"></div></div>
+        <div id="gq-blq-qtxt" style="font-size:16px;font-weight:600;color:var(--primary);margin-bottom:14px;line-height:1.5"></div>
+        <div id="gq-blq-opts"></div>
+        <div id="gq-blq-fb" style="margin-top:10px;font-weight:600;font-size:14px;min-height:20px"></div>
+        <div style="margin-top:14px"><button id="gq-blq-nxt" class="btn" style="display:none" onclick="gqNext('blq')">Next →</button></div>
+      </div>
+      <div id="gq-blq-result" style="display:none;text-align:center;padding:20px 0">
+        <div id="gq-blq-score"></div>
+        <canvas id="gq-blq-cert-canvas" style="display:none;max-width:100%;margin:16px auto;border:1px solid #e2e8f0;border-radius:8px;box-shadow:0 2px 12px rgba(0,0,0,.1)"></canvas>
+        <button id="gq-blq-dl" class="btn" style="display:none;margin-top:10px" onclick="gqDownload('blq')">⬇ Download Certificate</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Prior Authorization QUIZ -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ig">🎓</div>Prior Authorization Knowledge Quiz <span class="badge bc">Required — All Staff</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div id="gq-paq-start">
+        <div style="text-align:center;padding:24px 0 8px">
+          <div style="font-size:48px;margin-bottom:12px">📋</div>
+          <h3 style="color:var(--primary);margin:0 0 8px">Prior Authorization Knowledge Check</h3>
+          <p style="color:var(--muted);margin:0 0 20px;font-size:14px">20 questions &nbsp;·&nbsp; 80% required to pass &nbsp;·&nbsp; Certificate awarded on successful completion</p>
+          <input id="gq-paq-name" type="text" placeholder="Enter your full name" style="display:block;margin:0 auto 14px;padding:10px 16px;border:2px solid #e2e8f0;border-radius:8px;font-size:15px;width:320px;max-width:100%;text-align:center">
+          <button class="btn" onclick="gqStart('paq')">Start Quiz →</button>
+        </div>
+      </div>
+      <div id="gq-paq-quiz" style="display:none">
+        <div style="margin-bottom:6px;font-size:13px;color:var(--muted);font-weight:600" id="gq-paq-qcnt"></div>
+        <div class="gq-prog-bar"><div class="gq-prog-fill" id="gq-paq-pb" style="width:0%"></div></div>
+        <div id="gq-paq-qtxt" style="font-size:16px;font-weight:600;color:var(--primary);margin-bottom:14px;line-height:1.5"></div>
+        <div id="gq-paq-opts"></div>
+        <div id="gq-paq-fb" style="margin-top:10px;font-weight:600;font-size:14px;min-height:20px"></div>
+        <div style="margin-top:14px"><button id="gq-paq-nxt" class="btn" style="display:none" onclick="gqNext('paq')">Next →</button></div>
+      </div>
+      <div id="gq-paq-result" style="display:none;text-align:center;padding:20px 0">
+        <div id="gq-paq-score"></div>
+        <canvas id="gq-paq-cert-canvas" style="display:none;max-width:100%;margin:16px auto;border:1px solid #e2e8f0;border-radius:8px;box-shadow:0 2px 12px rgba(0,0,0,.1)"></canvas>
+        <button id="gq-paq-dl" class="btn" style="display:none;margin-top:10px" onclick="gqDownload('paq')">⬇ Download Certificate</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Care Management QUIZ -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ig">🎓</div>Care Management Knowledge Quiz <span class="badge bc">Required — All Staff</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div id="gq-cmq-start">
+        <div style="text-align:center;padding:24px 0 8px">
+          <div style="font-size:48px;margin-bottom:12px">📋</div>
+          <h3 style="color:var(--primary);margin:0 0 8px">Care Management Knowledge Check</h3>
+          <p style="color:var(--muted);margin:0 0 20px;font-size:14px">20 questions &nbsp;·&nbsp; 80% required to pass &nbsp;·&nbsp; Certificate awarded on successful completion</p>
+          <input id="gq-cmq-name" type="text" placeholder="Enter your full name" style="display:block;margin:0 auto 14px;padding:10px 16px;border:2px solid #e2e8f0;border-radius:8px;font-size:15px;width:320px;max-width:100%;text-align:center">
+          <button class="btn" onclick="gqStart('cmq')">Start Quiz →</button>
+        </div>
+      </div>
+      <div id="gq-cmq-quiz" style="display:none">
+        <div style="margin-bottom:6px;font-size:13px;color:var(--muted);font-weight:600" id="gq-cmq-qcnt"></div>
+        <div class="gq-prog-bar"><div class="gq-prog-fill" id="gq-cmq-pb" style="width:0%"></div></div>
+        <div id="gq-cmq-qtxt" style="font-size:16px;font-weight:600;color:var(--primary);margin-bottom:14px;line-height:1.5"></div>
+        <div id="gq-cmq-opts"></div>
+        <div id="gq-cmq-fb" style="margin-top:10px;font-weight:600;font-size:14px;min-height:20px"></div>
+        <div style="margin-top:14px"><button id="gq-cmq-nxt" class="btn" style="display:none" onclick="gqNext('cmq')">Next →</button></div>
+      </div>
+      <div id="gq-cmq-result" style="display:none;text-align:center;padding:20px 0">
+        <div id="gq-cmq-score"></div>
+        <canvas id="gq-cmq-cert-canvas" style="display:none;max-width:100%;margin:16px auto;border:1px solid #e2e8f0;border-radius:8px;box-shadow:0 2px 12px rgba(0,0,0,.1)"></canvas>
+        <button id="gq-cmq-dl" class="btn" style="display:none;margin-top:10px" onclick="gqDownload('cmq')">⬇ Download Certificate</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cognitive Assessment QUIZ -->
+  <div class="acc">
+    <div class="ah" onclick="tog(this)"><div class="at"><div class="si ig">🎓</div>Cognitive Assessment Knowledge Quiz <span class="badge bc">Required — All Staff</span></div><span class="chev">▼</span></div>
+    <div class="ab">
+      <div id="gq-cgq-start">
+        <div style="text-align:center;padding:24px 0 8px">
+          <div style="font-size:48px;margin-bottom:12px">📋</div>
+          <h3 style="color:var(--primary);margin:0 0 8px">Cognitive Assessment Knowledge Check</h3>
+          <p style="color:var(--muted);margin:0 0 20px;font-size:14px">20 questions &nbsp;·&nbsp; 80% required to pass &nbsp;·&nbsp; Certificate awarded on successful completion</p>
+          <input id="gq-cgq-name" type="text" placeholder="Enter your full name" style="display:block;margin:0 auto 14px;padding:10px 16px;border:2px solid #e2e8f0;border-radius:8px;font-size:15px;width:320px;max-width:100%;text-align:center">
+          <button class="btn" onclick="gqStart('cgq')">Start Quiz →</button>
+        </div>
+      </div>
+      <div id="gq-cgq-quiz" style="display:none">
+        <div style="margin-bottom:6px;font-size:13px;color:var(--muted);font-weight:600" id="gq-cgq-qcnt"></div>
+        <div class="gq-prog-bar"><div class="gq-prog-fill" id="gq-cgq-pb" style="width:0%"></div></div>
+        <div id="gq-cgq-qtxt" style="font-size:16px;font-weight:600;color:var(--primary);margin-bottom:14px;line-height:1.5"></div>
+        <div id="gq-cgq-opts"></div>
+        <div id="gq-cgq-fb" style="margin-top:10px;font-weight:600;font-size:14px;min-height:20px"></div>
+        <div style="margin-top:14px"><button id="gq-cgq-nxt" class="btn" style="display:none" onclick="gqNext('cgq')">Next →</button></div>
+      </div>
+      <div id="gq-cgq-result" style="display:none;text-align:center;padding:20px 0">
+        <div id="gq-cgq-score"></div>
+        <canvas id="gq-cgq-cert-canvas" style="display:none;max-width:100%;margin:16px auto;border:1px solid #e2e8f0;border-radius:8px;box-shadow:0 2px 12px rgba(0,0,0,.1)"></canvas>
+        <button id="gq-cgq-dl" class="btn" style="display:none;margin-top:10px" onclick="gqDownload('cgq')">⬇ Download Certificate</button>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end panel-quiz -->
+
 </div><!-- end .content -->
 
 <script>
@@ -16553,145 +16815,119 @@ function hqFinish(){
   if(passed){document.getElementById('hq-cert-area').style.display='block';hqDrawCert(hqState.name,pct);}
 }
 
+// Mir Neurology logo — exact PNG embedded as base64 data URL
+const _MIR_LOGO_B64='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAABqCAYAAACSwQcHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAIiGlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgOS4xLWMwMDEgNzkuMTQ2Mjg5OSwgMjAyMy8wNi8yNS0yMDowMTo1NSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdEV2dD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlRXZlbnQjIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3Rvc2hvcC8xLjAvIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCAyNC43IChXaW5kb3dzKSIgeG1wOkNyZWF0ZURhdGU9IjIwMjQtMTItMjBUMDA6NDc6NTMrMDU6MDAiIHhtcDpNZXRhZGF0YURhdGU9IjIwMjQtMTItMjBUMDA6NDg6MDcrMDU6MDAiIHhtcDpNb2RpZnlEYXRlPSIyMDI0LTEyLTIwVDAwOjQ4OjA3KzA1OjAwIiBkYzpmb3JtYXQ9ImltYWdlL3BuZyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozZWNlZDQ4YS03MjUzLTM5NDctYTdkZS1iODEzMWZmY2UwNzkiIHhtcE1NOkRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDpjYjY5N2QzMi02N2Q3LWY1NGYtOTBmNS1jMzNmNzgyZTEwNWIiIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDowNzVkNzE5OC03M2VlLTdhNDMtYjg0Yy1iNzQwYzFhMGNjMjAiIHBob3Rvc2hvcDpDb2xvck1vZGU9IjMiPiA8eG1wTU06SGlzdG9yeT4gPHJkZjpTZXE+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJjcmVhdGVkIiBzdEV2dDppbnN0YW5jZUlEPSJ4bXAuaWlkOjA3NWQ3MTk4LTczZWUtN2E0My1iODRjLWI3NDBjMWEwY2MyMCIgc3RFdnQ6d2hlbj0iMjAyNC0xMi0yMFQwMDo0Nzo1MyswNTowMCIgc3RFdnQ6c29mdHdhcmVBZ2VudD0iQWRvYmUgUGhvdG9zaG9wIDI0LjcgKFdpbmRvd3MpIi8+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJzYXZlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDowODVkMWIxMS0xOGI4LTVmNDktODhhMS1jOWNiYTEyNDQ0NzkiIHN0RXZ0OndoZW49IjIwMjQtMTItMjBUMDA6NDg6MDcrMDU6MDAiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFkb2JlIFBob3Rvc2hvcCAyNC43IChXaW5kb3dzKSIgc3RFdnQ6Y2hhbmdlZD0iLyIvPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0iY29udmVydGVkIiBzdEV2dDpwYXJhbWV0ZXJzPSJmcm9tIGFwcGxpY2F0aW9uL3ZuZC5hZG9iZS5waG90b3Nob3AgdG8gaW1hZ2UvcG5nIi8+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJkZXJpdmVkIiBzdEV2dDpwYXJhbWV0ZXJzPSJjb252ZXJ0ZWQgZnJvbSBhcHBsaWNhdGlvbi92bmQuYWRvYmUucGhvdG9zaG9wIHRvIGltYWdlL3BuZyIvPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0ic2F2ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6M2VjZWQ0OGEtNzI1My0z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';
+let _LOGO_IMG=null,_LOGO_LOADING=false,_LOGO_CBS=[];
+function _withLogo(cb){
+  if(_LOGO_IMG){cb(_LOGO_IMG);return;}
+  if(_LOGO_IMG===false){cb(null);return;}// logo failed — render cert without logo
+  _LOGO_CBS.push(cb);
+  if(_LOGO_LOADING)return;
+  _LOGO_LOADING=true;
+  const img=new Image();
+  img.onload=function(){_LOGO_IMG=img;_LOGO_CBS.forEach(f=>f(img));_LOGO_CBS=[];};
+  img.onerror=function(){_LOGO_IMG=false;_LOGO_LOADING=false;_LOGO_CBS.forEach(f=>f(null));_LOGO_CBS=[];};
+  img.src=_MIR_LOGO_B64;
+}
+function _drawMirLogo(c,x,y,w,h){
+  if(_LOGO_IMG)c.drawImage(_LOGO_IMG,x,y,w,h);
+}
+// Preload logo on page load
+document.addEventListener('DOMContentLoaded',()=>_withLogo(()=>{}));
 function hqDrawCert(name,score){
   const cv=document.getElementById('hq-cert-canvas');
-  cv.width=1200;cv.height=850;
-  const img=new Image();
-  img.crossOrigin='anonymous';
-  img.onload=()=>_hqRenderCert(cv,name,score,img);
-  img.onerror=()=>_hqRenderCert(cv,name,score,null);
-  img.src='https://mirneurology.com/wp-content/uploads/2026/02/698c98c84a7b64fa534a12a4.png';
+  _withLogo(()=>_hqRenderCert(cv,name));
 }
 
-function _hqRenderCert(cv,name,score,logoImg){
+function _hqRenderCert(cv,name){
   const c=cv.getContext('2d');
-  const W=1200,H=850;
+  const W=1200,H=850;cv.width=W;cv.height=H;
+  const NAVY='#0d1e3d',TEAL='#29b5d8';
 
-  // ── Background gradient ──
-  const bg=c.createLinearGradient(0,0,0,H);
-  bg.addColorStop(0,'#f8fafc');
-  bg.addColorStop(1,'#eef2f7');
-  c.fillStyle=bg;c.fillRect(0,0,W,H);
+  // White background
+  c.fillStyle='#fff';c.fillRect(0,0,W,H);
 
-  // ── Deep navy header band ──
-  const hdr=c.createLinearGradient(0,0,W,0);
-  hdr.addColorStop(0,'#0d2e5c');
-  hdr.addColorStop(0.5,'#1a4a7a');
-  hdr.addColorStop(1,'#0d2e5c');
-  c.fillStyle=hdr;c.fillRect(0,0,W,140);
+  // Top accent: teal bar + short navy bar
+  c.fillStyle=TEAL;c.fillRect(0,0,W,8);
+  c.fillStyle=NAVY;c.fillRect(0,8,310,3);
 
-  // ── Gold accent stripe under header ──
-  c.fillStyle='#C9A227';c.fillRect(0,140,W,5);
+  // Bottom accent: right-side teal + navy
+  c.fillStyle=TEAL;c.fillRect(W-260,H-8,260,8);
+  c.fillStyle=NAVY;c.fillRect(W-260,H-11,260,3);
 
-  // ── Outer border ──
-  c.strokeStyle='#1a4a7a';c.lineWidth=10;c.strokeRect(12,12,W-24,H-24);
-  // ── Inner gold border ──
-  c.strokeStyle='#C9A227';c.lineWidth=2;c.strokeRect(26,26,W-52,H-52);
+  // Outer gray border
+  c.strokeStyle='#d4dae4';c.lineWidth=1.5;c.strokeRect(26,26,W-52,H-52);
 
-  // ── Corner ornaments ──
-  [[46,46],[W-46,46],[46,H-46],[W-46,H-46]].forEach(([x,y])=>{
-    c.fillStyle='#C9A227';
-    c.beginPath();c.arc(x,y,8,0,Math.PI*2);c.fill();
-    c.strokeStyle='#1a4a7a';c.lineWidth=1.5;
-    c.beginPath();c.arc(x,y,14,0,Math.PI*2);c.stroke();
-  });
+  // Logo (drawn with canvas)
+  const lh=72,lw=_LOGO_IMG?Math.round(_LOGO_IMG.naturalWidth*lh/_LOGO_IMG.naturalHeight):Math.round(560*(lh/106));
+  _drawMirLogo(c,Math.round((W-lw)/2),40,lw,lh);
 
-  // ── Logo or text in header ──
-  if(logoImg){
-    const lh=90,lw=Math.round(logoImg.naturalWidth*(lh/logoImg.naturalHeight));
-    const lx=Math.round((W-lw)/2);
-    c.drawImage(logoImg,lx,25,lw,lh);
-  } else {
-    c.fillStyle='#ffffff';c.textAlign='center';
-    c.font='bold 38px Georgia,serif';c.fillText('MIR NEUROLOGY',W/2,78);
-    c.font='16px Arial,sans-serif';c.fillText('& Spine Center',W/2,106);
-  }
+  // Practice name — sits between logo and CERTIFICATE
+  c.fillStyle=TEAL;c.font='bold 15px Arial,sans-serif';c.textAlign='center';
+  c.fillText('Mir Neurology & Spine Center',W/2,134);
 
-  // ── Tagline below header band ──
-  c.fillStyle='#1a4a7a';c.font='italic 15px Arial,sans-serif';c.textAlign='center';
-  c.fillText('Board-Certified Neurological Care · Hagerstown & Cumberland, MD',W/2,172);
+  // CERTIFICATE – large bold
+  c.fillStyle=NAVY;c.font='bold 92px Arial,sans-serif';c.textAlign='center';
+  c.fillText('CERTIFICATE',W/2,226);
 
-  // ── Main title ──
-  c.fillStyle='#1a4a7a';c.font='bold 58px Georgia,serif';c.textAlign='center';
-  c.shadowColor='rgba(26,74,122,0.15)';c.shadowBlur=8;
-  c.fillText('Certificate of Completion',W/2,258);
-  c.shadowBlur=0;
+  // — OF COMPLETION — with teal lines
+  const subT='OF COMPLETION';
+  c.font='bold 15px Arial';
+  const sw=c.measureText(subT).width;
+  const lGap=16,lLen=82;
+  c.strokeStyle=TEAL;c.lineWidth=1.5;
+  c.beginPath();c.moveTo(W/2-sw/2-lGap-lLen,240);c.lineTo(W/2-sw/2-lGap,240);c.stroke();
+  c.beginPath();c.moveTo(W/2+sw/2+lGap,240);c.lineTo(W/2+sw/2+lGap+lLen,240);c.stroke();
+  c.fillStyle=NAVY;c.textAlign='center';c.fillText(subT,W/2,245);
 
-  // ── Gold title underline ──
-  const grad2=c.createLinearGradient(200,0,W-200,0);
-  grad2.addColorStop(0,'transparent');grad2.addColorStop(0.2,'#C9A227');grad2.addColorStop(0.8,'#C9A227');grad2.addColorStop(1,'transparent');
-  c.strokeStyle=grad2;c.lineWidth=3;
-  c.beginPath();c.moveTo(200,272);c.lineTo(W-200,272);c.stroke();
+  // THIS CERTIFICATE IS PROUDLY PRESENTED TO
+  c.fillStyle='#8090a8';c.font='11.5px Arial';c.textAlign='center';
+  c.fillText('THIS CERTIFICATE IS PROUDLY PRESENTED TO',W/2,290);
 
-  // ── "This certifies that" ──
-  c.fillStyle='#555';c.font='italic 22px Georgia,serif';c.textAlign='center';
-  c.fillText('This certifies that',W/2,330);
+  // Recipient name – italic
+  c.fillStyle=NAVY;c.font='italic bold 66px Georgia,serif';c.textAlign='center';
+  c.shadowColor='rgba(13,30,61,0.07)';c.shadowBlur=5;
+  c.fillText(name,W/2,368);c.shadowBlur=0;
 
-  // ── Recipient name ──
-  c.fillStyle='#1a4a7a';c.font='bold 54px Georgia,serif';c.textAlign='center';
-  c.shadowColor='rgba(26,74,122,0.12)';c.shadowBlur=6;
-  c.fillText(name,W/2,406);
-  c.shadowBlur=0;
+  // Teal underline
+  const nw2=c.measureText(name).width;
+  c.strokeStyle=TEAL;c.lineWidth=2;
+  c.beginPath();c.moveTo(W/2-nw2/2-22,385);c.lineTo(W/2+nw2/2+22,385);c.stroke();
 
-  // ── Name gold underline ──
-  const nw=c.measureText(name).width;
-  c.strokeStyle='#C9A227';c.lineWidth=2;
-  c.beginPath();c.moveTo(W/2-nw/2-20,420);c.lineTo(W/2+nw/2+20,420);c.stroke();
+  // Description
+  c.fillStyle='#4a5568';c.font='16px Georgia,serif';c.textAlign='center';
+  c.fillText('in recognition of the successful completion of',W/2,428);
+  c.fillStyle=NAVY;c.font='bold 20px Georgia,serif';
+  c.fillText('HIPAA Privacy & Security Compliance Training',W/2,458);
+  c.fillStyle='#4a5568';c.font='15px Georgia,serif';c.textAlign='center';
+  c.fillText('demonstrating commitment to patient privacy and regulatory compliance',W/2,486);
 
-  // ── "has successfully completed" ──
-  c.fillStyle='#555';c.font='italic 22px Georgia,serif';c.textAlign='center';
-  c.fillText('has successfully completed',W/2,468);
+  // Horizontal rule
+  c.strokeStyle='#eaecf0';c.lineWidth=1;
+  c.beginPath();c.moveTo(42,520);c.lineTo(W-42,520);c.stroke();
 
-  // ── Course title ──
-  c.fillStyle='#1a4a7a';c.font='bold 28px Georgia,serif';c.textAlign='center';
-  c.fillText('HIPAA Privacy & Security Compliance Training',W/2,514);
+  // Bottom section
+  const bCY=692;
 
-  // ── Score badge ──
-  const bx=W/2-160,by=534;
-  c.fillStyle='#e8f5e9';c.strokeStyle='#2e7d32';c.lineWidth=2;
-  hqRoundRect(c,bx,by,320,48,10);
-  c.fillStyle='#2E7D32';c.font='bold 20px Arial,sans-serif';c.textAlign='center';
-  c.fillText('Score: '+score+'%  ·  PASSED',W/2,565);
-
-  // ── Date ──
+  // DATE (left)
   const ds=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
-  c.fillStyle='#666';c.font='18px Arial,sans-serif';c.textAlign='center';
-  c.fillText('Date of Completion: '+ds,W/2,610);
+  const dX=200;
+  c.fillStyle=NAVY;c.font='15px Georgia,serif';c.textAlign='center';
+  c.fillText(ds,dX,bCY+4);
+  c.strokeStyle='#b4bdc8';c.lineWidth=1;
+  c.beginPath();c.moveTo(dX-98,bCY+20);c.lineTo(dX+98,bCY+20);c.stroke();
+  c.fillStyle='#8090a8';c.font='bold 10px Arial';c.textAlign='center';
+  c.fillText('DATE',dX,bCY+38);
 
-  // ── Divider ──
-  c.strokeStyle='#C9A227';c.lineWidth=1.5;
-  c.beginPath();c.moveTo(120,632);c.lineTo(W-120,632);c.stroke();
+  // SIGNATURE (right)
+  const sigX=W-200;
+  c.strokeStyle='#b4bdc8';c.lineWidth=1;
+  c.beginPath();c.moveTo(sigX-98,bCY+20);c.lineTo(sigX+98,bCY+20);c.stroke();
+  c.fillStyle='#8090a8';c.font='bold 10px Arial';c.textAlign='center';
+  c.fillText('PRIVACY OFFICER',sigX,bCY+38);
+  c.fillStyle=NAVY;c.font='15px Arial';c.textAlign='center';
+  c.fillText('Mir Neurology',sigX,bCY+56);
 
-  // ── Seal (left) ──
-  const sx=190,sy=710;
-  // Outer ring
-  c.beginPath();c.arc(sx,sy,72,0,Math.PI*2);
-  const sgrad=c.createRadialGradient(sx,sy,30,sx,sy,72);
-  sgrad.addColorStop(0,'#1a4a7a');sgrad.addColorStop(1,'#0d2e5c');
-  c.fillStyle=sgrad;c.fill();
-  c.strokeStyle='#C9A227';c.lineWidth=3;c.stroke();
-  // Inner ring
-  c.beginPath();c.arc(sx,sy,58,0,Math.PI*2);c.strokeStyle='#C9A22780';c.lineWidth=1;c.stroke();
-  // Seal text
-  c.fillStyle='#fff';c.font='bold 12px Arial';c.textAlign='center';
-  c.fillText('MIR NEUROLOGY',sx,698);
-  c.font='10px Arial';c.fillText('HIPAA CERTIFIED',sx,713);
-  c.font='bold 13px Arial';c.fillText(new Date().getFullYear(),sx,730);
-
-  // ── Signature line (right) ──
-  const sig_cx=820;
-  c.strokeStyle='#aaa';c.lineWidth=1;
-  c.beginPath();c.moveTo(sig_cx-170,695);c.lineTo(sig_cx+170,695);c.stroke();
-  c.fillStyle='#555';c.font='14px Arial';c.textAlign='center';
-  c.fillText('Privacy Officer / Practice Administrator',sig_cx,716);
-  c.font='bold 15px Arial';c.fillStyle='#1a4a7a';
-  c.fillText('Mir Neurology & Spine Center',sig_cx,736);
-  c.font='13px Arial';c.fillStyle='#888';
-  c.fillText('Hagerstown & Cumberland, MD  ·  (301) 797-7600',sig_cx,754);
-
-  // ── Footer ──
-  c.fillStyle='#aaa';c.font='12px Arial';c.textAlign='center';
-  c.fillText('This certificate documents successful completion of annual HIPAA training · mirneurology.com',W/2,820);
 }
 
 function hqRoundRect(c,x,y,w,h,r){
@@ -16729,7 +16965,17 @@ const gqData={
     {q:"A patient says a family member will be picking up their records. You should:",opts:["Release records if the family member has a photo ID","Ask the family member to sign a release form","Only release records if a signed patient authorization is on file","Call the patient to confirm verbally — no documentation needed"],ans:2},
     {q:"If a patient is a no-show, your next step is:",opts:["Delete the appointment slot","Document it and attempt to reschedule per practice protocol","Call the patient immediately regardless of time","Notify billing only"],ans:1},
     {q:"Which patients typically require an active referral on file before the visit?",opts:["All patients","Medicare patients only","Patients whose insurance requires a PCP referral (e.g., HMO plans)","Medicaid patients only"],ans:2},
-    {q:"A patient disputes a co-pay amount at check-in. You should:",opts:["Waive the co-pay to avoid conflict","Accept whatever they want to pay","Explain the co-pay is set by their insurance and offer a receipt; escalate to billing if needed","Tell them to call their insurance themselves"],ans:2}
+    {q:"A patient disputes a co-pay amount at check-in. You should:",opts:["Waive the co-pay to avoid conflict","Accept whatever they want to pay","Explain the co-pay is set by their insurance and offer a receipt; escalate to billing if needed","Tell them to call their insurance themselves"],ans:2},
+    {q:"A patient presents without an appointment and requests to be seen urgently. You should:",opts:["Schedule them for next week","Notify the MA and provider immediately to assess urgency","Tell them walk-ins are not accepted","Ask them to call back later"],ans:1},
+    {q:"When verifying insurance eligibility, you should check:",opts:["Only that the card is not expired","Active coverage, copay, deductible status, referral requirements, and in-network status","Just the group number","The patient's pharmacy plan only"],ans:1},
+    {q:"A patient becomes verbally aggressive at the front desk. You should:",opts:["Argue back to defend the practice","Remain calm, de-escalate, and involve a supervisor if needed","Call 911 immediately","Ignore them"],ans:1},
+    {q:"Checking in a patient who owes a previous balance, you should:",opts:["Refuse to check them in","Note the balance and alert billing — do not deny care","Collect the full balance before rooming","Delete the balance"],ans:1},
+    {q:"A provider asks you to schedule a patient as 'ASAP.' This means:",opts:["Schedule within 6 months","Schedule at the next available slot within 24–72 hours depending on urgency","Schedule at the patient's convenience","It is low priority"],ans:1},
+    {q:"Sensitive patient information should never be:",opts:["Entered into the EHR","Discussed loudly at the front desk where others can hear","Shared with the provider","Kept in a locked chart"],ans:1},
+    {q:"When a patient has a secondary insurance, you should:",opts:["Only bill the primary","Collect copay from primary only and bill both insurances in correct COB order","Ask the patient which one they prefer","Ignore the secondary"],ans:1},
+    {q:"End-of-day cash reconciliation requires:",opts:["A rough estimate of payments collected","Exact match of all payments collected against the appointment log and receipts","Only the credit card total","Just noting any discrepancies verbally"],ans:1},
+    {q:"A patient requests their records be sent to another provider. You must:",opts:["Send immediately without any form","Obtain a signed HIPAA-compliant authorization before releasing","Ask the provider's permission only","Send via email without encryption"],ans:1},
+    {q:"When a patient who does not speak English arrives, you should:",opts:["Ask a family member to translate all medical information","Use a qualified medical interpreter service per HIPAA and language access requirements","Reschedule until they bring an interpreter","Use Google Translate on your phone"],ans:1}
   ],
   maq:[
     {q:"Before rooming a patient, the MA should review:",opts:["Only the chief complaint","Last visit note, current medications, pending labs, and reason for today's visit","Insurance information only","Referral status only"],ans:1},
@@ -16741,7 +16987,17 @@ const gqData={
     {q:"A patient discloses active suicidal ideation during rooming. You should:",opts:["Document it and room the patient as normal","Immediately notify the provider before leaving the patient alone","Tell the patient to call a hotline","Schedule a follow-up for next week"],ans:1},
     {q:"Documenting allergies correctly requires:",opts:["Only the medication name","The medication name AND the specific reaction (e.g., rash, anaphylaxis)","Writing 'NKDA' if the patient says no allergies","Only documenting new allergies"],ans:1},
     {q:"A critical lab value is received. You should:",opts:["File it and wait for provider review at end of day","Immediately bring it to the provider's attention","Call the patient first","Send a portal message and wait"],ans:1},
-    {q:"EMG/nerve conduction studies require the patient to:",opts:["Fast overnight","Avoid lotions/oils on the skin and wear loose-fitting clothing","Take extra pain medication before the study","Stop all medications 48 hours prior"],ans:1}
+    {q:"EMG/nerve conduction studies require the patient to:",opts:["Fast overnight","Avoid lotions/oils on the skin and wear loose-fitting clothing","Take extra pain medication before the study","Stop all medications 48 hours prior"],ans:1},
+    {q:"CPT code 64616 for cervical Botox is a bilateral procedure and requires:",opts:["Modifier -25","-50 modifier appended to the code","No modifier","Modifier -59"],ans:1},
+    {q:"Before administering a Botox injection, the MA must confirm:",opts:["Insurance is verified and PA is approved","The patient's preferred injection sites","The pharmacy has the drug","The provider's schedule"],ans:0},
+    {q:"When a patient reports a new allergy during rooming, you must:",opts:["Note it verbally and tell the provider later","Immediately document it in the allergy section of the EHR before the provider enters","Wait until end of visit","Only document if it is to a prescription medication"],ans:1},
+    {q:"A vial sticker for Botox must include:",opts:["Only the patient's name","Patient name, DOB, drug name, lot number, expiration date, units drawn, and date/time prepared","Just the units drawn","The provider's NPI only"],ans:1},
+    {q:"For a small fiber biopsy appointment, the MA should instruct the patient to:",opts:["Fast overnight","Discontinue all medications","Not apply lotion to the biopsy site area and wear loose clothing","Shave the biopsy area at home"],ans:2},
+    {q:"Medication reconciliation must be completed:",opts:["Annually at the wellness visit only","At every visit — review and update the full medication list including OTCs and supplements","Only when the patient reports a change","By front desk during check-in"],ans:1},
+    {q:"When a provider marks an order as STAT in the EHR, the MA must:",opts:["Process it at end of day","Act on it immediately — same day","Route it to billing first","Wait for the patient to ask about it"],ans:1},
+    {q:"If an EEG lead falls off during the study, you should:",opts:["End the study and reschedule","Reapply it using conductive paste and continue per protocol","Document it and ignore it","Ask the patient to hold it in place"],ans:1},
+    {q:"Patient education materials should be:",opts:["Given only when the patient asks","Provided at every visit relevant to the patient's conditions and documented in the chart","Mailed after the visit","Optional — based on MA preference"],ans:1},
+    {q:"An MA should interrupt a provider during a patient encounter:",opts:["Never under any circumstances","Only for a life-threatening emergency or urgent patient safety concern","To ask about scheduling","When a phone call comes in"],ans:1}
   ],
   scq:[
     {q:"A new neurology patient appointment is typically scheduled for:",opts:["15 minutes","30 minutes","60 minutes or more depending on complexity","10 minutes"],ans:2},
@@ -16753,7 +17009,17 @@ const gqData={
     {q:"Infusion appointments must be scheduled with confirmation of:",opts:["Patient's preferred time only","Active authorization, drug availability, and a signed order","Just the referral","Only the insurance ID number"],ans:1},
     {q:"When a patient cancels same-day, the appointment slot should be:",opts:["Left open","Offered to patients on the waitlist","Blocked for the rest of the day","Deleted from the system"],ans:1},
     {q:"A STAT referral appointment means the patient should be seen:",opts:["Within 6 months","Within 30 days","Within 24-72 hours depending on urgency","At the patient's convenience"],ans:2},
-    {q:"When scheduling an EEG, patients should be instructed to avoid:",opts:["All food and water","Hair products (oils, sprays, conditioners) on the day of the study","All prescription medications","Driving entirely on that day"],ans:1}
+    {q:"When scheduling an EEG, patients should be instructed to avoid:",opts:["All food and water","Hair products (oils, sprays, conditioners) on the day of the study","All prescription medications","Driving entirely on that day"],ans:1},
+    {q:"A patient calls to reschedule a procedure. Before changing the appointment you must:",opts:["Simply move it to the next slot","Verify the PA is still valid for the new date and that drug/supplies can be arranged","Ask the provider first","Check if the patient has a balance"],ans:1},
+    {q:"When booking an appointment with a new provider for a transferred patient, you should:",opts:["Copy the previous provider's schedule exactly","Verify the new provider accepts the patient's insurance before booking","Schedule immediately without verification","Ask the patient to confirm the insurance themselves"],ans:1},
+    {q:"A double-booked appointment is discovered. You should:",opts:["Let both patients show up and sort it out","Contact one patient immediately to reschedule and document the change","Cancel both appointments","Ignore it — providers handle it"],ans:1},
+    {q:"For Cognitive Assessment appointments, you must confirm:",opts:["That the patient has transportation","An active order, covered diagnosis, and PA or eligibility if required before booking","That the family member will attend","The patient's pharmacy"],ans:1},
+    {q:"A patient missed three consecutive appointments without canceling. You should:",opts:["Schedule them again without comment","Document all no-shows, notify the provider, and follow the practice's no-show policy","Remove them from the system","Block all future appointments"],ans:1},
+    {q:"When scheduling an infusion, site-of-care restrictions mean:",opts:["The infusion can be done anywhere","Certain payers require infusions at specific approved locations — verify before booking","The patient chooses the location","The provider decides on the day of infusion"],ans:1},
+    {q:"A Botox appointment is typically how long for chronic migraine?",opts:["15 minutes","30–45 minutes","2 hours","5 minutes"],ans:1},
+    {q:"The scheduler's role when a PA is still pending is:",opts:["Book the appointment anyway and hope it approves","Do not schedule the procedure until PA is confirmed — only schedule office visits","Cancel the appointment permanently","Ask the patient to call the insurance"],ans:1},
+    {q:"A patient calls asking about their test results. Schedulers should:",opts:["Look up the result and share it","Route the call to the MA or provider — schedulers do not interpret or share clinical results","Tell the patient to use the portal","Document the call and not follow up"],ans:1},
+    {q:"Same-day scheduling slots should be reserved for:",opts:["VIP patients only","Urgent clinical needs as directed by the provider or triage protocol","Walk-ins only","Established patients with balances paid"],ans:1}
   ],
   rfq:[
     {q:"Closed-loop referral tracking means:",opts:["The referral is sent and filed","The referral is sent, appointment confirmed, and consult report received and documented","The patient self-manages the referral","Only tracked if the patient requests it"],ans:1},
@@ -16765,7 +17031,17 @@ const gqData={
     {q:"Which situation requires a STAT referral?",opts:["Annual wellness follow-up","New onset unilateral vision loss or sudden severe headache","Routine EMG for chronic neuropathy","Elective cognitive testing"],ans:1},
     {q:"Consult reports received by fax should be:",opts:["Held at the fax machine until the provider asks","Scanned into the patient chart and routed to the provider for review","Mailed to the patient","Saved to a shared drive only"],ans:1},
     {q:"For an HMO patient, before the referral visit you must verify:",opts:["The patient's pharmacy card","A PCP referral number is on file and has not expired","The Medicare supplement card","The provider's NPI number"],ans:1},
-    {q:"Referral documentation must be retained:",opts:["For 1 year","Per record retention requirements for the duration of active care","Only until the specialist visit is confirmed","For 30 days after the referral is sent"],ans:1}
+    {q:"Referral documentation must be retained:",opts:["For 1 year","Per record retention requirements for the duration of active care","Only until the specialist visit is confirmed","For 30 days after the referral is sent"],ans:1},
+    {q:"An outgoing referral must include:",opts:["Only the patient's name and DOB","Reason for referral, relevant clinical notes, insurance information, and ordering provider details","Just the ICD-10 code","Only the insurance card copy"],ans:1},
+    {q:"After sending a referral, you should follow up if no appointment confirmation is received within:",opts:["6 months","1 week to 10 business days depending on urgency","30 days","The patient confirms on their own"],ans:1},
+    {q:"Medical records sent to another provider should be:",opts:["Faxed without a cover sheet to save time","Accompanied by a HIPAA fax cover sheet and verified as received","Emailed unencrypted","Mailed only"],ans:1},
+    {q:"When a specialist sends a consult report, it must be:",opts:["Filed alphabetically","Uploaded to the patient chart and routed to the provider for review and signature","Sent to billing only","Mailed to the patient"],ans:1},
+    {q:"An urgent referral for sudden-onset diplopia should be processed:",opts:["Same day or within 24 hours","Within 2 weeks","Within 30 days","At the next team meeting"],ans:0},
+    {q:"When a patient transfers their care to another provider, you must:",opts:["Send all records without authorization","Obtain a signed release of information before sending any records","Notify billing only","Call the new provider directly without documentation"],ans:1},
+    {q:"A referral sent to a non-participating (out-of-network) specialist for an HMO patient requires:",opts:["No special steps","Prior authorization or plan approval before the visit","Patient signature only","A written letter from the provider"],ans:1},
+    {q:"Referral tracking logs must include:",opts:["Only the date sent","Date sent, specialist name, reason, appointment date, and date report received","The patient's payment status","Only the ICD-10 code"],ans:1},
+    {q:"What is the correct action if a referral fax confirmation is not received?",opts:["Assume it went through","Resend and call the receiving office to confirm receipt","Wait for the patient to ask","Cancel and reschedule"],ans:1},
+    {q:"For release of records requests from attorneys (e.g., MVA cases), you must verify:",opts:["The attorney's business card","A valid HIPAA-compliant authorization signed by the patient before releasing any records","That the patient owes no balance","The attorney's state bar number"],ans:1}
   ],
   lbq:[
     {q:"A critical lab value must be communicated to the provider:",opts:["By end of business day","Immediately — within minutes of receipt","At the patient's next visit","Only if the patient asks"],ans:1},
@@ -16777,7 +17053,17 @@ const gqData={
     {q:"Standing lab orders typically expire after:",opts:["30 days","6 months to 1 year — check the order for expiration","Never — they are permanent","After the first result is received"],ans:1},
     {q:"Before an MRI, patients with pacemakers or metal implants require:",opts:["A referral to cardiology","A specific safety screening questionnaire and provider/radiology approval","No special steps","A chest X-ray first"],ans:1},
     {q:"A patient reports they did not fast before a fasting lipid panel. You should:",opts:["Proceed anyway and not note it","Notify the provider and reschedule or proceed only with provider approval of non-fasting draw","Cancel all of today's labs","Do the test and not document it"],ans:1},
-    {q:"Critical values are defined as:",opts:["Any result outside the normal reference range","Results so abnormal they may require immediate clinical intervention","Results the provider has not reviewed yet","Any result flagged yellow by the lab"],ans:1}
+    {q:"Critical values are defined as:",opts:["Any result outside the normal reference range","Results so abnormal they may require immediate clinical intervention","Results the provider has not reviewed yet","Any result flagged yellow by the lab"],ans:1},
+    {q:"When ordering a urinalysis for a controlled substance patient, the order must include:",opts:["Only the patient's name","The clinical indication (e.g., monitoring for controlled substance compliance) and correct ICD-10 code","Just the provider's signature","The pharmacy NPI"],ans:1},
+    {q:"An MRI brain with and without contrast requires the patient to:",opts:["Fast for 12 hours","Complete a metal implant/pacemaker safety screening and renal function check if contrast is used","Shave their head","Bring a family member"],ans:1},
+    {q:"A patient's TSH result comes back markedly elevated. This is most clinically relevant for:",opts:["Seizure management","Cognitive impairment and neuropathy workup","Migraine treatment","ARIA monitoring"],ans:1},
+    {q:"Labs ordered for Tysabri monitoring include:",opts:["Only a CBC","LFTs, CBC, and JCV antibody index (every 6 months for TOUCH-enrolled patients)","Just a metabolic panel","Thyroid panel only"],ans:1},
+    {q:"When a patient is claustrophobic and needs an MRI, you should:",opts:["Cancel the MRI order","Notify the provider — they may order anxiolytic premedication or an open MRI","Proceed without telling anyone","Reschedule indefinitely"],ans:1},
+    {q:"Vitamin D deficiency is monitored with which lab value?",opts:["Vitamin D2 only","25-hydroxyvitamin D (25-OH Vitamin D)","1,25-dihydroxyvitamin D only","Calcium level only"],ans:1},
+    {q:"An EMG result showing denervation and reinnervation patterns suggests:",opts:["A demyelinating process","An axonal/neurogenic process such as radiculopathy or ALS","Normal findings","A myopathic process"],ans:1},
+    {q:"Imaging ordered for a patient with new-onset seizures typically includes:",opts:["X-ray of the spine","MRI brain with and without contrast as first-line","CT chest only","Ultrasound of the abdomen"],ans:1},
+    {q:"When results are sent to a patient via the portal, you must confirm:",opts:["The patient has reviewed them before the provider does","The provider has reviewed and released them before they are visible to the patient","They are sent within 1 hour","Billing has been notified"],ans:1},
+    {q:"A requisition for an outside lab must include:",opts:["Only the test name","Patient demographics, DOB, ICD-10 diagnosis codes, ordering provider's NPI, and insurance information","Just the patient's member ID","The pharmacy's NPI"],ans:1}
   ],
   qiq:[
     {q:"The first step in any quality improvement initiative is:",opts:["Implementing a solution","Identifying and measuring the problem with data","Writing a policy","Training all staff immediately"],ans:1},
@@ -16789,7 +17075,17 @@ const gqData={
     {q:"Tracking staff training completion rates ensures:",opts:["All staff have badges","All staff have the knowledge and skills required for their roles","The schedule is filled","Patient satisfaction scores are high"],ans:1},
     {q:"Peer review of clinical documentation serves to:",opts:["Find errors for disciplinary action","Identify patterns and support provider improvement","Replace the billing audit","Satisfy external accreditation only"],ans:1},
     {q:"Which is a leading indicator of quality in a neurology practice?",opts:["Number of parking spaces","Rate of follow-up after abnormal test results","Staff break schedules","Number of fax machines"],ans:1},
-    {q:"Continuous quality improvement (CQI) is best described as:",opts:["A one-time annual project","An ongoing cycle of measuring, analyzing, improving, and monitoring","A single department's responsibility","A requirement only for hospitals"],ans:1}
+    {q:"Continuous quality improvement (CQI) is best described as:",opts:["A one-time annual project","An ongoing cycle of measuring, analyzing, improving, and monitoring","A single department's responsibility","A requirement only for hospitals"],ans:1},
+    {q:"A PDSA cycle stands for:",opts:["Plan, Do, Study, Act","Prepare, Deploy, Sustain, Analyze","Process, Document, Submit, Audit","Prioritize, Delegate, Supervise, Assess"],ans:0},
+    {q:"When a near-miss event occurs (an error caught before reaching the patient), it should be:",opts:["Ignored since no harm was done","Reported and analyzed — near-misses reveal system vulnerabilities","Reported only if the patient was informed","Discussed informally and dropped"],ans:1},
+    {q:"Provider documentation turnaround time is important for quality because:",opts:["It affects staff morale only","Late notes delay billing, referrals, and care coordination","It is required by state law only","It only matters for Medicare patients"],ans:1},
+    {q:"A fishbone (Ishikawa) diagram is used to:",opts:["Map the patient care journey","Identify root causes of a problem","Track staff attendance","Measure patient satisfaction"],ans:1},
+    {q:"No-show rate is a quality metric because:",opts:["It shows how busy the practice is","High no-show rates indicate access barriers, follow-up gaps, and revenue loss","It determines provider pay","It is required for accreditation only"],ans:1},
+    {q:"Before implementing a new workflow change, staff should receive:",opts:["No notice — changes should be immediate","Clear training, written instructions, and a go-live date communicated in advance","An email only","A verbal announcement at a meeting"],ans:1},
+    {q:"Patient complaint resolution should be:",opts:["Handled only by the office manager","Acknowledged within 1 business day, investigated, and documented with a resolution plan","Ignored if the patient doesn't follow up","Forwarded to the provider only"],ans:1},
+    {q:"Benchmarking in healthcare quality means:",opts:["Setting arbitrary goals","Comparing your practice's performance to industry standards or top performers","Only tracking internal data","Competing with neighboring practices"],ans:1},
+    {q:"Documentation of a quality improvement project must include:",opts:["Only the outcome","Problem identified, baseline data, intervention, timeline, outcome, and next steps","Just the staff involved","The financial cost only"],ans:1},
+    {q:"Reducing medication errors in the office is best achieved through:",opts:["Trusting experienced staff to catch errors","Standardized double-check protocols, clear labeling, and consistent workflows","Only disciplining staff who make errors","Reducing the number of medications prescribed"],ans:1}
   ],
   ifq:[
     {q:"Ocrevus premedication protocol requires which three medications?",opts:["Aspirin, Prednisone, and Zofran","Tylenol 650mg PO + Benadryl 50mg PO + Solu-Medrol 125mg IV","Tylenol, Ibuprofen, and Benadryl","Decadron, Zofran, and Benadryl"],ans:1},
@@ -16801,7 +17097,17 @@ const gqData={
     {q:"Solu-Medrol infusion billing uses which codes?",opts:["J2323 and 96365","J2930 for the drug + 96365 first hour + 96366 each additional hour","J0585 only","J2350 and 96413"],ans:1},
     {q:"Which infusion center does NOT accept MPC, Medicare, or Medicaid?",opts:["Meritus","Hagerstown Infusion Center","Antietam","Schwab/WMHS"],ans:1},
     {q:"Home infusion orders for Option Care should be faxed to:",opts:["301-797-7600","833-445-4155 (Kilduff fax)","410-633-9076","304-597-1302"],ans:1},
-    {q:"Before an infusion appointment, the provider must have signed:",opts:["Only a verbal order","A written order with diagnosis, drug, dose, rate, frequency, and relevant labs reviewed","Just the patient's consent form","A referral to the infusion center"],ans:1}
+    {q:"Before an infusion appointment, the provider must have signed:",opts:["Only a verbal order","A written order with diagnosis, drug, dose, rate, frequency, and relevant labs reviewed","Just the patient's consent form","A referral to the infusion center"],ans:1},
+    {q:"Ocrevus is indicated for:",opts:["Relapsing and primary progressive MS","Alzheimer's disease only","Migraine prevention","Parkinson's disease"],ans:0},
+    {q:"Tysabri infusions are given every:",opts:["2 weeks","4 weeks (every 28 days)","6 weeks","12 weeks"],ans:1},
+    {q:"Before every Tysabri infusion, the prescriber and infusion site must verify:",opts:["The patient's pharmacy plan","Active TOUCH enrollment for both prescriber and infusion site, and current JCV index","The patient's primary care provider","The patient's allergies only"],ans:1},
+    {q:"Leqembi IV is dosed at:",opts:["5 mg/kg every 2 weeks","10 mg/kg every 2 weeks","15 mg/kg monthly","10 mg/kg monthly"],ans:1},
+    {q:"ARIA stands for:",opts:["Amyloid Related Imaging Abnormalities","Autoimmune Reactive Inflammatory Arthritis","Anti-REMS Infusion Assessment","Alzheimer's Registry Imaging Analysis"],ans:0},
+    {q:"The J-code for Ocrevus (ocrelizumab) is:",opts:["J2350","J2930","J2323","J0174"],ans:1},
+    {q:"An infusion reaction during Ocrevus administration requires:",opts:["Stopping the infusion and calling EMS immediately","Slowing or stopping the infusion per protocol and notifying the provider — do not restart without authorization","Continuing at the same rate","Asking the patient to drink water and continue"],ans:1},
+    {q:"Home infusion requires a written order that includes:",opts:["Only the drug name","Drug, dose, rate, frequency, diagnosis, and provider signature","Just the patient's address","The insurance ID only"],ans:1},
+    {q:"MRI monitoring for Leqembi is required:",opts:["Only if ARIA symptoms appear","Before the 3rd, 5th, 7th, and 14th infusions as scheduled, plus any time ARIA is suspected","Annually","Monthly for all patients"],ans:1},
+    {q:"When scheduling a new Ocrevus patient, the first two infusions are separated by:",opts:["4 weeks","2 weeks","6 months","1 month"],ans:1}
   ],
   blq:[
     {q:"Which modifier indicates a service was performed bilaterally?",opts:["-25","-50","-59","-76"],ans:1},
@@ -16813,7 +17119,17 @@ const gqData={
     {q:"The prior authorization number on a claim belongs in:",opts:["Box 19 (comments)","Box 23 (prior authorization number)","Box 11 (insured policy number)","Box 32 (service facility)"],ans:1},
     {q:"Coordination of benefits (COB) applies when:",opts:["A patient has only Medicare","A patient has two or more insurance plans","A patient owes a co-pay","A claim is denied"],ans:1},
     {q:"E/M code selection is currently based on:",opts:["Only the length of the visit","Medical decision-making or total provider time per current AMA guidelines","The diagnosis code","The number of prescriptions written"],ans:1},
-    {q:"Modifier -25 is used when:",opts:["A procedure is performed bilaterally","A significant, separately identifiable E/M service is performed the same day as a procedure","A service is repeated by the same provider","A service is unrelated to the primary diagnosis"],ans:1}
+    {q:"Modifier -25 is used when:",opts:["A procedure is performed bilaterally","A significant, separately identifiable E/M service is performed the same day as a procedure","A service is repeated by the same provider","A service is unrelated to the primary diagnosis"],ans:1},
+    {q:"CPT 64616 for cervical Botox requires which modifier because it is a bilateral procedure?",opts:["-25","-50","-59","-76"],ans:1},
+    {q:"A claim submitted more than 12 months after the date of service to Medicare is called:",opts:["A late claim — may be rejected for timely filing","An amended claim","A crossover claim","A secondary claim"],ans:0},
+    {q:"The NPI (National Provider Identifier) on a claim identifies:",opts:["The insurance plan","The rendering provider","The patient","The billing software"],ans:1},
+    {q:"When a patient's insurance changes mid-year, billing must:",opts:["Continue billing the old insurance","Update the insurance in the EHR and verify new coverage before billing the new plan","Bill both plans simultaneously","Ask the patient to pay out-of-pocket"],ans:1},
+    {q:"A remittance advice (RA) from Medicare showing CO-97 means:",opts:["The claim was approved","The service was bundled into another service already paid — cannot bill separately","The provider is not enrolled","The patient's deductible was not met"],ans:1},
+    {q:"J-code J0585 is used for:",opts:["Tysabri (natalizumab)","Botox (onabotulinumtoxinA) per unit","Ocrevus (ocrelizumab)","Leqembi (lecanemab)"],ans:1},
+    {q:"Medicaid is always billed:",opts:["First, before Medicare","Last — as the payer of last resort after all other insurances","Simultaneously with Medicare","Only for pharmacy claims"],ans:1},
+    {q:"A provider performs an E/M visit AND a Botox injection the same day. To separately bill the E/M, you must use:",opts:["Modifier -50","-25 on the E/M code","Modifier -59 on the injection","No modifier needed"],ans:1},
+    {q:"The JW modifier is used for:",opts:["Bilateral procedures","Discarded drug from a single-dose vial","A service performed in a different location","A repeat procedure by the same provider"],ans:1},
+    {q:"Place of service code 11 on a CMS-1500 form indicates:",opts:["Hospital outpatient","Office","Inpatient hospital","Infusion center"],ans:1}
   ],
   paq:[
     {q:"CoverMyMeds is primarily used for:",opts:["Scheduling infusions","Submitting electronic prior authorizations for medications","Verifying insurance eligibility","Processing copay cards"],ans:1},
@@ -16825,7 +17141,17 @@ const gqData={
     {q:"Ocrevus authorizations typically need to be renewed every:",opts:["3 months","6 months","12 months","24 months"],ans:1},
     {q:"Step therapy means:",opts:["The patient takes medication in divided doses","The patient must try and fail preferred medications before the requested drug is approved","The dose is increased gradually","The provider must complete a step-by-step form"],ans:1},
     {q:"After a PA is approved, the authorization number must be documented:",opts:["Only in the PA log","In the patient chart — including auth number, effective dates, units/quantity approved, and drug source","On a sticky note at the front desk","In billing only"],ans:1},
-    {q:"Straight Maryland Medicaid CGRP PAs are submitted via:",opts:["CoverMyMeds only","Paper PA form submitted by fax","Online payer portal only","Phone call to the plan"],ans:1}
+    {q:"Straight Maryland Medicaid CGRP PAs are submitted via:",opts:["CoverMyMeds only","Paper PA form submitted by fax","Online payer portal only","Phone call to the plan"],ans:1},
+    {q:"When should a PA be initiated for a specialty medication?",opts:["After the prescription is already sent to the pharmacy","Before the prescription is sent — ideally at or immediately after the patient encounter","Only after a denial","When the patient calls to ask about it"],ans:1},
+    {q:"A PA for Botox chronic migraine typically needs to be renewed every:",opts:["3 months","12 months (annually)","6 months","Every infusion visit"],ans:1},
+    {q:"Which document most commonly supports a PA for a biologic or specialty medication?",opts:["The patient's pharmacy card","A letter of medical necessity from the provider, with clinical diagnosis, failed therapies, and rationale","The front desk intake form","The patient's insurance card only"],ans:1},
+    {q:"When a PA requires a peer-to-peer review, this means:",opts:["A billing specialist calls the insurer","The prescribing provider speaks directly with the insurance's medical reviewer","The MA submits additional documentation","A supervisor escalates the appeal"],ans:1},
+    {q:"Tepezza (teprotumumab) requires documentation of:",opts:["Chronic migraine diagnosis","Active thyroid eye disease (TED) diagnosis with clinical severity criteria","Multiple sclerosis diagnosis","Alzheimer's disease diagnosis"],ans:1},
+    {q:"If a PA is approved but the patient's insurance changes before treatment starts, you must:",opts:["Use the existing authorization","Verify coverage with the new plan and obtain a new authorization — the old one may not transfer","Ask the patient to appeal","Proceed and deal with denial after the fact"],ans:1},
+    {q:"CGRP antagonists (e.g., Aimovig, Ajovy, Emgality) generally require documentation of:",opts:["Any headache diagnosis","15+ headache days/month for 3+ months and failure of oral preventive medications","A single migraine episode","Only the provider's statement"],ans:1},
+    {q:"An authorization approved for 'medical benefit' means the drug will be billed through:",opts:["Pharmacy (Part D)","Medical insurance (Part B for Medicare) — not pharmacy/PBM","Either benefit equally","The patient's secondary insurance only"],ans:1},
+    {q:"After a PA is approved, the authorization details must be documented in the chart including:",opts:["Auth number only","Auth number, approval date, expiration date, approved drug/dose/units, and approved location","Just the approval date","Only the insurance company's name"],ans:1},
+    {q:"The term 'step therapy failure' on a PA form means:",opts:["The medication was given in steps","The patient tried and failed required prior medications as documented in the chart","The provider submitted the form in steps","The insurer denied the first step"],ans:1}
   ],
   cmq:[
     {q:"CCM (Chronic Care Management) is billed for patients with:",opts:["Any single chronic condition","Two or more chronic conditions expected to last at least 12 months or until death","Only diabetes","Any patient over age 65"],ans:1},
@@ -16837,7 +17163,17 @@ const gqData={
     {q:"BHI (Behavioral Health Integration) is appropriate for patients with:",opts:["Only physical diagnoses","Behavioral or mental health conditions managed in the specialty setting","Patients enrolled in CCM only","Patients who request therapy referrals"],ans:1},
     {q:"PCM (Principal Care Management) differs from CCM in that it:",opts:["Requires two chronic conditions","Focuses on a single high-risk condition requiring complex management","Is only for Medicare patients","Does not require a care plan"],ans:1},
     {q:"When a CCM-enrolled patient is hospitalized, you should:",opts:["Automatically disenroll them","Suspend CCM billing for that month — Medicare cannot be billed for both simultaneously","Continue billing normally","Transfer the care plan to the hospital"],ans:1},
-    {q:"RPM data (e.g., blood pressure readings) should be reviewed:",opts:["Only at the annual visit","Per the monitoring protocol — typically within 2 business days of data receipt","Weekly by front desk","Monthly by billing"],ans:1}
+    {q:"RPM data (e.g., blood pressure readings) should be reviewed:",opts:["Only at the annual visit","Per the monitoring protocol — typically within 2 business days of data receipt","Weekly by front desk","Monthly by billing"],ans:1},
+    {q:"The CPT code for standard CCM (20 minutes clinical staff time per month) is:",opts:["99490","99491","99487","99439"],ans:0},
+    {q:"A CCM patient must be informed of and consent to:",opts:["Nothing — CCM is automatic for eligible patients","The program, the monthly fee, their right to disenroll at any time, and what services are included","Only the cost","The care plan contents only"],ans:1},
+    {q:"RPM requires the clinical staff to review data for a minimum of how many days per month to bill?",opts:["7 days","16 days","10 days","30 days"],ans:1},
+    {q:"TCM (Transitional Care Management) requires a face-to-face visit within:",opts:["30 days of discharge","7 business days for high-complexity or 14 calendar days for moderate-complexity","60 days","The next scheduled visit"],ans:1},
+    {q:"Which patients are typically NOT eligible for CCM?",opts:["Patients with diabetes and hypertension","Patients with only one acute, self-resolving condition","Patients with Alzheimer's disease and depression","Patients with MS and chronic pain"],ans:1},
+    {q:"BHI (Behavioral Health Integration) codes require the behavioral health care manager to:",opts:["See the patient independently","Work as part of the treating team under the direction of the billing provider","Submit claims separately","Only document phone calls"],ans:1},
+    {q:"CCM time must be documented with:",opts:["A general note that CCM was performed","The date, activity, staff name, and time spent — each contact documented separately","Only the total monthly minutes","A provider signature only"],ans:1},
+    {q:"A CCM-enrolled patient who is admitted to a SNF:",opts:["Continues to generate billable CCM time","Suspends CCM billing for that month — Medicare prohibits concurrent billing","Is automatically disenrolled","Should be billed under TCM instead"],ans:1},
+    {q:"PCM (Principal Care Management) requires the condition being managed to be:",opts:["Any chronic condition","A single high-risk chronic condition with expected 3+ months duration requiring complex management","Two or more chronic conditions","A behavioral health condition only"],ans:1},
+    {q:"The goal of care management programs in a neurology practice is:",opts:["To reduce provider visits","To proactively monitor and coordinate care for complex patients between office visits, reducing hospitalizations","To replace face-to-face care","To manage billing only"],ans:1}
   ],
   cgq:[
     {q:"MoCA stands for:",opts:["Memory Orientation and Cognitive Assessment","Montreal Cognitive Assessment","Medical Office Cognitive Analysis","Maryland Outpatient Cognitive Assessment"],ans:1},
@@ -16849,7 +17185,17 @@ const gqData={
     {q:"Which insurance plans most commonly require pre-authorization for neuropsychological testing?",opts:["Medicare","Most commercial/private insurance plans","Medicaid only","No insurances require PA for cognitive testing"],ans:1},
     {q:"After cognitive testing, results should be discussed with the patient by:",opts:["Front desk staff at check-out","The ordering provider in a dedicated counseling or follow-up visit","The MA who administered the test","Any available staff member"],ans:1},
     {q:"The MMSE primarily assesses:",opts:["Emotional regulation and mood","Orientation, attention, recall, language, and visuospatial ability","Reaction time and motor speed","Pain and sensory thresholds"],ans:1},
-    {q:"Cognitive testing is most appropriate for patients presenting with:",opts:["Only patients over age 80","Memory complaints, confusion, functional decline, or suspected dementia/MCI","Headache only","Any patient who requests it regardless of clinical indication"],ans:1}
+    {q:"Cognitive testing is most appropriate for patients presenting with:",opts:["Only patients over age 80","Memory complaints, confusion, functional decline, or suspected dementia/MCI","Headache only","Any patient who requests it regardless of clinical indication"],ans:1},
+    {q:"Which test is validated for detecting cognitive impairment in patients with less than 12 years of education?",opts:["MoCA with no adjustment","MMSE — though education adjustments may apply; the SLUMS was also designed with education norms","CDR only","Mini-Cog exclusively"],ans:1},
+    {q:"Under Medicare, Cognitive Assessment (CA) as a standalone billable service typically uses which CPT code?",opts:["99213","96132 (neuropsychological testing) or per provider documentation — confirm with billing","99483 for the cognitive assessment visit","99490"],ans:1},
+    {q:"Staff may never share a cognitive assessment result with:",opts:["The patient","The ordering provider","An unauthorized third party without patient consent","A caregiver with documented patient authorization"],ans:2},
+    {q:"Which insurance plans typically DO NOT require PA for cognitive assessment?",opts:["Commercial plans","Medicare (standard) — CA is covered when medically indicated without PA in most cases","Medicaid","All require PA"],ans:1},
+    {q:"A patient with a language barrier undergoing cognitive testing should:",opts:["Take the test in English regardless","Have testing performed by a qualified clinician using a validated version in the patient's language or with a certified medical interpreter","Have a family member translate","Skip the test"],ans:1},
+    {q:"The CDR (Clinical Dementia Rating) global score of 1 indicates:",opts:["Normal cognition","Mild dementia","Moderate dementia","Severe dementia"],ans:1},
+    {q:"For MVA patients at Mir Neurology:",opts:["Full cognitive assessment may be performed","Full CA is NOT performed — MMSE (paper test) is permitted","No cognitive testing is allowed","Only digital testing is allowed"],ans:1},
+    {q:"Staff should describe the list of patients due for cognitive assessment as:",opts:["The CA list","The list of patients with covered Dx for CA, or the list of patients due for repeat CA","The dementia list","The memory patient list"],ans:1},
+    {q:"A patient who had an abnormal CA result 6+ months ago should be on:",opts:["The standard follow-up list only","A separate tracking list for patients with abnormal CA due for follow-up","No additional tracking","The discharge list"],ans:1},
+    {q:"Medicaid patients requiring cognitive assessment:",opts:["Do not need PA","Require PA across all Medicaid managed care plans (MD, WV, and other states) — MMSE only if no PA is on file","Are automatically covered","Are seen as self-pay"],ans:1}
   ]
 };
 
@@ -16930,54 +17276,97 @@ function gqDrawCert(pfx,name,score){
   const dl=document.getElementById('gq-'+pfx+'-dl');if(dl)dl.style.display='inline-block';
   const titles={fdq:'Front Desk Operations',maq:'Medical Assistant Procedures',scq:'Scheduling & Patient Flow',rfq:'Referrals & Records Management',lbq:'Labs & Imaging Procedures',qiq:'Quality Improvement Principles',ifq:'Infusion Therapy Procedures',blq:'Medical Billing & Coding',paq:'Prior Authorization Workflows',cmq:'Care Management Programs',cgq:'Cognitive Assessment Procedures'};
   const title=titles[pfx]||'Staff Training';
-  const img=new Image();img.crossOrigin='anonymous';
-  img.onload=()=>_gqRenderCert(cv,name,score,title,img);
-  img.onerror=()=>_gqRenderCert(cv,name,score,title,null);
-  img.src='https://mirneurology.com/wp-content/uploads/2026/02/698c98c84a7b64fa534a12a4.png';
+  _withLogo(()=>_gqRenderCert(cv,name,title));
 }
 
-function _gqRenderCert(cv,name,score,title,logoImg){
+function _gqRenderCert(cv,name,title){
   const c=cv.getContext('2d'),W=1000,H=720;cv.width=W;cv.height=H;
-  const bg=c.createLinearGradient(0,0,0,H);bg.addColorStop(0,'#f8fafc');bg.addColorStop(1,'#eef2f7');
-  c.fillStyle=bg;c.fillRect(0,0,W,H);
-  const hdr=c.createLinearGradient(0,0,W,0);hdr.addColorStop(0,'#0d2e5c');hdr.addColorStop(0.5,'#1a4a7a');hdr.addColorStop(1,'#0d2e5c');
-  c.fillStyle=hdr;c.fillRect(0,0,W,120);c.fillStyle='#C9A227';c.fillRect(0,120,W,4);
-  c.strokeStyle='#1a4a7a';c.lineWidth=8;c.strokeRect(10,10,W-20,H-20);
-  c.strokeStyle='#C9A227';c.lineWidth=2;c.strokeRect(22,22,W-44,H-44);
-  [[38,38],[W-38,38],[38,H-38],[W-38,H-38]].forEach(([x,y])=>{c.fillStyle='#C9A227';c.beginPath();c.arc(x,y,7,0,Math.PI*2);c.fill();});
-  if(logoImg){const lh=80,lw=Math.round(logoImg.naturalWidth*(lh/logoImg.naturalHeight));c.drawImage(logoImg,Math.round((W-lw)/2),20,lw,lh);}
-  else{c.fillStyle='#fff';c.font='bold 30px Georgia,serif';c.textAlign='center';c.fillText('MIR NEUROLOGY',W/2,68);c.font='14px Arial';c.fillText('& Spine Center',W/2,90);}
-  c.fillStyle='#1a4a7a';c.font='italic 13px Arial';c.textAlign='center';
-  c.fillText('Board-Certified Neurological Care · Hagerstown & Cumberland, MD',W/2,146);
-  c.fillStyle='#1a4a7a';c.font='bold 46px Georgia,serif';c.textAlign='center';
-  c.shadowColor='rgba(26,74,122,.12)';c.shadowBlur=6;c.fillText('Certificate of Completion',W/2,218);c.shadowBlur=0;
-  const gr=c.createLinearGradient(150,0,W-150,0);gr.addColorStop(0,'transparent');gr.addColorStop(0.2,'#C9A227');gr.addColorStop(0.8,'#C9A227');gr.addColorStop(1,'transparent');
-  c.strokeStyle=gr;c.lineWidth=2;c.beginPath();c.moveTo(150,232);c.lineTo(W-150,232);c.stroke();
-  c.fillStyle='#555';c.font='italic 18px Georgia,serif';c.textAlign='center';c.fillText('This certifies that',W/2,278);
-  c.fillStyle='#1a4a7a';c.font='bold 44px Georgia,serif';c.textAlign='center';
-  c.shadowColor='rgba(26,74,122,.1)';c.shadowBlur=4;c.fillText(name,W/2,342);c.shadowBlur=0;
-  const nw=c.measureText(name).width;
-  c.strokeStyle='#C9A227';c.lineWidth=2;c.beginPath();c.moveTo(W/2-nw/2-16,356);c.lineTo(W/2+nw/2+16,356);c.stroke();
-  c.fillStyle='#555';c.font='italic 18px Georgia,serif';c.fillText('has successfully completed',W/2,396);
-  c.fillStyle='#1a4a7a';c.font='bold 22px Georgia,serif';c.fillText(title+' Training',W/2,432);
-  c.fillStyle='#e8f5e9';c.strokeStyle='#2e7d32';c.lineWidth=2;
-  hqRoundRect(c,W/2-130,448,260,40,8);
-  c.fillStyle='#2E7D32';c.font='bold 17px Arial';c.textAlign='center';c.fillText('Score: '+score+'%  ·  PASSED',W/2,474);
+  const NAVY='#0d1e3d',TEAL='#29b5d8';
+
+  // White background
+  c.fillStyle='#fff';c.fillRect(0,0,W,H);
+
+  // Top accent: teal bar + short navy bar
+  c.fillStyle=TEAL;c.fillRect(0,0,W,7);
+  c.fillStyle=NAVY;c.fillRect(0,7,260,3);
+
+  // Bottom accent: right-side teal + navy
+  c.fillStyle=TEAL;c.fillRect(W-220,H-7,220,7);
+  c.fillStyle=NAVY;c.fillRect(W-220,H-10,220,3);
+
+  // Outer gray border
+  c.strokeStyle='#d4dae4';c.lineWidth=1.5;c.strokeRect(22,22,W-44,H-44);
+
+  // Logo (drawn with canvas)
+  const lh=60,lw=_LOGO_IMG?Math.round(_LOGO_IMG.naturalWidth*lh/_LOGO_IMG.naturalHeight):Math.round(560*(lh/106));
+  _drawMirLogo(c,Math.round((W-lw)/2),32,lw,lh);
+
+  // Practice name — sits between logo and CERTIFICATE
+  c.fillStyle=TEAL;c.font='bold 13px Arial,sans-serif';c.textAlign='center';
+  c.fillText('Mir Neurology & Spine Center',W/2,114);
+
+  // CERTIFICATE – large bold
+  c.fillStyle=NAVY;c.font='bold 76px Arial,sans-serif';c.textAlign='center';
+  c.fillText('CERTIFICATE',W/2,196);
+
+  // — OF COMPLETION — with teal lines each side
+  const subT='OF COMPLETION';
+  c.font='bold 13px Arial';
+  const sw=c.measureText(subT).width;
+  const lGap=14,lLen=68;
+  c.strokeStyle=TEAL;c.lineWidth=1.5;
+  c.beginPath();c.moveTo(W/2-sw/2-lGap-lLen,210);c.lineTo(W/2-sw/2-lGap,210);c.stroke();
+  c.beginPath();c.moveTo(W/2+sw/2+lGap,210);c.lineTo(W/2+sw/2+lGap+lLen,210);c.stroke();
+  c.fillStyle=NAVY;c.textAlign='center';c.fillText(subT,W/2,215);
+
+  // THIS CERTIFICATE IS PROUDLY PRESENTED TO
+  c.fillStyle='#8090a8';c.font='10px Arial';c.textAlign='center';
+  c.fillText('THIS CERTIFICATE IS PROUDLY PRESENTED TO',W/2,252);
+
+  // Recipient name – italic
+  c.fillStyle=NAVY;c.font='italic bold 54px Georgia,serif';c.textAlign='center';
+  c.shadowColor='rgba(13,30,61,0.07)';c.shadowBlur=5;
+  c.fillText(name,W/2,313);c.shadowBlur=0;
+
+  // Teal underline
+  const nw2=c.measureText(name).width;
+  c.strokeStyle=TEAL;c.lineWidth=2;
+  c.beginPath();c.moveTo(W/2-nw2/2-18,328);c.lineTo(W/2+nw2/2+18,328);c.stroke();
+
+  // Description
+  c.fillStyle='#4a5568';c.font='14px Georgia,serif';c.textAlign='center';
+  c.fillText('in recognition of the successful completion of',W/2,365);
+  c.fillStyle=NAVY;c.font='bold 17px Georgia,serif';
+  c.fillText(title+' Training',W/2,391);
+  c.fillStyle='#4a5568';c.font='13px Georgia,serif';c.textAlign='center';
+  c.fillText('demonstrating proficiency and commitment to excellence in '+title.toLowerCase(),W/2,413);
+
+  // Horizontal rule
+  c.strokeStyle='#eaecf0';c.lineWidth=1;
+  c.beginPath();c.moveTo(36,440);c.lineTo(W-36,440);c.stroke();
+
+  // Bottom section
+  const bCY=585;
+
+  // DATE (left)
   const ds=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
-  c.fillStyle='#666';c.font='15px Arial';c.textAlign='center';c.fillText('Date of Completion: '+ds,W/2,510);
-  c.strokeStyle='#C9A227';c.lineWidth=1.5;c.beginPath();c.moveTo(80,530);c.lineTo(W-80,530);c.stroke();
-  const sx=150,sy=608;
-  c.beginPath();c.arc(sx,sy,60,0,Math.PI*2);const sg=c.createRadialGradient(sx,sy,20,sx,sy,60);sg.addColorStop(0,'#1a4a7a');sg.addColorStop(1,'#0d2e5c');c.fillStyle=sg;c.fill();
-  c.strokeStyle='#C9A227';c.lineWidth=2.5;c.stroke();
-  c.beginPath();c.arc(sx,sy,48,0,Math.PI*2);c.strokeStyle='#C9A22770';c.lineWidth=1;c.stroke();
-  c.fillStyle='#fff';c.font='bold 10px Arial';c.textAlign='center';c.fillText('MIR NEUROLOGY',sx,599);c.font='9px Arial';c.fillText('CERTIFIED',sx,613);c.font='bold 12px Arial';c.fillText(new Date().getFullYear(),sx,629);
-  const scx=680;
-  c.strokeStyle='#bbb';c.lineWidth=1;c.beginPath();c.moveTo(scx-150,596);c.lineTo(scx+150,596);c.stroke();
-  c.fillStyle='#555';c.font='13px Arial';c.textAlign='center';c.fillText('Practice Administrator',scx,614);
-  c.font='bold 14px Arial';c.fillStyle='#1a4a7a';c.fillText('Mir Neurology & Spine Center',scx,632);
-  c.font='12px Arial';c.fillStyle='#888';c.fillText('(301) 797-7600  ·  mirneurology.com',scx,648);
-  c.fillStyle='#bbb';c.font='11px Arial';c.textAlign='center';
-  c.fillText('This certificate documents successful completion of staff training at Mir Neurology & Spine Center.',W/2,695);
+  const dX=164;
+  c.fillStyle=NAVY;c.font='13px Georgia,serif';c.textAlign='center';
+  c.fillText(ds,dX,bCY+4);
+  c.strokeStyle='#b4bdc8';c.lineWidth=1;
+  c.beginPath();c.moveTo(dX-82,bCY+18);c.lineTo(dX+82,bCY+18);c.stroke();
+  c.fillStyle='#8090a8';c.font='bold 9px Arial';c.textAlign='center';
+  c.fillText('DATE',dX,bCY+34);
+
+  // SIGNATURE (right)
+  const sigX=W-164;
+  c.strokeStyle='#b4bdc8';c.lineWidth=1;
+  c.beginPath();c.moveTo(sigX-82,bCY+18);c.lineTo(sigX+82,bCY+18);c.stroke();
+  c.fillStyle='#8090a8';c.font='bold 9px Arial';c.textAlign='center';
+  c.fillText('MANAGER',sigX,bCY+34);
+  c.fillStyle=NAVY;c.font='13px Arial';c.textAlign='center';
+  c.fillText('Mir Neurology',sigX,bCY+50);
+
 }
 
 function gqDownload(pfx){
@@ -17194,7 +17583,6 @@ function printWCForm(){
 </script>
 </body>
 </html>
-
 <script>
 function checkPassword() {
   const correctPassword = "mirneuro";
